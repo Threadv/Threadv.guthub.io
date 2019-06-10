@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据类型的转换 | Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据类型的转换Java的数据类型分为三大类，即布尔型、字符型和数值型，其中，数值型又分为整型和浮点型。相对于数据类型，Java的变量类型为布尔型boolean；字符型char；整型byte、short、int、long；浮点型float、double。其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型的转换">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/数据类型的转换/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta property="og:description" content="数据类型的转换Java的数据类型分为三大类，即布尔型、字符型和数值型，其中，数值型又分为整型和浮点型。相对于数据类型，Java的变量类型为布尔型boolean；字符型char；整型byte、short、int、long；浮点型float、double。其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类变量，即String和Date。  数据类型转换的种类  J">
+<meta property="og:updated_time" content="2018-07-20T13:43:08.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据类型的转换">
+<meta name="twitter:description" content="数据类型的转换Java的数据类型分为三大类，即布尔型、字符型和数值型，其中，数值型又分为整型和浮点型。相对于数据类型，Java的变量类型为布尔型boolean；字符型char；整型byte、short、int、long；浮点型float、double。其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类变量，即String和Date。  数据类型转换的种类  J">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据类型的转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/数据类型的转换/" class="article-date">
+  <time datetime="2018-06-19T11:18:26.000Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据类型的转换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h6><p>Java的数据类型分为三大类，即布尔型、字符型和数值型，其中，数值型又分为整型和浮点型。相对于数据类型，Java的变量类型为布尔型boolean；字符型char；整型byte、short、int、long；浮点型float、double。其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类变量，即String和Date。</p>
+<ol>
+<li><p>数据类型转换的种类</p>
+<p> Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换、字符串与其他数据类型的转换、其他实用数据类型的转换。</p>
+</li>
+<li><p>简单数据类型之间的转换</p>
+<p> 在Java中，整型、实型、字符型被视为简单数据类型，这些类型由低级到高级分别为(byte，short，char)—int—long—float—double。</p>
+<p> 简单数据类型之间的转换又可以分为：低级到高级的自动类型转换、高级到低级的强制类型转换、包装类过渡类型能够转换。</p>
+</li>
+</ol>
+<p>2.1. 自动类型转换。</p>
+<pre><code>低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在Java中直接通过：
+
+byte b;int i=b;long l=b;float f=b;double d=b;
+</code></pre><p>如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCII码值，例如：</p>
+<pre><code>char c=&apos;c&apos;;   int i=c;   System.out.println(&quot;output:&quot;+i);
+输出：output:99;
+</code></pre><p>对于byte、short、char三种类型而言，它们是相同级别的，因此，不能相互自动转换，可以使用下述的强制类型转换。</p>
+<pre><code>short i=99;char c=(char)i;System.out.println(&quot;output:&quot;+c);
+输出：output:c;
+</code></pre><p>2.2. 强制类型转换。</p>
+<p>将高级变量转换为低级变量时，情况会复杂一些，你可以使用强制类型转换。如：</p>
+<pre><code>int i=99;byte b=(byte)i;char c=(char)i;
+</code></pre><p>这种转换可能会导致溢出或精度的下降。</p>
+<p>2.3. 包装类过渡类型转换。</p>
+<p>Java的包装类就是可以直接将简单类型的变量表示为一个类。Java共有六个包装类，分别是Boolean、Character、Integer、Long、Float和Double，从字面上可以看出它们分别对应于boolean、char、int、long、float和double。而String和Date本身就是类，不存在包装类的概念。</p>
+<p>在进行简单数据类型之间的转换（自动转换或强制转换）时，可以利用包装类进行中间过渡。一般情况下，首先声明一个变量，然后生成一个对应的包装类，就可以利用包装类的各种方法进行类型转换了。</p>
+<p>例1，当希望把float型转换为double型时：</p>
+<pre><code>float f1=100.00f;
+Float F1=new float(f1);
+Double d1=F1.doubleValue();
+</code></pre><p>例2，当希望把double型转换为int型时：</p>
+<pre><code>double d1=100.00;   Double D1=new Double(d1);   int i1=D1.intValue();
+</code></pre><p>例3，当希望把int型转换为double型时，自动转换：</p>
+<pre><code>int i1=200;   double d1=i1;;
+</code></pre><p>例4，简单类型的变量转换为相应的包装类，可以利用包装类的构造函数。</p>
+<pre><code>Boolean(boolean value)
+Character(char value)
+Integer(int value)
+Long(long value)
+Float(float value)
+Double(double value)
+</code></pre><p>利用这种方法也可以实现不同数值型变量间的转换，例如，对于一个双精度实型类，int Value()可以得到其对应的整型变量，而double Value()可以得到其对应的双精度实型变量。</p>
+<ol>
+<li>字符串型与其他数据类型的转换</li>
+</ol>
+<p>通过查阅类库中各个类提供的成员方法可以看到，几乎从java.lang.Object类派生的所有类都提供了toString()方法，即将该类转换为字符串。例如，Characrer、Integer、Float、Double、Boolean、Short等类的toString()方法用于将字符、整数、浮点数、双精度数、逻辑数、短整型等类转换为字符串，如下所示：</p>
+<pre><code>class Test {
+public static void main(String args[]) {
+      int i1 = 10;
+      float f1 = 3.14f;
+      double d1 = 3.1415926;
+      Integer I1 = new Integer(i1);
+      Float F1 = new Float(f1)
+      Double D1 = new Double(d1);
+      String si1=I1.toString();
+      String sf1=F1.toString();
+      String sd1=D1.toString();
+      System.out.println(&quot;si1&quot; + si1);
+      System.out.println(&quot;sf1&quot; + sf1);
+      System.out.println(&quot;sd1&quot; + sd1);
+}
+}
+</code></pre><p>（4）将字符型直接作为数值转换为其他数据类型</p>
+<p>将字符型变量转换为数值型变量实际上有两种对应关系：一种是将其转换成对应的ASCII码；另一种是转换关系，例如，’1’就是指数值1，而不是其ASCII码，对于这种转换，可以使用Character的getNumericValue(char ch)方法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/19/数据类型的转换/" data-id="cjwpwun2x008224v5yq9nz3cy" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/21/运算符优先级/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          运算符优先级
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/19/Java异常/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Java异常</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Design-Patterns/" style="font-size: 15.45px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.91px;">Html</a> <a href="/tags/Http/" style="font-size: 16.36px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.55px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.64px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.27px;">demo</a> <a href="/tags/docker/" style="font-size: 16.36px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.09px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 11.82px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.55px;">logstash</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/springboot/" style="font-size: 16.36px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 12.73px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/30/Aop/">Aop</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/基础sql/">基础sql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/rabbitMq/">rabbitMq</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/18/Java求职/">Java基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 chen v<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

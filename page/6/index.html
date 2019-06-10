@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Threadv">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Threadv">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-PHPoffice导出" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/16/PHPoffice导出/" class="article-date">
+  <time datetime="2018-10-16T13:30:21.000Z" itemprop="datePublished">2018-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/16/PHPoffice导出/">PHPoffice导出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">downLoadExcel</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $searchParams = input(<span class="string">'get.searchParams'</span>);</span><br><span class="line">        $map = unserialize($searchParams);</span><br><span class="line">        $List = Db::table(<span class="string">'xxx_xxx_gift'</span>)-&gt;where($map)-&gt;select();</span><br><span class="line">        <span class="keyword">if</span>($List == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//通过工厂模式创建内容</span></span><br><span class="line">        $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(<span class="string">'exceltemplate/salegift.xlsx'</span>);</span><br><span class="line"></span><br><span class="line">        $worksheet = $spreadsheet-&gt;getActiveSheet();</span><br><span class="line">        <span class="keyword">foreach</span>($List <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">            $rowId = $key + <span class="number">2</span>;</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'A'</span>.$rowId)-&gt;setValue($val[<span class="string">'id'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'B'</span>.$rowId)-&gt;setValue($val[<span class="string">'user_id'</span>]);</span><br><span class="line">            $goods = Db::table(<span class="string">'story_pre_sale_goods'</span>)-&gt;where(<span class="string">'id'</span>,$val[<span class="string">'goods_id'</span>])-&gt;find();</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'C'</span>.$rowId)-&gt;setValue($goods[<span class="string">'content'</span>]);</span><br><span class="line">            $activity = Db::table(<span class="string">'story_pre_sale_activity'</span>)-&gt;where(<span class="string">'id'</span>,$val[<span class="string">'activity_id'</span>])-&gt;find();</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'D'</span>.$rowId)-&gt;setValue($activity[<span class="string">'content'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'E'</span>.$rowId)-&gt;setValue($val[<span class="string">'name'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'F'</span>.$rowId)-&gt;setValue($val[<span class="string">'receiver'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'G'</span>.$rowId)-&gt;setValue($val[<span class="string">'phone'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'H'</span>.$rowId)-&gt;setValue($val[<span class="string">'address'</span>]);</span><br><span class="line">            <span class="keyword">if</span>($val[<span class="string">'status'</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                $status =<span class="string">'未领取'</span>;</span><br><span class="line">            &#125;<span class="keyword">elseif</span> ($val[<span class="string">'status'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                $status =<span class="string">'已领取'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'I'</span>.$rowId)-&gt;setValue($status);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'J'</span>.$rowId)-&gt;setValue($val[<span class="string">'create_time'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'K'</span>.$rowId)-&gt;setValue($val[<span class="string">'express_company_name'</span>]);</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'L'</span>.$rowId)-&gt;setValue($val[<span class="string">'express_code'</span>]);</span><br><span class="line">            <span class="keyword">if</span>($val[<span class="string">'express_status'</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">                $express_status =<span class="string">'未发货'</span>;</span><br><span class="line">            &#125;<span class="keyword">elseif</span> ($val[<span class="string">'express_status'</span>]==<span class="number">1</span>)&#123;</span><br><span class="line">                $express_status =<span class="string">'已发货'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $worksheet-&gt;getCell(<span class="string">'M'</span>.$rowId)-&gt;setValue($express_status);</span><br><span class="line">        &#125;</span><br><span class="line">        $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, <span class="string">'Xlsx'</span>);</span><br><span class="line">        $date = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">        <span class="comment">//通过工厂模式来写内容</span></span><br><span class="line">        header(<span class="string">'Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'</span>);<span class="comment">//告诉浏览器输出07Excel文件</span></span><br><span class="line"><span class="comment">//        header('Content-Type:application/vnd.ms-excel');//告诉浏览器将要输出Excel03版本文件</span></span><br><span class="line">        header(<span class="string">'Content-Disposition: attachment;filename='</span>.$date.<span class="string">".xlsx"</span>);<span class="comment">//告诉浏览器输出浏览器名称</span></span><br><span class="line">        header(<span class="string">'Cache-Control: max-age=0'</span>);<span class="comment">//禁止缓存</span></span><br><span class="line">        $writer-&gt;save(<span class="string">'php://output'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/16/PHPoffice导出/" data-id="cjwpwumvq001g24v5khy61kjf" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-添加数据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/16/添加数据/" class="article-date">
+  <time datetime="2018-10-16T13:30:21.000Z" itemprop="datePublished">2018-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/16/添加数据/">添加数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--查看数据--&gt;</span><br><span class="line"> dump($xxx);</span><br><span class="line"> <span class="keyword">die</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 发送</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $notice_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'noticeId'</span>,$notice_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'send'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $userList = explode(<span class="string">','</span>, $data[<span class="string">'user_id'</span>]);</span><br><span class="line">           <span class="keyword">foreach</span>($userList <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">               $insData[<span class="string">'notice_id'</span>] = $data[<span class="string">'notice_id'</span>];</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = $val;</span><br><span class="line">               $insData[<span class="string">'is_read'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_del'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               Db::table(<span class="string">'xxx_user'</span>)-&gt;insert($insData);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $code_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'codeId'</span>,$code_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'add'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $num = intval($data[<span class="string">'num'</span>]);</span><br><span class="line">           <span class="keyword">for</span> ($n=<span class="number">0</span>;$n&lt;$num;$n++)&#123;</span><br><span class="line">               $insData[<span class="string">'name'</span>] = $data[<span class="string">'name'</span>];</span><br><span class="line">               $insData[<span class="string">'goods_id'</span>] = $data[<span class="string">'goods_id'</span>];</span><br><span class="line">               $insData[<span class="string">'activity_id'</span>] = <span class="number">4</span>;</span><br><span class="line">               $insData[<span class="string">'pay_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'status'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_expire'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               $insData[<span class="string">'end_time'</span>] = date(<span class="string">'2099-12-12 00:00:00'</span>);</span><br><span class="line">               $insData[<span class="string">'code'</span>] = <span class="string">''</span>;</span><br><span class="line">               $codeId =Db::table(<span class="string">'story_pre_sale_code'</span>)-&gt;insertGetId($insData);</span><br><span class="line">               $r = rand(<span class="number">10</span>,<span class="number">99</span>);</span><br><span class="line">               $pre=<span class="string">""</span>;</span><br><span class="line">               <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">8</span>-strlen($codeId);$i++)&#123;</span><br><span class="line">                   $pre = $pre.<span class="string">"0"</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               $newCode = $r.$pre.$codeId;</span><br><span class="line">               $newCode16 = base_convert($newCode, <span class="number">10</span>, <span class="number">16</span>);</span><br><span class="line">               Db::table(<span class="string">'xxx_code'</span>)-&gt;where(<span class="string">'id'</span>, $codeId)-&gt;setField(<span class="string">'code'</span>,$newCode16);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/16/添加数据/" data-id="cjwpwun3i008s24v53bd58tdq" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Exception" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/15/Exception/" class="article-date">
+  <time datetime="2018-10-15T05:15:19.000Z" itemprop="datePublished">2018-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/15/Exception/">Exception</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><ul>
+<li>异常处理</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 异常处理类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiExceptionHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Api接口默认异常</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> req</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(value = ApiException.class)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ExceptionResponse <span class="title">jsonErrorHandler</span><span class="params">(HttpServletRequest req, Exception e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        </span><br><span class="line">        ExceptionResponse response = <span class="keyword">new</span> ExceptionResponse();</span><br><span class="line">        ApiStatus apiStatus=<span class="keyword">new</span> ApiStatus();</span><br><span class="line">        apiStatus.setMsg(e.getMessage());</span><br><span class="line">        apiStatus.setCode(<span class="number">500</span>);</span><br><span class="line">        <span class="comment">//查询数据不存在</span></span><br><span class="line">        <span class="keyword">if</span>(e <span class="keyword">instanceof</span> ApiException)&#123;</span><br><span class="line">            apiStatus.setCode(((ApiException) e).getApicode());</span><br><span class="line">            apiStatus.setMsg(((ApiException) e).getApimsg());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        response.setStatus(apiStatus);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> response;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionResponse</span> <span class="keyword">extends</span> <span class="title">ApiResponse</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiResponse</span> </span>&#123;</span><br><span class="line">    ApiStatus status;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApiResponse</span><span class="params">()</span></span>&#123;</span><br><span class="line">        status=<span class="keyword">new</span> ApiStatus();</span><br><span class="line">        status.setCode(<span class="number">1</span>);</span><br><span class="line">        status.setMsg(<span class="string">"成功"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ApiStatus <span class="title">getStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStatus</span><span class="params">(ApiStatus status)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.status = status;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> String apimsg;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> apicode;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApiException</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApiException</span><span class="params">(ExceptionStyle exceptionStyle,String apimsg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(apimsg);</span><br><span class="line">        <span class="keyword">this</span>.apicode=exceptionStyle.code;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.apimsg=apimsg;</span><br><span class="line">        <span class="keyword">if</span>(apimsg==<span class="keyword">null</span>||<span class="string">""</span>.equals(apimsg))&#123;</span><br><span class="line">            <span class="keyword">this</span>.apimsg=exceptionStyle.msg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getApimsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> apimsg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApimsg</span><span class="params">(String apimsg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.apimsg = apimsg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getApicode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> apicode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApicode</span><span class="params">(<span class="keyword">int</span> apicode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.apicode = apicode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 没有找到数据的异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiNotFoundException</span> <span class="keyword">extends</span> <span class="title">ApiException</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApiNotFoundException</span><span class="params">(String apimsg)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">super</span>(ExceptionStyle.NOT_FOUND_EXCEPTION,apimsg);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApiNotFoundException</span><span class="params">(String apimsg,<span class="keyword">int</span> code)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.apimsg=apimsg;</span><br><span class="line">        <span class="keyword">this</span>.apicode=code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> ExceptionStyle &#123;</span><br><span class="line"></span><br><span class="line">    NOT_USER_EXCEPTION(<span class="number">3</span>,<span class="string">"没有这个用户"</span>)</span><br><span class="line">    ,NOT_FOUND_EXCEPTION(<span class="number">201</span>,<span class="string">"没有找到数据"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> code;</span><br><span class="line">    String msg;</span><br><span class="line"></span><br><span class="line">    ExceptionStyle(<span class="keyword">int</span> code,String msg)&#123;</span><br><span class="line">        <span class="keyword">this</span>.code=code;</span><br><span class="line">        <span class="keyword">this</span>.msg=msg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/15/Exception/" data-id="cjwpwumuj000524v5gh9nlqx4" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Swagger-ui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/15/Swagger-ui/" class="article-date">
+  <time datetime="2018-10-15T05:15:19.000Z" itemprop="datePublished">2018-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/15/Swagger-ui/">Swagger-ui</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Swagger-ui"><a href="#Swagger-ui" class="headerlink" title="Swagger-ui"></a>Swagger-ui</h4><ul>
+<li>SwaggerConfig</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SwaggerConfig</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger</span>2</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * SpringBoot默认已经将classpath:/META-INF/resources/和classpath:/META-INF/resources/webjars/映射</span></span><br><span class="line"><span class="comment">     * 所以该方法不需要重写，如果在SpringMVC中，可能需要重写定义（我没有尝试）</span></span><br><span class="line"><span class="comment">     * 重写该方法需要 extends WebMvcConfigurerAdapter</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以定义多个组，比如本类中定义把test和demo区分开了</span></span><br><span class="line"><span class="comment">     * （访问页面就可以看到效果了）</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Parameter&gt; <span class="title">globeParams</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ParameterBuilder parameterBuilder = <span class="keyword">new</span> ParameterBuilder();</span><br><span class="line">        List&lt;Parameter&gt; parameters = <span class="keyword">new</span> ArrayList&lt;Parameter&gt;();</span><br><span class="line">        parameterBuilder.name(<span class="string">"ssToken"</span>)</span><br><span class="line">                .description(<span class="string">"ssToken"</span>)</span><br><span class="line">                .modelRef(<span class="keyword">new</span> ModelRef(<span class="string">"string"</span>))</span><br><span class="line">                .parameterType(<span class="string">"header"</span>)</span><br><span class="line">                .required(<span class="keyword">false</span>).build();</span><br><span class="line">        parameters.add(parameterBuilder.build());</span><br><span class="line">        <span class="keyword">return</span> parameters;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">swaggerSpringMvcPlugin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="comment">// 显示名称</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">"api"</span>)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.xxxx.xxx.app"</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build()</span><br><span class="line">                .globalOperationParameters(<span class="keyword">this</span>.globeParams());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">swaggerSpringMvcPluginAdmin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">// 显示名称</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">"admin"</span>)</span><br><span class="line">                .apiInfo(apiInfoAdmin())</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.xxxx.xxx.adminapi"</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build()</span><br><span class="line">                .globalOperationParameters(<span class="keyword">this</span>.globeParams());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder().title(<span class="string">"Simple APIs"</span>)</span><br><span class="line">                .description(<span class="string">"simple apis"</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">"http://www.gm.com"</span>)</span><br><span class="line">                .contact(<span class="keyword">new</span> Contact(<span class="string">"suliyea"</span>, <span class="string">"http://xxx"</span>, <span class="string">"suliyea@qq.com"</span>))</span><br><span class="line">                .version(<span class="string">"1.0"</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfoAdmin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder().title(<span class="string">"Simple APIs"</span>)</span><br><span class="line">                .description(<span class="string">"admin apis"</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">"http://www.gm.com"</span>)</span><br><span class="line">                .contact(<span class="keyword">new</span> Contact(<span class="string">"suliyea"</span>, <span class="string">"http://xxx"</span>, <span class="string">"suliyea@qq.com"</span>))</span><br><span class="line">                .version(<span class="string">"1.0"</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//pom.xml</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Swagger --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/15/Swagger-ui/" data-id="cjwpwumws002224v5cpoipvel" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/12/web/" class="article-date">
+  <time datetime="2018-10-12T13:36:56.000Z" itemprop="datePublished">2018-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/12/web/">web</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="web"><a href="#web" class="headerlink" title="web"></a>web</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="comment">//@EnableAutoConfiguration</span></span><br><span class="line"><span class="comment">//@SpringBootApplication</span></span><br><span class="line"><span class="comment">//@ConfigurationProperties(prefix = "spring")</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/web"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShareController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> Environment env;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value=<span class="string">"/shareUser/&#123;userIdStr&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shareStory</span><span class="params">(HttpServletResponse response,@PathVariable String userIdStr)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//        return "Hello World!";</span></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> userId=Integer.parseInt(userIdStr);</span><br><span class="line">            User user = userService.getStory(userId);</span><br><span class="line">            <span class="keyword">if</span>(user.getWebFile().indexOf(<span class="string">"zip"</span>)==-<span class="number">1</span>)&#123;</span><br><span class="line">                response.getWriter().write(<span class="string">"not find share page."</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String url=env.getProperty(<span class="string">"cmsconfig.oss.url"</span>)+<span class="string">"webfolder/"</span>+user.getWebFile().replace(<span class="string">".zip"</span>,<span class="string">"/index.html"</span>);</span><br><span class="line">            response.sendRedirect(url);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();;</span><br><span class="line">            response.getWriter().write(<span class="string">"not find share page."</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="cjwpwun12006224v5ih8sqgzg" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-枚举类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/12/枚举类型/" class="article-date">
+  <time datetime="2018-10-12T12:36:56.000Z" itemprop="datePublished">2018-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/12/枚举类型/">枚举类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h4><ul>
+<li>枚举</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> WalletStyle &#123;</span><br><span class="line"></span><br><span class="line">    DEFAULT(<span class="number">0</span>,<span class="string">"隐藏钱包"</span>),</span><br><span class="line">    IOS_WALLET(<span class="number">1</span>,<span class="string">"IOS钱包"</span>),</span><br><span class="line">    ANDROID_WALLET(<span class="number">2</span>,<span class="string">"安卓钱包"</span>);</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String name;</span><br><span class="line">    WalletStyle(<span class="keyword">int</span> id, String name)&#123;</span><br><span class="line">        <span class="keyword">this</span>.id=id;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> WalletStyle <span class="title">getById</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(WalletStyle style:WalletStyle.values())&#123;</span><br><span class="line">            <span class="keyword">if</span>(style.getId()==id)&#123;</span><br><span class="line">                <span class="keyword">return</span> style;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/12/枚举类型/" data-id="cjwpwun3b008k24v5bm2qaeri" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SpringBoot中注解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/12/SpringBoot中注解/" class="article-date">
+  <time datetime="2018-10-12T12:19:23.000Z" itemprop="datePublished">2018-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/12/SpringBoot中注解/">SpringBoot中注解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="SpringBoot中常见注解"><a href="#SpringBoot中常见注解" class="headerlink" title="SpringBoot中常见注解"></a>SpringBoot中常见注解</h4><h6 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h6><p>@RestController被称为一个构造型（stereotype）注解。它为阅读代码的开发人员提供建议。对于Spring，该类扮演了一个特殊角色。它继承自@Controller注解。4.0之前的版本，spring MVC的组件都使用@Controller来标识当前类是一个控制器servlet。使用这个特性，我们可以开发REST服务的时候不需要使用@Controller而专门的@RestController。</p>
+<h6 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h6><p>注解提供路由信息。它告诉Spring任何来自”/“路径的HTTP请求都应该被映射到home方法。@RestController注解告诉Spring以字符串的形式渲染结果，并直接返回给调用者。该注解有六个属性：</p>
+<p>params：指定request中必须包含某些参数值是，才让该方法处理。</p>
+<p>headers：指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
+<p>value：指定请求的实际地址，指定的地址可以是URI Template 模式</p>
+<p>method：指定请求的method类型， GET、POST、PUT、DELETE等</p>
+<p>consumes：指定处理请求的提交内容类型（Content-Type），如application/json,text/html</p>
+<p>produces：指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回</p>
+<h6 id="EnableAutoConfiguration"><a href="#EnableAutoConfiguration" class="headerlink" title="@EnableAutoConfiguration"></a>@EnableAutoConfiguration</h6><p>@EnableAutoConfiguration。这个注解告诉Spring Boot根据添加的jar依赖猜测你想如何配置Spring。由于spring-boot-starter-web添加了Tomcat和Spring MVC，所以auto-configuration将假定正在开发一个web应用并相应地对Spring进行设置。Starter POMs和Auto-Configuration设计auto-configuration的目的是更好的使用”Starter POMs”，但这两个概念没有直接的联系。可以自由地挑选starter POMs以外的jar依赖，并且Spring Boot将仍旧尽最大努力去自动配置你的应用</p>
+<h6 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h6><p>Spring Boot提倡基于Java的配置。尽管可以使用一个XML源来调用SpringApplication.run()，但官方建议使用@Configuration类作为主要源。一般定义main方法的类也是主要@Configuration的一个很好候选。不需要将所有的@Configuration放进一个单独的类。@Import注解可以用来导入其他配置类。另外也可以使用@ComponentScan注解自动收集所有的Spring组件，包括@Configuration类。</p>
+<p>如果需要使用基于XML的配置，官方建议仍旧从一个@Configuration类开始。可以使用附加的@ImportResource注解加载XML配置文件。</p>
+<p>@Configuration注解该类，等价与XML中配置beans；用@Bean标注方法等价于XML中配置bean。</p>
+<h6 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h6><p>表示将该类自动发现扫描组件。如果扫描到有@Component、@Controller、@Service等这些注解的类，并注册为Bean，可以自动收集所有的Spring组件，包括@Configuration类。使用@ComponentScan注解搜索beans，并结合@Autowired注解导入。可以自动收集所有的Spring组件，包括@Configuration类。如果没有配置，Spring Boot会扫描启动类所在包下以及子包下的使用了@Service,@Repository等注解的类。</p>
+<h6 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h6><p>@SpringBootApplication // 等同于@Configuration @EnableAutoConfiguration @ComponentScan </p>
+<h6 id="Profiles"><a href="#Profiles" class="headerlink" title="@Profiles"></a>@Profiles</h6><p>Spring Profiles提供了一种隔离应用程序配置的方式，并让这些配置只能在特定的环境下生效。任何@Component或@Configuration都能被@Profile标记，从而限制加载它的时机。</p>
+<h6 id="ControllerAdvice"><a href="#ControllerAdvice" class="headerlink" title="@ControllerAdvice"></a>@ControllerAdvice</h6><p>包含@Component。可以被扫描到。统一处理异常。</p>
+<h6 id="ExceptionHandler"><a href="#ExceptionHandler" class="headerlink" title="@ExceptionHandler"></a>@ExceptionHandler</h6><p>用在方法上面表示遇到这个异常就执行以下方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * 全局异常处理</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">@ControllerAdvice</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalDefaultExceptionHandler</span> </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_ERROR_VIEW = <span class="string">"error"</span>; </span><br><span class="line"></span><br><span class="line"><span class="meta">@ExceptionHandler</span>(&#123;TypeMismatchException.class,NumberFormatException.class&#125;) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">formatErrorHandler</span><span class="params">(HttpServletRequest req, Exception e)</span> <span class="keyword">throws</span> Exception </span>&#123; </span><br><span class="line"></span><br><span class="line">        ModelAndView mav = <span class="keyword">new</span> ModelAndView(); </span><br><span class="line"></span><br><span class="line">        mav.addObject(<span class="string">"error"</span>,<span class="string">"参数类型错误"</span>); </span><br><span class="line"></span><br><span class="line">        mav.addObject(<span class="string">"exception"</span>, e); </span><br><span class="line"></span><br><span class="line">        mav.addObject(<span class="string">"url"</span>, RequestUtils.getCompleteRequestUrl(req)); </span><br><span class="line"></span><br><span class="line">        mav.addObject(<span class="string">"timestamp"</span>, <span class="keyword">new</span> Date()); </span><br><span class="line"></span><br><span class="line">        mav.setViewName(DEFAULT_ERROR_VIEW); </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mav; </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="value"><a href="#value" class="headerlink" title="@value"></a>@value</h6><p>通过@value注解来读取application.properties里面的配置，使用实例参考：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/************** application.properties *************/</span></span><br><span class="line"></span><br><span class="line">qq_api_key=********<span class="number">1</span>***********</span><br><span class="line"></span><br><span class="line">qq_api_secrt=******<span class="number">2</span>***********</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment">/************* Java **************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;qq_api_key&#125;"</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String API_KEY; </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;qq_api_secrt&#125;"</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String API_SECRET;</span><br></pre></td></tr></table></figure>
+<h6 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h6><p>表示该方法的返回结果直接写入HTTP response body中一般在异步获取数据时使用，在使用@RequestMapping后，返回值通常解析为跳转路径，加上@Responsebody后返回结果不会被解析为跳转路径，而是直接写入HTTP response body中。如异步获取json数据，加上@Responsebody后，会直接返回json数据。</p>
+<h6 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h6><p>泛指组件，当组件不好归类时，可以使用这个注解进行标注。一般公共的方法会用上这个注解</p>
+<h6 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h6><p>用在方法的参数前面，实例：</p>
+<p>@RequestParam String a=request.getParameter(“a”);</p>
+<h6 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h6><p>路径变量注解，其参数与大括号里的名字一样要保持一致，实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">RequestMapping(<span class="string">"yoodb/detail/&#123;id&#125;"</span>) </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getByMacAddress</span><span class="params">(@PathVariable String id)</span></span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//do something; </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Inject"><a href="#Inject" class="headerlink" title="@Inject"></a>@Inject</h6><p>等价于默认的@Autowired，只是没有required属性。</p>
+<h6 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h6><p>相当于XML中的,放在方法的上面，而不是类，意思是产生一个bean,并交给spring管理。</p>
+<h6 id="AutoWired"><a href="#AutoWired" class="headerlink" title="@AutoWired"></a>@AutoWired</h6><p>自动导入依赖的bean。byType方式。把配置好的Bean拿来用，完成属性、方法的组装，它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作。当加上（required=false）时，就算找不到bean也不报错。</p>
+<h6 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h6><p>当有多个同一类型的Bean时，可以用@Qualifier(“name”)来指定。与@Autowired配合使用。@Qualifier限定描述符除了能根据名字进行注入，但能进行更细粒度的控制如何选择候选者，具体使用方式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Qualifier</span>(value = <span class="string">"demoInfoService"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> DemoInfoService demoInfoService;</span><br></pre></td></tr></table></figure>
+<h6 id="Resource-name-”name”-type-”type”"><a href="#Resource-name-”name”-type-”type”" class="headerlink" title="@Resource(name=”name”,type=”type”)"></a>@Resource(name=”name”,type=”type”)</h6><p>没有括号内内容的话，默认byName。与@Autowired类似。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/12/SpringBoot中注解/" data-id="cjwpwumwm001x24v5642j78e1" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-application.properties" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/12/application.properties/" class="article-date">
+  <time datetime="2018-10-12T12:16:52.000Z" itemprop="datePublished">2018-10-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/12/application.properties/">application.properties</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="spring-boot-application-properties"><a href="#spring-boot-application-properties" class="headerlink" title="spring boot application.properties"></a>spring boot application.properties</h4><ul>
+<li>application.properties</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//128.37.136.265/test?characterEncoding=utf-8</span></span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=root</span><br><span class="line">spring.datasource.driver-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=com.mysql.jdbc.Driver</span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource</span><br><span class="line"></span><br><span class="line"># ??????????????????????????????????????</span><br><span class="line"># ???????С????С?????</span><br><span class="line">spring.datasource.initialSize=<span class="number">1</span></span><br><span class="line">spring.datasource.minIdle=<span class="number">1</span></span><br><span class="line">spring.datasource.maxActive=<span class="number">5</span></span><br><span class="line"># ????????????????????</span><br><span class="line">spring.datasource.maxWait=<span class="number">60000</span></span><br><span class="line"># ???ü????ò??????μ??????????????????????λ?????</span><br><span class="line">spring.datasource.timeBetweenEvictionRunsMillis=<span class="number">60000</span></span><br><span class="line"># ??????????????????С??????????λ?????</span><br><span class="line">spring.datasource.minEvictableIdleTimeMillis=<span class="number">300000</span></span><br><span class="line">spring.datasource.validationQuery=SELECT <span class="number">1</span> FROM DUAL</span><br><span class="line">spring.datasource.testWhileIdle=<span class="keyword">true</span></span><br><span class="line">spring.datasource.testOnBorrow=<span class="keyword">false</span></span><br><span class="line">spring.datasource.testOnReturn=<span class="keyword">false</span></span><br><span class="line"># ??PSCache??????????????????PSCache???С</span><br><span class="line">spring.datasource.poolPreparedStatements=<span class="keyword">true</span></span><br><span class="line">spring.datasource.maxPoolPreparedStatementPerConnectionSize=<span class="number">20</span></span><br><span class="line"># ???ü??????????filters????????????sql???????'wall'????????</span><br><span class="line">spring.datasource.filters=stat,wall,log4j</span><br><span class="line"># ???connectProperties????????mergeSql???????SQL???</span><br><span class="line">spring.datasource.connectionProperties=druid.stat.mergeSql=<span class="keyword">true</span>;druid.stat.slowSqlMillis=<span class="number">5000</span></span><br><span class="line"># ??????DruidDataSource????????</span><br><span class="line">#spring.datasource.useGlobalDataSourceStat=true</span><br><span class="line"></span><br><span class="line">#spring.jpa.properties.hibernate.cache.use_second_level_cache=true</span><br><span class="line">#spring.jpa.properties.hibernate.cache.use_query_cache=true</span><br><span class="line">#spring.jpa.properties.hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory</span><br><span class="line">spring.jpa.properties.javax.persistence.sharedCache.mode=ALL</span><br><span class="line"></span><br><span class="line">test.preSaleUser.ids=<span class="number">115</span>,<span class="number">103</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">18</span>,<span class="number">23</span>,<span class="number">25</span>,<span class="number">27</span></span><br><span class="line">server.tomcat.access-log-enabled=<span class="keyword">true</span></span><br><span class="line"># REDIS (RedisProperties)</span><br><span class="line"># database name</span><br><span class="line">spring.redis.database=<span class="number">4</span></span><br><span class="line"># server host</span><br><span class="line">spring.redis.host=<span class="number">101.37</span>.174.227</span><br><span class="line"># server password</span><br><span class="line">spring.redis.password=</span><br><span class="line"># connection port</span><br><span class="line">spring.redis.port=<span class="number">6379</span></span><br><span class="line"># pool settings ...</span><br><span class="line">spring.redis.pool.max-idle=<span class="number">8</span></span><br><span class="line">spring.redis.pool.min-idle=<span class="number">1</span></span><br><span class="line">spring.redis.pool.max-active=<span class="number">8</span></span><br><span class="line">spring.redis.pool.max-wait=-<span class="number">1</span></span><br><span class="line">cache.defaultexpiration=<span class="number">86400</span></span><br><span class="line"></span><br><span class="line">#spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br><span class="line">#spring.jpa.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">#spring.view.prefix: classpath:/template/</span><br><span class="line">spring.view.suffix: .html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#JPA Configuration:</span><br><span class="line">spring.jpa.show-sql=<span class="keyword">true</span></span><br><span class="line">spring.jpa.properties.hibernate.show_sql=<span class="keyword">true</span></span><br><span class="line">## LOGGING</span><br><span class="line">logging.path=/home/logs/test/</span><br><span class="line"></span><br><span class="line">debug=<span class="keyword">true</span></span><br><span class="line"></span><br><span class="line">spring.freemarker.enabled=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.cache=<span class="keyword">false</span></span><br><span class="line">spring.freemarker.charset=UTF-<span class="number">8</span></span><br><span class="line">spring.freemarker.check-template-location=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.content-type=text/html</span><br><span class="line">spring.freemarker.expose-request-attributes=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.expose-session-attributes=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.request-context-attribute=request</span><br><span class="line">spring.freemarker.suffix=.html</span><br><span class="line">spring.freemarker.settings.number_format=0.##</span><br><span class="line"></span><br><span class="line">#spring.profiles.active=dev</span><br><span class="line">server.port = <span class="number">8080</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/12/application.properties/" data-id="cjwpwumxb002m24v5aeljp8ww" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Jrebel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/10/Jrebel/" class="article-date">
+  <time datetime="2018-10-10T05:20:38.000Z" itemprop="datePublished">2018-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/10/Jrebel/">Jrebel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Jrebel"><a href="#Jrebel" class="headerlink" title="Jrebel"></a>Jrebel</h5><blockquote>
+<p><a href="https://www.cnblogs.com/wang1024/p/7211194.html" target="_blank" rel="noopener">https://www.cnblogs.com/wang1024/p/7211194.html</a></p>
+<p><a href="http://chessman-126-com.iteye.com/blog/2163514" target="_blank" rel="noopener">http://chessman-126-com.iteye.com/blog/2163514</a></p>
+</blockquote>
+<p>默认反代 idea.lanyus.com, 运行起来后，<a href="http://127.0.0.1:8888/Zephyr就是激活地址了（激活地址复制到激活的窗口，而不是浏览器地址栏，见下图）" target="_blank" rel="noopener">http://127.0.0.1:8888/Zephyr就是激活地址了（激活地址复制到激活的窗口，而不是浏览器地址栏，见下图）</a>, 邮箱随意填写（激活成功前不要关闭反向代理程序）。</p>
+<p>　　如果使用上面的激活地址出现  “Incorrect license server group URL.Contact license sever administrator.”  错误，是由于授权地址增加了GUID检测造成的，可以尝试使用下面的激活地址：</p>
+<ul>
+<li><a href="http://127.0.0.1:8888/88414687-3b91-4286-89ba-2dc813b107ce、" target="_blank" rel="noopener">http://127.0.0.1:8888/88414687-3b91-4286-89ba-2dc813b107ce、</a></li>
+<li><a href="http://127.0.0.1:8888/ff47a3ac-c11e-4cb2-836b-9b2b26101696、" target="_blank" rel="noopener">http://127.0.0.1:8888/ff47a3ac-c11e-4cb2-836b-9b2b26101696、</a></li>
+<li><a href="http://127.0.0.1:8888/11d221d1-5cf0-4557-b023-4b4adfeeb36a" target="_blank" rel="noopener">http://127.0.0.1:8888/11d221d1-5cf0-4557-b023-4b4adfeeb36a</a></li>
+</ul>
+<blockquote>
+<p>链接：<a href="https://pan.baidu.com/s/1db2_jRJFvfm1FtdhiyTfCQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1db2_jRJFvfm1FtdhiyTfCQ</a><br>提取码：xbv4 </p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/10/Jrebel/" data-id="cjwpwumve001224v5kfb5xyqq" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-springboot之乐观锁和悲观锁" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/07/springboot之乐观锁和悲观锁/" class="article-date">
+  <time datetime="2018-10-07T13:36:56.000Z" itemprop="datePublished">2018-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/07/springboot之乐观锁和悲观锁/">springboot之乐观锁和悲观锁</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="springboot之乐观锁和悲观锁"><a href="#springboot之乐观锁和悲观锁" class="headerlink" title="springboot之乐观锁和悲观锁"></a>springboot之乐观锁和悲观锁</h4><p>原文：<a href="https://blog.csdn.net/east123321/article/details/81084158" target="_blank" rel="noopener">https://blog.csdn.net/east123321/article/details/81084158</a> </p>
+<hr>
+<p>悲观锁：比较适合写入操作比较频繁的场景，如果出现大量的读取操作，每次读取的时候都会进行加锁，这样会增加大量的锁的开销，降低了系统的吞吐量。</p>
+<p>乐观锁：比较适合读取操作比较频繁的场景，如果出现大量的写入操作，数据发生冲突的可能性就会增大，为了保证数据的一致性，应用层需要不断的重新获取数据，这样会增加大量的查询操作，降低了系统的吞吐量。</p>
+<p>一、乐观锁</p>
+<p>1、乐观锁：<br>每次获取数据的时候，都不会担心数据被修改，所以每次获取数据的时候都不会进行加锁，由于数据没有进行加锁，期间该数据可以被其他线程进行读写操作。</p>
+<p>2、乐观锁的原理</p>
+<p>乐观锁，大多是基于数据版本   Version ）记录机制实现。何谓数据版本？即为数据增加一个版本标识，在基于数据库表的版本解决方案中，一般是通过为数据库表增加一个 “version” 字段来 实现。 读取出数据时，将此版本号一同读出，之后更新时，对此版本号加一。此时，将提 交数据的版本数据与数据库表对应记录的当前版本信息进行比对，如果提交的数据 版本号大于数据库表当前版本号，则予以更新，否则认为是过期数据。</p>
+<p>3、乐观锁的实现</p>
+<p>在实体类中添加一个int型的字段，并标注注解@Version即可，注意该字段要在主键id的后面。</p>
+<ul>
+<li>User.java</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Id</span></span><br><span class="line"><span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line"><span class="keyword">private</span> Long id;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Version</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> version;</span><br><span class="line"> </span><br><span class="line">.......</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Controller.java </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test1"</span>)</span><br><span class="line"><span class="meta">@RetryOnOptimisticLockingFailure</span><span class="comment">//最后一步</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String  <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		User user=userRepo.findByNumber(<span class="string">"20180716114900229366"</span>);</span><br><span class="line">		user.setStartTime(<span class="string">"22232322"</span>);</span><br><span class="line">		System.out.println(<span class="string">"test1："</span>+leaveApproval.getVersion());</span><br><span class="line">		userRepo.save(user);</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test2"</span>)</span><br><span class="line"><span class="meta">@RetryOnOptimisticLockingFailure</span><span class="comment">//最后一步</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String  <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		User user=<span class="keyword">new</span> User();</span><br><span class="line">		user=userRepo.findByNumber(<span class="string">"20180716114900229366"</span>);</span><br><span class="line">		leaveApproval.setEndTime(<span class="string">"111111"</span>);</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">5000</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"test2："</span>+leaveApproval.getVersion());</span><br><span class="line">		userRepo.save(leaveApproval);</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>先执行/test2，然后在5秒之内执行/test1,来模拟多个用户对同一个资源的并发操作。此时便会报错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">2018</span>-<span class="number">07</span>-<span class="number">17</span> <span class="number">17</span>:<span class="number">03</span>:<span class="number">14.254</span> ERROR <span class="number">6816</span> --- [p-nio-<span class="number">80</span>-exec-<span class="number">2</span>] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() <span class="keyword">for</span> servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.ObjectOptimisticLockingFailureException: Batch update returned unexpected row count from update [<span class="number">0</span>]; actual row count: <span class="number">0</span>; expected: <span class="number">1</span>; nested exception is org.hibernate.StaleStateException: Batch update returned unexpected row count from update [<span class="number">0</span>]; actual row count: <span class="number">0</span>; expected: <span class="number">1</span>] with root cause</span><br></pre></td></tr></table></figure>
+<p>当test2 save时，数据库通过对比version发现 该条数据已经过期，便会终止save 操作。</p>
+<p>接下来只要捕获并处理这个异常即可。</p>
+<p>3、乐观锁更新失败后的解决方案</p>
+<p>用spring AOP思想来实现处理异常并实现重试机制。以下。</p>
+<p>首先自定义一个注解：</p>
+<p>@RetryOnOptimisticLockingFailure</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD) </span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> RetryOnOptimisticLockingFailure &#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后 用AOP抛出异常 并进行重试。</p>
+<p><strong>注意：捕获异常时，网上的大部分文章都是只有OptimisticLockingFailureException这一种异常，这是不够的，可以先e.printStackTrace();看一看都有哪些异常，再进行捕获</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RetryOnOptimisticLockingAspect</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger= LoggerFactory.getLogger(RetryOnOptimisticLockingFailure.class);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> maxRetries = <span class="number">5</span>;<span class="comment">//最多重试的次数</span></span><br><span class="line">	<span class="meta">@Pointcut</span>(<span class="string">"@annotation(RetryOnOptimisticLockingFailure)"</span>)<span class="comment">//自定义的注解作为切点</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">retryOnOptFailure</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">	<span class="meta">@Around</span>(<span class="string">"retryOnOptFailure()"</span>)<span class="comment">//around注解可以在 目标方法 之前执行 也可以在目标方法之后</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doConcurrentOperation</span><span class="params">(ProceedingJoinPoint pjp)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> numAttempts = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			numAttempts++;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> pjp.proceed();</span><br><span class="line">			&#125; <span class="keyword">catch</span> (Exception e) &#123;<span class="comment">//此处捕获异常时，网上的大部分文章都是只有OptimisticLockingFailureException这一种异常，这是不够的，可以先e.printStackTrace();看一看都有哪些异常，在进行捕获</span></span><br><span class="line">				 <span class="keyword">if</span> (e <span class="keyword">instanceof</span> ObjectOptimisticLockingFailureException || e <span class="keyword">instanceof</span> StaleStateException  ||e <span class="keyword">instanceof</span> JpaSystemException ) &#123;</span><br><span class="line">					 logger.info(<span class="string">"更新数据---乐观锁重试中---"</span>);</span><br><span class="line">					 <span class="keyword">if</span> (numAttempts &gt; maxRetries)&#123;</span><br><span class="line">						 logger.info(<span class="string">"抛出异常"</span>);</span><br><span class="line">						 <span class="keyword">throw</span> e;</span><br><span class="line">					 &#125;</span><br><span class="line">				&#125;</span><br><span class="line"> </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">while</span> (numAttempts &lt; <span class="keyword">this</span>.maxRetries);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后在controller的对应的方法上 添加该注解即可。</p>
+<hr>
+<p>二、悲观锁</p>
+<p>1、 悲观锁</p>
+<p>每次在读取或者加载一条记录的时候，都会锁住被加载的记录，此时当其他事务如果要更新或者是加载此条记录就会因为不能获得锁而阻塞，但是其他事务还是可以插入和删除记录的。</p>
+<p>2、 实现</p>
+<p>在JDBC中使用悲观锁，需要使用select for update，即</p>
+<p>select * from A Where id=1 for update;</p>
+<p>3、 实例代码</p>
+<p>先写查询的Jpa  接口</p>
+<p>UserRepo.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Lock</span>(LockModeType.PESSIMISTIC_WRITE)<span class="comment">//这就相当与 select for update 一会执行的时候看打印的sql语句就知道了</span></span><br><span class="line"><span class="meta">@Query</span>(value = <span class="string">"select u from User u where phoneNumber=?1  "</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> User <span class="title">findByPhoneNumber</span><span class="params">(String phoneNumber)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>然后写调用它的service服务，为了便于观察，写两个方法</p>
+<p>注意：1、 一定要声明事务管理@Transactional，不添加注解会报错 no transation。</p>
+<pre><code>2、 事务管理的注解一定要 包住 对数据库的持久化操作  。即 find--set-save。
+</code></pre><p>AppControllerService.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Transactional</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">findByPhoneNumber</span><span class="params">(String phoneNumber)</span></span>&#123;</span><br><span class="line">	User user = userRepo.findByPhoneNumber(phoneNumber);</span><br><span class="line">	user.setUsername(<span class="string">"第一步111"</span>);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Thread.sleep(<span class="number">12000</span>);<span class="comment">//线程sleep12秒</span></span><br><span class="line">	&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	userRepo.save(user);</span><br><span class="line">	<span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">findByPhoneNumber1</span><span class="params">(String phoneNumber)</span></span>&#123;</span><br><span class="line">	User user = userRepo.findByPhoneNumber(phoneNumber);</span><br><span class="line">	user.setEmail(<span class="string">"第二部222"</span>);</span><br><span class="line">	userRepo.save(user);</span><br><span class="line">	<span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后写controller</p>
+<p>UserController.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@GetMapping</span>(<span class="string">"/app/getUser1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">transform</span><span class="params">()</span></span>&#123;</span><br><span class="line">	User user = appControllerService.findByPhoneNumber(<span class="string">"123123"</span>);</span><br><span class="line">	<span class="keyword">return</span> user.toString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/app/getUser2"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">transform1</span><span class="params">()</span></span>&#123;</span><br><span class="line">	User user = appControllerService.findByPhoneNumber1(<span class="string">"123123"</span>);</span><br><span class="line">	<span class="keyword">return</span> user.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先执行接口 localhost/app/getUser1  该接口执行完成需要12s，在这期间 执行接口2 即localhost/app/getUser2。接口2 没有设置线程sleep。此时会发现接口2 不会立马执行完，而是要等待接口1 （12秒之后）执行完成之后 才会执行接口1。 </p>
+<p>这样 就表示设置悲观锁成功，方法2修改的数据不会被覆盖。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/07/springboot之乐观锁和悲观锁/" data-id="cjwpwun0j005k24v5uyy1m6rm" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/7/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Design-Patterns/" style="font-size: 15.45px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.91px;">Html</a> <a href="/tags/Http/" style="font-size: 16.36px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.55px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.64px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.27px;">demo</a> <a href="/tags/docker/" style="font-size: 16.36px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.09px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 11.82px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.55px;">logstash</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/springboot/" style="font-size: 16.36px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 12.73px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/30/Aop/">Aop</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/基础sql/">基础sql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/03/rabbitMq/">rabbitMq</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/18/Java求职/">Java基础知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 chen v<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

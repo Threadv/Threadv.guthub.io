@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>dubbo发布/引用服务 | Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dubbo 服务治理 spring配置服务  在中添加dubbo的xmlns相关声明1234&amp;lt;beans xmlns:dubbo=&quot;http://code.alibabatech.com/schema/dubbo&quot;    xsi:schemaLocation=    &quot;htt">
+<meta name="keywords" content="dubbo服务治理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dubbo发布&#x2F;引用服务">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/dubbo发布-引用服务/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta property="og:description" content="dubbo 服务治理 spring配置服务  在中添加dubbo的xmlns相关声明1234&amp;lt;beans xmlns:dubbo=&quot;http://code.alibabatech.com/schema/dubbo&quot;    xsi:schemaLocation=    &quot;http://code.alibabatech.com/schema/dubbo    http://code.alibab">
+<meta property="og:updated_time" content="2018-02-20T09:55:27.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dubbo发布&#x2F;引用服务">
+<meta name="twitter:description" content="dubbo 服务治理 spring配置服务  在中添加dubbo的xmlns相关声明1234&amp;lt;beans xmlns:dubbo=&quot;http://code.alibabatech.com/schema/dubbo&quot;    xsi:schemaLocation=    &quot;http://code.alibabatech.com/schema/dubbo    http://code.alibab">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-dubbo发布-引用服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/dubbo发布-引用服务/" class="article-date">
+  <time datetime="2018-02-10T09:38:04.000Z" itemprop="datePublished">2018-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      dubbo发布/引用服务
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="dubbo-服务治理"><a href="#dubbo-服务治理" class="headerlink" title="dubbo 服务治理"></a>dubbo 服务治理</h4><ul>
+<li>spring配置服务</li>
+</ul>
+<p>在<beans>中添加dubbo的xmlns相关声明<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans xmlns:dubbo=<span class="string">"http://code.alibabatech.com/schema/dubbo"</span></span><br><span class="line">    xsi:schemaLocation=</span><br><span class="line">    <span class="string">"http://code.alibabatech.com/schema/dubbo</span></span><br><span class="line"><span class="string">    http://code.alibabatech.com/schema/dubbo/dubbo.xsd"</span>&gt;</span><br></pre></td></tr></table></figure></beans></p>
+<ul>
+<li>注册服务<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id="helloService" class="com.xxx.testdubbo.api.HelloServiceImpl"&gt;&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- 提供方应用名称信息 --&gt;</span><br><span class="line">   &lt;dubbo:application name="hello_server"&gt;&lt;/dubbo:application&gt;</span><br><span class="line">   &lt;!-- 使用zookeeper注册中心 --&gt;</span><br><span class="line">   &lt;dubbo:registry address="zookeeper://127.0.0.1:2181" check="false" subscribe="false" register=""&gt;&lt;/dubbo:registry&gt;</span><br><span class="line">   &lt;!-- 用dubbo协议在<span class="number">20880</span>端口暴露服务 --&gt;</span><br><span class="line">   &lt;dubbo:protocol name=<span class="string">"dubbo"</span> port=<span class="string">"20880"</span> /&gt;</span><br><span class="line">   &lt;!-- 要提供的服务接口 --&gt;</span><br><span class="line">   &lt;dubbo:service <span class="class"><span class="keyword">interface</span></span>=<span class="string">"com.xxx.testdubbo.api.HelloService"</span> ref=<span class="string">"helloService"</span> /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>启动服务即可注册到dubbo</p>
+<ul>
+<li>web层调用服务</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在dubbo注册应用名称 --&gt;</span><br><span class="line">&lt;!-- 引用服务 --&gt;</span><br><span class="line">   &lt;dubbo:application name="dubbo_client"&gt;&lt;/dubbo:application&gt;</span><br><span class="line">   &lt;!-- zookeeper地址 --&gt;</span><br><span class="line">   &lt;dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"&gt;&lt;/dubbo:registry&gt;</span><br><span class="line">   &lt;!-- 依赖的服务 --&gt;</span><br><span class="line">   &lt;dubbo:reference interface="com.xxx.testdubbo.api.HelloService" id="helloService"&gt;&lt;/dubbo:reference&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/10/dubbo发布-引用服务/" data-id="cjg0ug0j0000oewv5ahzin14m" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dubbo服务治理/">dubbo服务治理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/Single-Sign-On/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuevo</strong>
+      <div class="article-nav-title">
+        
+          Single-Sign-On
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/05/struts2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">struts2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dubbo服务治理/">dubbo服务治理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/example/">example</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hibernate/">hibernate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/">project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/service/">service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/struts2/">struts2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tool/">tool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符个数/">字符个数</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nube de Tags</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/basic/" style="font-size: 17.5px;">basic</a> <a href="/tags/demo/" style="font-size: 20px;">demo</a> <a href="/tags/dubbo服务治理/" style="font-size: 10px;">dubbo服务治理</a> <a href="/tags/example/" style="font-size: 10px;">example</a> <a href="/tags/hibernate/" style="font-size: 10px;">hibernate</a> <a href="/tags/project/" style="font-size: 15px;">project</a> <a href="/tags/service/" style="font-size: 10px;">service</a> <a href="/tags/struts2/" style="font-size: 10px;">struts2</a> <a href="/tags/tool/" style="font-size: 12.5px;">tool</a> <a href="/tags/字符个数/" style="font-size: 10px;">字符个数</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/22/SendSms/">云通信短信service</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/16/日期前后几天/">指定日期+</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/10/小程序/">小程序</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/08/读文件/">读文件</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/18/solr/">solr</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 chen v<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
