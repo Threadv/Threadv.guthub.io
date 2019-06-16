@@ -61,51 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序/">快速排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
-<li>方式一</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="cjwpxmri7007skcv5gqvv93ca" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
@@ -205,7 +160,169 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cjwpxmri7007qkcv5l04j1qsz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cjwyim6hy007vdsv58zvskwxy" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-复杂度" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/复杂度/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/复杂度/">算法复杂度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h5><ul>
+<li>原文地址： <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序方法</th>
+<th style="text-align:center">时间复杂度（平均）</th>
+<th style="text-align:center">时间复杂度（最坏）</th>
+<th style="text-align:center">时间复杂度（最好）</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">插入排序</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">希尔排序</td>
+<td style="text-align:center">O(n1.3)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">选择排序</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">堆排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">冒泡排序</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">快速排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n2)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:center">归并排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">稳定</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>演示</li>
+</ul>
+<h6 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h6><p><img src="https://threadv.github.io/GIf/InsertionSort.gif" alt="InsertionSort"></p>
+<h6 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h6><p><img src="https://threadv.github.io/GIf/ShellSort.gif" alt="ShellSort"></p>
+<h6 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h6><p><img src="https://threadv.github.io/GIf/SelectionSort.gif" alt="SelectionSort"></p>
+<h6 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h6><p><img src="https://threadv.github.io/GIf/HeapSort.gif" alt="HeapSort"></p>
+<h6 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h6><p><img src="https://threadv.github.io/GIf/BubbleSort.gif" alt="BubbleSort"></p>
+<h6 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h6><p><img src="https://threadv.github.io/GIf/QuickSort.gif" alt="QuickSort"></p>
+<h6 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h6><p><img src="https://threadv.github.io/GIf/MergingSort.gif" alt="MergingSort"></p>
+<h6 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h6><p><img src="https://threadv.github.io/GIf/CountingSort.gif" alt="CountingSort"></p>
+<h6 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h6><p><img src="https://threadv.github.io/GIf/BucketSort.png" alt="BucketSort"></p>
+<h6 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h6><p><img src="https://threadv.github.io/GIf/RadixSort.gif" alt="RadixSort"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="cjwyim6he0073dsv5o42dr1a4" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="cjwyim6i0007xdsv5me7q3nkh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -290,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="cjwpxmrc5000fkcv575am2w42" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="cjwyim6b2000bdsv5zulefjqy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -335,93 +452,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cjwpxmrf6003lkcv5jznysbi7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cjwyim6d8003edsv5wuy5py0v" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/19/cookie/" class="article-date">
-  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/cookie/">cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie创建：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getCookie</span><span class="params">( Cookie[] cookies,String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName90.equals(key))&#123;</span><br><span class="line">                <span class="keyword">return</span> cookie.getValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> IOException,ServletException</span>&#123;</span><br><span class="line">    Cookie[] cookies = request.getCookies();</span><br><span class="line">    Sring userName = getCookie(cookies,<span class="string">"userName"</span>);</span><br><span class="line">    String userAge = getCookie(cookies. <span class="string">"userAge"</span>);</span><br><span class="line">    <span class="keyword">if</span>(userName == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"useName"</span>,<span class="string">"jack"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(userAge == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"userAge"</span>,<span class="string">"25"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    response.getHeaders(<span class="string">"Set-cookie"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>浏览器对cookie的限制</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>浏览器版本</th>
-<th>Cookie的数量限制</th>
-<th>Cookie的总大小限制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IE6</td>
-<td>20个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE7</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE8</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE9</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>Chrome</td>
-<td>50个/每个域名</td>
-<td>大于80000</td>
-</tr>
-<tr>
-<td>FireFox</td>
-<td>50个/每个域名</td>
-<td>4097个字节</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="cjwpxmreb002qkcv5y48b511b" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
 
     </footer>
   </div>
@@ -536,7 +570,90 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="cjwpxmrhs006vkcv501up70cw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="cjwyim6hd0071dsv5qfvoq2rk" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/19/cookie/" class="article-date">
+  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/19/cookie/">cookie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie创建：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getCookie</span><span class="params">( Cookie[] cookies,String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName90.equals(key))&#123;</span><br><span class="line">                <span class="keyword">return</span> cookie.getValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> IOException,ServletException</span>&#123;</span><br><span class="line">    Cookie[] cookies = request.getCookies();</span><br><span class="line">    Sring userName = getCookie(cookies,<span class="string">"userName"</span>);</span><br><span class="line">    String userAge = getCookie(cookies. <span class="string">"userAge"</span>);</span><br><span class="line">    <span class="keyword">if</span>(userName == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"useName"</span>,<span class="string">"jack"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(userAge == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"userAge"</span>,<span class="string">"25"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    response.getHeaders(<span class="string">"Set-cookie"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>浏览器对cookie的限制</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>浏览器版本</th>
+<th>Cookie的数量限制</th>
+<th>Cookie的总大小限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE6</td>
+<td>20个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE7</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE8</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE9</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>50个/每个域名</td>
+<td>大于80000</td>
+</tr>
+<tr>
+<td>FireFox</td>
+<td>50个/每个域名</td>
+<td>4097个字节</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="cjwyim6ct002sdsv5xgm52jz0" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -588,7 +705,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="cjwpxmrhc006ckcv5cpz05vwx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="cjwyim6gx006gdsv5tvo7x0ed" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -649,7 +766,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="cjwpxmrf6003fkcv5ry375inr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="cjwyim6dd003ldsv5fwnz3wul" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -754,77 +871,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http-报文、方法/" data-id="cjwpxmreq003bkcv5pl3wrzho" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http-资源" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/14/http-资源/" class="article-date">
-  <time datetime="2018-05-14T03:33:06.000Z" itemprop="datePublished">2018-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/http-资源/">http资源</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="http-资源"><a href="#http-资源" class="headerlink" title="http-资源"></a>http-资源</h6><p>Web服务器是Web资源（Web  resource）的宿主。Web资源是Web内容的源头。最简单的Web资源就是Web服务器文件的静态文件。</p>
-<ul>
-<li>媒体类型<br>因特网上有数千种不同的数据类型，HTTP仔细地给每种要通过Web传输的对象都打上了名为MIME类型（MIME type）的数据格式标签。</li>
-</ul>
-<p>MIME类型是一种文本标记，表示一种主要的对象类型和一个特定的子类型，中间由一条斜杠来分隔。</p>
-<ul>
-<li>HTML格式的文本文档由text/html类型来标记。</li>
-<li>普通的ASCII文本文档由•ext/plain类型来标记。</li>
-<li>JPEG格式的图片为image/jpeg类型。</li>
-<li>GIF格式的图片为image/gif类型。</li>
-<li>Apple的QuickTime电影为video/quicktime类型。</li>
-<li>微软的PowerPoint演示文件为application/vnd.ms-powerpoint类型。</li>
-</ul>
-<blockquote>
-<p>URI</p>
-</blockquote>
-<p>服务器资源名被称为统一资源标识符（Uniform Resource Identifier，URI）。URI就像因特网上的邮政地址一样，在世界范围内唯一标识并定位信息资源。</p>
-<blockquote>
-<p>URL</p>
-</blockquote>
-<p>统一资源定位符（URL）是资源标识符最常见的形式。URL描述了一台特定服务器上某资源的特定位置。它们可以明确说明如何从一个精确、固定的位置获取资源。</p>
-<ul>
-<li>URL 格式 </li>
-<li>方案（scheme），说明了访问资源所使用的协议类型。这部分通常就是HTTP协议（<a href="http://）。" target="_blank" rel="noopener">http://）。</a></li>
-<li>第二部分给出了服务器的因特网地址（比如，www.joes-hardware.com）。</li>
-<li>其余部分指定了Web服务器上的某个资源（比如，/specials/saw-blade.gif）。</li>
-<li>现在，几乎所有的URI都是URL</li>
-</ul>
-<blockquote>
-<p>URN</p>
-</blockquote>
-<p>URI的第二种形式就是统一资源名（URN）.URN是作为特定内容的唯一名称使用的，与目前的资源所在地无关.使用这些与位置无关的URN，就可以将资源四处搬移.通过URN，还可以用同一个名字通过多种网络访问协议来访问资源.<br>比如，不论因特网标准文档RFC 2141位于何处（甚至可以将其复制到多个地方），都可以用下列URN来命名它：<br>urn:ietf:rfc:2141<br>URN仍然处于试验阶段，还未大范围使用.为了更有效地工作，URN需要一个支撑架构来解析资源的位置.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http-资源/" data-id="cjwpxmreq003dkcv5dezhq2k2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/14/http-报文、方法/" data-id="cjwyim6dl003xdsv5ei2dmqnt" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -864,7 +911,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.45px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.91px;">Html</a> <a href="/tags/Http/" style="font-size: 16.36px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.55px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.64px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.27px;">demo</a> <a href="/tags/docker/" style="font-size: 16.36px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.09px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 11.82px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.55px;">logstash</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/springboot/" style="font-size: 16.36px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 12.73px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
@@ -886,6 +933,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/10/反转单链表/">简单算法题</a>
           </li>
         
@@ -899,10 +950,6 @@
         
           <li>
             <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/03/rabbitMq/">rabbitMq</a>
           </li>
         
       </ul>

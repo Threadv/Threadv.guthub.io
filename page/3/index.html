@@ -61,6 +61,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nginx文件大小限制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/29/nginx文件大小限制/" class="article-date">
+  <time datetime="2018-12-29T10:40:11.000Z" itemprop="datePublished">2018-12-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/29/nginx文件大小限制/">nginx文件大小限制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="nginx文件大小限制"><a href="#nginx文件大小限制" class="headerlink" title="nginx文件大小限制"></a>nginx文件大小限制</h5><p>上传超过1M大的客户端文件无法正常上传，nginx直接报错，上传文件太大，于是修改了下nginx的配置，就可以了。<br>按照网上所说的加上client_max_body_size 字段，怎么重启nginx都不行。后来发现放的位置有问题！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查询容器</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">进入容器</span><br><span class="line">docker exec -it e12d7e64036c  /bin/bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        client_max_body_size 10M;</span><br><span class="line"></span><br><span class="line">        location /web &#123;</span><br><span class="line">            alias   D:/web;</span><br><span class="line">            index main.html;            </span><br><span class="line">        &#125;</span><br><span class="line">        location /web/service &#123;</span><br><span class="line">            proxy_pass   http://192.168.1.188:8080/service;     </span><br><span class="line">        &#125;</span><br><span class="line">        location /web/service/upload &#123;</span><br><span class="line">            proxy_pass   http://192.168.1.188/upload;</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="php-ini修改php上传文件大小限制的方法"><a href="#php-ini修改php上传文件大小限制的方法" class="headerlink" title="php.ini修改php上传文件大小限制的方法"></a>php.ini修改php上传文件大小限制的方法</h3><p>vi *.php<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> phpinfo();</span><br></pre></td></tr></table></figure></p>
+<p>php56 *.php  | grep php.ini</p>
+<p>重启 ： /etc/init.d/php56-php-fpm restart</p>
+<p>打开php.ini，首先找到<br>file_uploads = on ;是否允许通过HTTP上传文件的开关。默认为ON即是开<br>upload_tmp_dir ;文件上传至服务器上存储临时文件的地方，如果没指定就会用系统默认的临时文件夹<br>upload_max_filesize = 8m ;望文生意，即允许上传文件大小的最大值。默认为2M<br>post_max_size = 8m ;指通过表单POST给PHP的所能接收的最大值，包括表单里的所有值。默认为8M<br>一般地，设置好上述四个参数后，上传&lt;=8M的文件是不成问题，在网络正常的情况下。<br>但如果要上传&gt;8M的大体积文件，只设置上述四项还一定能行的通。</p>
+<p>进一步配置以下的参数<br>max_execution_time = 600 ;每个PHP页面运行的最大时间值(秒)，默认30秒<br>max_input_time = 600 ;每个PHP页面接收数据所需的最大时间，默认60秒<br>memory_limit = 8m ;每个PHP页面所吃掉的最大内存，默认8M<br>把上述参数修改后，在网络所允许的正常情况下，就可以上传大体积文件了<br>max_execution_time = 600<br>max_input_time = 600<br>memory_limit = 32m<br>file_uploads = on<br>upload_tmp_dir = /tmp<br>upload_max_filesize = 32m<br>post_max_size = 32m</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/29/nginx文件大小限制/" data-id="cjwyim6g20057dsv5llcug0um" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/28/Docker/" class="article-date">
@@ -323,7 +369,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/Docker/" data-id="cjwpxmrc50004kcv599ttavqw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/Docker/" data-id="cjwyim6az0008dsv5skaxp8t9" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -753,7 +799,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/JVM-优化/" data-id="cjwpxmrck000skcv53xkfpje9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/JVM-优化/" data-id="cjwyim6bj000xdsv5s42c5l44" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
@@ -1080,48 +1126,10 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/Jvm-GC/" data-id="cjwpxmrd00014kcv5mw6k83sv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/Jvm-GC/" data-id="cjwyim6bm0012dsv5tykhz0hx" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test_build_sh" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/26/test_build_sh/" class="article-date">
-  <time datetime="2018-12-26T03:37:26.000Z" itemprop="datePublished">2018-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/26/test_build_sh/">test.build</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="test-build"><a href="#test-build" class="headerlink" title="test.build"></a>test.build</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">svn up /data/storybookapi2_src</span><br><span class="line">cd /data/storybookapi2_src</span><br><span class="line">#mvn tomcat7:deploy -e</span><br><span class="line">mvn clean</span><br><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/26/test_build_sh/" data-id="cjwpxmrgw005ukcv5h8ww48zl" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
 
     </footer>
   </div>
@@ -1156,7 +1164,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/26/test_run/" data-id="cjwpxmrgw005ykcv5tpa2oehd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/26/test_run/" data-id="cjwyim6gl0060dsv59rhu2kvg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -1168,10 +1176,10 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
 
 
   
-    <article id="post-start-test.sh" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-test_build_sh" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/12/24/start-test.sh/" class="article-date">
-  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
+    <a href="/2018/12/26/test_build_sh/" class="article-date">
+  <time datetime="2018-12-26T03:37:26.000Z" itemprop="datePublished">2018-12-26</time>
 </a>
     
   </div>
@@ -1182,7 +1190,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/24/start-test.sh/">start-test.sh</a>
+      <a class="article-title" href="/2018/12/26/test_build_sh/">test.build</a>
     </h1>
   
 
@@ -1190,49 +1198,11 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="start-test-sh"><a href="#start-test-sh" class="headerlink" title="start-test.sh"></a>start-test.sh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar /opt/storybookfenxiao/fenxiao.jar --spring.profiles.active=test</span><br></pre></td></tr></table></figure>
+        <h5 id="test-build"><a href="#test-build" class="headerlink" title="test.build"></a>test.build</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">svn up /data/storybookapi2_src</span><br><span class="line">cd /data/storybookapi2_src</span><br><span class="line">#mvn tomcat7:deploy -e</span><br><span class="line">mvn clean</span><br><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/start-test.sh/" data-id="cjwpxmrgw005okcv5fzlg77au" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-start-product.sh" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/24/start-product.sh/" class="article-date">
-  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/24/start-product.sh/">start-product.sh</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="start-product-sh"><a href="#start-product-sh" class="headerlink" title="start-product.sh"></a>start-product.sh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar /opt/storybookfenxiao/fenxiao.jar --spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/start-product.sh/" data-id="cjwpxmrgw005qkcv5xq7q6ovb" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/26/test_build_sh/" data-id="cjwyim6gk005ydsv5b0vk3iji" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -1270,45 +1240,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/容器模板/" data-id="cjwpxmrhs007ckcv5wzpj1w06" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-build.bat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/24/build.bat/" class="article-date">
-  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/24/build.bat/">build.bat</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="build-bat"><a href="#build-bat" class="headerlink" title="build.bat"></a>build.bat</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">::1 本地已经安装maven，svn</span><br><span class="line">set project_name=&quot;storybookfenxiao&quot;</span><br><span class="line">set ver=&quot;1.0.0&quot;</span><br><span class="line"></span><br><span class="line">set project_path=f:\tmp\storybook_fenxiao</span><br><span class="line">::第一次需要运行co</span><br><span class="line">svn co svn://121.xx.xx.xxx/xxx/storybook/fenxiao/fenxiao %project_path%</span><br><span class="line">::以后每次运行update</span><br><span class="line">svn update %project_path%</span><br><span class="line"></span><br><span class="line">rd /S /Q %project_name%</span><br><span class="line">mkdir %project_name%</span><br><span class="line">xcopy %project_path% %project_name% /s /e</span><br><span class="line">xcopy /y %project_name%\src\main\resources\prod %project_name%\src\main\resources /s /e</span><br><span class="line">echo &quot;请确认svn更新是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">::maven package </span><br><span class="line">call mvn clean -f %project_name%</span><br><span class="line">call mvn package -f %project_name% -Dmaven.test.skip=true</span><br><span class="line">::del sale.jar</span><br><span class="line">echo &quot;try copy jar&quot;</span><br><span class="line">copy /y %project_name%\target\fenxiao-0.0.1-SNAPSHOT.jar %cd%\fenxiao.jar</span><br><span class="line"></span><br><span class="line">echo &quot;请确认build是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">::build</span><br><span class="line">docker build . -t %project_name%:%ver%</span><br><span class="line"></span><br><span class="line">echo &quot;请确认docker是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">::4 提交镜像</span><br><span class="line">docker tag %project_name%:%ver% registry.cn-hangzhou.aliyuncs.com/com_ifenghui/%project_name%:%ver%</span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/com_ifenghui/%project_name%:%ver%</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">echo &quot;success!&quot;</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/build.bat/" data-id="cjwpxmrdv002nkcv5nffo18c3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/24/容器模板/" data-id="cjwyim6hn007cdsv58uq890bq" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -1346,7 +1278,83 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/Dockerfile/" data-id="cjwpxmrc50005kcv5051jjwt9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/24/Dockerfile/" data-id="cjwyim6b00009dsv5uxxjans5" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-start-product.sh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/start-product.sh/" class="article-date">
+  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/start-product.sh/">start-product.sh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="start-product-sh"><a href="#start-product-sh" class="headerlink" title="start-product.sh"></a>start-product.sh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar /opt/storybookfenxiao/fenxiao.jar --spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/24/start-product.sh/" data-id="cjwyim6gh005udsv52uvr3jr5" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-start-test.sh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/start-test.sh/" class="article-date">
+  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/start-test.sh/">start-test.sh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="start-test-sh"><a href="#start-test-sh" class="headerlink" title="start-test.sh"></a>start-test.sh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar /opt/storybookfenxiao/fenxiao.jar --spring.profiles.active=test</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/24/start-test.sh/" data-id="cjwyim6gf005tdsv5qlfila8h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -1386,7 +1394,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.45px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.91px;">Html</a> <a href="/tags/Http/" style="font-size: 16.36px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.55px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.64px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.27px;">demo</a> <a href="/tags/docker/" style="font-size: 16.36px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.09px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 11.82px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.55px;">logstash</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/springboot/" style="font-size: 16.36px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 12.73px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
@@ -1408,6 +1416,10 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       <ul>
         
           <li>
+            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/10/反转单链表/">简单算法题</a>
           </li>
         
@@ -1421,10 +1433,6 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
         
           <li>
             <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/03/rabbitMq/">rabbitMq</a>
           </li>
         
       </ul>

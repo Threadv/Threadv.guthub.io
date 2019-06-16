@@ -61,6 +61,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-build.bat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/build.bat/" class="article-date">
+  <time datetime="2018-12-24T07:01:26.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/build.bat/">build.bat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="build-bat"><a href="#build-bat" class="headerlink" title="build.bat"></a>build.bat</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">::1 本地已经安装maven，svn</span><br><span class="line">set project_name=&quot;storybookfenxiao&quot;</span><br><span class="line">set ver=&quot;1.0.0&quot;</span><br><span class="line"></span><br><span class="line">set project_path=f:\tmp\storybook_fenxiao</span><br><span class="line">::第一次需要运行co</span><br><span class="line">svn co svn://121.xx.xx.xxx/xxx/storybook/fenxiao/fenxiao %project_path%</span><br><span class="line">::以后每次运行update</span><br><span class="line">svn update %project_path%</span><br><span class="line"></span><br><span class="line">rd /S /Q %project_name%</span><br><span class="line">mkdir %project_name%</span><br><span class="line">xcopy %project_path% %project_name% /s /e</span><br><span class="line">xcopy /y %project_name%\src\main\resources\prod %project_name%\src\main\resources /s /e</span><br><span class="line">echo &quot;请确认svn更新是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">::maven package </span><br><span class="line">call mvn clean -f %project_name%</span><br><span class="line">call mvn package -f %project_name% -Dmaven.test.skip=true</span><br><span class="line">::del sale.jar</span><br><span class="line">echo &quot;try copy jar&quot;</span><br><span class="line">copy /y %project_name%\target\fenxiao-0.0.1-SNAPSHOT.jar %cd%\fenxiao.jar</span><br><span class="line"></span><br><span class="line">echo &quot;请确认build是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">::build</span><br><span class="line">docker build . -t %project_name%:%ver%</span><br><span class="line"></span><br><span class="line">echo &quot;请确认docker是否完成&quot;</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">::4 提交镜像</span><br><span class="line">docker tag %project_name%:%ver% registry.cn-hangzhou.aliyuncs.com/com_ifenghui/%project_name%:%ver%</span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/com_ifenghui/%project_name%:%ver%</span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">echo &quot;success!&quot;</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/24/build.bat/" data-id="cjwyim6d00032dsv5w0h8x36w" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-start-beta.sh" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/24/start-beta.sh/" class="article-date">
@@ -87,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/24/start-beta.sh/" data-id="cjwpxmrgh005mkcv556cuuqkg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/24/start-beta.sh/" data-id="cjwyim6ga005ldsv5wwjie2q2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -449,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/jvm基本操作/" data-id="cjwpxmrfm0049kcv5m0w0oiog" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/11/jvm基本操作/" data-id="cjwyim6dw004cdsv5w0f923hl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
@@ -492,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/微信模板消息/" data-id="cjwpxmri7007okcv5zly7cd5q" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/11/微信模板消息/" data-id="cjwyim6hw007qdsv5gffpm95c" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
@@ -551,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/JDK1.8 LocalDate/" data-id="cjwpxmrck000lkcv58n5ygr9u" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/11/JDK1.8 LocalDate/" data-id="cjwyim6bg000sdsv5702onxvh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -593,7 +631,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/11/nginx配置重启/" data-id="cjwpxmrg10051kcv5k8i7lke1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/11/nginx配置重启/" data-id="cjwyim6g00055dsv5k4iv73dg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -632,7 +670,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/10/weixin4j/" data-id="cjwpxmrgw0065kcv5ntusczw6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/10/weixin4j/" data-id="cjwyim6gp0066dsv56njn6uqv" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
@@ -671,7 +709,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/07/WXPayConfig/" data-id="cjwpxmrdv0026kcv58hncdnq1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/07/WXPayConfig/" data-id="cjwyim6cc0024dsv5va7taf0x" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -717,7 +755,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/07/wx 转账退款/" data-id="cjwpxmrgw0067kcv511ju8rvs" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/07/wx 转账退款/" data-id="cjwyim6gq0068dsv5p7kwiwuv" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/支付转账/">支付转账</a></li></ul>
@@ -762,80 +800,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/07/ali 转账退款/" data-id="cjwpxmrdv002ikcv5dhhcl44d" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/07/ali 转账退款/" data-id="cjwyim6cn002idsv54el8orxy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/支付转账/">支付转账</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo 简单搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/06/hexo 简单搭建/" class="article-date">
-  <time datetime="2018-12-06T09:36:40.000Z" itemprop="datePublished">2018-12-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/06/hexo 简单搭建/">hexo 简单搭建GitHub博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="HEXO简单使用"><a href="#HEXO简单使用" class="headerlink" title="HEXO简单使用"></a>HEXO简单使用</h5><p>hexo文档 &gt; <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
-<p>node下载 &gt; <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a></p>
-<h6 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">检查node安装:</span><br><span class="line"></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">检查git安装:</span><br><span class="line"></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<h6 id="注册账号-gt-https-github-com"><a href="#注册账号-gt-https-github-com" class="headerlink" title="注册账号 &gt; https://github.com/"></a>注册账号 &gt; <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></h6><hr>
-<h6 id="全局配置设置到淘宝源："><a href="#全局配置设置到淘宝源：" class="headerlink" title="全局配置设置到淘宝源："></a>全局配置设置到淘宝源：</h6><p>git 命令窗口打开<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例：</span><br><span class="line">Administrator@SC-201707251402 MINGW64 /g/vchen/blog/hexo (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>设置全局配置 user.name 和 user.email</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config –-global user.name “your name”  //(“”的账号是刚才Github里面自己注册的账号) </span><br><span class="line">git config –-global user.email “your email” //(""的邮箱是你自己注册的邮箱)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生成ssh密钥</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C “your email” //打自己的邮箱</span><br></pre></td></tr></table></figure>
-<p><strong>==设置ssh key到GitHub<br>默认生成ssh key在C:\Users\username.ssh文件夹中，复制 id_rsa.pub文件到 github-&gt;settings-&gt;SSH and GPG key-&gt;new ssh key==</strong></p>
-<ul>
-<li>检测是否成功</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<hr>
-<h6 id="hexo-安装"><a href="#hexo-安装" class="headerlink" title="hexo 安装"></a>hexo 安装</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">空文件夹</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo generate（可简写为hexo g） </span><br><span class="line">hexo sever（可简写为hexo s 本地测试）</span><br><span class="line">hexo deploy(可简写为hexo d 部署GitHub 需要提前配置)</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">换端口 本地测试</span><br><span class="line">hexo s -p 5000</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看版本</span><br><span class="line">hexo -V</span><br></pre></td></tr></table></figure>
-<h6 id="hexo-配置文件（-config-yml）"><a href="#hexo-配置文件（-config-yml）" class="headerlink" title="hexo 配置文件（_config.yml）"></a>hexo 配置文件（_config.yml）</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">type: git </span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git  //（改成自己的用户名和用户名加域名） </span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-<p><strong>==冒号后要有空格==</strong></p>
-<ul>
-<li>部署</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p><strong>等待，打开类似:threadv.github.io</strong><br>更多设置可查看<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener"> hexo 文档</a></p>
-<hr>
-<h6 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d </span></span><br><span class="line">ERROR Deployer not found: git</span><br><span class="line">没安装之前步骤</span><br><span class="line">解决方案：</span><br><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/06/hexo 简单搭建/" data-id="cjwpxmreq0036kcv5u5hn4fvd" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -872,7 +840,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.45px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.91px;">Html</a> <a href="/tags/Http/" style="font-size: 16.36px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.55px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.64px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.27px;">demo</a> <a href="/tags/docker/" style="font-size: 16.36px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.09px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 11.82px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.55px;">logstash</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/springboot/" style="font-size: 16.36px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 12.73px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
@@ -894,6 +862,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/10/反转单链表/">简单算法题</a>
           </li>
         
@@ -907,10 +879,6 @@
         
           <li>
             <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/03/rabbitMq/">rabbitMq</a>
           </li>
         
       </ul>

@@ -5,19 +5,19 @@
   
 
   
-  <title>web | Threadv</title>
+  <title>linux常用命令 | Threadv</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="web1234567891011121314151617181920212223242526272829303132@Controller@EnableAutoConfiguration//@EnableAutoConfiguration//@SpringBootApplication//@ConfigurationP">
-<meta name="keywords" content="springboot">
+  <meta name="description" content="linux常用命令Linux的目录结构123456789101112131415161718192021222324bin  (binaries)存放二进制可执行文件sbin  (super user binaries)存放二进制可执行文件，只有root才能访问etc (etcetera)存放系统配置文件usr  (u">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web">
-<meta property="og:url" content="http://yoursite.com/2018/10/12/web/index.html">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/linux常用命令/index.html">
 <meta property="og:site_name" content="Threadv">
-<meta property="og:description" content="web1234567891011121314151617181920212223242526272829303132@Controller@EnableAutoConfiguration//@EnableAutoConfiguration//@SpringBootApplication//@ConfigurationProperties(prefix = &quot;spring&quot;)@RequestMapp">
-<meta property="og:updated_time" content="2018-10-31T12:48:03.576Z">
+<meta property="og:description" content="linux常用命令Linux的目录结构123456789101112131415161718192021222324bin  (binaries)存放二进制可执行文件sbin  (super user binaries)存放二进制可执行文件，只有root才能访问etc (etcetera)存放系统配置文件usr  (unix shared resources)用于存放共享的系统资源home 存放用">
+<meta property="og:updated_time" content="2019-06-16T05:33:07.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web">
-<meta name="twitter:description" content="web1234567891011121314151617181920212223242526272829303132@Controller@EnableAutoConfiguration//@EnableAutoConfiguration//@SpringBootApplication//@ConfigurationProperties(prefix = &quot;spring&quot;)@RequestMapp">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="linux常用命令Linux的目录结构123456789101112131415161718192021222324bin  (binaries)存放二进制可执行文件sbin  (super user binaries)存放二进制可执行文件，只有root才能访问etc (etcetera)存放系统配置文件usr  (unix shared resources)用于存放共享的系统资源home 存放用">
   
     <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-web" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/12/web/" class="article-date">
-  <time datetime="2018-10-12T13:36:56.000Z" itemprop="datePublished">2018-10-12</time>
+    <a href="/2019/06/12/linux常用命令/" class="article-date">
+  <time datetime="2019-06-12T07:09:11.000Z" itemprop="datePublished">2019-06-12</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      web
+      linux常用命令
     </h1>
   
 
@@ -86,14 +86,196 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="web"><a href="#web" class="headerlink" title="web"></a>web</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="comment">//@EnableAutoConfiguration</span></span><br><span class="line"><span class="comment">//@SpringBootApplication</span></span><br><span class="line"><span class="comment">//@ConfigurationProperties(prefix = "spring")</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/web"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShareController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> Environment env;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value=<span class="string">"/shareUser/&#123;userIdStr&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shareStory</span><span class="params">(HttpServletResponse response,@PathVariable String userIdStr)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//        return "Hello World!";</span></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> userId=Integer.parseInt(userIdStr);</span><br><span class="line">            User user = userService.getStory(userId);</span><br><span class="line">            <span class="keyword">if</span>(user.getWebFile().indexOf(<span class="string">"zip"</span>)==-<span class="number">1</span>)&#123;</span><br><span class="line">                response.getWriter().write(<span class="string">"not find share page."</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String url=env.getProperty(<span class="string">"cmsconfig.oss.url"</span>)+<span class="string">"webfolder/"</span>+user.getWebFile().replace(<span class="string">".zip"</span>,<span class="string">"/index.html"</span>);</span><br><span class="line">            response.sendRedirect(url);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();;</span><br><span class="line">            response.getWriter().write(<span class="string">"not find share page."</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h4><h6 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bin  (binaries)存放二进制可执行文件</span><br><span class="line"></span><br><span class="line">sbin  (super user binaries)存放二进制可执行文件，只有root才能访问</span><br><span class="line"></span><br><span class="line">etc (etcetera)存放系统配置文件</span><br><span class="line"></span><br><span class="line">usr  (unix shared resources)用于存放共享的系统资源</span><br><span class="line"></span><br><span class="line">home 存放用户文件的根目录</span><br><span class="line"></span><br><span class="line">root  超级用户目录</span><br><span class="line"></span><br><span class="line">dev (devices)用于存放设备文件</span><br><span class="line"></span><br><span class="line">lib  (library)存放跟文件系统中的程序运行所需要的共享库及内核模块</span><br><span class="line"></span><br><span class="line">mnt  (mount)系统管理员安装临时文件系统的安装点</span><br><span class="line"></span><br><span class="line">boot 存放用于系统引导时使用的各种文件</span><br><span class="line"></span><br><span class="line">tmp  (temporary)用于存放各种临时文件</span><br><span class="line"></span><br><span class="line">var  (variable)用于存放运行时需要改变数据的文件</span><br></pre></td></tr></table></figure>
+<h6 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令格式：命令  -选项  参数 （选项和参数可以为空）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文件及目录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>参数</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>-</td>
+<td>cd /usr</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>-</td>
+<td>pwd</td>
+<td>当前目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>-</td>
+<td>touch a.java</td>
+<td>创建空文件</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>-</td>
+<td>mkdir dir</td>
+<td>创建新目录</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>-p</td>
+<td>mkdir -p /usr/dir/java</td>
+<td>创建多级目录</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>-</td>
+<td>cp a.java /usr</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>-r</td>
+<td>cp -f /usr/dir/a.txt /root</td>
+<td>递归处理</td>
+</tr>
+<tr>
+<td>rmdir</td>
+<td>-</td>
+<td>rmdir dirxx</td>
+<td>删除空目录</td>
+</tr>
+<tr>
+<td>more</td>
+<td>-</td>
+<td>more a.txt</td>
+<td>分页显示文本文件内容 空格后，b向前</td>
+</tr>
+<tr>
+<td>less</td>
+<td>-</td>
+<td>less a.txt</td>
+<td>同上，支持底行</td>
+</tr>
+<tr>
+<td>head</td>
+<td>-</td>
+<td>head a.txt</td>
+<td>查看开头 默认10行</td>
+</tr>
+<tr>
+<td>head</td>
+<td>-num</td>
+<td>head -20 a.txt</td>
+<td>查看开头指定行</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-</td>
+<td>tail a.txt</td>
+<td>查看文本结尾，默认10行</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-num</td>
+<td>tail -20 a.txt</td>
+<td>查看文本结尾，指定行数</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-f</td>
+<td>tail a.txt</td>
+<td>循环滚动读取并动态显示</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-</td>
+<td>wc a.txt</td>
+<td>统计文本的行数，字数，字符数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-m</td>
+<td>wc -m a.txt</td>
+<td>字符数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-w</td>
+<td>wc -w a.txt</td>
+<td>文本字数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-l</td>
+<td>cd -l a.txt</td>
+<td>文本行数</td>
+</tr>
+<tr>
+<td>find</td>
+<td>-name</td>
+<td>find / -name a.txt</td>
+<td>指定目录查文件</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>vi / vim</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>光标前插入</td>
+</tr>
+<tr>
+<td>l</td>
+<td>在光标当前行开始插入</td>
+</tr>
+<tr>
+<td>a</td>
+<td>光标后插入</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在光标当前行末尾插入</td>
+</tr>
+<tr>
+<td>o</td>
+<td>在当前行下一行插入</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在当前行上一行插入</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存退出</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="cjwyim6go0064dsv5w5ziuil1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/06/12/linux常用命令/" data-id="cjwyim6dq0044dsv5qxdwp55f" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -101,19 +283,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/10/15/Exception/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          Exception
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/12/枚举类型/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/06/10/反转单链表/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">枚举类型</div>
+      <div class="article-nav-title">简单算法题</div>
     </a>
   
 </nav>
