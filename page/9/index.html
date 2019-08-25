@@ -61,6 +61,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Input常用的输入框验证" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/20/Input常用的输入框验证/" class="article-date">
+  <time datetime="2018-09-20T07:15:25.000Z" itemprop="datePublished">2018-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/20/Input常用的输入框验证/">Html</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Input常用的输入框验证"><a href="#Input常用的输入框验证" class="headerlink" title="Input常用的输入框验证"></a>Input常用的输入框验证</h5><ol>
+<li><p>过滤空格</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">"this.value=this.value.replace(/^ +| +$/g,'')"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不能输入空格及英文状态下的逗号</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">"this.value=this.value.replace(/[, ]/g,'')"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只能输入数字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">maxlength</span>=<span class="string">"11"</span> <span class="attr">onkeyup</span>=<span class="string">"value=value.replace(/[^\d]/g,'') "</span><span class="attr">onbeforepaste</span>=<span class="string">"clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只能输入英文及数字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">maxlength</span>=<span class="string">"17"</span> <span class="attr">onkeyup</span>=<span class="string">"value=value.replace(/[\W]/g,'') "</span><span class="attr">onbeforepaste</span>=<span class="string">"clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/20/Input常用的输入框验证/" data-id="cjzqr54zl000likv5w681osw5" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-插入排序(Insertion Sort)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/11/插入排序(Insertion Sort)/" class="article-date">
@@ -137,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/11/插入排序(Insertion Sort)/" data-id="cjwyim6i50085dsv5drx4iglq" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/11/插入排序(Insertion Sort)/" data-id="cjzqr555m0087ikv5b6pea6y6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -228,95 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/11/希尔排序(Shell Sort)/" data-id="cjwyim6hu007mdsv5t6hqnu9f" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-选择排序(SelctionSort)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/05/选择排序(SelctionSort)/" class="article-date">
-  <time datetime="2018-09-05T04:39:46.000Z" itemprop="datePublished">2018-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/05/选择排序(SelctionSort)/">选择排序(SelctionSort)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
-<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O(n1.5)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>O(d(n+r))</td>
-</tr>
-</tbody>
-</table>
-<h5 id="选择排序-SelctionSort"><a href="#选择排序-SelctionSort" class="headerlink" title="选择排序(SelctionSort)"></a>选择排序(SelctionSort)</h5><ul>
-<li><p>基本思想：<br>在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；<br>第二次遍历n-2个数，找到最小的数值与第二个元素交换；<br>。。。<br>第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</p>
-</li>
-<li><p>平均时间复杂度：O(n2)</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> array[],<span class="keyword">int</span> lenth)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenth-<span class="number">1</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> minIndex = i;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;lenth;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(array[j]&lt;array[minIndex])&#123;</span><br><span class="line">              minIndex = j;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>(minIndex != i)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = array[i];</span><br><span class="line">           array[i] = array[minIndex];</span><br><span class="line">           array[minIndex] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/05/选择排序(SelctionSort)/" data-id="cjwyim6jb009qdsv5nn2n8vlw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/11/希尔排序(Shell Sort)/" data-id="cjzqr5556007likv5myv6vwi2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -420,7 +383,95 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/05/冒泡排序(BubbleSort)/" data-id="cjwyim6h7006vdsv5vnvvxjhw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/05/冒泡排序(BubbleSort)/" data-id="cjzqr554f006pikv5bvh13f8f" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-选择排序(SelctionSort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/05/选择排序(SelctionSort)/" class="article-date">
+  <time datetime="2018-09-05T04:39:46.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/选择排序(SelctionSort)/">选择排序(SelctionSort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选择排序-SelctionSort"><a href="#选择排序-SelctionSort" class="headerlink" title="选择排序(SelctionSort)"></a>选择排序(SelctionSort)</h5><ul>
+<li><p>基本思想：<br>在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；<br>第二次遍历n-2个数，找到最小的数值与第二个元素交换；<br>。。。<br>第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</p>
+</li>
+<li><p>平均时间复杂度：O(n2)</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> array[],<span class="keyword">int</span> lenth)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenth-<span class="number">1</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> minIndex = i;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;lenth;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(array[j]&lt;array[minIndex])&#123;</span><br><span class="line">              minIndex = j;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>(minIndex != i)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = array[i];</span><br><span class="line">           array[i] = array[minIndex];</span><br><span class="line">           array[minIndex] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/05/选择排序(SelctionSort)/" data-id="cjzqr557m009xikv5mhy2psmx" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -475,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/内存泄漏/" data-id="cjwyim6gz006idsv5orb4pgez" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/29/内存泄漏/" data-id="cjzqr554e006nikv5t4kpyfln" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -513,45 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/WXPayUtil/" data-id="cjwyim6cf0029dsv5efrj9gi9" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SortedMap转化成 xml格式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/02/SortedMap转化成 xml格式/" class="article-date">
-  <time datetime="2018-07-02T11:09:35.000Z" itemprop="datePublished">2018-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/02/SortedMap转化成 xml格式/">SortedMap 集合转化成 xml格式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="SortedMap-集合转化成-xml格式"><a href="#SortedMap-集合转化成-xml格式" class="headerlink" title="SortedMap 集合转化成 xml格式"></a>SortedMap<object,object> 集合转化成 xml格式</object,object></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 将SortedMap&lt;Object,Object&gt; 集合转化成 xml格式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getRequestXml</span><span class="params">(SortedMap&lt;Object,Object&gt; parameters)</span></span>&#123;</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    sb.append(<span class="string">"&lt;xml&gt;"</span>);</span><br><span class="line">    Set es = parameters.entrySet();</span><br><span class="line">    Iterator it = es.iterator();</span><br><span class="line">    <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">        Map.Entry entry = (Map.Entry)it.next();</span><br><span class="line">        String k = (String)entry.getKey();</span><br><span class="line">        String v = (String)entry.getValue();</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"attach"</span>.equalsIgnoreCase(k)||<span class="string">"body"</span>.equalsIgnoreCase(k)||<span class="string">"sign"</span>.equalsIgnoreCase(k)) &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+<span class="string">"&lt;![CDATA["</span>+v+<span class="string">"]]&gt;&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+v+<span class="string">"&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(<span class="string">"&lt;/xml&gt;"</span>);</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/SortedMap转化成 xml格式/" data-id="cjwyim6bz001kdsv5yfodovrv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/02/WXPayUtil/" data-id="cjzqr551b002bikv5x6emq7am" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -589,7 +602,45 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/XML格式字符串转换为Map/" data-id="cjwyim6cs002qdsv51nh0g5ab" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/02/XML格式字符串转换为Map/" data-id="cjzqr551d002eikv5j3mqpweh" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SortedMap转化成 xml格式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/02/SortedMap转化成 xml格式/" class="article-date">
+  <time datetime="2018-07-02T11:09:35.000Z" itemprop="datePublished">2018-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/02/SortedMap转化成 xml格式/">SortedMap 集合转化成 xml格式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="SortedMap-集合转化成-xml格式"><a href="#SortedMap-集合转化成-xml格式" class="headerlink" title="SortedMap 集合转化成 xml格式"></a>SortedMap<object,object> 集合转化成 xml格式</object,object></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 将SortedMap&lt;Object,Object&gt; 集合转化成 xml格式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getRequestXml</span><span class="params">(SortedMap&lt;Object,Object&gt; parameters)</span></span>&#123;</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    sb.append(<span class="string">"&lt;xml&gt;"</span>);</span><br><span class="line">    Set es = parameters.entrySet();</span><br><span class="line">    Iterator it = es.iterator();</span><br><span class="line">    <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">        Map.Entry entry = (Map.Entry)it.next();</span><br><span class="line">        String k = (String)entry.getKey();</span><br><span class="line">        String v = (String)entry.getValue();</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"attach"</span>.equalsIgnoreCase(k)||<span class="string">"body"</span>.equalsIgnoreCase(k)||<span class="string">"sign"</span>.equalsIgnoreCase(k)) &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+<span class="string">"&lt;![CDATA["</span>+v+<span class="string">"]]&gt;&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+v+<span class="string">"&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(<span class="string">"&lt;/xml&gt;"</span>);</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/02/SortedMap转化成 xml格式/" data-id="cjzqr550u001mikv5fct3y2oq" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -627,45 +678,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/30/月初和月末/" data-id="cjwyim6id008kdsv5xlpdab3m" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Map转换为XML格式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/30/Map转换为XML格式/" class="article-date">
-  <time datetime="2018-06-30T12:10:12.000Z" itemprop="datePublished">2018-06-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/30/Map转换为XML格式/">Map转换为XML格式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Map转换为XML格式"><a href="#Map转换为XML格式" class="headerlink" title="Map转换为XML格式"></a>Map转换为XML格式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将Map转换为XML格式的字符串</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> XML格式的字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">mapToXml</span><span class="params">(Map&lt;String, String&gt; data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">    DocumentBuilder documentBuilder= documentBuilderFactory.newDocumentBuilder();</span><br><span class="line">    org.w3c.dom.Document document = documentBuilder.newDocument();</span><br><span class="line">    org.w3c.dom.Element root = document.createElement(<span class="string">"xml"</span>);</span><br><span class="line">    document.appendChild(root);</span><br><span class="line">    <span class="keyword">for</span> (String key: data.keySet()) &#123;</span><br><span class="line">        String value = data.get(key);</span><br><span class="line">        <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123;</span><br><span class="line">            value = <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        value = value.trim();</span><br><span class="line">        org.w3c.dom.Element filed = document.createElement(key);</span><br><span class="line">        filed.appendChild(document.createTextNode(value));</span><br><span class="line">        root.appendChild(filed);</span><br><span class="line">    &#125;</span><br><span class="line">    TransformerFactory tf = TransformerFactory.newInstance();</span><br><span class="line">    Transformer transformer = tf.newTransformer();</span><br><span class="line">    DOMSource source = <span class="keyword">new</span> DOMSource(document);</span><br><span class="line">    transformer.setOutputProperty(OutputKeys.ENCODING, <span class="string">"UTF-8"</span>);</span><br><span class="line">    transformer.setOutputProperty(OutputKeys.INDENT, <span class="string">"yes"</span>);</span><br><span class="line">    StringWriter writer = <span class="keyword">new</span> StringWriter();</span><br><span class="line">    StreamResult result = <span class="keyword">new</span> StreamResult(writer);</span><br><span class="line">    transformer.transform(source, result);</span><br><span class="line">    String output = writer.getBuffer().toString(); <span class="comment">//.replaceAll("\n|\r", "");</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        writer.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/30/Map转换为XML格式/" data-id="cjwyim6bu001ddsv5i8yhyw4r" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/30/月初和月末/" data-id="cjzqr555z008qikv5ozj4kis6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -695,7 +708,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -705,7 +718,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
@@ -714,7 +727,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -725,6 +738,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/03/pytest—基础知识/">基础知识</a>
+          </li>
         
           <li>
             <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
@@ -740,10 +757,6 @@
         
           <li>
             <a href="/2019/04/08/基础sql/">基础sql</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/06/GItChat_java/">Java 基础G</a>
           </li>
         
       </ul>
