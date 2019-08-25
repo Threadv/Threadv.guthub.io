@@ -61,200 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="cjzqr555h0081ikv5sb7a4cdk" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序/">快速排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
-<li>方式一</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="cjzqr555f007zikv58anzq6um" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
-<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O(n1.5)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>O(d(n+r))</td>
-</tr>
-</tbody>
-</table>
-<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
-<li>基本思想：（分治）</li>
-</ul>
-<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
-<ul>
-<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
-</ul>
-<ol>
-<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>平均时间复杂度：O(N*logN)</p>
-</li>
-<li><p>方式一</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二 runoob</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cjzqr555e007xikv541a7yl2f" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-复杂度" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/30/复杂度/" class="article-date">
@@ -367,7 +173,201 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="cjzqr554u007bikv57x58bmsr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="cjzqr6wlw007afov5asbz0hcy" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="cjzqr6wmf0082fov5x2cn8ios" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序/">快速排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
+<li>方式一</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式二</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="cjzqr6wmd007yfov5ezucbvqf" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
+<li>基本思想：（分治）</li>
+</ul>
+<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
+<ul>
+<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
+</ul>
+<ol>
+<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>平均时间复杂度：O(N*logN)</p>
+</li>
+<li><p>方式一</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式二 runoob</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cjzqr6wmc007wfov5dtpldj6g" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -452,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="cjzqr54zc000dikv52ekb68if" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="cjzqr6wg6000dfov5jdkb1xp8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -497,10 +497,93 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cjzqr552c003tikv5jcc69ekt" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cjzqr6wiq003lfov5tr03vt42" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/19/cookie/" class="article-date">
+  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/19/cookie/">cookie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie创建：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getCookie</span><span class="params">( Cookie[] cookies,String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName90.equals(key))&#123;</span><br><span class="line">                <span class="keyword">return</span> cookie.getValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> IOException,ServletException</span>&#123;</span><br><span class="line">    Cookie[] cookies = request.getCookies();</span><br><span class="line">    Sring userName = getCookie(cookies,<span class="string">"userName"</span>);</span><br><span class="line">    String userAge = getCookie(cookies. <span class="string">"userAge"</span>);</span><br><span class="line">    <span class="keyword">if</span>(userName == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"useName"</span>,<span class="string">"jack"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(userAge == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"userAge"</span>,<span class="string">"25"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    response.getHeaders(<span class="string">"Set-cookie"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>浏览器对cookie的限制</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>浏览器版本</th>
+<th>Cookie的数量限制</th>
+<th>Cookie的总大小限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE6</td>
+<td>20个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE7</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE8</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>IE9</td>
+<td>50个/每个域名</td>
+<td>4095个字节</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>50个/每个域名</td>
+<td>大于80000</td>
+</tr>
+<tr>
+<td>FireFox</td>
+<td>50个/每个域名</td>
+<td>4097个字节</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="cjzqr6why002rfov5tz05muoc" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
 
     </footer>
   </div>
@@ -615,90 +698,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="cjzqr554q0075ikv5nh02zbnv" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/19/cookie/" class="article-date">
-  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/cookie/">cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie创建：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getCookie</span><span class="params">( Cookie[] cookies,String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName90.equals(key))&#123;</span><br><span class="line">                <span class="keyword">return</span> cookie.getValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> IOException,ServletException</span>&#123;</span><br><span class="line">    Cookie[] cookies = request.getCookies();</span><br><span class="line">    Sring userName = getCookie(cookies,<span class="string">"userName"</span>);</span><br><span class="line">    String userAge = getCookie(cookies. <span class="string">"userAge"</span>);</span><br><span class="line">    <span class="keyword">if</span>(userName == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"useName"</span>,<span class="string">"jack"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(userAge == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"userAge"</span>,<span class="string">"25"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    response.getHeaders(<span class="string">"Set-cookie"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>浏览器对cookie的限制</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>浏览器版本</th>
-<th>Cookie的数量限制</th>
-<th>Cookie的总大小限制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IE6</td>
-<td>20个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE7</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE8</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE9</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>Chrome</td>
-<td>50个/每个域名</td>
-<td>大于80000</td>
-</tr>
-<tr>
-<td>FireFox</td>
-<td>50个/每个域名</td>
-<td>4097个字节</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="cjzqr551l002qikv5iweh2e75" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="cjzqr6wlr0072fov58dqdxequ" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -750,7 +750,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="cjzqr554b006jikv52u82spby" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="cjzqr6wl9006ffov5wncczeh8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -811,7 +811,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="cjzqr5524003hikv5twirrdy3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="cjzqr6wio003hfov5fo74ody3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -873,7 +873,7 @@
       <ul>
         
           <li>
-            <a href="/2019/08/03/pytest—基础知识/">基础知识</a>
+            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
           </li>
         
           <li>
