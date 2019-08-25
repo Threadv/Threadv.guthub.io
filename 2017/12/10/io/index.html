@@ -1,68 +1,226 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= page.title + ' | ' + config.title
+  
+  <title>io | Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="io1234567891011121314FileReader reader = new FileReader(&quot;d:\\test.txt&quot;);		// 创建一个bufferReader缓冲流		BufferedReader br = new BufferedReader(reader);		Fil">
+<meta name="keywords" content="demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="io">
+<meta property="og:url" content="http://yoursite.com/2017/12/10/io/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta property="og:description" content="io1234567891011121314FileReader reader = new FileReader(&quot;d:\\test.txt&quot;);		// 创建一个bufferReader缓冲流		BufferedReader br = new BufferedReader(reader);		FileWriter writer = new FileWriter(&quot;d:\\example.txt&quot;)">
+<meta property="og:updated_time" content="2017-12-10T09:53:42.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="io">
+<meta name="twitter:description" content="io1234567891011121314FileReader reader = new FileReader(&quot;d:\\test.txt&quot;);		// 创建一个bufferReader缓冲流		BufferedReader br = new BufferedReader(reader);		FileWriter writer = new FileWriter(&quot;d:\\example.txt&quot;)">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/10/io/" class="article-date">
+  <time datetime="2017-12-10T09:52:45.000Z" itemprop="datePublished">2017-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      io
+    </h1>
+  
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      div
-        ul.post-copyright
-          li.post-copyright-author
-            strong= __('copyright_author_prefix')
-            = theme.post_copyright.author
-          li.post-copyright-link
-            strong= __('copyright_link_prefix')
-            a(href='/' + page.path)= page.permalink
-          li.post-copyright-license
-            strong= __('copyright_declare_prefix')
-            if theme.post_copyright.copyright_text
-              != theme.post_copyright.copyright_text
-            else
-              != __('copyright_default_text')
-      br
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="io"><a href="#io" class="headerlink" title="io"></a>io</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FileReader reader = <span class="keyword">new</span> FileReader(<span class="string">"d:\\test.txt"</span>);</span><br><span class="line">		<span class="comment">// 创建一个bufferReader缓冲流</span></span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(reader);</span><br><span class="line">		FileWriter writer = <span class="keyword">new</span> FileWriter(<span class="string">"d:\\example.txt"</span>);</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(writer);</span><br><span class="line"></span><br><span class="line">		String str;</span><br><span class="line">		<span class="keyword">while</span> ((str = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			bw.write(str);</span><br><span class="line">			bw.newLine();</span><br><span class="line">		&#125;</span><br><span class="line">		br.close();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/10/io/" data-id="cjzr22957003k1kv5knu1c28o" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/14/mybatis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          mybatis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/10/properties/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">properties</div>
+    </a>
+  
+</nav>
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+  
+</article>
 
-    if page.comments
-      include _partial/comments.pug
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/10/反转单链表/">简单算法题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/30/Aop/">Aop</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/基础sql/">基础sql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 chen v<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

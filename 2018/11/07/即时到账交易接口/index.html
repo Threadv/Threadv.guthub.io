@@ -1,68 +1,239 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= page.title + ' | ' + config.title
+  
+  <title>即时到账 ali | Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="即时到账 ali https://docs.open.alipay.com/62/103566   支付获取订单和回调地址  123456789101112131415161718192021222324252627@RequestMapping(value = &quot;/getNewRechargeOrder&q">
+<meta name="keywords" content="支付转账">
+<meta property="og:type" content="article">
+<meta property="og:title" content="即时到账 ali">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/即时到账交易接口/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta property="og:description" content="即时到账 ali https://docs.open.alipay.com/62/103566   支付获取订单和回调地址  123456789101112131415161718192021222324252627@RequestMapping(value = &quot;/getNewRechargeOrder&quot;, method = RequestMethod.POST)   @ResponseBody">
+<meta property="og:updated_time" content="2019-01-05T06:04:22.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="即时到账 ali">
+<meta name="twitter:description" content="即时到账 ali https://docs.open.alipay.com/62/103566   支付获取订单和回调地址  123456789101112131415161718192021222324252627@RequestMapping(value = &quot;/getNewRechargeOrder&quot;, method = RequestMethod.POST)   @ResponseBody">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-即时到账交易接口" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/07/即时到账交易接口/" class="article-date">
+  <time datetime="2018-11-07T05:20:26.000Z" itemprop="datePublished">2018-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      即时到账 ali
+    </h1>
+  
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      div
-        ul.post-copyright
-          li.post-copyright-author
-            strong= __('copyright_author_prefix')
-            = theme.post_copyright.author
-          li.post-copyright-link
-            strong= __('copyright_link_prefix')
-            a(href='/' + page.path)= page.permalink
-          li.post-copyright-license
-            strong= __('copyright_declare_prefix')
-            if theme.post_copyright.copyright_text
-              != theme.post_copyright.copyright_text
-            else
-              != __('copyright_default_text')
-      br
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="即时到账-ali"><a href="#即时到账-ali" class="headerlink" title="即时到账 ali"></a>即时到账 ali</h5><blockquote>
+<p><a href="https://docs.open.alipay.com/62/103566" target="_blank" rel="noopener">https://docs.open.alipay.com/62/103566</a></p>
+</blockquote>
+<ul>
+<li>支付获取订单和回调地址</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/getNewRechargeOrder"</span>, method = RequestMethod.POST)</span><br><span class="line">   <span class="meta">@ResponseBody</span></span><br><span class="line">   <span class="meta">@ApiOperation</span>(value = <span class="string">"即时到账交易接口-获得充值订单)"</span>, notes = <span class="string">"支付获取订单和回调地址"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> BuyStorysPayApiResponse <span class="title">getNewRechargeOrder</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">           @ApiParam(value = <span class="string">"用户token"</span>)</span> @RequestParam String token,</span></span><br><span class="line"><span class="function">           @<span class="title">ApiParam</span><span class="params">(value = <span class="string">"订阅或购买订单号"</span>)</span> @RequestParam Long payOrderId,</span></span><br><span class="line"><span class="function">           @<span class="title">ApiParam</span><span class="params">(value = <span class="string">"类型"</span>)</span> @RequestParam Integer type</span></span><br><span class="line"><span class="function">   ) <span class="keyword">throws</span> ApiException </span>&#123;</span><br><span class="line">       Long userId;</span><br><span class="line">       userId = userService.checkAndGetCurrentUserId(token);</span><br><span class="line">       String appName = <span class="string">""</span>;</span><br><span class="line">       String app_id;</span><br><span class="line">       String private_key;</span><br><span class="line">       String notify_url;</span><br><span class="line">       String userAgent=request.getHeader(<span class="string">"User-Agent"</span>);</span><br><span class="line">       logger.info(<span class="string">"------------new--------getNewRechargeOrder------userAgent--"</span> + userAgent);</span><br><span class="line">       </span><br><span class="line">       app_id = env.getProperty(<span class="string">"app_id"</span>);</span><br><span class="line">       private_key = env.getProperty(<span class="string">"private_key"</span>);</span><br><span class="line">       RechargeStyle rechargeStyle=RechargeStyle.getById(type);</span><br><span class="line">       PayRechargeOrder payRechargeOrder = payService.addPayRechargeOrder(userId, payOrderId, rechargeStyle, priceId, channel, app_id, private_key, notify_url,appName);</span><br><span class="line">       BuyStorysPayApiResponse buyStorysPayApiResponse = <span class="keyword">new</span> BuyStorysPayApiResponse();</span><br><span class="line">       buyStorysPayApiResponse.setPayRechargeOrder(payRechargeOrder);</span><br><span class="line">       logger.info(<span class="string">"------------new--------getNewRechargeOrder------result--"</span> + buyStorysPayApiResponse);</span><br><span class="line">       <span class="keyword">return</span> buyStorysPayApiResponse;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> PayRechargeOrder <span class="title">addPayRechargeOrder</span><span class="params">(Long userId, Long payOrderId, RechargeStyle type, Long priceId, String channel,String app_id,String private_key,String alipay_notify_url,String appName)</span> <span class="keyword">throws</span> ApiException </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer amount = payRechargeOrderService.getAmountByRechargeStyle(type, payOrderId.intValue(), priceId);</span><br><span class="line"></span><br><span class="line">    String prefix =env.getProperty(<span class="string">"order.prefix"</span>);</span><br><span class="line"></span><br><span class="line">    User user = userDao.findOne(userId);</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成充值订单story_pay_recharge_order</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (channel == <span class="keyword">null</span>) &#123;</span><br><span class="line">        channel = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    PayRechargeOrder payRechargeOrder = payRechargeOrderService.addPayRechargeOrder(</span><br><span class="line">            userId.intValue(),</span><br><span class="line">            amount,</span><br><span class="line">            RechargePayStyle.DEFAULT_NULL,</span><br><span class="line">            type, channel, appName</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    String orderStr = prefix + <span class="string">"_"</span> + payRechargeOrder.getId();</span><br><span class="line">    payRechargeOrder.setOrderCode(orderStr);</span><br><span class="line">    payRechargeOrderDao.save(payRechargeOrder);</span><br><span class="line">    payRechargeOrder.setUser(user);</span><br><span class="line">    payRechargeOrderService.setPayRechargeOrderNotifyAddress(payRechargeOrder,alipay_notify_url);</span><br><span class="line"></span><br><span class="line">    String orderString = <span class="keyword">this</span>.getAlipayStr(amount,payRechargeOrder,app_id,private_key,alipay_notify_url);</span><br><span class="line">    payRechargeOrder.setOrderString(orderString);</span><br><span class="line">    payRechargeOrderDao.save(payRechargeOrder);</span><br><span class="line">    logger.info(<span class="string">"--------------------getPayRechargeOrder----orderString-----"</span>+orderString);</span><br><span class="line">    <span class="keyword">return</span> payRechargeOrder;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获得alipay的支付信息。用于生成支付订单时的返回</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getAlipayStr</span><span class="params">(<span class="keyword">int</span> amount,PayRechargeOrder payRechargeOrder,String app_id,String private_key,String notify_url)</span></span>&#123;</span><br><span class="line">        String prefix=env.getProperty(<span class="string">"order.prefix"</span>);</span><br><span class="line">        String orderStr = prefix + <span class="string">"_"</span> + payRechargeOrder.getId();</span><br><span class="line">        <span class="comment">//处理orderStr和sign</span></span><br><span class="line">        String charset=<span class="string">"utf-8"</span>;</span><br><span class="line">        String sign_type=<span class="string">"RSA"</span>;</span><br><span class="line"></span><br><span class="line">        Date now = <span class="keyword">new</span> Date();</span><br><span class="line">        SimpleDateFormat dateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);<span class="comment">//可以方便地修改日期格式</span></span><br><span class="line">        String timestamp = dateFormat.format( now );</span><br><span class="line"></span><br><span class="line"><span class="comment">//        String notify_url = env.getProperty("iosalipay.notify");....</span></span><br><span class="line">        String method = <span class="string">"alipay.trade.app.pay"</span>;<span class="comment">//?</span></span><br><span class="line">        String version = <span class="string">"1.0"</span>;</span><br><span class="line"><span class="comment">//        String gateway = "https://openapi.alipay.com/gateway.do";//支付宝网关</span></span><br><span class="line">        <span class="keyword">float</span> size = (<span class="keyword">float</span>)amount/<span class="number">100</span>;</span><br><span class="line">        DecimalFormat df = <span class="keyword">new</span> DecimalFormat(<span class="string">"0.00"</span>);<span class="comment">//格式化小数，不足的补0</span></span><br><span class="line">        String total_amount = df.format(size);<span class="comment">//返回的是String类型的</span></span><br><span class="line"></span><br><span class="line">        String out_trade_no = prefix+<span class="string">"_"</span>+payRechargeOrder.getId();</span><br><span class="line">        String biz_content = <span class="string">"&#123;\"timeout_express\":\"30m\",\"seller_id\":\"\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":"</span>+total_amount+<span class="string">",\"subject\":\"支付宝支付\",\"body\":\"交易的具体描述信息\",\"out_trade_no\":"</span>+<span class="string">"\""</span>+out_trade_no+<span class="string">"\""</span>+<span class="string">"&#125;"</span>;</span><br><span class="line">        String formatStr = <span class="string">"json"</span>;</span><br><span class="line">        String originalStr;<span class="comment">//原始字符串</span></span><br><span class="line">        originalStr = <span class="string">"app_id="</span>+app_id+<span class="string">"&amp;biz_content="</span>+biz_content+<span class="string">"&amp;charset="</span>+charset+<span class="string">"&amp;format="</span>+formatStr+<span class="string">"&amp;method="</span>+method+<span class="string">"&amp;notify_url="</span>+notify_url+<span class="string">"&amp;sign_type="</span>+sign_type+<span class="string">"&amp;timestamp="</span>+timestamp+<span class="string">"&amp;version="</span>+version;</span><br><span class="line"></span><br><span class="line">        logger.info(<span class="string">"--------------------getPayRechargeOrder----biz_content-----"</span>+biz_content);</span><br><span class="line">        logger.info(<span class="string">"--------------------getPayRechargeOrder----originalStr-----"</span>+originalStr);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        AlipayClient alipayClient = new DefaultAlipayClient(gateway,app_id,private_key,"json",charset,alipay_public_key,sign_type);</span></span><br><span class="line"></span><br><span class="line">        String sign = <span class="keyword">null</span>;<span class="comment">//签名</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sign = AlipaySignature.rsaSign(originalStr,private_key,charset,sign_type);</span><br><span class="line">            app_id = URLEncoder.encode(app_id,charset);</span><br><span class="line">            biz_content = URLEncoder.encode(biz_content,charset);</span><br><span class="line"></span><br><span class="line">            formatStr = URLEncoder.encode(formatStr,charset);</span><br><span class="line">            method = URLEncoder.encode(method,charset);</span><br><span class="line">            notify_url = URLEncoder.encode(notify_url,charset);</span><br><span class="line">            sign_type = URLEncoder.encode(sign_type,charset);</span><br><span class="line">            timestamp = URLEncoder.encode(timestamp,charset);</span><br><span class="line">            version = URLEncoder.encode(version,charset);</span><br><span class="line">            sign = URLEncoder.encode(sign,charset);</span><br><span class="line">            charset = URLEncoder.encode(charset,charset);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (AlipayApiException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        String orderString = <span class="string">"app_id="</span>+app_id+<span class="string">"&amp;biz_content="</span>+biz_content+<span class="string">"&amp;charset="</span>+charset+<span class="string">"&amp;format="</span>+formatStr+<span class="string">"&amp;method="</span>+method+<span class="string">"&amp;notify_url="</span>+notify_url+<span class="string">"&amp;sign_type="</span>+sign_type+<span class="string">"&amp;timestamp="</span>+timestamp+<span class="string">"&amp;version="</span>+version+<span class="string">"&amp;sign="</span>+sign;</span><br><span class="line">        logger.info(<span class="string">"--------------------getPayRechargeOrder----orderString-----"</span>+orderString);</span><br><span class="line">        <span class="keyword">return</span> orderString;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>回调地址<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 新支付宝支付回调地址</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/alipayNotify"</span>, method = RequestMethod.POST)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"新支付宝支付回调地址"</span>)</span><br><span class="line"><span class="meta">@ApiResponses</span>(&#123;<span class="meta">@ApiResponse</span>(code = <span class="number">1</span>, message = <span class="string">"成功"</span>, response = GetUserResponse.class)</span><br><span class="line">        , <span class="meta">@ApiResponse</span>(code = <span class="number">201</span>, message = <span class="string">"没有找到这个用户"</span>, response = ExceptionResponse.class)&#125;)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">alipayNotify</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    logger.info(<span class="string">"----------alipayNotify--top-appname-----"</span>);</span><br><span class="line"></span><br><span class="line">    AlipayConfig.partner = env.getProperty(<span class="string">"partner"</span>);</span><br><span class="line">    AlipayConfig.private_key = env.getProperty(<span class="string">"private_key"</span>);</span><br><span class="line">    AlipayConfig.alipay_public_key = env.getProperty(<span class="string">"alipay_public_key"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    logger.info(<span class="string">"------------------alipayNotify--------"</span>);</span><br><span class="line">    <span class="comment">//获取支付宝POST过来反馈信息</span></span><br><span class="line">    Map&lt;String, String&gt; params = VersionUtil.getParams(request);</span><br><span class="line"></span><br><span class="line">    logger.info(<span class="string">"-------------alipayNotify-----params---"</span> + params);</span><br><span class="line"></span><br><span class="line">    String alipaypublicKey = env.getProperty(<span class="string">"alipay_public_key"</span>);</span><br><span class="line">    String charset = <span class="string">"utf-8"</span>;</span><br><span class="line">    <span class="keyword">boolean</span> signVerfied = AlipaySignature.rsaCheckV1(params, alipaypublicKey, charset, <span class="string">"RSA"</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"验证签名的结果是："</span> + signVerfied);</span><br><span class="line">    <span class="keyword">if</span> (signVerfied == <span class="keyword">false</span>) &#123;</span><br><span class="line">        response.getWriter().print(<span class="string">"fail"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照支付结果异步通知中的描述，对支付结果中的业务内容进行1\2\3\4二次校验，校验成功后在response中返回success，校验失败返回failure</span></span><br><span class="line"></span><br><span class="line">    String callbackMsg = transMapToString(params);</span><br><span class="line"></span><br><span class="line">    String prefix = env.getProperty(<span class="string">"order.prefix"</span>);</span><br><span class="line"></span><br><span class="line">    String orderIdstr = params.get(<span class="string">"out_trade_no"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> orderId = Long.parseLong(orderIdstr.split(<span class="string">"_"</span>)[<span class="number">1</span>]);</span><br><span class="line"> </span><br><span class="line">    logger.info(<span class="string">"----------------alipayNotify----getOrderId----"</span> + orderId);</span><br><span class="line"></span><br><span class="line">    PayRechargeOrder payRechargeOrder = payRechargeOrderService.getPayRechargeOrder(orderId);</span><br><span class="line">    <span class="comment">// 获取 payAccount  buyer_id</span></span><br><span class="line">    String buyer_id = params.get(<span class="string">"buyer_id"</span>);</span><br><span class="line">    <span class="keyword">if</span> (buyer_id == <span class="keyword">null</span>) &#123;</span><br><span class="line">        buyer_id = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    payRechargeOrder.setPayAccount(buyer_id);<span class="comment">//买家支付宝账号</span></span><br><span class="line"></span><br><span class="line">    String ostatus = params.get(<span class="string">"trade_status"</span>);</span><br><span class="line">    <span class="keyword">if</span> (ostatus.equals(<span class="string">"TRADE_FINISHED"</span>) || ostatus.equals(<span class="string">"TRADE_SUCCESS"</span>)) &#123;</span><br><span class="line">        logger.info(<span class="string">"-------------mtx-------alipayNotify-----TRADE_FINISHED--TRADE_SUCCESS-----"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            String tradeNo = params.get(<span class="string">"trade_no"</span>);</span><br><span class="line">            <span class="comment">//处理成功逻辑 添加回调数据，定单成功....</span></span><br><span class="line">            <span class="keyword">this</span>.setOrderSuccess(payRechargeOrder.getId().intValue()</span><br><span class="line">                    ,buyer_id</span><br><span class="line">                    ,RechargePayStyle.ALI_PAY</span><br><span class="line">                    ,callbackMsg</span><br><span class="line">                    ,tradeNo</span><br><span class="line">                    ,<span class="string">"支付宝支付充值"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (ApiNotFoundException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            response.getWriter().print(<span class="string">"fail"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        response.getWriter().print(<span class="string">"success"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/07/即时到账交易接口/" data-id="cjzr22992006y1kv5cts9rr1n" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/支付转账/">支付转账</a></li></ul>
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/06/hexo 简单搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          hexo 简单搭建GitHub博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/06/支付宝支付/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">aliPay</div>
+    </a>
+  
+</nav>
 
-    if page.comments
-      include _partial/comments.pug
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/10/反转单链表/">简单算法题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/30/Aop/">Aop</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/基础sql/">基础sql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 chen v<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
