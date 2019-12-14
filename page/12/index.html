@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Map2StringUtil" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+    <a href="/2018/05/31/Map2StringUtil/" class="article-date">
+  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
+      <a class="article-title" href="/2018/05/31/Map2StringUtil/">Map2StringUtil</a>
     </h1>
   
 
@@ -83,88 +83,451 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
-<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O(n1.5)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>O(d(n+r))</td>
-</tr>
-</tbody>
-</table>
-<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
-<li>基本思想：（分治）</li>
-</ul>
-<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
-<ul>
-<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
-</ul>
-<ol>
-<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>平均时间复杂度：O(N*logN)</p>
-</li>
-<li><p>方式一</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二 runoob</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="Map2StringUtil"><a href="#Map2StringUtil" class="headerlink" title="Map2StringUtil"></a>Map2StringUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map2StringUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法名称:transMapToString</span></span><br><span class="line"><span class="comment">     * 传入参数:map</span></span><br><span class="line"><span class="comment">     * 返回值:String 形如 username'chenziwen^password'1234</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">transMapToString</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">        java.util.Map.Entry entry;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span>(Iterator iterator = map.entrySet().iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            entry = (java.util.Map.Entry)iterator.next();</span><br><span class="line">            sb.append(entry.getKey().toString()).append( <span class="string">"'"</span> ).append(<span class="keyword">null</span>==entry.getValue()?<span class="string">""</span>:</span><br><span class="line">                    entry.getValue().toString()).append (iterator.hasNext() ? <span class="string">"^"</span> : <span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cjzr3bt68007uugv5hl5xok8q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/31/Map2StringUtil/" data-id="ck456j4d4001b78uwte4prwx9" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
 
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SHA1加密" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/SHA1加密/" class="article-date">
+  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/SHA1加密/">SHA1 加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="SHA1-加密"><a href="#SHA1-加密" class="headerlink" title="SHA1 加密"></a>SHA1 加密</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SHA1</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[] abcde = &#123;</span><br><span class="line">            <span class="number">0x67452301</span>, <span class="number">0xefcdab89</span>, <span class="number">0x98badcfe</span>, <span class="number">0x10325476</span>, <span class="number">0xc3d2e1f0</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 摘要数据存储数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] digestInt = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">    <span class="comment">// 计算过程中的临时数据存储数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] tmpData = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">80</span>];</span><br><span class="line">    <span class="comment">// 计算sha-1摘要</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">process_input_bytes</span><span class="params">(<span class="keyword">byte</span>[] bytedata)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 初试化常量</span></span><br><span class="line">        System.arraycopy(abcde, <span class="number">0</span>, digestInt, <span class="number">0</span>, abcde.length);</span><br><span class="line">        <span class="comment">// 格式化输入字节数组，补10及长度数据</span></span><br><span class="line">        <span class="keyword">byte</span>[] newbyte = byteArrayFormatData(bytedata);</span><br><span class="line">        <span class="comment">// 获取数据摘要计算的数据单元个数</span></span><br><span class="line">        <span class="keyword">int</span> MCount = newbyte.length / <span class="number">64</span>;</span><br><span class="line">        <span class="comment">// 循环对每个数据单元进行摘要计算</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> pos = <span class="number">0</span>; pos &lt; MCount; pos++) &#123;</span><br><span class="line">            <span class="comment">// 将每个单元的数据转换成16个整型数据，并保存到tmpData的前16个数组元素中</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">                tmpData[j] = byteArrayToInt(newbyte, (pos * <span class="number">64</span>) + (j * <span class="number">4</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 摘要计算函数</span></span><br><span class="line">            encrypt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">20</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 格式化输入字节数组格式</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">byte</span>[] byteArrayFormatData(<span class="keyword">byte</span>[] bytedata) &#123;</span><br><span class="line">        <span class="comment">// 补0数量</span></span><br><span class="line">        <span class="keyword">int</span> zeros = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 补位后总位数</span></span><br><span class="line">        <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 原始数据长度</span></span><br><span class="line">        <span class="keyword">int</span> n = bytedata.length;</span><br><span class="line">        <span class="comment">// 模64后的剩余位数</span></span><br><span class="line">        <span class="keyword">int</span> m = n % <span class="number">64</span>;</span><br><span class="line">        <span class="comment">// 计算添加0的个数以及添加10后的总长度</span></span><br><span class="line">        <span class="keyword">if</span> (m &lt; <span class="number">56</span>) &#123;</span><br><span class="line">            zeros = <span class="number">55</span> - m;</span><br><span class="line">            size = n - m + <span class="number">64</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == <span class="number">56</span>) &#123;</span><br><span class="line">            zeros = <span class="number">63</span>;</span><br><span class="line">            size = n + <span class="number">8</span> + <span class="number">64</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            zeros = <span class="number">63</span> - m + <span class="number">56</span>;</span><br><span class="line">            size = (n + <span class="number">64</span>) - m + <span class="number">64</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 补位后生成的新数组内容</span></span><br><span class="line">        <span class="keyword">byte</span>[] newbyte = <span class="keyword">new</span> <span class="keyword">byte</span>[size];</span><br><span class="line">        <span class="comment">// 复制数组的前面部分</span></span><br><span class="line">        System.arraycopy(bytedata, <span class="number">0</span>, newbyte, <span class="number">0</span>, n);</span><br><span class="line">        <span class="comment">// 获得数组Append数据元素的位置</span></span><br><span class="line">        <span class="keyword">int</span> l = n;</span><br><span class="line">        <span class="comment">// 补1操作</span></span><br><span class="line">        newbyte[l++] = (<span class="keyword">byte</span>) <span class="number">0x80</span>;</span><br><span class="line">        <span class="comment">// 补0操作</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; zeros; i++) &#123;</span><br><span class="line">            newbyte[l++] = (<span class="keyword">byte</span>) <span class="number">0x00</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 计算数据长度，补数据长度位共8字节，长整型</span></span><br><span class="line">        <span class="keyword">long</span> N = (<span class="keyword">long</span>) n * <span class="number">8</span>;</span><br><span class="line">        <span class="keyword">byte</span> h8 = (<span class="keyword">byte</span>) (N &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h7 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h6 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">16</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h5 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h4 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">32</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h3 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">40</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h2 = (<span class="keyword">byte</span>) ((N &gt;&gt; <span class="number">48</span>) &amp; <span class="number">0xFF</span>);</span><br><span class="line">        <span class="keyword">byte</span> h1 = (<span class="keyword">byte</span>) (N &gt;&gt; <span class="number">56</span>);</span><br><span class="line">        newbyte[l++] = h1;</span><br><span class="line">        newbyte[l++] = h2;</span><br><span class="line">        newbyte[l++] = h3;</span><br><span class="line">        newbyte[l++] = h4;</span><br><span class="line">        newbyte[l++] = h5;</span><br><span class="line">        newbyte[l++] = h6;</span><br><span class="line">        newbyte[l++] = h7;</span><br><span class="line">        newbyte[l++] = h8;</span><br><span class="line">        <span class="keyword">return</span> newbyte;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">f1</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (x &amp; y) | (~x &amp; z);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x ^ y ^ z;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">f3</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (x &amp; y) | (x &amp; z) | (y &amp; z);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">f4</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (x &lt;&lt; y) | x &gt;&gt;&gt; (<span class="number">32</span> - y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 单元摘要计算函数</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">encrypt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">16</span>; i &lt;= <span class="number">79</span>; i++) &#123;</span><br><span class="line">            tmpData[i] = f4(tmpData[i - <span class="number">3</span>] ^ tmpData[i - <span class="number">8</span>] ^ tmpData[i - <span class="number">14</span>] ^</span><br><span class="line">                    tmpData[i - <span class="number">16</span>], <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] tmpabcde = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i1 = <span class="number">0</span>; i1 &lt; tmpabcde.length; i1++) &#123;</span><br><span class="line">            tmpabcde[i1] = digestInt[i1];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">19</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = f4(tmpabcde[<span class="number">0</span>], <span class="number">5</span>) +</span><br><span class="line">                    f1(tmpabcde[<span class="number">1</span>], tmpabcde[<span class="number">2</span>], tmpabcde[<span class="number">3</span>]) + tmpabcde[<span class="number">4</span>] +</span><br><span class="line">                    tmpData[j] + <span class="number">0x5a827999</span>;</span><br><span class="line">            tmpabcde[<span class="number">4</span>] = tmpabcde[<span class="number">3</span>];</span><br><span class="line">            tmpabcde[<span class="number">3</span>] = tmpabcde[<span class="number">2</span>];</span><br><span class="line">            tmpabcde[<span class="number">2</span>] = f4(tmpabcde[<span class="number">1</span>], <span class="number">30</span>);</span><br><span class="line">            tmpabcde[<span class="number">1</span>] = tmpabcde[<span class="number">0</span>];</span><br><span class="line">            tmpabcde[<span class="number">0</span>] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">20</span>; k &lt;= <span class="number">39</span>; k++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = f4(tmpabcde[<span class="number">0</span>], <span class="number">5</span>) +</span><br><span class="line">                    f2(tmpabcde[<span class="number">1</span>], tmpabcde[<span class="number">2</span>], tmpabcde[<span class="number">3</span>]) + tmpabcde[<span class="number">4</span>] +</span><br><span class="line">                    tmpData[k] + <span class="number">0x6ed9eba1</span>;</span><br><span class="line">            tmpabcde[<span class="number">4</span>] = tmpabcde[<span class="number">3</span>];</span><br><span class="line">            tmpabcde[<span class="number">3</span>] = tmpabcde[<span class="number">2</span>];</span><br><span class="line">            tmpabcde[<span class="number">2</span>] = f4(tmpabcde[<span class="number">1</span>], <span class="number">30</span>);</span><br><span class="line">            tmpabcde[<span class="number">1</span>] = tmpabcde[<span class="number">0</span>];</span><br><span class="line">            tmpabcde[<span class="number">0</span>] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">40</span>; l &lt;= <span class="number">59</span>; l++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = f4(tmpabcde[<span class="number">0</span>], <span class="number">5</span>) +</span><br><span class="line">                    f3(tmpabcde[<span class="number">1</span>], tmpabcde[<span class="number">2</span>], tmpabcde[<span class="number">3</span>]) + tmpabcde[<span class="number">4</span>] +</span><br><span class="line">                    tmpData[l] + <span class="number">0x8f1bbcdc</span>;</span><br><span class="line">            tmpabcde[<span class="number">4</span>] = tmpabcde[<span class="number">3</span>];</span><br><span class="line">            tmpabcde[<span class="number">3</span>] = tmpabcde[<span class="number">2</span>];</span><br><span class="line">            tmpabcde[<span class="number">2</span>] = f4(tmpabcde[<span class="number">1</span>], <span class="number">30</span>);</span><br><span class="line">            tmpabcde[<span class="number">1</span>] = tmpabcde[<span class="number">0</span>];</span><br><span class="line">            tmpabcde[<span class="number">0</span>] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">60</span>; m &lt;= <span class="number">79</span>; m++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = f4(tmpabcde[<span class="number">0</span>], <span class="number">5</span>) +</span><br><span class="line">                    f2(tmpabcde[<span class="number">1</span>], tmpabcde[<span class="number">2</span>], tmpabcde[<span class="number">3</span>]) + tmpabcde[<span class="number">4</span>] +</span><br><span class="line">                    tmpData[m] + <span class="number">0xca62c1d6</span>;</span><br><span class="line">            tmpabcde[<span class="number">4</span>] = tmpabcde[<span class="number">3</span>];</span><br><span class="line">            tmpabcde[<span class="number">3</span>] = tmpabcde[<span class="number">2</span>];</span><br><span class="line">            tmpabcde[<span class="number">2</span>] = f4(tmpabcde[<span class="number">1</span>], <span class="number">30</span>);</span><br><span class="line">            tmpabcde[<span class="number">1</span>] = tmpabcde[<span class="number">0</span>];</span><br><span class="line">            tmpabcde[<span class="number">0</span>] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i2 = <span class="number">0</span>; i2 &lt; tmpabcde.length; i2++) &#123;</span><br><span class="line">            digestInt[i2] = digestInt[i2] + tmpabcde[i2];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; tmpData.length; n++) &#123;</span><br><span class="line">            tmpData[n] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4字节数组转换为整数</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">byteArrayToInt</span><span class="params">(<span class="keyword">byte</span>[] bytedata, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ((bytedata[i] &amp; <span class="number">0xff</span>) &lt;&lt; <span class="number">24</span>) | ((bytedata[i + <span class="number">1</span>] &amp; <span class="number">0xff</span>) &lt;&lt; <span class="number">16</span>) |</span><br><span class="line">                ((bytedata[i + <span class="number">2</span>] &amp; <span class="number">0xff</span>) &lt;&lt; <span class="number">8</span>) | (bytedata[i + <span class="number">3</span>] &amp; <span class="number">0xff</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 整数转换为4字节数组</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">intToByteArray</span><span class="params">(<span class="keyword">int</span> intValue, <span class="keyword">byte</span>[] byteData, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        byteData[i] = (<span class="keyword">byte</span>) (intValue &gt;&gt;&gt; <span class="number">24</span>);</span><br><span class="line">        byteData[i + <span class="number">1</span>] = (<span class="keyword">byte</span>) (intValue &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">        byteData[i + <span class="number">2</span>] = (<span class="keyword">byte</span>) (intValue &gt;&gt;&gt; <span class="number">8</span>);</span><br><span class="line">        byteData[i + <span class="number">3</span>] = (<span class="keyword">byte</span>) intValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 将字节转换为十六进制字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">byteToHexString</span><span class="params">(<span class="keyword">byte</span> ib)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] Digit = &#123;</span><br><span class="line">                <span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>,</span><br><span class="line">                <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">char</span>[] ob = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">2</span>];</span><br><span class="line">        ob[<span class="number">0</span>] = Digit[(ib &gt;&gt;&gt; <span class="number">4</span>) &amp; <span class="number">0X0F</span>];</span><br><span class="line">        ob[<span class="number">1</span>] = Digit[ib &amp; <span class="number">0X0F</span>];</span><br><span class="line">        String s = <span class="keyword">new</span> String(ob);</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 将字节数组转换为十六进制字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">byteArrayToHexString</span><span class="params">(<span class="keyword">byte</span>[] bytearray)</span> </span>&#123;</span><br><span class="line">        String strDigest = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bytearray.length; i++) &#123;</span><br><span class="line">            strDigest += byteToHexString(bytearray[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strDigest;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计算sha-1摘要，返回相应的字节数组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getDigestOfBytes(<span class="keyword">byte</span>[] byteData) &#123;</span><br><span class="line">        process_input_bytes(byteData);</span><br><span class="line">        <span class="keyword">byte</span>[] digest = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">20</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digestInt.length; i++) &#123;</span><br><span class="line">            intToByteArray(digestInt[i], digest, i * <span class="number">4</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> digest;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计算sha-1摘要，返回相应的十六进制字符串</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDigestOfString</span><span class="params">(<span class="keyword">byte</span>[] byteData)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> byteArrayToHexString(getDigestOfBytes(byteData));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/SHA1加密/" data-id="ck456j4db001l78uwxhdgdp8v" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ZipUtil" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/ZipUtil/" class="article-date">
+  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/ZipUtil/">ZipUtil</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="ZipUtil"><a href="#ZipUtil" class="headerlink" title="ZipUtil"></a>ZipUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipUtil</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">     <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BUFFER = <span class="number">2048</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">unzip</span><span class="params">(String filepath,String unzipFolder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            String fileName = <span class="string">"E:\\test\\myfiles.zip"</span>;</span><br><span class="line">            String filePath = <span class="string">"E:\\test\\"</span>;</span><br><span class="line">            fileName=filepath;</span><br><span class="line">            filePath=unzipFolder;</span><br><span class="line"></span><br><span class="line">            ZipFile zipFile = <span class="keyword">new</span> ZipFile(fileName);</span><br><span class="line">            Enumeration emu = zipFile.entries();</span><br><span class="line">            <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(emu.hasMoreElements())&#123;</span><br><span class="line">                ZipEntry entry = (ZipEntry)emu.nextElement();</span><br><span class="line">                <span class="comment">//会把目录作为一个file读出一次，所以只建立目录就可以，之下的文件还会被迭代到。</span></span><br><span class="line">                <span class="keyword">if</span> (entry.isDirectory())</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">new</span> File(filePath + entry.getName()).mkdirs();</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                BufferedInputStream bis = <span class="keyword">new</span> BufferedInputStream(zipFile.getInputStream(entry));</span><br><span class="line">                File file = <span class="keyword">new</span> File(filePath + entry.getName());</span><br><span class="line">                <span class="comment">//加入这个的原因是zipfile读取文件是随机读取的，这就造成可能先读取一个文件</span></span><br><span class="line">                <span class="comment">//而这个文件所在的目录还没有出现过，所以要建出目录来。</span></span><br><span class="line">                File parent = file.getParentFile();</span><br><span class="line">                <span class="keyword">if</span>(parent != <span class="keyword">null</span> &amp;&amp; (!parent.exists()))&#123;</span><br><span class="line">                    parent.mkdirs();</span><br><span class="line">                &#125;</span><br><span class="line">                FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">                BufferedOutputStream bos = <span class="keyword">new</span> BufferedOutputStream(fos,BUFFER);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> count;</span><br><span class="line">                <span class="keyword">byte</span> data[] = <span class="keyword">new</span> <span class="keyword">byte</span>[BUFFER];</span><br><span class="line">                <span class="keyword">while</span> ((count = bis.read(data, <span class="number">0</span>, BUFFER)) != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    bos.write(data, <span class="number">0</span>, count);</span><br><span class="line">                &#125;</span><br><span class="line">                bos.flush();</span><br><span class="line">                bos.close();</span><br><span class="line">                bis.close();</span><br><span class="line">            &#125;</span><br><span class="line">            zipFile.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ck456j4dw002e78uwgzy1xep5" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux简单命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/linux简单命令/" class="article-date">
+  <time datetime="2018-05-31T07:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/linux简单命令/">linux简单命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="linux简单命令"><a href="#linux简单命令" class="headerlink" title="linux简单命令"></a>linux简单命令</h5><ol>
+<li><p>ls [选项] [目录名 | 列出相关目录下的所有目录和文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-a  列出包括.a开头的隐藏文件的所有文件</span><br><span class="line">-A  通-a，但不列出"."和".."</span><br><span class="line">-l  列出文件的详细信息</span><br><span class="line">-c  根据ctime排序显示</span><br><span class="line">-t  根据文件修改时间排序</span><br><span class="line">---color[=WHEN] 用色彩辨别文件类型 WHEN 可以是'never'、'always'或'auto'其中之一</span><br><span class="line">   白色：表示普通文件</span><br><span class="line">   蓝色：表示目录</span><br><span class="line">   绿色：表示可执行文件</span><br><span class="line">   红色：表示压缩文件</span><br><span class="line">   浅蓝色：链接文件</span><br><span class="line">   红色闪烁：表示链接的文件有问题</span><br><span class="line">   黄色：表示设备文件</span><br><span class="line">   灰色：表示其它文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mv [选项] 源文件或目录 目录或多个源文件 | 移动或重命名文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-b  覆盖前做备份</span><br><span class="line">-f  如存在不询问而强制覆盖</span><br><span class="line">-i  如存在则询问是否覆盖</span><br><span class="line">-u  较新才覆盖</span><br><span class="line">-t  将多个源文件移动到统一目录下，目录参数在前，文件参数在后</span><br><span class="line">eg:</span><br><span class="line">   mv a /tmp/ 将文件a移动到 /tmp目录下</span><br><span class="line">   mv a b 将a命名为b</span><br><span class="line">   mv /home/zenghao test1.txt test2.txt test3.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cp [选项] 源文件或目录 目录或多个源文件 | 将源文件复制至目标文件，或将多个源文件复制至目标目录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-r -R 递归复制该目录及其子目录内容</span><br><span class="line">-p  连同档案属性一起复制过去</span><br><span class="line">-f  不询问而强制复制</span><br><span class="line">-s  生成快捷方式</span><br><span class="line">-a  将档案的所有特性都一起复制</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scp [参数] [原路径] [目标路径] | 在Linux服务器之间复制文件和目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-v  详细显示输出的具体情况</span><br><span class="line">-r  递归复制整个目录</span><br><span class="line">(1) 复制文件：  </span><br><span class="line">命令格式：  </span><br><span class="line">scp local_file remote_username@remote_ip:remote_folder  </span><br><span class="line">或者  </span><br><span class="line">scp local_file remote_username@remote_ip:remote_file  </span><br><span class="line">或者  </span><br><span class="line">scp local_file remote_ip:remote_folder  </span><br><span class="line">或者  </span><br><span class="line">scp local_file remote_ip:remote_file  </span><br><span class="line">第1,2个指定了用户名，命令执行后需要输入用户密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名  </span><br><span class="line">第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名   </span><br><span class="line">(2) 复制目录：  </span><br><span class="line">命令格式：  </span><br><span class="line">scp -r local_folder remote_username@remote_ip:remote_folder  </span><br><span class="line">或者  </span><br><span class="line">scp -r local_folder remote_ip:remote_folder  </span><br><span class="line">第1个指定了用户名，命令执行后需要输入用户密码；  </span><br><span class="line">第2个没有指定用户名，命令执行后需要输入用户名和密码；</span><br><span class="line">eg:</span><br><span class="line">   从 本地 复制到 远程</span><br><span class="line">   scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root </span><br><span class="line">   从 远程 复制到 本地</span><br><span class="line">   scp root@/172.19.2.75:/home/root/full.tar.gz /home/daisy/full.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rm [选项] 文件 | 删除文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-r  删除文件夹</span><br><span class="line">-f  删除不提示</span><br><span class="line">-i  删除提示</span><br><span class="line">-v  详细显示进行步骤</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>touch [选项] 文件 | 创建空文件或更新文件时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-a  只修改存取时间</span><br><span class="line">-m  值修改变动时间</span><br><span class="line">-r  eg:touch -r a b ,使b的时间和a相同</span><br><span class="line">-t  指定特定的时间 eg:touch -t 201211142234.50 log.log </span><br><span class="line">   -t time [[CC]YY]MMDDhhmm[.SS],C:年前两位</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pwd 查看当前所在路径</p>
+</li>
+<li><p>cd 改变当前目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- ：返回上层目录</span><br><span class="line">.. :返回上层目录</span><br><span class="line">回车  ：返回主目录</span><br><span class="line">/   :根目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mkdir [选项] 目录… | 创建新目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-p  递归创建目录，若父目录不存在则依次创建</span><br><span class="line">-m  自定义创建目录的权限  eg:mkdir -m 777 hehe</span><br><span class="line">-v  显示创建目录的详细信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rmdir 删除空目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-v  显示执行过程</span><br><span class="line">-p  若自父母删除后父目录为空则一并删除</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rm [选项] 文件… | 一个或多个文件或目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-f  忽略不存在的文件，不给出提示</span><br><span class="line">-i  交互式删除</span><br><span class="line">-r  将列出的目录及其子目录递归删除</span><br><span class="line">-v  列出详细信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>echo：显示内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-n  输出后不换行</span><br><span class="line">-e  遇到转义字符特殊处理  </span><br><span class="line">   eg:</span><br><span class="line">       echo "he\nhe"   显示he\nhe</span><br><span class="line">       ehco -e "he\nhe"    显示he(换行了)he</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cat [选项] [文件]..| 一次显示整个文件或从键盘创建一个文件或将几个文件合并成一个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-n  编号文件内容再输出</span><br><span class="line">-E  在结束行提示$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tac | 反向显示</p>
+</li>
+<li><p>more | 按页查看文章内容，从前向后读取文件，因此在启动时就加载整个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+n  从第n行开始显示</span><br><span class="line">-n  每次查看n行数据</span><br><span class="line">+/String    搜寻String字符串位置，从其前两行开始查看</span><br><span class="line">-c  清屏再显示</span><br><span class="line">-p  换页时清屏</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>less | 可前后移动地逐屏查看文章内容，在查看前不会加载整个文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-m  显示类似于more命令的百分比</span><br><span class="line">-N  显示行号</span><br><span class="line">/   字符串：向下搜索“字符串”的功能</span><br><span class="line">?   字符串：向上搜索“字符串”的功能</span><br><span class="line">n   重复前一个搜索（与 / 或 ? 有关）</span><br><span class="line">N   反向重复前一个搜索（与 / 或 ? 有关）</span><br><span class="line">b   向后翻一页</span><br><span class="line">d   向后翻半页</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nl [选项]… [文件]… | 将输出内容自动加上行号 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-b </span><br><span class="line">-b a 不论是否有空行，都列出行号（类似 cat -n) </span><br><span class="line">-b t 空行则不列行号（默认） </span><br><span class="line">-n 有ln rn rz三个参数，分别为再最左方显示，最右方显示不加0，最右方显示加0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>head [参数]… [文件]… | 显示档案开头，默认开头10行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-v  显示文件名</span><br><span class="line">-c number   显示前number个字符,若number为负数,则显示除最后number个字符的所有内容</span><br><span class="line">-number/n (+)number     显示前number行内容，</span><br><span class="line">-n number   若number为负数，则显示除最后number行数据的所有内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tail [必要参数] [选择参数] [文件] | 显示文件结尾内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-v  显示详细的处理信息</span><br><span class="line">-q  不显示处理信息</span><br><span class="line">-num/-n (-)num      显示最后num行内容</span><br><span class="line">-n +num 从第num行开始显示后面的数据</span><br><span class="line">-c  显示最后c个字符</span><br><span class="line">-f  循环读取</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vi 编辑文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">:w filename 将文章以指定的文件名保存起来  </span><br><span class="line">:wq 保存并退出</span><br><span class="line">:q! 不保存而强制退出</span><br><span class="line">命令行模式功能键</span><br><span class="line">1）插入模式</span><br><span class="line">   按「i」切换进入插入模式「insert mode」，按"i"进入插入模式后是从光标当前位置开始输入文件；</span><br><span class="line">   按「a」进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</span><br><span class="line">   按「o」进入插入模式后，是插入新的一行，从行首开始输入文字。</span><br><span class="line"></span><br><span class="line">2）从插入模式切换为命令行模式</span><br><span class="line"> 按「ESC」键。</span><br><span class="line">3）移动光标</span><br><span class="line">　　vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母「h」、「j」、「k」、「l」，分别控制光标左、下、上、右移一格。</span><br><span class="line">　　按「ctrl」+「b」：屏幕往"后"移动一页。</span><br><span class="line">　　按「ctrl」+「f」：屏幕往"前"移动一页。</span><br><span class="line">　　按「ctrl」+「u」：屏幕往"后"移动半页。</span><br><span class="line">　　按「ctrl」+「d」：屏幕往"前"移动半页。</span><br><span class="line">　　按数字「0」：移到文章的开头。</span><br><span class="line">　　按「G」：移动到文章的最后。</span><br><span class="line">　　按「$」：移动到光标所在行的"行尾"。</span><br><span class="line">　　按「^」：移动到光标所在行的"行首"</span><br><span class="line">　　按「w」：光标跳到下个字的开头</span><br><span class="line">　　按「e」：光标跳到下个字的字尾</span><br><span class="line">　　按「b」：光标回到上个字的开头</span><br><span class="line">　　按「#l」：光标移到该行的第#个位置，如：5l,56l。</span><br><span class="line"></span><br><span class="line">4）删除文字</span><br><span class="line">　　「x」：每按一次，删除光标所在位置的"后面"一个字符。</span><br><span class="line">　　「#x」：例如，「6x」表示删除光标所在位置的"后面"6个字符。</span><br><span class="line">　　「X」：大写的X，每按一次，删除光标所在位置的"前面"一个字符。</span><br><span class="line">　　「#X」：例如，「20X」表示删除光标所在位置的"前面"20个字符。</span><br><span class="line">　　「dd」：删除光标所在行。</span><br><span class="line">　　「#dd」：从光标所在行开始删除#行</span><br><span class="line"></span><br><span class="line">5）复制</span><br><span class="line">　　「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</span><br><span class="line">　　「#yw」：复制#个字到缓冲区</span><br><span class="line">　　「yy」：复制光标所在行到缓冲区。</span><br><span class="line">　　「#yy」：例如，「6yy」表示拷贝从光标所在的该行"往下数"6行文字。</span><br><span class="line">　　「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与"y"有关的复制命令都必须与"p"配合才能完成复制与粘贴功能。</span><br><span class="line"></span><br><span class="line">6）替换</span><br><span class="line">　　「r」：替换光标所在处的字符。</span><br><span class="line">　　「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</span><br><span class="line"></span><br><span class="line">7）回复上一次操作</span><br><span class="line">　　「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次"u"可以执行多次回复。</span><br><span class="line"></span><br><span class="line">8）更改</span><br><span class="line">　　「cw」：更改光标所在处的字到字尾处</span><br><span class="line">　　「c#w」：例如，「c3w」表示更改3个字</span><br><span class="line"></span><br><span class="line">9）跳至指定的行</span><br><span class="line">　　「ctrl」+「g」列出光标所在行的行号。</span><br><span class="line">　　「#G」：例如，「15G」，表示移动光标至文章的第15行行首。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>which 可执行文件名称 | 查看可执行文件的位置，在PATH变量指定的路径中查看系统命令是否存在及其位置</p>
+</li>
+<li><p>whereis [-bmsu] [BMS 目录名 -f ] 文件名| 定位可执行文件、源代码文件、帮助文件在文件系统中的位置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-b   定位可执行文件。</span><br><span class="line">-m   定位帮助文件。</span><br><span class="line">-s   定位源代码文件。</span><br><span class="line">-u   搜索默认路径下除可执行文件、源代码文件、帮助文件以外的其它文件。</span><br><span class="line">-B   指定搜索可执行文件的路径。</span><br><span class="line">-M   指定搜索帮助文件的路径。</span><br><span class="line">-S   指定搜索源代码文件的路径。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>locate | 通过搜寻数据库快速搜寻档案</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-r  使用正规运算式做寻找的条件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>find find [PATH] [option] [action] | 在文件树种查找文件，并作出相应的处理</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">选项与参数：</span><br><span class="line">1. 与时间有关的选项：共有 -atime, -ctime 与 -mtime 和-amin,-cmin与-mmin，以 -mtime 说明</span><br><span class="line">   -mtime n ：n 为数字，意义为在 n 天之前的『一天之内』被更动过内容的档案；</span><br><span class="line">   -mtime +n ：列出在 n 天之前(不含 n 天本身)被更动过内容的档案档名；</span><br><span class="line">   -mtime -n ：列出在 n 天之内(含 n 天本身)被更动过内容的档案档名。</span><br><span class="line">   -newer file ：file 为一个存在的档案，列出比 file 还要新的档案档名</span><br><span class="line"></span><br><span class="line">2. 与使用者或组名有关的参数：</span><br><span class="line">   -uid n ：n 为数字，这个数字是用户的账号 ID，亦即 UID</span><br><span class="line">   -gid n ：n 为数字，这个数字是组名的 ID，亦即 GID</span><br><span class="line">   -user name ：name 为使用者账号名称！例如 dmtsai</span><br><span class="line">   -group name：name 为组名，例如 users ；</span><br><span class="line">   -nouser ：寻找档案的拥有者不存在 /etc/passwd 的人！</span><br><span class="line">   -nogroup ：寻找档案的拥有群组不存在于 /etc/group 的档案！</span><br><span class="line"></span><br><span class="line">3. 与档案权限及名称有关的参数：</span><br><span class="line">   -name filename：搜寻文件名为 filename 的档案（可使用通配符）</span><br><span class="line">   -size [+-]SIZE：搜寻比 SIZE 还要大(+)或小(-)的档案。这个 SIZE 的规格有：</span><br><span class="line">       c: 代表 byte</span><br><span class="line">       k: 代表 1024bytes。所以，要找比 50KB还要大的档案，就是『 -size +50k 』</span><br><span class="line">   -type TYPE ：搜寻档案的类型为 TYPE 的，类型主要有：</span><br><span class="line">       一般正规档案 (f)</span><br><span class="line">       装置档案 (b, c)</span><br><span class="line">       目录 (d)</span><br><span class="line">       连结档 (l)</span><br><span class="line">       socket (s)</span><br><span class="line">       FIFO (p)</span><br><span class="line">   -perm mode ：搜寻档案权限『刚好等于』 mode的档案，这个mode为类似chmod的属性值，举例来说，-rwsr-xr-x 的属性为4755！</span><br><span class="line">   -perm -mode ：搜寻档案权限『必须要全部囊括 mode 的权限』的档案，举例来说，</span><br><span class="line">       我们要搜寻-rwxr--r-- 亦即 0744 的档案，使用-perm -0744，当一个档案的权限为 -rwsr-xr-x ，亦即 4755 时，也会被列出来，因为 -rwsr-xr-x 的属性已经囊括了 -rwxr--r-- 的属性了。</span><br><span class="line">   -perm +mode ：搜寻档案权限『包含任一 mode 的权限』的档案，举例来</span><br><span class="line">       说，我们搜寻-rwxr-xr-x ，亦即 -perm +755 时，但一个文件属性为 -rw-------也会被列出来，因为他有 -rw.... 的属性存在！</span><br><span class="line">4. 额外可进行的动作：</span><br><span class="line">   -exec command ：command 为其他指令，-exec 后面可再接额外的指令来处理搜寻到的结果。</span><br><span class="line">   -print ：将结果打印到屏幕上，这个动作是预设动作！</span><br><span class="line">   eg:</span><br><span class="line">       find / -perm +7000 -exec ls -l &#123;&#125; \; ,额外指令以-exec开头，以\;结尾&#123;&#125;代替前面找到的内容</span><br><span class="line">   | xargs </span><br><span class="line">       -i  默认的前面输出用&#123;&#125;代替 </span><br><span class="line">       eg:</span><br><span class="line">           find . -name "*.log" | xargs -i mv &#123;&#125; test4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>grep ‘正则表达式’ 文件名 | 用正则表达式搜索文本，并把匹配的行打印出来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-c  只输出匹配行的计数。</span><br><span class="line">-I  不区分大小写(只适用于单字符)。</span><br><span class="line">-l  只显示文件名</span><br><span class="line">-v  显示不包含匹配文本的所有行。</span><br><span class="line">-n  显示匹配行数据及其行号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>gzip [-cdtv#] 檔名 | 压缩、解压缩，源文件都不再存在</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d  进行解压缩</span><br><span class="line">-c  将压缩的数据输出到屏幕上</span><br><span class="line">-v  :显示原档案/压缩文件案的压缩比等信息</span><br><span class="line"><span class="meta">-#</span><span class="bash">  ：压缩等级，-1最快，但压缩比最差，=9最慢，但压缩比最好</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>gunzip | 解压缩</p>
+</li>
+<li><p>bzip2 | 压缩、解压缩</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d  :解压</span><br><span class="line">-z  :压缩</span><br><span class="line">-k  :保留源文件</span><br><span class="line">-c ：将压缩的过程产生的数据输出到屏幕上！</span><br><span class="line">-v ：可以显示出原档案/压缩文件案的压缩比等信息；</span><br><span class="line"><span class="meta">-#</span><span class="bash"> ：与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bzcat 读取数据而无需解压</p>
+</li>
+<li>tar [主选项+辅选项] 文件或者目录 | 多个目录或档案打包、压缩成一个大档案</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">主选项：</span><br><span class="line">   -c  建立打包档案，可搭配 -v 来察看过程中被打包的档名(filename)</span><br><span class="line">   -t  察看打包档案的内容含有哪些档名，重点在察看『档名』就是了；</span><br><span class="line">   -x  解打包或解压缩的功能，可以搭配 -C (大写) 在特定目录解开</span><br><span class="line">辅选项：</span><br><span class="line">   -j  透过 bzip2 的支持进行压缩/解压缩：此时档名最好为 *.tar.bz2</span><br><span class="line">   -z  透过 gzip 的支持进行压缩/解压缩：此时档名最好为 *.tar.gz</span><br><span class="line">   -v  在压缩/解压缩的过程中，将正在处理的文件名显示出来！</span><br><span class="line">   -f filename -f 后面要立刻接要被处理的档名！</span><br><span class="line">   -C 目录   这个选项用在解压缩，若要在特定目录解压缩，可以使用这个选项。</span><br><span class="line">   --exclude FILE：在压缩打包过程中忽略某文件 eg: tar --exclude /home/zenghao -zcvf myfile.tar.gz /home/* /etc</span><br><span class="line">   -p  保留备份数据的原本权限与属性，常用于备份(-c)重要的配置文件</span><br><span class="line">   -P(大写）  保留绝对路径，亦即允许备份数据中含有根目录存在之意；</span><br><span class="line">eg:</span><br><span class="line">   压 缩：tar -jcvf filename.tar.bz2 要被压缩的档案或目录名称</span><br><span class="line">   查 询：tar -jtvf filename.tar.bz2</span><br><span class="line">   解压缩：tar -jxvf filename.tar.bz2 -C 欲解压缩的目录</span><br></pre></td></tr></table></figure>
+<ol>
+<li>exit 退出当前shell </li>
+<li>logout 退出登录shell </li>
+<li>shutdown -h now</li>
+<li>users 显示当前登录系统地用户</li>
+<li><p>who 登录在本机的用户与来源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-H或--heading 　显示各栏位的标题信息列。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>w 登录在本机的用户及其运行的程序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-s 　使用简洁格式列表，不显示用户登入时间，终端机阶段作业和程序所耗费的CPU时间。</span><br><span class="line">-h 　不显示各栏位的标题信息列。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>write 给当前联机的用户发消息</p>
+</li>
+<li>wall 给所有登录再本机的用户发消息</li>
+<li>last 查看用户的登陆日志</li>
+<li>lastlog 查看每个用户最后的登陆时间</li>
+<li><p>finger [选项] [使用者] [用户@主机] | 查看用户信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-s 显示用户的注册名、实际姓名、终端名称、写状态、停滞时间、登录时间等信息</span><br><span class="line">-l 除了用-s选项显示的信息外，还显示用户主目录、登录shell、邮件状态等信息，以及用户主目录下的.plan、.project和.forward文件的内容。</span><br><span class="line">-p 除了不显示.plan文件和.project文件以外，与-l选项相同</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hostname 查看主机名</p>
+</li>
+<li>alias ii = “ls -l” | 添加别名</li>
+<li>unalias ii | 清除别名</li>
+<li><p>useradd [-u UID] [-g 初始群组] [-G 次要群组] [-c 说明栏] [-d 家目录绝对路径] [-s shell] 使用者账号名 | 新增用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-M  不建立用户家目录！(系统账号默认值)</span><br><span class="line">-m  建立用户家目录！(一般账号默认值)</span><br><span class="line">-r  建立一个系统的账号，这个账号的 UID 会有限制 </span><br><span class="line">-e  账号失效日期，格式为『YYYY-MM-DD』</span><br><span class="line">-D  查看useradd的各项默认值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>passwd | 修改密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-l  使密码失效</span><br><span class="line">-u  与-l相对，用户解锁</span><br><span class="line">-S  列出登陆用户passwd文件内的相关参数</span><br><span class="line">-n  后面接天数，shadow 的第 4 字段，多久不可修改密码天数</span><br><span class="line">-x  后面接天数，shadow 的第 5 字段，多久内必须要更动密码</span><br><span class="line">-w  后面接天数，shadow 的第 6 字段，密码过期前的警告天数</span><br><span class="line">-i  后面接『日期』，shadow 的第 7 字段，密码失效日期</span><br><span class="line">使用管道刘设置密码：echo "zeng" | passwd --stdin zenghao</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>userdel 删除用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-r  用户文件一并删除</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>chage [-ldEImMW] 账号名 | 修改用户密码的相关属性</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-l  列出该账号的详细密码参数；</span><br><span class="line">-d  后面接日期，修改 shadow 第三字段(最近一次更改密码的日期)，格式YYYY-MM-DD</span><br><span class="line">-E  后面接日期，修改 shadow 第八字段(账号失效日)，格式 YYYY-MM-DD</span><br><span class="line">-I  后面接天数，修改 shadow 第七字段(密码失效日期)</span><br><span class="line">-m  后面接天数，修改 shadow 第四字段(密码最短保留天数)</span><br><span class="line">-M  后面接天数，修改 shadow 第五字段(密码多久需要进行变更)</span><br><span class="line">-W  后面接天数，修改 shadow 第六字段(密码过期前警告日期)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>usermod [-cdegGlsuLU] username | 修改用户的相关属性</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c  后面接账号的说明，即 /etc/passwd 第五栏的说明栏，可以加入一些账号的说明。</span><br><span class="line">-d  后面接账号的家目录，即修改 /etc/passwd 的第六栏；</span><br><span class="line">-e  后面接日期，格式是 YYYY-MM-DD 也就是在 /etc/shadow 内的第八个字段数据啦！</span><br><span class="line">-f  后面接天数为 shadow 的第七字段。</span><br><span class="line">-g  后面接初始群组，修改 /etc/passwd 的第四个字段，亦即是GID的字段！</span><br><span class="line">-G  后面接次要群组，修改这个使用者能够支持的群组</span><br><span class="line">-l  后面接账号名称。亦即是修改账号名称， /etc/passwd 的第一栏！</span><br><span class="line">-s  后面接 Shell 的实际档案，例如 /bin/bash 或 /bin/csh 等等。</span><br><span class="line">-u  后面接 UID 数字啦！即 /etc/passwd 第三栏的资料；</span><br><span class="line">-L  冻结密码</span><br><span class="line">-U  解冻密码</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>id [username] | 查看用户相关的id信息，还可以用来判断用户是否存在</p>
+</li>
+<li>groups 查看登陆用户支持的群组， 第一个输出的群组为有效群组</li>
+<li>newgrp 切换有效群组</li>
+<li><p>groupadd [-g gid] 组名 | 添加组</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-g  设定添加组的特定组id</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>groupmod [-g gid] [-n group_name] 群组名 | 修改组信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-g  修改既有的 GID 数字</span><br><span class="line">-n  修改既有的组名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>groupdel [groupname] | 删除群组</p>
+</li>
+<li><p>gpasswd | 群组管理员功能</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root管理员动作：</span><br><span class="line">   -gpasswd groupname 设定密码</span><br><span class="line">   -gpasswd [-A user1,...] [-M user3,...] groupname</span><br><span class="line">       -A  将 groupname 的主控权交由后面的使用者管理(该群组的管理员)</span><br><span class="line">       -M  将某些账号加入这个群组当中</span><br><span class="line">   -gpasswd [-r] groupname</span><br><span class="line">       -r  将 groupname 的密码移除</span><br><span class="line">群组管理员动作：</span><br><span class="line">   - gpasswd [-ad] user groupname </span><br><span class="line">       -a  将某位使用者加入到 groupname 这个群组当中</span><br><span class="line">       -d  将某位使用者移除出 groupname 这个群组当中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>chfn修改个人信息</p>
+</li>
+<li><p>mount [-t vfstype] [-o options] device dir</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    -ro 采用只读方式挂接设备</span><br><span class="line">    -rw 采用读写方式挂接设备</span><br><span class="line">    eg:mount /home/mydisk.iso /tmp/mnt 通过mnt访问mydisk内的内容</span><br><span class="line">``` </span><br><span class="line">59. umount 取消挂载</span><br><span class="line">60. cut</span><br><span class="line">```shell</span><br><span class="line">    -b ：以字节为单位进行分割。这些字节位置将忽略多字节字符边界，除非也指定了 -n 标志。</span><br><span class="line">    -c ：以字符为单位进行分割。</span><br><span class="line">    -d ：自定义分隔符，默认为制表符。</span><br><span class="line">    -f  ：与-d一起使用，指定显示哪个区域。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sort</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-n   依照数值的大小排序。</span><br><span class="line">-o&lt;输出文件&gt;   将排序后的结果存入指定的文件。</span><br><span class="line">-r   以相反的顺序来排序。</span><br><span class="line">-t&lt;分隔字符&gt;   指定排序时所用的栏位分隔字符。</span><br><span class="line">-k  选择以哪个区间进行排序。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wc 统计指定文件中的字节数、字数、行数, 并将统计结果显示输出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-l filename 报告行数</span><br><span class="line">-c filename 报告字节数</span><br><span class="line">-m filename 报告字符数</span><br><span class="line">-w filename 报告单词数</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uniq 去除文件中相邻的重复行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c或——count：在每列旁边显示该行重复出现的次数；</span><br><span class="line">-d或--repeated：仅显示重复出现的行列；</span><br><span class="line">-f&lt;栏位&gt;或--skip-fields=&lt;栏位&gt;：忽略比较指定的栏位；</span><br><span class="line">-s&lt;字符位置&gt;或--skip-chars=&lt;字符位置&gt;：忽略比较指定的字符；</span><br><span class="line">-u或——unique：仅显示出一次的行列；</span><br><span class="line">-w&lt;字符位置&gt;或--check-chars=&lt;字符位置&gt;：指定要比较的字符。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>set 显示环境变量和普通变量 </p>
+</li>
+<li>env 显示环境变量 </li>
+<li>export 把普通变量变成环境变量 </li>
+<li><p>unset 删除一个环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aaa()&#123;&#125; 定义函数</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>read</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-p  接提示字符</span><br><span class="line">-t  接等待的秒数</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>declare、typeset</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-i 声明为整数</span><br><span class="line">-a 声明为数组</span><br><span class="line">-f 声明为函数</span><br><span class="line">-r 声明为只读</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ulimit 限制使用者的某些系统资源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-f  此 shell 可以建立的最大档案容量 (一般可能设定为 2GB)单位为 Kbytes eg: ulimit -f 1024 限制使用者仅能建立 1MBytes 以下的容量的档案</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>df [选项] [文件] | 显示指定磁盘文件的可用空间,如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">-a  显示全部文件系统</span><br><span class="line">-h  文件大小友好显示</span><br><span class="line">-l  只显示本地文件系统</span><br><span class="line">-i  显示inode信息</span><br><span class="line">-T  显示文件系统类型</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>du [选项] [文件] | 显示每个文件和目录的磁盘使用空间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-h  方便阅读的方式</span><br><span class="line">-s  只显示总和的大小</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ln [参数] [源文件或目录] [目标文件或目录] | 某一个文件在另外一个位置建立一个同步的链接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-s  建立软连接   </span><br><span class="line">-v  显示详细的处理过程</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>diff [参数] [文件1或目录1] [文件2或目录2] | 比较单个文件或者目录内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b 　不检查空格字符的不同。</span><br><span class="line">-B 　不检查空白行。</span><br><span class="line">-i  不检查大小写</span><br><span class="line">-q  仅显示差异而不显示详细信息</span><br><span class="line">eg: diff a b &gt; parch.log 比较两个文件的不同并产生补丁</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>date [参数]… [+格式] | 显示或设定系统的日期与时间</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">H 小时(以00-23来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">M 分钟(以00-59来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">P AM或PM。</span></span><br><span class="line"><span class="meta">%</span><span class="bash">D 日期(含年月日)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">U 该年中的周数。</span></span><br><span class="line">date -s “2015-10-17 01:01:01″ //时间设定</span><br><span class="line">date +%Y%m%d         //显示前天年月日</span><br><span class="line">date +%Y%m%d --date="+1 day/month/year"  //显示前一天/月/年的日期</span><br><span class="line">date +%Y%m%d --date="-1 day/month/year"  //显示后一天/月/年的日期</span><br><span class="line">date -d '2 weeks' 2周后的日期</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cal [参数] 月份] [年份] | 查看日历</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-1  显示当月的月历</span><br><span class="line">-3  显示前、当、后一个月的日历</span><br><span class="line">-m  显示星期一为一个星期的第一天</span><br><span class="line">-s  （默认）星期天为第一天</span><br><span class="line">-j  显示当月是一年中的第几天的日历</span><br><span class="line">-y  显示当前年份的日历</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ps | 列出当前进程的快照</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a   显示所有的进程</span><br><span class="line">-a  显示同一终端下的所有程序</span><br><span class="line">e   显示环境变量</span><br><span class="line">f   显示进程间的关系</span><br><span class="line">-H  显示树状结构</span><br><span class="line">r   显示当前终端的程序</span><br><span class="line">T   显示当前终端的所有程序</span><br><span class="line">-au 显示更详细的信息</span><br><span class="line">-aux    显示所有包含其他使用者的行程 </span><br><span class="line">-u  指定用户的所有进程</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>top [参数] | 显示当前系统正在执行的进程的相关信息，包括进程ID、内存占用率、CPU占用率等</p>
+</li>
+<li>kill [参数] [进程号] | 杀死进程</li>
+<li>free [参数] | 显示linux系统中空闲的、已用的物理内存及swap内存,及被内核使用的buffer</li>
+<li>vmstat | 对操作系统的虚拟内存、进程、CPU活动进行监控</li>
+<li><p>iostat [参数] [时间t] [次数n](每隔t时间刷新一次，最多刷新n次）| 对系统的磁盘操作活动进行监视,汇报磁盘活动统计情况，同时也会汇报出CPU使用情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p[磁盘] 显示磁盘和分区的情况</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>watch [参数] [命令] |重复执行某一命令以观察变化</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-n  时隔多少秒刷新</span><br><span class="line">-d  高亮显示动态变化</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>at [参数] [时间] | 在一个指定的时间执行一个指定任务，只能执行一次</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HH:MM[am|pm] + number [minutes|hours|days|weeks] 强制在某年某月某日的某时刻进行该项任务</span><br><span class="line">atq 查看系统未执行的任务</span><br><span class="line">atrm n 删除编号为n的任务</span><br><span class="line">at -c n 显示编号为n的任务的内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>crontab | 定时任务调度</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file    载入crontab</span><br><span class="line">    -e  编辑某个用户的crontab文件内容</span><br><span class="line">    -l  显示某个用户的crontab文件内容</span><br><span class="line">    -r  删除某个用户的crontab文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ifconfig [网络设备] [参数] | 查看和配置网络设备</p>
+</li>
+<li>route | 显示和操作IP路由表</li>
+<li><p>ping [参数] [主机名或IP地址] | 测试与目标主机的连通性</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-q  只显示最后的结果</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>netstat | 显示与IP、TCP、UDP和ICMP协议相关的统计数据</p>
+</li>
+<li>telnet [参数] [主机] | 用于远程登录，采用明文传送报文，安全性不好</li>
+<li><p>rcp [参数] [源文件] [目标文件] | 远程文件拷贝</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-r  递归复制</span><br><span class="line">-p  保留源文件的属性</span><br><span class="line">usage: rcp –r remote_hostname:remote_dir local_dir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wget [参数] [URL地址] | 直接从网络上下载文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-o FILE 把记录写到FILE文件中    eg : wget -O a.txt URL</span><br><span class="line">wget --limit-rate=300k URL  限速下载</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>awk</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-F 分隔符  以分隔符分隔内容</span><br><span class="line">&#123;&#125;  要执行的脚本内容 eg:cat /etc/passwd |awk  -F ':'  '&#123;print $1"\t"$7&#125;'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sed 对数据行进行替换、删除、新增、选取等操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a   新增，在新的下一行出现</span><br><span class="line">c   取代，取代 n1,n2 之间的行 eg: sed '1,2c Hi' ab</span><br><span class="line">d   删除</span><br><span class="line">i   插入，在新的上一行出现</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>paste 合并文件，需确保合并的两文件行数相同</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-d  指定不同于空格或tab键的域分隔符</span><br><span class="line">-s  按行合并，单独一个文件为一行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>su [参数] user | 切换登陆</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-l  切换时连同环境变量、工作目录一起改变</span><br><span class="line">-c command  执行command变回原来的使用者</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sudo | 以特定用户的权限执行特定命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-l  列出当前用户可执行的命令</span><br><span class="line">-u username#uid 以指定用户执行命令</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>file | 判断文件类型</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="ck456j4fp004m78uw8x31hb95" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-session" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/session/" class="article-date">
+  <time datetime="2018-05-31T07:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/session/">session</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><p>客户端每次和服务器交互时不需要每次都传回所有的cookie值，而是只要传回一个ID，这个ID是客户端第一次访问服务器时生成的，而且每个客户端是唯一的。</p>
+<ul>
+<li>SESSION 工作<br>服务端可以通过session ID 创建HttpSession对象，第一次触发通过reques.getSession()方法。如果当前的session ID没有对应的HttpSession对象，就创建一个新的，并且将这个对象加到org.apach.catalina.Manager的sessions容器中保存。Manager类将管理所有的Session生命周期，Session过期将被回收，服务器关闭，Session将被序列化到磁盘。只要HttpSession对象存在，用户就可以根据Session ID来获取这个对象，做到对状态的保持。 </li>
+</ul>
+<p>从request.getSession中获取的HttpSession对象实际是StandardSession对象的门面对象，这与前面的Request和Servlet是一样的原理，从Request中获取的Session对象保存在org.apache.catalina.Manager类中，它的实现类是org,apache.catalina.session.StandardManager,通过requestedSessionId从StandardManager的sessions集合中取出的StandarSession对象。由于一个requestedSessioId对应一个访问的客户端，多以一个客户端也就对应一个StandardSession对象，这个对象正是保存我们创建的的Seesion值的。</p>
+<p>StandardManager类负责Servlet容器中所有的的StandardSession对象的生命周期管理。当Servlet容器长期或者关闭时，StandManager负责持久化没有过期的StandardSession对象，它会将所有的StandardSession对象持久化到一个以“SESSIONS.ser”为文件名的文件中，到Servlet容器重启时，也就是StandarManager初始化时，它会重新读取这个文件，解析出所有session对象，重新保存在StandardManager的sessions集合中。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/session/" data-id="ck456j4gt005w78uwh3eh5h26" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-UML" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/UML/" class="article-date">
+  <time datetime="2018-05-30T13:30:03.836Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/UML/">UML</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h4><h5 id="序列图"><a href="#序列图" class="headerlink" title="序列图"></a>序列图</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    loop every day</span><br><span class="line">        Alice-&gt;&gt;John: hello john,how are you?</span><br><span class="line">        John--&gt;&gt;Alice: great</span><br><span class="line">        end</span><br></pre></td></tr></table></figure>
+<h5 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[Christmas] --&gt;B(Go shopping)</span><br><span class="line">    B --&gt; A&#123;Christmas&#125;</span><br><span class="line">    B--&gt;C[ERW]</span><br><span class="line">    C --&gt;|One| D[Laptop]</span><br><span class="line">    C --&gt;|Two| E[iPhone]</span><br><span class="line">    C --&gt;|Three| F[Car]</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line"></span><br><span class="line">st[注册印象笔记]--&gt;a</span><br><span class="line">a&#123;是否已经购买马克飞象&#125;</span><br><span class="line">a--&gt;|是|b1(您已购买马克飞象可以使用markdown语法)</span><br><span class="line">a--&gt;|否|b2(您还未能成功购买马克飞象但你可以免费试用10天)</span><br><span class="line">b1--&gt;c[欢迎使用马克飞象]</span><br><span class="line">b2--&gt;d&#123;是否要购买马克飞象&#125;</span><br><span class="line">d--&gt;|是|e1(您已成功购买马克飞象欢迎使用)</span><br><span class="line">e1--&gt;c</span><br><span class="line">d--&gt;|否|e2(试用10天后将会到期欢迎购买)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/UML/" data-id="ck456j4dr002778uwo788oljq" class="article-share-link">Teilen</a>
+      
+      
     </footer>
   </div>
   
@@ -284,7 +647,118 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="cjzr3bt5u007augv526xrx2kr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ck456j4i4007n78uwinoylv4y" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
+<li>基本思想：（分治）</li>
+</ul>
+<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
+<ul>
+<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
+</ul>
+<ol>
+<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>平均时间复杂度：O(N*logN)</p>
+</li>
+<li><p>方式一</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式二 runoob</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ck456j4ik008978uwr2utxqxj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -329,7 +803,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="cjzr3bt69007wugv5ztcmpe86" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="ck456j4il008b78uwyizp8dq6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -367,454 +841,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="cjzr3bt6a007yugv52ch73b9a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ck456j4in008d78uwnl0yzwyr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HQL：hibernate查询语言" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/29/HQL：hibernate查询语言/" class="article-date">
-  <time datetime="2018-05-29T06:05:35.000Z" itemprop="datePublished">2018-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/HQL：hibernate查询语言/">hibernate查询语言</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="HQL：hibernate查询语言"><a href="#HQL：hibernate查询语言" class="headerlink" title="HQL：hibernate查询语言"></a>HQL：hibernate查询语言</h5><h6 id="from子句"><a href="#from子句" class="headerlink" title="from子句"></a>from子句</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat</span><br></pre></td></tr></table></figure>
-<ul>
-<li>子句可以同时出现多个类，查询结果是产生一个笛卡尔积或产生跨表的连接。</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula as form ,Parameter as param</span><br></pre></td></tr></table></figure>
-<h6 id="关联-Association-与连接-Join"><a href="#关联-Association-与连接-Join" class="headerlink" title="关联(Association)与连接(Join)"></a>关联(Association)与连接(Join)</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner jon cat.mate as mate</span><br><span class="line">    left outer cat.kittens as kitten</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.mate.kittens as kittens</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula form full jon form.parameter param</span><br></pre></td></tr></table></figure>
-<ul>
-<li>inner jon (内连接)</li>
-<li>left outer join (左外连接)</li>
-<li>right outer join (右外连接)</li>
-<li>full join (全连接，不常用)</li>
-</ul>
-<p>通过HQL的with关键字，你可以提供额外的join条件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.kittens as kitten </span><br><span class="line">    with kitten.bodyWeight &gt; 10.0</span><br></pre></td></tr></table></figure>
-<p>一个”fetch”连接允许仅仅使用一个选择语句就将相关联的对象或一组值的集合随着他们的父对象的初始化而被初始化，这种方法在使用到集合的情况下尤其有用，对于关联和集合来说，它有效的代替了映射文件中的外联接 与延迟声明（lazy declarations）. </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens</span><br></pre></td></tr></table></figure>
-<p>一个fetch连接通常不需要被指定别名, 因为相关联的对象不应当被用在 where 子句 (或其它任何子句)中。同时，相关联的对象 并不在查询的结果中直接返回，但可以通过他们的父对象来访问到他们。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens child</span><br><span class="line">    left join fetch child.kittens</span><br></pre></td></tr></table></figure>
-<p>如果你使用属性级别的延迟获取（lazy fetching）（这是通过重新编写字节码实现的），可以使用 fetch all properties 来强制Hibernate立即取得那些原本需要延迟加载的属性（在第一个查询中）。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document fetch all properties order by name</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document doc fetch all properties where lower(doc.name) like '%cats%'</span><br></pre></td></tr></table></figure>
-<h6 id="select-子句"><a href="#select-子句" class="headerlink" title="select 子句"></a>select 子句</h6><p>select 子句选择将哪些对象与属性返 回到查询结果集中.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mate </span><br><span class="line">    <span class="keyword">from</span> Cat <span class="keyword">as</span> cat</span><br><span class="line">    <span class="keyword">inner</span> jon cat.mate <span class="keyword">as</span> mate</span><br></pre></td></tr></table></figure></p>
-<p>可以更简洁的用以下的查询语句表达相同的含义:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.mate <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
-<p>查询语句可以返回值为任何类型的属性，包括返回类型为某种组件(Component)的属性:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.name <span class="keyword">from</span> DomesticCat cat</span><br><span class="line">    <span class="keyword">where</span> cat.name <span class="keyword">like</span> <span class="string">'fri%'</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cust.name.firstName <span class="keyword">from</span> Customer <span class="keyword">as</span> cust</span><br></pre></td></tr></table></figure>
-<p>查询语句可以返回多个对象和（或）属性，存放在Object[]队列中，</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mother,offspr,mate.name</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure>
-<p>或存放在一个List对象中，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> <span class="keyword">list</span>(mother,offspr,mate.name)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
-<p>也可能直接返回一个实际的类型安全的Java对象，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> Family(mother,mate,offspr)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
-<h6 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h6><p>HQL查询甚至可以返回作用于属性之上的聚集函数的计算结果: </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(cat.weight),<span class="keyword">sum</span>(cat.weight),<span class="keyword">max</span>(cat.weight),<span class="keyword">count</span>(cat)</span><br><span class="line"><span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure>
-<p>受支持的聚集函数如下： </p>
-<ul>
-<li>avg(…), sum(…), min(…), max(…) </li>
-<li>count(*) </li>
-<li>count(…), count(distinct …), count(all…)</li>
-</ul>
-<p>选择子句中使用数学操作符、连接以及经过验证的sql函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.weight + <span class="keyword">sum</span>(kitten.weight)</span><br><span class="line">    <span class="keyword">from</span> Cat cat</span><br><span class="line">    <span class="keyword">join</span> cat.kittens kitten</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> cat.id,cat.weight</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> firstName||<span class="string">' '</span>||<span class="keyword">initial</span>||<span class="string">' '</span>||<span class="keyword">upper</span>(lastName) <span class="keyword">from</span> Person</span><br></pre></td></tr></table></figure>
-<p>关键字distinct与all 也可以使用，它们具有与SQL相同的语义.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> cat.name <span class="keyword">from</span> Cat cat</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> cat.name), <span class="keyword">count</span>(cat) <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
-<h6 id="where-子句"><a href="#where-子句" class="headerlink" title="where 子句"></a>where 子句</h6><p>where 子句允许将返回的实例列表的范围缩小。如果没有指定别名，可以使用属性名直接引用属性</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat where name = 'Fritz'</span><br></pre></td></tr></table></figure>
-<p>如果指派了别名，需要使用完整的属性名：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat where cat.name = 'Fritz'</span><br></pre></td></tr></table></figure></p>
-<p>返回名为（属性name等于）’Fritz‘ 的Cat 实例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> foo </span><br><span class="line">    <span class="keyword">from</span> Foo foo ,Bar bar</span><br><span class="line">    <span class="keyword">where</span> foo.startDate = bar.date</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="cjzr3bt0w000dugv59hbk6blg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java-io&amp;encode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/26/java-io&encode/" class="article-date">
-  <time datetime="2018-05-26T06:05:35.000Z" itemprop="datePublished">2018-05-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26/java-io&encode/">java-io&amp;encode</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="I-O、Encode"><a href="#I-O、Encode" class="headerlink" title="I/O、Encode"></a>I/O、Encode</h4><p>Reader类是java的I/O中读字符的父类，而InputStream类是读字节的父类，InputStreamReader类就是关联字节到字符的桥梁，负责在I/O过程中读取字节到字符转换，而对具体字节到字符的解码实现是委托StreamDecoder去做。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[InputStream]</span><br><span class="line">    B[Charset]</span><br><span class="line">    C[Reader]</span><br><span class="line">    D(StreamEncoder)--&gt;A</span><br><span class="line">    D(StreamEncoder)--&gt;B</span><br><span class="line">    D(StreamEncoder)--&gt;C</span><br><span class="line">    E[InputStreamWriter]--&gt;D</span><br><span class="line">    E --&gt;C</span><br></pre></td></tr></table></figure></p>
-<p>Writer类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[OutputStream]</span><br><span class="line">    B[Charset]</span><br><span class="line">    C[Writer]</span><br><span class="line">    D(StreamEncoder)--&gt;A</span><br><span class="line">    D(StreamEncoder)--&gt;B</span><br><span class="line">    D(StreamEncoder)--&gt;C</span><br><span class="line">    E[OutputStreamWriter]--&gt;D</span><br><span class="line">    E --&gt;C</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   String file = <span class="string">"C:\\Users\\shy\\Desktop\\txt.txt"</span>;</span><br><span class="line">        String charset = <span class="string">"utf-8"</span>;</span><br><span class="line">        <span class="comment">//写字符转换成字节流</span></span><br><span class="line">        FileOutputStream outputStream = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">        OutputStreamWriter writer = <span class="keyword">new</span> OutputStreamWriter(outputStream, charset);</span><br><span class="line"></span><br><span class="line">        writer.write(<span class="string">"2234"</span>);</span><br><span class="line">        writer.close();</span><br><span class="line"></span><br><span class="line">        FileInputStream inputStream = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        InputStreamReader reader = <span class="keyword">new</span> InputStreamReader(inputStream,charset);</span><br><span class="line">        StringBuffer buffer = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">int</span> read = reader.read();</span><br><span class="line">        <span class="keyword">char</span>[] buf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65</span>];</span><br><span class="line">        <span class="keyword">int</span> count =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((count = reader.read(buf))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            StringBuffer append = buffer.append(buf,<span class="number">0</span>,count);</span><br><span class="line">            System.out.println(append);     <span class="comment">//2234</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        System.out.println(read);</span></span><br><span class="line">        reader.close();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>String类字节转换为字符</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"this are some chinese string"</span>;</span><br><span class="line">       <span class="keyword">byte</span>[] b = s.getBytes(<span class="number">0</span><span class="string">"utf-8"</span>);</span><br><span class="line">       String n = <span class="keyword">new</span> String(b,<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cjzr3bt37003kugv5h78gnnln" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-四层和七层负载均衡的区别" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/19/四层和七层负载均衡的区别/" class="article-date">
-  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/四层和七层负载均衡的区别/">四层和七层负载均衡</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="四层和七层负载均衡"><a href="#四层和七层负载均衡" class="headerlink" title="四层和七层负载均衡"></a>四层和七层负载均衡</h4><h6 id="四层和七层负载均衡的区别"><a href="#四层和七层负载均衡的区别" class="headerlink" title="四层和七层负载均衡的区别"></a>四层和七层负载均衡的区别</h6><p>　　（一）</p>
-<p>　　简单理解四层和七层负载均衡:</p>
-<p>　　① 所谓四层就是基于IP+端口的负载均衡；七层就是基于URL等应用层信息的负载均衡；同理，还有基于MAC地址的二层负载均衡和基于IP地址的三层负载均衡。 换句换说，二层负载均衡会通过一个虚拟MAC地址接收请求，然后再分配到真实的MAC地址；三层负载均衡会通过一个虚拟IP地址接收请求，然后再分配到真实的IP地址；四层通过虚拟IP+端口接收请求，然后再分配到真实的服务器；七层通过虚拟的URL或主机名接收请求，然后再分配到真实的服务器。</p>
-<p>　　② 所谓的四到七层负载均衡，就是在对后台的服务器进行负载均衡时，依据四层的信息或七层的信息来决定怎么样转发流量。 比如四层的负载均衡，就是通过发布三层的IP地址（VIP），然后加四层的端口号，来决定哪些流量需要做负载均衡，对需要处理的流量进行NAT处理，转发至后台服务器，并记录下这个TCP或者UDP的流量是由哪台服务器处理的，后续这个连接的所有流量都同样转发到同一台服务器处理。七层的负载均衡，就是在四层的基础上（没有四层是绝对不可能有七层的），再考虑应用层的特征，比如同一个Web服务器的负载均衡，除了根据VIP加80端口辨别是否需要处理的流量，还可根据七层的URL、浏览器类别、语言来决定是否要进行负载均衡。举个例子，如果你的Web服务器分成两组，一组是中文语言的，一组是英文语言的，那么七层负载均衡就可以当用户来访问你的域名时，自动辨别用户语言，然后选择对应的语言服务器组进行负载均衡处理。</p>
-<p>　　③ 负载均衡器通常称为四层交换机或七层交换机。四层交换机主要分析IP层及TCP/UDP层，实现四层流量负载均衡。七层交换机除了支持四层负载均衡以外，还有分析应用层的信息，如HTTP协议URI或Cookie信息。</p>
-<p>　　1、负载均衡分为L4 switch（四层交换），即在OSI第4层工作，就是TCP层啦。此种Load Balance不理解应用协议（如HTTP/FTP/MySQL等等）。例子：LVS，F5。</p>
-<p>　　2、另一种叫做L7 switch（七层交换），OSI的最高层，应用层。此时，该Load Balancer能理解应用协议。例子：  haproxy，MySQL Proxy。</p>
-<p>　　注意：上面的很多Load Balancer既可以做四层交换，也可以做七层交换。</p>
-<p>　　（二）</p>
-<p>　　负载均衡设备也常被称为”四到七层交换机”，那么四层和七层两者到底区别在哪里？</p>
-<p>　　第一，技术原理上的区别。</p>
-<p>　　所谓四层负载均衡，也就是主要通过报文中的目标地址和端口，再加上负载均衡设备设置的服务器选择方式，决定最终选择的内部服务器。</p>
-<p>　　以常见的TCP为例，负载均衡设备在接收到第一个来自客户端的SYN 请求时，即通过上述方式选择一个最佳的服务器，并对报文中目标IP地址进行修改(改为后端服务器IP），直接转发给该服务器。TCP的连接建立，即三次握手是客户端和服务器直接建立的，负载均衡设备只是起到一个类似路由器的转发动作。在某些部署情况下，为保证服务器回包可以正确返回给负载均衡设备，在转发报文的同时可能还会对报文原来的源地址进行修改。</p>
-<p>　　所谓七层负载均衡，也称为“内容交换”，也就是主要通过报文中的真正有意义的应用层内容，再加上负载均衡设备设置的服务器选择方式，决定最终选择的内部服务器。</p>
-<p>　　以常见的TCP为例，负载均衡设备如果要根据真正的应用层内容再选择服务器，只能先代理最终的服务器和客户端建立连接(三次握手)后，才可能接受到客户端发送的真正应用层内容的报文，然后再根据该报文中的特定字段，再加上负载均衡设备设置的服务器选择方式，决定最终选择的内部服务器。负载均衡设备在这种情况下，更类似于一个代理服务器。负载均衡和前端的客户端以及后端的服务器会分别建立TCP连接。所以从这个技术原理上来看，七层负载均衡明显的对负载均衡设备的要求更高，处理七层的能力也必然会低于四层模式的部署方式。</p>
-<p>　　第二，应用场景的需求。</p>
-<p>　　七层应用负载的好处，是使得整个网络更”智能化”。例如访问一个网站的用户流量，可以通过七层的方式，将对图片类的请求转发到特定的图片服务器并可以使用缓存技术；将对文字类的请求可以转发到特定的文字服务器并可以使用压缩技术。当然这只是七层应用的一个小案例，从技术原理上，这种方式可以对客户端的请求和服务器的响应进行任意意义上的修改，极大的提升了应用系统在网络层的灵活性。很多在后台，例如Nginx或者Apache上部署的功能可以前移到负载均衡设备上，例如客户请求中的Header重写，服务器响应中的关键字过滤或者内容插入等功能。</p>
-<p>　　另外一个常常被提到功能就是安全性。网络中最常见的SYN Flood攻击，即黑客控制众多源客户端，使用虚假IP地址对同一目标发送SYN攻击，通常这种攻击会大量发送SYN报文，耗尽服务器上的相关资源，以达到Denial of Service(DoS)的目的。从技术原理上也可以看出，四层模式下这些SYN攻击都会被转发到后端的服务器上；而七层模式下这些SYN攻击自然在负载均衡设备上就截止，不会影响后台服务器的正常运营。另外负载均衡设备可以在七层层面设定多种策略，过滤特定报文，例如SQL Injection等应用层面的特定攻击手段，从应用层面进一步提高系统整体安全。</p>
-<p>　　现在的7层负载均衡，主要还是着重于应用HTTP协议，所以其应用范围主要是众多的网站或者内部信息平台等基于B/S开发的系统。 4层负载均衡则对应其他TCP应用，例如基于C/S开发的ERP等系统。</p>
-<p>　　第三，七层应用需要考虑的问题。</p>
-<p>　　1：是否真的必要，七层应用的确可以提高流量智能化，同时必不可免的带来设备配置复杂，负载均衡压力增高以及故障排查上的复杂性等问题。在设计系统时需要考虑四层七层同时应用的混杂情况。</p>
-<p>　　2：是否真的可以提高安全性。例如SYN Flood攻击，七层模式的确将这些流量从服务器屏蔽，但负载均衡设备本身要有强大的抗DDoS能力，否则即使服务器正常而作为中枢调度的负载均衡设备故障也会导致整个应用的崩溃。</p>
-<p>　　3：是否有足够的灵活度。七层应用的优势是可以让整个应用的流量智能化，但是负载均衡设备需要提供完善的七层功能，满足客户根据不同情况的基于应用的调度。最简单的一个考核就是能否取代后台Nginx或者Apache等服务器上的调度功能。能够提供一个七层应用开发接口的负载均衡设备，可以让客户根据需求任意设定功能，才真正有可能提供强大的灵活性和智能性。</p>
-<p>　　（本节出自 “ADC技术博客” 博客，请务必保留此出处<a href="http://virtualadc.blog.51cto.com/3027116/591396）" target="_blank" rel="noopener">http://virtualadc.blog.51cto.com/3027116/591396）</a></p>
-<p>　　（三）</p>
-<p>　　负载均衡四七层介绍:</p>
-<p>　　负载均衡（Load Balance）建立在现有网络结构之上，它提供了一种廉价有效透明的方法扩展网络设备和服务器的带宽、增加吞吐量、加强网络数据处理能力、提高网络的灵活性和可用性。</p>
-<p>　　负载均衡有两方面的含义：首先，大量的并发访问或数据流量分担到多台节点设备上分别处理，减少用户等待响应的时间；其次，单个重负载的运算分担到多台节点设备上做并行处理，每个节点设备处理结束后，将结果汇总，返回给用户，系统处理能力得到大幅度提高。</p>
-<p>　　本文所要介绍的负载均衡技术主要是指在均衡服务器群中所有服务器和应用程序之间流量负载的应用，目前负载均衡技术大多数是用于提高诸如在Web服务器、FTP服务器和其它关键任务服务器上的Internet服务器程序的可用性和可伸缩性。</p>
-<p>　　负载均衡技术分类</p>
-<p>　　目前有许多不同的负载均衡技术用以满足不同的应用需求，下面从负载均衡所采用的设备对象、应用的网络层次（指OSI参考模型）及应用的地理结构等来分类。</p>
-<p>　　软/硬件负载均衡</p>
-<p>　　软件负载均衡解决方案是指在一台或多台服务器相应的操作系统上安装一个或多个附加软件来实现负载均衡，如DNS Load Balance，CheckPoint Firewall-1 ConnectControl等，它的优点是基于特定环境，配置简单，使用灵活，成本低廉，可以满足一般的负载均衡需求。</p>
-<p>　　软件解决方案缺点也较多，因为每台服务器上安装额外的软件运行会消耗系统不定量的资源，越是功能强大的模块，消耗得越多，所以当连接请求特别大的时候，软件本身会成为服务器工作成败的一个关键；软件可扩展性并不是很好，受到操作系统的限制；由于操作系统本身的Bug，往往会引起安全问题。</p>
-<p>　　硬件负载均衡解决方案是直接在服务器和外部网络间安装负载均衡设备，这种设备我们通常称之为负载均衡器，由于专门的设备完成专门的任务，独立于操作系统，整体性能得到大量提高，加上多样化的负载均衡策略，智能化的流量管理，可达到最佳的负载均衡需求。 </p>
-<p>　　负载均衡器有多种多样的形式，除了作为独立意义上的负载均衡器外，有些负载均衡器集成在交换设备中，置于服务器与Internet链接之间，有些则以两块网络适配器将这一功能集成到PC中，一块连接到Internet上，一块连接到后端服务器群的内部网络上。</p>
-<p>　　一般而言，硬件负载均衡在功能、性能上优于软件方式，不过成本昂贵。</p>
-<p>　　本地/全局负载均衡</p>
-<p>　　负载均衡从其应用的地理结构上分为本地负载均衡(Local Load Balance)和全局负载均衡(Global Load Balance，也叫地域负载均衡)，本地负载均衡是指对本地的服务器群做负载均衡，全局负载均衡是指对分别放置在不同的地理位置、有不同网络结构的服务器群间作负载均衡。</p>
-<p>　　本地负载均衡能有效地解决数据流量过大、网络负荷过重的问题，并且不需花费昂贵开支购置性能卓越的服务器，充分利用现有设备，避免服务器单点故障造成数据流量的损失。其有灵活多样的均衡策略把数据流量合理地分配给服务器群内的服务器共同负担。即使是再给现有服务器扩充升级，也只是简单地增加一个新的服务器到服务群中，而不需改变现有网络结构、停止现有的服务。 </p>
-<p>　　全局负载均衡主要用于在一个多区域拥有自己服务器的站点，为了使全球用户只以一个IP地址或域名就能访问到离自己最近的服务器，从而获得最快的访问速度，也可用于子公司分散站点分布广的大公司通过Intranet（企业内部互联网）来达到资源统一合理分配的目的。</p>
-<p>　　网络层次上的负载均衡</p>
-<p>　　针对网络上负载过重的不同瓶颈所在，从网络的不同层次入手，我们可以采用相应的负载均衡技术来解决现有问题。 </p>
-<p>　　随着带宽增加，数据流量不断增大，网络核心部分的数据接口将面临瓶颈问题，原有的单一线路将很难满足需求，而且线路的升级又过于昂贵甚至难以实现，这时就可以考虑采用链路聚合（Trunking）技术。</p>
-<p>　　链路聚合技术（第二层负载均衡）将多条物理链路当作一条单一的聚合逻辑链路使用，网络数据流量由聚合逻辑链路中所有物理链路共同承担，由此在逻辑上增大了链路的容量，使其能满足带宽增加的需求。</p>
-<p>　　现代负载均衡技术通常操作于网络的第四层或第七层。第四层负载均衡将一个Internet上合法注册的IP地址映射为多个内部服务器的IP地址，对每次 TCP连接请求动态使用其中一个内部IP地址，达到负载均衡的目的。在第四层交换机中，此种均衡技术得到广泛的应用，一个目标地址是服务器群VIP（虚拟 IP，Virtual IP address）连接请求的数据包流经交换机，交换机根据源端和目的IP地址、TCP或UDP端口号和一定的负载均衡策略，在服务器IP和VIP间进行映射，选取服务器群中最好的服务器来处理连接请求。</p>
-<p>　　第七层负载均衡控制应用层服务的内容，提供了一种对访问流量的高层控制方式，适合对HTTP服务器群的应用。第七层负载均衡技术通过检查流经的HTTP报头，根据报头内的信息来执行负载均衡任务。 </p>
-<p>　　第七层负载均衡优点表现在如下几个方面： </p>
-<p>　　通过对HTTP报头的检查，可以检测出HTTP400、500和600系列的错误信息，因而能透明地将连接请求重新定向到另一台服务器，避免应用层故障。</p>
-<p>　　可根据流经的数据类型（如判断数据包是图像文件、压缩文件或多媒体文件格式等），把数据流量引向相应内容的服务器来处理，增加系统性能。</p>
-<p>　　能根据连接请求的类型，如是普通文本、图象等静态文档请求，还是asp、cgi等的动态文档请求，把相应的请求引向相应的服务器来处理，提高系统的性能及安全性。</p>
-<p>　　第七层负载均衡受到其所支持的协议限制（一般只有HTTP），这样就限制了它应用的广泛性，并且检查HTTP报头会占用大量的系统资源，势必会影响到系统的性能，在大量连接请求的情况下，负载均衡设备自身容易成为网络整体性能的瓶颈。</p>
-<p>　　负载均衡策略</p>
-<p>　　在实际应用中，我们可能不想仅仅是把客户端的服务请求平均地分配给内部服务器，而不管服务器是否宕机。而是想使Pentium III服务器比Pentium II能接受更多的服务请求，一台处理服务请求较少的服务器能分配到更多的服务请求，出现故障的服务器将不再接受服务请求直至故障恢复等等。</p>
-<p>　　选择合适的负载均衡策略，使多个设备能很好的共同完成任务，消除或避免现有网络负载分布不均、数据流量拥挤反应时间长的瓶颈。在各负载均衡方式中，针对不同的应用需求，在OSI参考模型的第二、三、四、七层的负载均衡都有相应的负载均衡策略。</p>
-<p>　　负载均衡策略的优劣及其实现的难易程度有两个关键因素：一、负载均衡算法，二、对网络系统状况的检测方式和能力。 </p>
-<p>　　考虑到服务请求的不同类型、服务器的不同处理能力以及随机选择造成的负载分配不均匀等问题，为了更加合理的把负载分配给内部的多个服务器，就需要应用相应的能够正确反映各个服务器处理能力及网络状态的负载均衡算法：</p>
-<p>　　轮循均衡（Round Robin）：每一次来自网络的请求轮流分配给内部中的服务器，从1至N然后重新开始。此种均衡算法适合于服务器组中的所有服务器都有相同的软硬件配置并且平均服务请求相对均衡的情况。</p>
-<p>　　权重轮循均衡（Weighted Round Robin）：根据服务器的不同处理能力，给每个服务器分配不同的权值，使其能够接受相应权值数的服务请求。例如：服务器A的权值被设计成1，B的权值是 3，C的权值是6，则服务器A、B、C将分别接受到10%、30％、60％的服务请求。此种均衡算法能确保高性能的服务器得到更多的使用率，避免低性能的服务器负载过重。</p>
-<p>　　随机均衡（Random）：把来自网络的请求随机分配给内部中的多个服务器。</p>
-<p>　　权重随机均衡（Weighted Random）：此种均衡算法类似于权重轮循算法，不过在处理请求分担时是个随机选择的过程。</p>
-<p>　　响应速度均衡（Response Time）：负载均衡设备对内部各服务器发出一个探测请求（例如Ping），然后根据内部中各服务器对探测请求的最快响应时间来决定哪一台服务器来响应客户端的服务请求。此种均衡算法能较好的反映服务器的当前运行状态，但这最快响应时间仅仅指的是负载均衡设备与服务器间的最快响应时间，而不是客户端与服务器间的最快响应时间。</p>
-<p>　　最少连接数均衡（Least Connection）：客户端的每一次请求服务在服务器停留的时间可能会有较大的差异，随着工作时间加长，如果采用简单的轮循或随机均衡算法，每一台服务器上的连接进程可能会产生极大的不同，并没有达到真正的负载均衡。最少连接数均衡算法对内部中需负载的每一台服务器都有一个数据记录，记录当前该服务器正在处理的连接数量，当有新的服务连接请求时，将把当前请求分配给连接数最少的服务器，使均衡更加符合实际情况，负载更加均衡。此种均衡算法适合长时处理的请求服务，如FTP。 </p>
-<p>　　处理能力均衡：此种均衡算法将把服务请求分配给内部中处理负荷（根据服务器CPU型号、CPU数量、内存大小及当前连接数等换算而成）最轻的服务器，由于考虑到了内部服务器的处理能力及当前网络运行状况，所以此种均衡算法相对来说更加精确，尤其适合运用到第七层（应用层）负载均衡的情况下。</p>
-<p>　　DNS响应均衡（Flash DNS）：在Internet上，无论是HTTP、FTP或是其它的服务请求，客户端一般都是通过域名解析来找到服务器确切的IP地址的。在此均衡算法下，分处在不同地理位置的负载均衡设备收到同一个客户端的域名解析请求，并在同一时间内把此域名解析成各自相对应服务器的IP地址（即与此负载均衡设备在同一位地理位置的服务器的IP地址）并返回给客户端，则客户端将以最先收到的域名解析IP地址来继续请求服务，而忽略其它的IP地址响应。在种均衡策略适合应用在全局负载均衡的情况下，对本地负载均衡是没有意义的。</p>
-<p>　　尽管有多种的负载均衡算法可以较好的把数据流量分配给服务器去负载，但如果负载均衡策略没有对网络系统状况的检测方式和能力，一旦在某台服务器或某段负载均衡设备与服务器网络间出现故障的情况下，负载均衡设备依然把一部分数据流量引向那台服务器，这势必造成大量的服务请求被丢失，达不到不间断可用性的要求。所以良好的负载均衡策略应有对网络故障、服务器系统故障、应用服务故障的检测方式和能力：</p>
-<p>　　Ping侦测：通过ping的方式检测服务器及网络系统状况，此种方式简单快速，但只能大致检测出网络及服务器上的操作系统是否正常，对服务器上的应用服务检测就无能为力了。</p>
-<p>　　TCP Open侦测：每个服务都会开放某个通过TCP连接，检测服务器上某个TCP端口（如Telnet的23口，HTTP的80口等）是否开放来判断服务是否正常。</p>
-<p>　　HTTP URL侦测：比如向HTTP服务器发出一个对main.html文件的访问请求，如果收到错误信息，则认为服务器出现故障。</p>
-<p>　　负载均衡策略的优劣除受上面所讲的两个因素影响外，在有些应用情况下，我们需要将来自同一客户端的所有请求都分配给同一台服务器去负担，例如服务器将客户端注册、购物等服务请求信息保存的本地数据库的情况下，把客户端的子请求分配给同一台服务器来处理就显的至关重要了。有两种方式可以解决此问题，一是根据IP地址把来自同一客户端的多次请求分配给同一台服务器处理，客户端IP地址与服务器的对应信息是保存在负载均衡设备上的；二是在客户端浏览器 cookie内做独一无二的标识来把多次请求分配给同一台服务器处理，适合通过代理服务器上网的客户端。</p>
-<p>　　还有一种路径外返回模式（Out of Path Return），当客户端连接请求发送给负载均衡设备的时候，中心负载均衡设备将请求引向某个服务器，服务器的回应请求不再返回给中心负载均衡设备，即绕过流量分配器，直接返回给客户端，因此中心负载均衡设备只负责接受并转发请求，其网络负担就减少了很多，并且给客户端提供了更快的响应时间。此种模式一般用于HTTP服务器群，在各服务器上要安装一块虚拟网络适配器，并将其IP地址设为服务器群的VIP，这样才能在服务器直接回应客户端请求时顺利的达成三次握手。</p>
-<p>　　负载均衡实施要素</p>
-<p>　　负载均衡方案应是在网站建设初期就应考虑的问题，不过有时随着访问流量的爆炸性增长，超出决策者的意料，这也就成为不得不面对的问题。当我们在引入某种负载均衡方案乃至具体实施时，像其他的许多方案一样，首先是确定当前及将来的应用需求，然后在代价与收效之间做出权衡。</p>
-<p>　　针对当前及将来的应用需求，分析网络瓶颈的不同所在，我们就需要确立是采用哪一类的负载均衡技术，采用什么样的均衡策略，在可用性、兼容性、安全性等等方面要满足多大的需求，如此等等。 </p>
-<p>　　不管负载均衡方案是采用花费较少的软件方式，还是购买代价高昂在性能功能上更强的第四层交换机、负载均衡器等硬件方式来实现，亦或其他种类不同的均衡技术，下面这几项都是我们在引入均衡方案时可能要考虑的问题：</p>
-<p>　　性能：性能是我们在引入均衡方案时需要重点考虑的问题，但也是一个最难把握的问题。衡量性能时可将每秒钟通过网络的数据包数目做为一个参数，另一个参数是均衡方案中服务器群所能处理的最大并发连接数目，但是，假设一个均衡系统能处理百万计的并发连接数，可是却只能以每秒2个包的速率转发，这显然是没有任何作用的。性能的优劣与负载均衡设备的处理能力、采用的均衡策略息息相关，并且有两点需要注意：一、均衡方案对服务器群整体的性能，这是响应客户端连接请求速度的关键；二、负载均衡设备自身的性能，避免有大量连接请求时自身性能不足而成为服务瓶颈。有时我们也可以考虑采用混合型负载均衡策略来提升服务器群的总体性能，如DNS负载均衡与NAT负载均衡相结合。另外，针对有大量静态文档请求的站点，也可以考虑采用高速缓存技术，相对来说更节省费用，更能提高响应性能；对有大量ssl/xml内容传输的站点，更应考虑采用ssl/xml加速技术。</p>
-<p>　　可扩展性：IT技术日新月异，一年以前最新的产品，现在或许已是网络中性能最低的产品；业务量的急速上升，一年前的网络，现在需要新一轮的扩展。合适的均衡解决方案应能满足这些需求，能均衡不同操作系统和硬件平台之间的负载，能均衡HTTP、邮件、新闻、代理、数据库、防火墙和 Cache等不同服务器的负载，并且能以对客户端完全透明的方式动态增加或删除某些资源。</p>
-<p>　　灵活性：均衡解决方案应能灵活地提供不同的应用需求，满足应用需求的不断变化。在不同的服务器群有不同的应用需求时，应有多样的均衡策略提供更广泛的选择。</p>
-<p>　　可靠性：在对服务质量要求较高的站点，负载均衡解决方案应能为服务器群提供完全的容错性和高可用性。但在负载均衡设备自身出现故障时，应该有良好的冗余解决方案，提高可靠性。使用冗余时，处于同一个冗余单元的多个负载均衡设备必须具有有效的方式以便互相进行监控，保护系统尽可能地避免遭受到重大故障的损失。</p>
-<p>　　易管理性：不管是通过软件还是硬件方式的均衡解决方案，我们都希望它有灵活、直观和安全的管理方式，这样便于安装、配置、维护和监控，提高工作效率，避免差错。在硬件负载均衡设备上，目前主要有三种管理方式可供选择：一、命令行接口（CLI：Command Line Interface），可通过超级终端连接负载均衡设备串行接口来管理，也能telnet远程登录管理，在初始化配置时，往往要用到前者；二、图形用户接口（GUI：Graphical User Interfaces），有基于普通web页的管理，也有通过Java Applet 进行安全管理，一般都需要管理端安装有某个版本的浏览器；三、SNMP（Simple Network Management Protocol，简单网络管理协议）支持，通过第三方网络管理软件对符合SNMP标准的设备进行管理。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="cjzr3bt5n006zugv5ks9qp7dz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/19/cookie/" class="article-date">
-  <time datetime="2018-05-19T07:57:46.000Z" itemprop="datePublished">2018-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/cookie/">cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>cookie创建：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getCookie</span><span class="params">( Cookie[] cookies,String key)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName90.equals(key))&#123;</span><br><span class="line">                <span class="keyword">return</span> cookie.getValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> IOException,ServletException</span>&#123;</span><br><span class="line">    Cookie[] cookies = request.getCookies();</span><br><span class="line">    Sring userName = getCookie(cookies,<span class="string">"userName"</span>);</span><br><span class="line">    String userAge = getCookie(cookies. <span class="string">"userAge"</span>);</span><br><span class="line">    <span class="keyword">if</span>(userName == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"useName"</span>,<span class="string">"jack"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(userAge == <span class="keyword">null</span>)&#123;</span><br><span class="line">        response.addCookie(<span class="keyword">new</span> Cookie(<span class="string">"userAge"</span>,<span class="string">"25"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    response.getHeaders(<span class="string">"Set-cookie"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>浏览器对cookie的限制</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>浏览器版本</th>
-<th>Cookie的数量限制</th>
-<th>Cookie的总大小限制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IE6</td>
-<td>20个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE7</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE8</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>IE9</td>
-<td>50个/每个域名</td>
-<td>4095个字节</td>
-</tr>
-<tr>
-<td>Chrome</td>
-<td>50个/每个域名</td>
-<td>大于80000</td>
-</tr>
-<tr>
-<td>FireFox</td>
-<td>50个/每个域名</td>
-<td>4097个字节</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="cjzr3bt2k002mugv5wcwd6bw7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-七层模型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/17/七层模型/" class="article-date">
-  <time datetime="2018-05-17T08:32:55.000Z" itemprop="datePublished">2018-05-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/17/七层模型/">http-七层模型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="http-七层模型"><a href="#http-七层模型" class="headerlink" title="http-七层模型"></a>http-七层模型</h6><ul>
-<li>七层模型，亦称OSI（Open System Interconnection）参考模型，是参考模型是国际标准化组织（ISO）制定的一个用于计算机或通信系统间互联的标准体系。</li>
-</ul>
-<hr>
-<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>网络服务与最终用户的一个接口。<br>协议有：HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP</p>
-<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>数据的表示、安全、压缩。（在五层模型里面已经合并到了应用层）<br>格式有，JPEG、ASCll、DECOIC、加密格式等</p>
-<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>建立、管理、终止会话。（在五层模型里面已经合并到了应用层）<br>对应主机进程，指本地主机与远程主机正在进行的会话</p>
-<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>定义传输数据的协议端口号，以及流控和差错校验。<br>协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层</p>
-<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>进行逻辑地址寻址，实现不同网络之间的路径选择。<br>协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP</p>
-<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>建立逻辑连接、进行硬件地址寻址、差错校验 [2]  等功能。（由底层网络定义协议）<br>将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。</p>
-<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>建立、维护、断开物理连接。（由底层网络定义协议）</p>
-<p>TCP/IP 层级模型结构，应用层之间的协议通过逐级调用传输层（Transport layer）、网络层（Network Layer）和物理数据链路层（Physical Data Link）而可以实现应用层的应用程序通信互联。</p>
-<p>应用层需要关心应用程序的逻辑细节，而不是数据在网络中的传输活动。应用层其下三层则处理真正的通信细节。在 Internet 整个发展过程中的所有思想和着重点都以一种称为 RFC（Request For Comments）的文档格式存在。针对每一种特定的 TCP/IP 应用，有相应的 RFC [3]  文档。</p>
-<p>一些典型的 TCP/IP 应用有 FTP、Telnet、SMTP、SNTP、REXEC、TFTP、LPD、SNMP、NFS、INETD 等。RFC 使一些基本相同的 TCP/IP 应用程序实现了标准化，从而使得不同厂家开发的应用程序可以互相通信</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="cjzr3bt5d006kugv5lc55ftdo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http-连接" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/16/http-连接/" class="article-date">
-  <time datetime="2018-05-16T14:43:46.000Z" itemprop="datePublished">2018-05-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/http-连接/">http-连接</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="http-连接"><a href="#http-连接" class="headerlink" title="http-连接"></a>http-连接</h6><ul>
-<li>TCP/IP<br>HTTP 是个应用层协议。 HTTP 无需操心网络通信的具体细节； 它把联网的细节都<br>交给了通用、 可靠的因特网传输协议 TCP/IP。 </li>
-</ul>
-<p>TCP 提供了： </p>
-<ul>
-<li>无差错的数据传输；</li>
-<li>按序传输（数据总是会按照发送的顺序到达） ；</li>
-<li>未分段的数据流（可以在任意时刻以任意尺寸将数据发送出去）。</li>
-</ul>
-<p><strong>基本的浏览器连接处理</strong></p>
-<ul>
-<li>(a) 浏览器从 URL 中解析出服务器的主机名；</li>
-<li>(b) 浏览器将服务器的主机名转换成服务器的 IP 地址；</li>
-<li>(c) 浏览器将端口号（如果有的话） 从 URL 中解析出来；</li>
-<li>(d) 浏览器建立一条与 Web 服务器的 TCP 连接；</li>
-<li>(e) 浏览器向服务器发送一条 HTTP 请求报文；</li>
-<li>(f) 服务器向浏览器回送一条 HTTP 响应报文；</li>
-<li>(g) 关闭连接， 浏览器显示文档。</li>
-</ul>
-<hr>
-<p><strong>例 1-1 一个使用 Telnet 的 HTTP 事务</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">% telnet www.joes-hardware.com 80</span><br><span class="line">Trying 161.58.228.45...</span><br><span class="line">Connected to joes-hardware.com.</span><br><span class="line">Escape character is '^]'.</span><br><span class="line">GET /tools.html HTTP/1.1</span><br><span class="line">Host: www.joes-hardware.com</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Sun, 01 Oct 2000 23:25:17 GMT</span><br><span class="line">Server: Apache/1.3.11 BSafe-SSL/1.38 (Unix) FrontPage/4.0.4.3</span><br><span class="line">Last-Modified: Tue, 04 Jul 2000 09:46:21 GMT</span><br><span class="line">ETag: "373979-193-3961b26d"</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 403</span><br><span class="line">Connection: close</span><br><span class="line">Content-Type: text/html</span><br><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">HEAD</span>&gt;</span><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>Joe's Tools<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span><span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H1</span>&gt;</span>Tools Page<span class="tag">&lt;/<span class="name">H1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H2</span>&gt;</span>Hammers<span class="tag">&lt;/<span class="name">H2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">P</span>&gt;</span>Joe's Hardware Online has the largest selection of hammers on the</span><br><span class="line">earth.<span class="tag">&lt;/<span class="name">P</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">H2</span>&gt;</span><span class="tag">&lt;<span class="name">A</span> <span class="attr">NAME</span>=<span class="string">drills</span>&gt;</span><span class="tag">&lt;/<span class="name">A</span>&gt;</span>Drills<span class="tag">&lt;/<span class="name">H2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">P</span>&gt;</span>Joe's Hardware has a complete line of cordless and corded drills,</span><br><span class="line">as well as the latest</span><br><span class="line">in plutonium-powered atomic drills, for those big around the house</span><br><span class="line">jobs.<span class="tag">&lt;/<span class="name">P</span>&gt;</span> ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></span><br><span class="line">Connection closed by foreign host.</span><br></pre></td></tr></table></figure>
-<p>Telnet 会查找主机名并打开一条连接， 连接到在 www.joes-hardware.com 的端口 80<br>上监听的 Web 服务器。 这条命令之后的三行内容是 Telnet 的输出， 告诉我们它已经<br>建立了连接。<br>然后我们输入最基本的请求命令 GET/tools.html HTTP/1.1， 发送一个提供了源<br>端主机名的 Host 首部， 后面跟上一个空行， 请求从服务器 www.joes-hardware.com<br>上获取资源 tools.html。 随后， 服务器会以一个响应行、 几个响应首部、 一个空行和<br>最后面的 HTML 文档主体来应答。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="cjzr3bt32003eugv5za4jrexo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
 
     </footer>
   </div>
@@ -827,7 +857,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/11/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/13/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -841,7 +871,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -851,16 +881,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -868,28 +898,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
+            <a href="/2019/10/27/python_字典和集合/">python-字典</a>
           </li>
         
           <li>
-            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+            <a href="/2019/10/27/python_时间/">python-时间</a>
           </li>
         
           <li>
-            <a href="/2019/06/10/反转单链表/">简单算法题</a>
+            <a href="/2019/10/26/git取消修改/">Git-取消修改</a>
           </li>
         
           <li>
-            <a href="/2019/05/30/Aop/">Aop</a>
+            <a href="/2019/10/26/python_list操作/">python-list</a>
           </li>
         
           <li>
-            <a href="/2019/04/08/基础sql/">基础sql</a>
+            <a href="/2019/10/26/python_元组/">python-元祖</a>
           </li>
         
       </ul>

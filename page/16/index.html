@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,308 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-maven项目目录约定" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/25/maven项目目录约定/" class="article-date">
+  <time datetime="2018-01-25T00:57:33.000Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/25/maven项目目录约定/">maven项目目录约定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- maven项目目录约定： </span><br><span class="line">	src/main/java:只能编译java代码 </span><br><span class="line">	src/main/resources:编译配置文件 </span><br><span class="line">	为了满足Mybatis接口开发规范：接口和映射文件必须在同一个目录 </span><br><span class="line">		放行xml文件，让xml文件在src/main/java也能被编译 --&gt;</span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;resources&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">		&lt;/resources&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="ck456j4fz004z78uwqx6i5h4f" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-finalize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/16/finalize/" class="article-date">
+  <time datetime="2018-01-16T13:11:59.000Z" itemprop="datePublished">2018-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/16/finalize/">finalize</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h5><ul>
+<li>垃圾回收机制回收任何对象之前，总会先调用他的finalize方法，该方法可能使该对象重新复活（让一个引用变量重新引用该对象），从而导致立即回收机制取消回收.</li>
+<li>强制系统回收垃圾方法：</li>
+<li><ul>
+<li>System类的gc()静态方法：System.gc()</li>
+</ul>
+</li>
+<li><ul>
+<li>Runtime对象gc()实例方法：Runtime.getRuntime().gc()</li>
+</ul>
+</li>
+<li>finalize方法特点：</li>
+<li><ul>
+<li>永远不要主动调用对象的finalize方法，该方法应该交给垃圾回收机制调用.</li>
+</ul>
+</li>
+<li><ul>
+<li>finalize方法何时被调用，是否被调用具有不确定性.不要把finalize方法当成一定会被执行的方法.</li>
+</ul>
+</li>
+<li><ul>
+<li>当JVM执行去活对象的finalize方法时，可能使该对象或系统中其他对象重新变成激活状态.</li>
+</ul>
+</li>
+<li><ul>
+<li>当JVM执行finalize方法时出现了异常，垃圾回收机制不会报告异常，程序继续执行.</li>
+</ul>
+</li>
+<li>对象所处的状态：</li>
+<li><ul>
+<li>激活：</li>
+</ul>
+</li>
+<li><ul>
+<li>去活：</li>
+</ul>
+</li>
+<li><ul>
+<li>死亡：</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/16/finalize/" data-id="ck456j4ed002z78uwbt7qcbp3" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-与-区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/02/与-区别/" class="article-date">
+  <time datetime="2018-01-02T11:18:56.000Z" itemprop="datePublished">2018-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/02/与-区别/">/与/*</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="url-pattern-与"><a href="#url-pattern-与" class="headerlink" title="url-pattern / 与 /*"></a>url-pattern / 与 /*</h3><ul>
+<li>“/*”可以匹配所有url，包括带扩展名的，一般只用在过滤器上</li>
+<li>官方文档可知，它是tomcat的默认servlet，当其他的url-pattern匹配不上时都会走这个servlet。它除了能够处理静态资源还能够处理HTTP缓存请求，媒体（音频/视频）数据流和文件下载简历。所以如果我们的项目中配置了”/“，会覆盖掉tomcat中的default servlet</li>
+<li>当springMVC的前端控制器配置为“/”时，需要在主配置文件中配置放行静态资源。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一种：</span><br><span class="line">&lt;!-- 放行静态资源 --&gt;</span><br><span class="line">&lt;mvc:resources location=<span class="string">"/js/"</span> mapping=<span class="string">"/js/**"</span>/&gt; </span><br><span class="line">&lt;mvc:resources location=<span class="string">"/css/"</span> mapping=<span class="string">"/js/**"</span>/&gt;</span><br><span class="line"> &lt;mvc:resources location=<span class="string">"/images/"</span> mapping=<span class="string">"/js/**"</span>/&gt;</span><br><span class="line">第二种：</span><br><span class="line">&lt;mvc:<span class="keyword">default</span>-servlet-handler /&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="ck456j4hm006x78uwqwx4ho35" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-POI导出" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/30/POI导出/" class="article-date">
+  <time datetime="2017-12-30T10:43:59.000Z" itemprop="datePublished">2017-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/30/POI导出/">POI导出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="POI导出"><a href="#POI导出" class="headerlink" title="POI导出"></a>POI导出</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		response.setContentType(<span class="string">"application/vnd.ms-excel"</span>);</span><br><span class="line">		response.addHeader(<span class="string">"Content-Disposition"</span>, <span class="string">"attachment;filename=logininfo.xls"</span>);</span><br><span class="line">		String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">		String pwd =request.getParameter(<span class="string">"pwd"</span>);</span><br><span class="line">		String sex = request.getParameter(<span class="string">"sex"</span>);</span><br><span class="line">		String age = request.getParameter(<span class="string">"age"</span>);</span><br><span class="line">		String email = request.getParameter(<span class="string">"email"</span>);</span><br><span class="line">		ServletOutputStream out = response.getOutputStream();</span><br><span class="line">		<span class="comment">//创建Excel表格</span></span><br><span class="line">		HSSFWorkbook book = <span class="keyword">new</span> HSSFWorkbook();</span><br><span class="line">		<span class="comment">//创建工作簿</span></span><br><span class="line">		HSSFSheet sheet = book.createSheet(<span class="string">"用户信息"</span>);</span><br><span class="line">		<span class="comment">//设置列宽</span></span><br><span class="line">		sheet.setColumnWidth(<span class="number">4</span>, <span class="number">5000</span>);</span><br><span class="line">		<span class="comment">//创建标题行</span></span><br><span class="line">		HSSFRow titleRow0 = sheet.createRow(<span class="number">0</span>);</span><br><span class="line">		titleRow0.createCell(<span class="number">0</span>).setCellValue(<span class="string">"用户信息表"</span>);</span><br><span class="line">		sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">4</span>));  </span><br><span class="line">		</span><br><span class="line">		HSSFRow titleRow = sheet.createRow(<span class="number">1</span>);</span><br><span class="line">		<span class="comment">//创建第一个单元格</span></span><br><span class="line">		HSSFCell titleCell1 = titleRow.createCell(<span class="number">0</span>);</span><br><span class="line">		titleCell1.setCellValue(<span class="string">"姓名"</span>);</span><br><span class="line">		HSSFCell titleCell2 = titleRow.createCell(<span class="number">1</span>);</span><br><span class="line">		titleCell2.setCellValue(<span class="string">"密码"</span>);</span><br><span class="line">		HSSFCell titleCell3 = titleRow.createCell(<span class="number">2</span>);</span><br><span class="line">		titleCell3.setCellValue(<span class="string">"年龄"</span>);</span><br><span class="line">		HSSFCell titleCell4 = titleRow.createCell(<span class="number">3</span>);</span><br><span class="line">		titleCell4.setCellValue(<span class="string">"性别"</span>);</span><br><span class="line">		HSSFCell titleCell5 = titleRow.createCell(<span class="number">4</span>);</span><br><span class="line">		titleCell5.setCellValue(<span class="string">"Email"</span>);</span><br><span class="line">		<span class="comment">//创建第二行</span></span><br><span class="line">		HSSFRow valueRow = sheet.createRow(<span class="number">2</span>);</span><br><span class="line">		<span class="comment">//第二行创建单元格</span></span><br><span class="line">		HSSFCell nameCell = valueRow.createCell(<span class="number">0</span>);</span><br><span class="line">		nameCell.setCellValue(name);</span><br><span class="line">		HSSFCell nameCel2 = valueRow.createCell(<span class="number">1</span>);</span><br><span class="line">		nameCel2.setCellValue(pwd);</span><br><span class="line">		HSSFCell nameCel3 = valueRow.createCell(<span class="number">2</span>);</span><br><span class="line">		nameCel3.setCellValue(age);</span><br><span class="line">		HSSFCell nameCel4 = valueRow.createCell(<span class="number">3</span>);</span><br><span class="line">		nameCel4.setCellValue(sex);</span><br><span class="line">		HSSFCell nameCel5 = valueRow.createCell(<span class="number">4</span>);</span><br><span class="line">		nameCel5.setCellValue(email);</span><br><span class="line"><span class="comment">//		HSSFCellStyle cellStyle = book.createCellStyle();</span></span><br><span class="line">		<span class="comment">//响应流输入到Excel表格中</span></span><br><span class="line">		book.write(out); </span><br><span class="line">		out.flush();</span><br><span class="line">		out.close();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>页面<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"ExportServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">		&lt;table align=<span class="string">"center"</span>&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;用户名：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="name"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;密码：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="password" name="pwd"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;性别：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="sex"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;年龄：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="age"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;Email：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="email"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=<span class="string">"2"</span> align=<span class="string">"center"</span>&gt;</span><br><span class="line">					&lt;input type=<span class="string">"submit"</span> value=<span class="string">"导出到Excel"</span>/&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/30/POI导出/" data-id="ck456j4d9001i78uw3lkfk5im" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-统计访客数量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/30/统计访客数量/" class="article-date">
+  <time datetime="2017-12-30T04:52:33.000Z" itemprop="datePublished">2017-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/30/统计访客数量/">统计访客数量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="统计访客数量"><a href="#统计访客数量" class="headerlink" title="统计访客数量"></a>统计访客数量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		ServletContext context = getServletContext();</span><br><span class="line">		Integer count = (Integer) context.getAttribute(<span class="string">"counter"</span>);</span><br><span class="line">		<span class="keyword">if</span>(count==<span class="keyword">null</span>) &#123;</span><br><span class="line">			count =<span class="number">1</span>;</span><br><span class="line">			context.setAttribute(<span class="string">"counter"</span>, count);</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			context.setAttribute(<span class="string">"counter"</span>, count+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		 request.getRequestDispatcher(<span class="string">"count.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>servletContest</li>
+<li><ul>
+<li>Servlet容器在启动一个web应用时，就会创建一个servletContext对象,当servlet终止一个web应用时，servletContext对象也会被销毁,所以对象与web有同样的生命周期.整个web应用的组件都可以共享servletContext对象中存放的共享数据.</li>
+</ul>
+</li>
+<li>存取数据的方法：</li>
+<li><ul>
+<li>setAttribute（String name,Object object）；</li>
+</ul>
+</li>
+<li><ul>
+<li>removeAttribute(String name);</li>
+</ul>
+</li>
+<li><ul>
+<li>getAttribute(String name);</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/30/统计访客数量/" data-id="ck456j4ji009g78uw32cdc0yv" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cookie存信息" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/23/cookie存信息/" class="article-date">
+  <time datetime="2017-12-23T03:06:06.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/23/cookie存信息/">cookie存信息</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="cookie-存信息"><a href="#cookie-存信息" class="headerlink" title="cookie 存信息"></a>cookie 存信息</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">		name = java.net.URLEncoder.encode(<span class="string">"utf-8"</span>);</span><br><span class="line">		Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"username"</span>, name);</span><br><span class="line">		<span class="comment">//设置过期时间，单位秒</span></span><br><span class="line">		cookie.setMaxAge(<span class="number">60</span>);</span><br><span class="line">		<span class="comment">//保存到客户端cookie</span></span><br><span class="line">		response.addCookie(cookie);</span><br><span class="line">		request.getRequestDispatcher(<span class="string">"succes.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取cookie<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookiearr[] = request.getcookies();</span><br><span class="line"><span class="keyword">for</span> (Cookie cookie : cookiearr) &#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/23/cookie存信息/" data-id="ck456j4e6002t78uw462oar6j" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-数组2字符串" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -112,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/22/数组2字符串/" data-id="cjzr3bt6k008dugv5ijut9uk1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/22/数组2字符串/" data-id="ck456j4j3008y78uw6tp4qsa3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -166,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/接口/" data-id="cjzr3bt6c0080ugv5254253w6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/16/接口/" data-id="ck456j4iq008h78uwigjyo222" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -235,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/IOC/" data-id="cjzr3bt11000kugv590nr6tjq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/15/IOC/" data-id="ck456j4cc000k78uwtnd57zs2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -301,296 +603,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/mybatis/" data-id="cjzr3bt3z004pugv5hrpnoksl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/10/io/" class="article-date">
-  <time datetime="2017-12-10T09:52:45.000Z" itemprop="datePublished">2017-12-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/10/io/">io</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="io"><a href="#io" class="headerlink" title="io"></a>io</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FileReader reader = <span class="keyword">new</span> FileReader(<span class="string">"d:\\test.txt"</span>);</span><br><span class="line">		<span class="comment">// 创建一个bufferReader缓冲流</span></span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(reader);</span><br><span class="line">		FileWriter writer = <span class="keyword">new</span> FileWriter(<span class="string">"d:\\example.txt"</span>);</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(writer);</span><br><span class="line"></span><br><span class="line">		String str;</span><br><span class="line">		<span class="keyword">while</span> ((str = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			bw.write(str);</span><br><span class="line">			bw.newLine();</span><br><span class="line">		&#125;</span><br><span class="line">		br.close();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/io/" data-id="cjzr3bt36003iugv50z7ofv9t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-properties" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/10/properties/" class="article-date">
-  <time datetime="2017-12-10T03:01:39.000Z" itemprop="datePublished">2017-12-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/10/properties/">properties</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="properties"><a href="#properties" class="headerlink" title="properties"></a>properties</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">		</span><br><span class="line">		properties.setProperty(<span class="string">"1"</span>, <span class="string">"a"</span>);</span><br><span class="line">		properties.setProperty(<span class="string">"3"</span>, <span class="string">"c"</span>);</span><br><span class="line">		properties.setProperty(<span class="string">"2"</span>, <span class="string">"b"</span>);</span><br><span class="line">		</span><br><span class="line">		Enumeration&lt;?&gt; propertyNames = properties.propertyNames();</span><br><span class="line">		<span class="keyword">while</span>(propertyNames.hasMoreElements()) &#123;</span><br><span class="line">			String key = (String) propertyNames.nextElement();</span><br><span class="line">			String value = properties.getProperty(key);</span><br><span class="line">			</span><br><span class="line">			System.out.println(key+<span class="string">" : "</span>+value);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">输出</span><br><span class="line"></span><br><span class="line"><span class="number">3</span> : c</span><br><span class="line"><span class="number">2</span> : b</span><br><span class="line"><span class="number">1</span> : a</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/properties/" data-id="cjzr3bt4n005eugv52rjynz8o" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TreeMap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/10/TreeMap/" class="article-date">
-  <time datetime="2017-12-10T02:40:03.000Z" itemprop="datePublished">2017-12-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/10/TreeMap/">TreeMap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">		TreeMap&lt;String, Object&gt; treeMap = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">		</span><br><span class="line">		treeMap.put(<span class="string">"1"</span>, <span class="string">"a"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"3"</span>, <span class="string">"b"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"2"</span>, <span class="string">"c"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"5"</span>, <span class="string">"d"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"4"</span>, <span class="string">"e"</span>);</span><br><span class="line">		</span><br><span class="line">		Set keySet = treeMap.keySet();</span><br><span class="line">		Iterator it = keySet.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			Object key = it.next();</span><br><span class="line">			Object value = treeMap.get(key);</span><br><span class="line">			System.out.println(key+<span class="string">":"</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">輸出：</span><br><span class="line"><span class="number">1</span>:a</span><br><span class="line"><span class="number">2</span>:c</span><br><span class="line"><span class="number">3</span>:b</span><br><span class="line"><span class="number">4</span>:e</span><br><span class="line"><span class="number">5</span>:d</span><br></pre></td></tr></table></figure>
-<ul>
-<li>EntrySet迭代<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">TreeMap&lt;String, Object&gt; treeMap = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">		</span><br><span class="line">		treeMap.put(<span class="string">"1"</span>, <span class="string">"a"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"3"</span>, <span class="string">"b"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"2"</span>, <span class="string">"c"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"5"</span>, <span class="string">"d"</span>);</span><br><span class="line">		treeMap.put(<span class="string">"4"</span>, <span class="string">"e"</span>);</span><br><span class="line">		</span><br><span class="line">		Set&lt;Entry&lt;String,Object&gt;&gt; entrySet = treeMap.entrySet();</span><br><span class="line">		Iterator&lt;Entry&lt;String, Object&gt;&gt; iterator = entrySet.iterator();</span><br><span class="line">		<span class="keyword">while</span>(iterator.hasNext()) &#123;</span><br><span class="line">			Map.Entry&lt;String, Object&gt; entry = iterator.next();</span><br><span class="line">			String key = entry.getKey();</span><br><span class="line">			Object value = entry.getValue();</span><br><span class="line">			</span><br><span class="line">			System.out.println(key+<span class="string">" : "</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">输出：</span><br><span class="line"><span class="number">1</span> : a</span><br><span class="line"><span class="number">2</span> : c</span><br><span class="line"><span class="number">3</span> : b</span><br><span class="line"><span class="number">4</span> : e</span><br><span class="line"><span class="number">5</span> : d</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/TreeMap/" data-id="cjzr3bt240020ugv5h6rzduvy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/09/Map/" class="article-date">
-  <time datetime="2017-12-09T12:32:24.000Z" itemprop="datePublished">2017-12-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/09/Map/">Map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><ul>
-<li>存储键值映射关系,不能出现重复的键,可以允许键值为null,</li>
-<li><p>通过put、get存取元素,如果有键形同则覆盖其值,</p>
-</li>
-<li><p>通过keySet迭代</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Object&gt;  map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		map.put(<span class="string">"1"</span>, <span class="string">"a"</span>);</span><br><span class="line">		map.put(<span class="string">"2"</span>, <span class="string">"b"</span>);</span><br><span class="line">		map.put(<span class="string">"3"</span>, <span class="string">"c"</span>);</span><br><span class="line">		map.put(<span class="string">"3"</span>, <span class="string">"d"</span>);</span><br><span class="line">		</span><br><span class="line">		Set keySet = map.keySet();</span><br><span class="line">		Iterator it = keySet.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			Object obj = it.next();</span><br><span class="line">			Object value = map.get(obj);</span><br><span class="line">			</span><br><span class="line">			System.out.println(obj+<span class="string">" : "</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">输出：</span><br><span class="line"><span class="number">1</span> : a</span><br><span class="line"><span class="number">2</span> : b</span><br><span class="line"><span class="number">3</span> : d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过entrySet迭代<br>```java<br>Map<string, object="">  map = new HashMap&lt;&gt;();</string,></p>
-<pre><code>map.put(&quot;1&quot;,   &quot;a&quot;);
-map.put(&quot;2&quot;, &quot;b&quot;);
-map.put(&quot;3&quot;, &quot;c&quot;);
-map.put(&quot;3&quot;, &quot;d&quot;);
-
-//获得所有键放入set集合中
-Set&lt;Entry&lt;String,Object&gt;&gt; entrySet = map.entrySet();
-//通过迭代器取出map中的键值关系，迭代器接收的泛型参数和Set接收的一致  
-Iterator&lt;Entry&lt;String, Object&gt;&gt; iterator = entrySet.iterator();
-while(iterator.hasNext()) {
-    //将键值取出放入map.entry接口中
-    Map.Entry&lt;String, Object&gt; mapEntry = iterator.next();
-    String key = mapEntry.getKey();
-    Object value = mapEntry.getValue();
-
-    System.out.println(key+&quot;:&quot;+value);
-
-}
-</code></pre></li>
-</ul>
-<p>输出：<br>1:a<br>2:b<br>3:d</p>
-<p>```    </p>
-<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><ul>
-<li>存储原理类似TreeSet,</li>
-<li>按照某种顺序排列</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/09/Map/" data-id="cjzr3bt1n0019ugv5sg6n7bdk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-单列集合" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/09/单列集合/" class="article-date">
-  <time datetime="2017-12-09T11:27:51.000Z" itemprop="datePublished">2017-12-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/09/单列集合/">单列集合</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="list-元素有序可重复"><a href="#list-元素有序可重复" class="headerlink" title="list 元素有序可重复"></a>list 元素有序可重复</h1><h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
-<li>可看做长度可变的数组,</li>
-<li>数据结构允许通过索引访问元素，对于数据的查询速度较快,</li>
-<li>在增加和删除指定未知的元素时, 会导致创建新的数组效率较低,<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2></li>
-<li>内部维护双向循环链表,对于增删操作有很高的效率</li>
-</ul>
-<h2 id="set-元素无序，存入的元素不重复"><a href="#set-元素无序，存入的元素不重复" class="headerlink" title="set 元素无序，存入的元素不重复"></a>set 元素无序，存入的元素不重复</h2><ul>
-<li><p>hashset 添加元素时会调用当前存入对象的hashcode方法获得表hash值，根据哈希值确定存储位置，再根据存储位置是否有对象存在进行判断，有对象调用equals方法比较对象是否相等···存入集合</p>
-</li>
-<li><p>TreeSet<br>内部结构采用平衡二叉树存储元素,可以保证元素没有重复,还可以对元素进行排序,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TreeSet&lt;Object&gt; set = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line">		set.add(<span class="string">"1"</span>);</span><br><span class="line">		set.add(<span class="string">"1"</span>);</span><br><span class="line">		set.add(<span class="string">"2"</span>);</span><br><span class="line">		Iterator&lt;Object&gt; it = set.iterator();</span><br><span class="line">		<span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">			Object obj = it.next();</span><br><span class="line">			System.out.println(obj);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">输出：<span class="number">1</span>,,<span class="number">2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="迭代collection元素"><a href="#迭代collection元素" class="headerlink" title="迭代collection元素"></a>迭代collection元素</h2><h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">list.add(<span class="string">"1"</span>);</span><br><span class="line">list.add(<span class="string">"2"</span>);</span><br><span class="line">Iterator iterator = list.terator();</span><br><span class="line"><span class="keyword">while</span>(iterator.hashNext)&#123;</span><br><span class="line">	Object obj = it.next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/09/单列集合/" data-id="cjzr3bt5k006vugv51uftyyxi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-多线程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/07/多线程/" class="article-date">
-  <time datetime="2017-12-07T14:15:07.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/多线程/">多线程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">threads</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">99</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(count&gt;<span class="number">0</span>) &#123;</span><br><span class="line">				Thread th = Thread.currentThread(); <span class="comment">//取得当前线程</span></span><br><span class="line">				String th_name = th.getName();  <span class="comment">// 获得线程的名称</span></span><br><span class="line">				System.out.println(th_name+<span class="string">" "</span>+count--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		threads th = <span class="keyword">new</span> threads();</span><br><span class="line">		<span class="keyword">new</span> Thread(th,<span class="string">"第一人"</span>).start(); <span class="comment">//开启线程 命名为</span></span><br><span class="line">		<span class="keyword">new</span> Thread(th,<span class="string">"第二人"</span>).start(); <span class="comment">//开启线程 命名为</span></span><br><span class="line">		<span class="keyword">new</span> Thread(th,<span class="string">"第三人"</span>).start(); <span class="comment">//开启线程 命名为		</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>线程状态</li>
-<li>新建、就绪、阻塞、运行、死亡</li>
-<li>阻塞状态：调用join()方法或者sleep()方法,join()中断sleep()完成就会回到就绪状态、</li>
-<li>调用wait()方法、线程处于等待状态,notify()或者notifyAll()方法唤醒,进入就绪状态、</li>
-<li>yield()方法：线程让步、不会使线程进入阻塞状态、转换到就绪状态,让调度器重新调度一次、</li>
-<li>Thread 相关方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当前线程可转让cpu控制权，让别的就绪状态线程运行（切换）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Thread.yield() </span><br><span class="line"><span class="comment">//暂停一段时间</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Thread.sleep()  </span><br><span class="line"><span class="comment">//在一个线程中调用other.join(),将等待other执行完后才继续本线程。　　　　</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">join</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/多线程/" data-id="cjzr3bt5w007cugv5jt2f8ysg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/14/mybatis/" data-id="ck456j4fx004v78uw2mrrgpud" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -606,7 +619,7 @@ while(iterator.hasNext()) {
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/15/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/17/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -620,7 +633,7 @@ while(iterator.hasNext()) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -630,16 +643,16 @@ while(iterator.hasNext()) {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -647,28 +660,28 @@ while(iterator.hasNext()) {
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
+            <a href="/2019/10/27/python_字典和集合/">python-字典</a>
           </li>
         
           <li>
-            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+            <a href="/2019/10/27/python_时间/">python-时间</a>
           </li>
         
           <li>
-            <a href="/2019/06/10/反转单链表/">简单算法题</a>
+            <a href="/2019/10/26/git取消修改/">Git-取消修改</a>
           </li>
         
           <li>
-            <a href="/2019/05/30/Aop/">Aop</a>
+            <a href="/2019/10/26/python_list操作/">python-list</a>
           </li>
         
           <li>
-            <a href="/2019/04/08/基础sql/">基础sql</a>
+            <a href="/2019/10/26/python_元组/">python-元祖</a>
           </li>
         
       </ul>

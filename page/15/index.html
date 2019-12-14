@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,258 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-json2Map" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/18/json2Map/" class="article-date">
+  <time datetime="2018-04-18T09:02:36.000Z" itemprop="datePublished">2018-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/18/json2Map/">json2Map</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="json2Map"><a href="#json2Map" class="headerlink" title="json2Map"></a>json2Map</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    String str = <span class="string">"&#123;\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"&#125;"</span>;  </span><br><span class="line">    <span class="comment">//第一种方式  </span></span><br><span class="line">    Map maps = (Map)JSON.parse(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : maps.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"     "</span> + ((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第二种方式  </span></span><br><span class="line">    Map mapTypes = JSON.parseObject(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类的parseObject来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object obj : mapTypes.keySet())&#123;  </span><br><span class="line">        System.out.println(<span class="string">"key为："</span>+obj+<span class="string">"值为："</span>+mapTypes.get(obj));  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第三种方式  </span></span><br><span class="line">    Map mapType = JSON.parseObject(str,Map.class);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类,指定解析类型，来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object obj : mapType.keySet())&#123;  </span><br><span class="line">        System.out.println(<span class="string">"key为："</span>+obj+<span class="string">"值为："</span>+mapType.get(obj));  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第四种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    Map json = (Map) JSONObject.parse(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject类的parse方法来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第五种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    JSONObject jsonObject = JSONObject.parseObject(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject的parseObject方法来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第六种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    Map mapObj = JSONObject.parseObject(str,Map.class);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject的parseObject方法并执行返回类型来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map: json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    String strArr = <span class="string">"&#123;&#123;\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"&#125;,"</span> +  </span><br><span class="line">            <span class="string">"&#123;\"00\":\"zhangsan\",\"11\":\"lisi\",\"22\":\"wangwu\",\"33\":\"maliu\"&#125;&#125;"</span>;  </span><br><span class="line">   <span class="comment">// JSONArray.parse()  </span></span><br><span class="line">    System.out.println(json);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/18/json2Map/" data-id="ck456j4f3003w78uwbl6sh2fj" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-时间相关（增加时间，判断时刻）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/18/时间相关（增加时间，判断时刻）/" class="article-date">
+  <time datetime="2018-04-18T09:02:36.000Z" itemprop="datePublished">2018-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/18/时间相关（增加时间，判断时刻）/">时间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="有效时间（设置时间段）"><a href="#有效时间（设置时间段）" class="headerlink" title="有效时间（设置时间段）"></a>有效时间（设置时间段）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取时间加一年或加一月或加一天</span></span><br><span class="line">   Date date = <span class="keyword">new</span> Date();</span><br><span class="line">   Calendar cal = Calendar.getInstance();</span><br><span class="line">   cal.setTime(date);<span class="comment">//设置起时间</span></span><br><span class="line">   <span class="comment">//System.out.println("111111111::::"+cal.getTime());</span></span><br><span class="line">   cal.add(Calendar.YEAR, <span class="number">1</span>);<span class="comment">//增加一年</span></span><br><span class="line">   <span class="comment">//cd.add(Calendar.DATE, n);//增加一天  </span></span><br><span class="line">  <span class="comment">//cd.add(Calendar.DATE, -10);//减10天  </span></span><br><span class="line">   <span class="comment">//cd.add(Calendar.MONTH, n);//增加一个月   </span></span><br><span class="line">   System.out.println(<span class="string">"输出::"</span>+cal.getTime());</span><br></pre></td></tr></table></figure>
+<h5 id="对比同一天时间"><a href="#对比同一天时间" class="headerlink" title="对比同一天时间"></a>对比同一天时间</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">    String d1 = sdf.format(<span class="keyword">new</span> Date());<span class="comment">//第一个时间</span></span><br><span class="line">    String d2 = sdf.format(<span class="keyword">new</span> Date());<span class="comment">//第二个时间</span></span><br><span class="line">    System.out.println(d1.equals(d2));<span class="comment">//判断是否是同一天</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="时间的第二天（n）"><a href="#时间的第二天（n）" class="headerlink" title="时间的第二天（n）"></a>时间的第二天（n）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Date aDate = <span class="keyword">new</span> Date();<span class="comment">//如20141027</span></span><br><span class="line">        Date dateTomorrow = <span class="keyword">new</span> Date();<span class="comment">//如20141028</span></span><br><span class="line">        Date dateThrid = <span class="keyword">new</span> Date();<span class="comment">//如20141029</span></span><br><span class="line">        <span class="keyword">if</span> (aDate.compareTo(dateTomorrow) &gt;= <span class="number">0</span> &amp;&amp; aDate.compareTo(dateThrid) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//是第2天的</span></span><br><span class="line">            System.out.println(<span class="number">222222</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//不是第2天的</span></span><br><span class="line">            System.out.println(<span class="number">11111</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/18/时间相关（增加时间，判断时刻）/" data-id="ck456j4j5009078uwb2u8hoyn" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Cron表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/10/Cron表达式/" class="article-date">
+  <time datetime="2018-04-10T07:02:19.000Z" itemprop="datePublished">2018-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/10/Cron表达式/">cron表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Cron表达式范例："><a href="#Cron表达式范例：" class="headerlink" title="Cron表达式范例："></a>Cron表达式范例：</h5><pre><code>每隔5秒执行一次：*/5 * * * * ?
+
+每隔1分钟执行一次：0 */1 * * * ?
+
+每天23点执行一次：0 0 23 * * ?
+
+每天凌晨1点执行一次：0 0 1 * * ?
+
+每月1号凌晨1点执行一次：0 0 1 1 * ?
+
+每月最后一天23点执行一次：0 0 23 L * ?
+
+每周星期天凌晨1点实行一次：0 0 1 ? * L
+
+在26分、29分、33分执行一次：0 26,29,33 * * * ?
+
+每天的0点、13点、18点、21点都执行一次：0 0 0,13,18,21 * * ?
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/10/Cron表达式/" data-id="ck456j4bv000378uw2imxfmok" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-获取客户端ip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/08/获取客户端ip/" class="article-date">
+  <time datetime="2018-04-08T07:02:19.000Z" itemprop="datePublished">2018-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/08/获取客户端ip/">获取客户端ip</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="获取ip地址"><a href="#获取ip地址" class="headerlink" title="获取ip地址"></a>获取ip地址</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">　于是可得出获得客户端真实IP地址的方法一：</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getRemortIP</span><span class="params">(HttpServletRequest request)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (request.getHeader(<span class="string">"x-forwarded-for"</span>) == <span class="keyword">null</span>) &#123;  </span><br><span class="line">        <span class="keyword">return</span> request.getRemoteAddr();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> request.getHeader(<span class="string">"x-forwarded-for"</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">　　获得客户端真实IP地址的方法二：</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getIpAddr</span><span class="params">(HttpServletRequest request)</span> </span>&#123;  </span><br><span class="line">    String ip = request.getHeader(<span class="string">"x-forwarded-for"</span>);  </span><br><span class="line">    <span class="keyword">if</span>(ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || <span class="string">"unknown"</span>.equalsIgnoreCase(ip)) &#123;  </span><br><span class="line">        ip = request.getHeader(<span class="string">"Proxy-Client-IP"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span>(ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || <span class="string">"unknown"</span>.equalsIgnoreCase(ip)) &#123;  </span><br><span class="line">        ip = request.getHeader(<span class="string">"WL-Proxy-Client-IP"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span>(ip == <span class="keyword">null</span> || ip.length() == <span class="number">0</span> || <span class="string">"unknown"</span>.equalsIgnoreCase(ip)) &#123;  </span><br><span class="line">        ip = request.getRemoteAddr();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> ip;  </span><br><span class="line">&#125;  </span><br><span class="line">可是，如果通过了多级反向代理的话，X-Forwarded-For的值并不止一个，而是一串IP值，究竟哪个才是真正的用户端的真实IP呢？</span><br><span class="line"></span><br><span class="line">　　答案是取X-Forwarded-For中第一个非unknown的有效IP字符串。如：</span><br><span class="line">X-Forwarded-For：<span class="number">192.168</span>.1.110, <span class="number">192.168</span>.1.120, <span class="number">192.168</span>.1.130, <span class="number">192.168</span>.1.100</span><br><span class="line">用户真实IP为： <span class="number">192.168</span>.1.110</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * 从Request对象中获得客户端IP，处理了HTTP代理服务器和Nginx的反向代理截取了ip</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@return</span> ip</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getLocalIp</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        String remoteAddr = request.getRemoteAddr();</span><br><span class="line">        String forwarded = request.getHeader(<span class="string">"X-Forwarded-For"</span>);</span><br><span class="line">        String realIp = request.getHeader(<span class="string">"X-Real-IP"</span>);</span><br><span class="line"></span><br><span class="line">        String ip = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (realIp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (forwarded == <span class="keyword">null</span>) &#123;</span><br><span class="line">                ip = remoteAddr;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ip = remoteAddr + <span class="string">"/"</span> + forwarded.split(<span class="string">","</span>)[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (realIp.equals(forwarded)) &#123;</span><br><span class="line">                ip = realIp;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(forwarded != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    forwarded = forwarded.split(<span class="string">","</span>)[<span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                ip = realIp + <span class="string">"/"</span> + forwarded;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ip;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/08/获取客户端ip/" data-id="ck456j4jp009q78uw37lvi73b" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SendSms" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/22/SendSms/" class="article-date">
+  <time datetime="2018-03-22T02:35:26.000Z" itemprop="datePublished">2018-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/22/SendSms/">云通信短信service（阿里云）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="SendSms"><a href="#SendSms" class="headerlink" title="SendSms"></a>SendSms</h4><ul>
+<li>依赖配置<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;3.2.8&lt;/version&gt; 注：如提示报错，先升级基础包版，无法解决可联系技术支持</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeyid&#125;"</span>)</span><br><span class="line">    String accessKeyId;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeysecret&#125;"</span>)</span><br><span class="line">    String accessKeySecret;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//产品名称:云通信短信API产品,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String product = <span class="string">"Dysmsapi"</span>;</span><br><span class="line">        <span class="comment">//产品域名,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String domain = <span class="string">"dysmsapi.aliyuncs.com"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)</span></span><br><span class="line"><span class="comment">//        final String accessKeyId = "yourAccessKeyId";</span></span><br><span class="line"><span class="comment">//        final String accessKeySecret = "yourAccessKeySecret";</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  SendSmsResponse <span class="title">sendSms</span><span class="params">(String phone,String templateCode, Map&lt;String,String&gt; map)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//可自助调整超时时间</span></span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultConnectTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultReadTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//初始化acsClient,暂不支持region化</span></span><br><span class="line">            IClientProfile profile = DefaultProfile.getProfile(<span class="string">"cn-hangzhou"</span>, accessKeyId, accessKeySecret);</span><br><span class="line">            DefaultProfile.addEndpoint(<span class="string">"cn-hangzhou"</span>, <span class="string">"cn-hangzhou"</span>, product, domain);</span><br><span class="line">            IAcsClient acsClient = <span class="keyword">new</span> DefaultAcsClient(profile);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//组装请求对象-具体描述见控制台-文档部分内容</span></span><br><span class="line">            SendSmsRequest request = <span class="keyword">new</span> SendSmsRequest();</span><br><span class="line">            <span class="comment">//必填:待发送手机号</span></span><br><span class="line">            request.setPhoneNumbers(phone);</span><br><span class="line">            <span class="comment">//必填:短信签名-可在短信控制台中找到</span></span><br><span class="line">            request.setSignName(<span class="string">"signature"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//必填:短信模板-可在短信控制台中找到</span></span><br><span class="line"><span class="comment">//            request.setTemplateCode("SMS_1000000");</span></span><br><span class="line">            <span class="comment">//可选:模板中的变量替换JSON串,如模板内容为"亲爱的$&#123;name&#125;,您的验证码为$&#123;code&#125;"时,此处的值为</span></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"name\":\"Tom\", \"code\":\"123\"&#125;");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//根据模板id判断模板类型</span></span><br><span class="line">            request.setTemplateCode(templateCode);</span><br><span class="line">            <span class="comment">//获得map所有键放入set集合中</span></span><br><span class="line">            Set&lt;Map.Entry&lt;String,String&gt;&gt; entrySet = map.entrySet();</span><br><span class="line">            Iterator&lt;Map.Entry&lt;String, String&gt;&gt; iterator = entrySet.iterator();</span><br><span class="line">            String str = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;map.size();i++)&#123;</span><br><span class="line">                <span class="comment">//将键值取出放入map.entry接口中</span></span><br><span class="line">                Map.Entry&lt;String, String&gt; mapEntry = iterator.next();</span><br><span class="line">                String key = mapEntry.getKey();</span><br><span class="line">                Object value = mapEntry.getValue();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//拼接字符串</span></span><br><span class="line">                <span class="keyword">if</span>(i&lt;map.size()-<span class="number">1</span>)&#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>+<span class="string">","</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//拼接之后完整的字符串放入&#123;&#125;</span></span><br><span class="line">            request.setTemplateParam(<span class="string">"&#123;"</span>+str+<span class="string">"&#125;"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"gift\":"+ gift +", \"express\":"+express+", \"code\":"+code+", \"number\":"+number+", \"tel\":"+tel+"&#125;");</span></span><br><span class="line">            <span class="comment">//选填-上行短信扩展码(无特殊需求用户请忽略此字段)</span></span><br><span class="line">            <span class="comment">//request.setSmsUpExtendCode("90997");</span></span><br><span class="line">            <span class="comment">//可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者</span></span><br><span class="line"><span class="comment">//            request.setOutId("yourOutId");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//hint 此处可能会抛出异常，注意catch</span></span><br><span class="line">            SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);</span><br><span class="line">            <span class="keyword">return</span> sendSmsResponse;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/22/SendSms/" data-id="ck456j4dd001n78uwjyetl3fi" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-日期前后几天" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/16/日期前后几天/" class="article-date">
+  <time datetime="2018-03-16T03:02:19.000Z" itemprop="datePublished">2018-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/16/日期前后几天/">指定日期+</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="指定日期"><a href="#指定日期" class="headerlink" title="指定日期"></a>指定日期</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">      Date date = <span class="keyword">new</span> Date();  </span><br><span class="line">      SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);  </span><br><span class="line">      String specifiedDay = sdf.format(date);  </span><br><span class="line">      System.out.println(getSpecifiedDayBefore(specifiedDay));  </span><br><span class="line">      System.out.println(getSpecifiedDayAfter(specifiedDay));  </span><br><span class="line">  &#125;  </span><br><span class="line">    </span><br><span class="line">  <span class="comment">/** </span></span><br><span class="line"><span class="comment">   * 获得指定日期的前一天 </span></span><br><span class="line"><span class="comment">   *  </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> specifiedDay </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@throws</span> Exception </span></span><br><span class="line"><span class="comment">   */</span>  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getSpecifiedDayBefore</span><span class="params">(String specifiedDay)</span> </span>&#123;<span class="comment">//可以用new Date().toLocalString()传递参数  </span></span><br><span class="line">      Calendar c = Calendar.getInstance();  </span><br><span class="line">      Date date = <span class="keyword">null</span>;  </span><br><span class="line">      <span class="keyword">try</span> &#123;  </span><br><span class="line">          date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd"</span>).parse(specifiedDay);  </span><br><span class="line">      &#125; <span class="keyword">catch</span> (ParseException e) &#123;  </span><br><span class="line">          e.printStackTrace();  </span><br><span class="line">      &#125;  </span><br><span class="line">      c.setTime(date);  </span><br><span class="line">      <span class="keyword">int</span> day = c.get(Calendar.DATE);  </span><br><span class="line">      c.set(Calendar.DATE, day - <span class="number">1</span>);  </span><br><span class="line"></span><br><span class="line">      String dayBefore = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(c  </span><br><span class="line">              .getTime());  </span><br><span class="line">      <span class="keyword">return</span> dayBefore;  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  <span class="comment">/** </span></span><br><span class="line"><span class="comment">   * 获得指定日期的后一天 </span></span><br><span class="line"><span class="comment">   *  </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> specifiedDay </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> </span></span><br><span class="line"><span class="comment">   */</span>  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getSpecifiedDayAfter</span><span class="params">(String specifiedDay)</span> </span>&#123;  </span><br><span class="line">      Calendar c = Calendar.getInstance();  </span><br><span class="line">      Date date = <span class="keyword">null</span>;  </span><br><span class="line">      <span class="keyword">try</span> &#123;  </span><br><span class="line">          date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd"</span>).parse(specifiedDay);  </span><br><span class="line">      &#125; <span class="keyword">catch</span> (ParseException e) &#123;  </span><br><span class="line">          e.printStackTrace();  </span><br><span class="line">      &#125;  </span><br><span class="line">      c.setTime(date);  </span><br><span class="line">      <span class="keyword">int</span> day = c.get(Calendar.DATE);  </span><br><span class="line">      c.set(Calendar.DATE, day + <span class="number">1</span>);  </span><br><span class="line"></span><br><span class="line">      String dayAfter = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)  </span><br><span class="line">              .format(c.getTime());  </span><br><span class="line">      <span class="keyword">return</span> dayAfter;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/16/日期前后几天/" data-id="ck456j4j0008u78uw1lwedlin" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-小程序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="cjzr3bt66007sugv5n2o1wtw5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="ck456j4id007z78uwlktsz1dp" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -125,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/08/读文件/" data-id="cjzr3bt7c009fugv58zwaisct" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/08/读文件/" data-id="ck456j4jq009s78uwe8h8ba7f" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -163,47 +415,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="cjzr3bt4z005yugv5ugfywore" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="ck456j4h4006b78uwe1wubn56" class="article-share-link">Teilen</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-maven项目目录约定" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/25/maven项目目录约定/" class="article-date">
-  <time datetime="2018-01-25T00:57:33.000Z" itemprop="datePublished">2018-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/25/maven项目目录约定/">maven项目目录约定</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- maven项目目录约定： </span><br><span class="line">	src/main/java:只能编译java代码 </span><br><span class="line">	src/main/resources:编译配置文件 </span><br><span class="line">	为了满足Mybatis接口开发规范：接口和映射文件必须在同一个目录 </span><br><span class="line">		放行xml文件，让xml文件在src/main/java也能被编译 --&gt;</span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;resources&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">		&lt;/resources&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="cjzr3bt42004rugv535nec330" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
     </footer>
   </div>
   
@@ -263,274 +477,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="cjzr3bt3x004mugv5uqycl7xh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="ck456j4fq004o78uwdp9aa6wo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-finalize" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/16/finalize/" class="article-date">
-  <time datetime="2018-01-16T13:11:59.000Z" itemprop="datePublished">2018-01-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/finalize/">finalize</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h5><ul>
-<li>垃圾回收机制回收任何对象之前，总会先调用他的finalize方法，该方法可能使该对象重新复活（让一个引用变量重新引用该对象），从而导致立即回收机制取消回收.</li>
-<li>强制系统回收垃圾方法：</li>
-<li><ul>
-<li>System类的gc()静态方法：System.gc()</li>
-</ul>
-</li>
-<li><ul>
-<li>Runtime对象gc()实例方法：Runtime.getRuntime().gc()</li>
-</ul>
-</li>
-<li>finalize方法特点：</li>
-<li><ul>
-<li>永远不要主动调用对象的finalize方法，该方法应该交给垃圾回收机制调用.</li>
-</ul>
-</li>
-<li><ul>
-<li>finalize方法何时被调用，是否被调用具有不确定性.不要把finalize方法当成一定会被执行的方法.</li>
-</ul>
-</li>
-<li><ul>
-<li>当JVM执行去活对象的finalize方法时，可能使该对象或系统中其他对象重新变成激活状态.</li>
-</ul>
-</li>
-<li><ul>
-<li>当JVM执行finalize方法时出现了异常，垃圾回收机制不会报告异常，程序继续执行.</li>
-</ul>
-</li>
-<li>对象所处的状态：</li>
-<li><ul>
-<li>激活：</li>
-</ul>
-</li>
-<li><ul>
-<li>去活：</li>
-</ul>
-</li>
-<li><ul>
-<li>死亡：</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/finalize/" data-id="cjzr3bt2t0031ugv5l37gx14x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-与-区别" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/02/与-区别/" class="article-date">
-  <time datetime="2018-01-02T11:18:56.000Z" itemprop="datePublished">2018-01-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/与-区别/">/与/*</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="url-pattern-与"><a href="#url-pattern-与" class="headerlink" title="url-pattern / 与 /*"></a>url-pattern / 与 /*</h3><ul>
-<li>“/*”可以匹配所有url，包括带扩展名的，一般只用在过滤器上</li>
-<li>官方文档可知，它是tomcat的默认servlet，当其他的url-pattern匹配不上时都会走这个servlet。它除了能够处理静态资源还能够处理HTTP缓存请求，媒体（音频/视频）数据流和文件下载简历。所以如果我们的项目中配置了”/“，会覆盖掉tomcat中的default servlet</li>
-<li>当springMVC的前端控制器配置为“/”时，需要在主配置文件中配置放行静态资源。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一种：</span><br><span class="line">&lt;!-- 放行静态资源 --&gt;</span><br><span class="line">&lt;mvc:resources location=<span class="string">"/js/"</span> mapping=<span class="string">"/js/**"</span>/&gt; </span><br><span class="line">&lt;mvc:resources location=<span class="string">"/css/"</span> mapping=<span class="string">"/js/**"</span>/&gt;</span><br><span class="line"> &lt;mvc:resources location=<span class="string">"/images/"</span> mapping=<span class="string">"/js/**"</span>/&gt;</span><br><span class="line">第二种：</span><br><span class="line">&lt;mvc:<span class="keyword">default</span>-servlet-handler /&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="cjzr3bt5c006iugv5jjacv6es" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-POI导出" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/30/POI导出/" class="article-date">
-  <time datetime="2017-12-30T10:43:59.000Z" itemprop="datePublished">2017-12-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/30/POI导出/">POI导出</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="POI导出"><a href="#POI导出" class="headerlink" title="POI导出"></a>POI导出</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		response.setContentType(<span class="string">"application/vnd.ms-excel"</span>);</span><br><span class="line">		response.addHeader(<span class="string">"Content-Disposition"</span>, <span class="string">"attachment;filename=logininfo.xls"</span>);</span><br><span class="line">		String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">		String pwd =request.getParameter(<span class="string">"pwd"</span>);</span><br><span class="line">		String sex = request.getParameter(<span class="string">"sex"</span>);</span><br><span class="line">		String age = request.getParameter(<span class="string">"age"</span>);</span><br><span class="line">		String email = request.getParameter(<span class="string">"email"</span>);</span><br><span class="line">		ServletOutputStream out = response.getOutputStream();</span><br><span class="line">		<span class="comment">//创建Excel表格</span></span><br><span class="line">		HSSFWorkbook book = <span class="keyword">new</span> HSSFWorkbook();</span><br><span class="line">		<span class="comment">//创建工作簿</span></span><br><span class="line">		HSSFSheet sheet = book.createSheet(<span class="string">"用户信息"</span>);</span><br><span class="line">		<span class="comment">//设置列宽</span></span><br><span class="line">		sheet.setColumnWidth(<span class="number">4</span>, <span class="number">5000</span>);</span><br><span class="line">		<span class="comment">//创建标题行</span></span><br><span class="line">		HSSFRow titleRow0 = sheet.createRow(<span class="number">0</span>);</span><br><span class="line">		titleRow0.createCell(<span class="number">0</span>).setCellValue(<span class="string">"用户信息表"</span>);</span><br><span class="line">		sheet.addMergedRegion(<span class="keyword">new</span> CellRangeAddress(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">4</span>));  </span><br><span class="line">		</span><br><span class="line">		HSSFRow titleRow = sheet.createRow(<span class="number">1</span>);</span><br><span class="line">		<span class="comment">//创建第一个单元格</span></span><br><span class="line">		HSSFCell titleCell1 = titleRow.createCell(<span class="number">0</span>);</span><br><span class="line">		titleCell1.setCellValue(<span class="string">"姓名"</span>);</span><br><span class="line">		HSSFCell titleCell2 = titleRow.createCell(<span class="number">1</span>);</span><br><span class="line">		titleCell2.setCellValue(<span class="string">"密码"</span>);</span><br><span class="line">		HSSFCell titleCell3 = titleRow.createCell(<span class="number">2</span>);</span><br><span class="line">		titleCell3.setCellValue(<span class="string">"年龄"</span>);</span><br><span class="line">		HSSFCell titleCell4 = titleRow.createCell(<span class="number">3</span>);</span><br><span class="line">		titleCell4.setCellValue(<span class="string">"性别"</span>);</span><br><span class="line">		HSSFCell titleCell5 = titleRow.createCell(<span class="number">4</span>);</span><br><span class="line">		titleCell5.setCellValue(<span class="string">"Email"</span>);</span><br><span class="line">		<span class="comment">//创建第二行</span></span><br><span class="line">		HSSFRow valueRow = sheet.createRow(<span class="number">2</span>);</span><br><span class="line">		<span class="comment">//第二行创建单元格</span></span><br><span class="line">		HSSFCell nameCell = valueRow.createCell(<span class="number">0</span>);</span><br><span class="line">		nameCell.setCellValue(name);</span><br><span class="line">		HSSFCell nameCel2 = valueRow.createCell(<span class="number">1</span>);</span><br><span class="line">		nameCel2.setCellValue(pwd);</span><br><span class="line">		HSSFCell nameCel3 = valueRow.createCell(<span class="number">2</span>);</span><br><span class="line">		nameCel3.setCellValue(age);</span><br><span class="line">		HSSFCell nameCel4 = valueRow.createCell(<span class="number">3</span>);</span><br><span class="line">		nameCel4.setCellValue(sex);</span><br><span class="line">		HSSFCell nameCel5 = valueRow.createCell(<span class="number">4</span>);</span><br><span class="line">		nameCel5.setCellValue(email);</span><br><span class="line"><span class="comment">//		HSSFCellStyle cellStyle = book.createCellStyle();</span></span><br><span class="line">		<span class="comment">//响应流输入到Excel表格中</span></span><br><span class="line">		book.write(out); </span><br><span class="line">		out.flush();</span><br><span class="line">		out.close();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>页面<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"ExportServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">		&lt;table align=<span class="string">"center"</span>&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;用户名：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="name"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;密码：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="password" name="pwd"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;性别：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="sex"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;年龄：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="age"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;Email：&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;input type="text" name="email"/&gt;&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=<span class="string">"2"</span> align=<span class="string">"center"</span>&gt;</span><br><span class="line">					&lt;input type=<span class="string">"submit"</span> value=<span class="string">"导出到Excel"</span>/&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/POI导出/" data-id="cjzr3bt1t001iugv5vbde4l60" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-统计访客数量" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/30/统计访客数量/" class="article-date">
-  <time datetime="2017-12-30T04:52:33.000Z" itemprop="datePublished">2017-12-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/30/统计访客数量/">统计访客数量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="统计访客数量"><a href="#统计访客数量" class="headerlink" title="统计访客数量"></a>统计访客数量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">		request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		ServletContext context = getServletContext();</span><br><span class="line">		Integer count = (Integer) context.getAttribute(<span class="string">"counter"</span>);</span><br><span class="line">		<span class="keyword">if</span>(count==<span class="keyword">null</span>) &#123;</span><br><span class="line">			count =<span class="number">1</span>;</span><br><span class="line">			context.setAttribute(<span class="string">"counter"</span>, count);</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			context.setAttribute(<span class="string">"counter"</span>, count+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		 request.getRequestDispatcher(<span class="string">"count.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>servletContest</li>
-<li><ul>
-<li>Servlet容器在启动一个web应用时，就会创建一个servletContext对象,当servlet终止一个web应用时，servletContext对象也会被销毁,所以对象与web有同样的生命周期.整个web应用的组件都可以共享servletContext对象中存放的共享数据.</li>
-</ul>
-</li>
-<li>存取数据的方法：</li>
-<li><ul>
-<li>setAttribute（String name,Object object）；</li>
-</ul>
-</li>
-<li><ul>
-<li>removeAttribute(String name);</li>
-</ul>
-</li>
-<li><ul>
-<li>getAttribute(String name);</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/统计访客数量/" data-id="cjzr3bt750095ugv5p76m7u9m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cookie存信息" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/23/cookie存信息/" class="article-date">
-  <time datetime="2017-12-23T03:06:06.000Z" itemprop="datePublished">2017-12-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/23/cookie存信息/">cookie存信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="cookie-存信息"><a href="#cookie-存信息" class="headerlink" title="cookie 存信息"></a>cookie 存信息</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">		String name = request.getParameter(<span class="string">"name"</span>);</span><br><span class="line">		name = java.net.URLEncoder.encode(<span class="string">"utf-8"</span>);</span><br><span class="line">		Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"username"</span>, name);</span><br><span class="line">		<span class="comment">//设置过期时间，单位秒</span></span><br><span class="line">		cookie.setMaxAge(<span class="number">60</span>);</span><br><span class="line">		<span class="comment">//保存到客户端cookie</span></span><br><span class="line">		response.addCookie(cookie);</span><br><span class="line">		request.getRequestDispatcher(<span class="string">"succes.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>获取cookie<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookiearr[] = request.getcookies();</span><br><span class="line"><span class="keyword">for</span> (Cookie cookie : cookiearr) &#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/cookie存信息/" data-id="cjzr3bt2l002ougv56knwv3cu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
 
     </footer>
   </div>
@@ -543,7 +493,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/14/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/16/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/14/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/16/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -557,7 +507,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -567,16 +517,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10.83px;">Html</a> <a href="/tags/Http/" style="font-size: 16.67px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -584,28 +534,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2019/08/03/pytest—基础知识/">pytest—基础知识</a>
+            <a href="/2019/10/27/python_字典和集合/">python-字典</a>
           </li>
         
           <li>
-            <a href="/2019/06/12/linux常用命令/">linux常用命令</a>
+            <a href="/2019/10/27/python_时间/">python-时间</a>
           </li>
         
           <li>
-            <a href="/2019/06/10/反转单链表/">简单算法题</a>
+            <a href="/2019/10/26/git取消修改/">Git-取消修改</a>
           </li>
         
           <li>
-            <a href="/2019/05/30/Aop/">Aop</a>
+            <a href="/2019/10/26/python_list操作/">python-list</a>
           </li>
         
           <li>
-            <a href="/2019/04/08/基础sql/">基础sql</a>
+            <a href="/2019/10/26/python_元组/">python-元祖</a>
           </li>
         
       </ul>
