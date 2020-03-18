@@ -87,48 +87,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/java请求url返回json/" data-id="ck7xg3t93003jl4uwvkzcskc7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/18/java请求url返回json/" data-id="ck7xgnh9b003iwkuwoy1y67eo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-json2Map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/18/json2Map/" class="article-date">
-  <time datetime="2018-04-18T09:02:36.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/json2Map/">json2Map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="json2Map"><a href="#json2Map" class="headerlink" title="json2Map"></a>json2Map</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    String str = <span class="string">"&#123;\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"&#125;"</span>;  </span><br><span class="line">    <span class="comment">//第一种方式  </span></span><br><span class="line">    Map maps = (Map)JSON.parse(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : maps.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"     "</span> + ((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第二种方式  </span></span><br><span class="line">    Map mapTypes = JSON.parseObject(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类的parseObject来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object obj : mapTypes.keySet())&#123;  </span><br><span class="line">        System.out.println(<span class="string">"key为："</span>+obj+<span class="string">"值为："</span>+mapTypes.get(obj));  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第三种方式  </span></span><br><span class="line">    Map mapType = JSON.parseObject(str,Map.class);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSON类,指定解析类型，来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object obj : mapType.keySet())&#123;  </span><br><span class="line">        System.out.println(<span class="string">"key为："</span>+obj+<span class="string">"值为："</span>+mapType.get(obj));  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第四种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    Map json = (Map) JSONObject.parse(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject类的parse方法来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第五种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    JSONObject jsonObject = JSONObject.parseObject(str);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject的parseObject方法来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map : json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//第六种方式  </span></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * JSONObject是Map接口的一个实现类 </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    Map mapObj = JSONObject.parseObject(str,Map.class);  </span><br><span class="line">    System.out.println(<span class="string">"这个是用JSONObject的parseObject方法并执行返回类型来解析JSON字符串!!!"</span>);  </span><br><span class="line">    <span class="keyword">for</span> (Object map: json.entrySet())&#123;  </span><br><span class="line">        System.out.println(((Map.Entry)map).getKey()+<span class="string">"  "</span>+((Map.Entry)map).getValue());  </span><br><span class="line">    &#125;  </span><br><span class="line">    String strArr = <span class="string">"&#123;&#123;\"0\":\"zhangsan\",\"1\":\"lisi\",\"2\":\"wangwu\",\"3\":\"maliu\"&#125;,"</span> +  </span><br><span class="line">            <span class="string">"&#123;\"00\":\"zhangsan\",\"11\":\"lisi\",\"22\":\"wangwu\",\"33\":\"maliu\"&#125;&#125;"</span>;  </span><br><span class="line">   <span class="comment">// JSONArray.parse()  </span></span><br><span class="line">    System.out.println(json);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/json2Map/" data-id="ck7xg3t96003ol4uwwu8uli59" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
 
     </footer>
   </div>
@@ -165,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/时间相关（增加时间，判断时刻）/" data-id="ck7xg3td6008pl4uwtuurwlwv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/18/时间相关（增加时间，判断时刻）/" data-id="ck7xgnhd4008ywkuwijoykx90" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -220,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/10/Cron表达式/" data-id="ck7xg3t640001l4uwxge5el4u" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/10/Cron表达式/" data-id="ck7xgnh6n0003wkuwdc8n0gq3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -258,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/08/获取客户端ip/" data-id="ck7xg3tdp0099l4uw2309gc33" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/08/获取客户端ip/" data-id="ck7xgnhdm009iwkuw1sbx3vp7" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -301,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/22/SendSms/" data-id="ck7xg3t7k001jl4uwtxncqgso" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/22/SendSms/" data-id="ck7xgnh7t001dwkuwlw94beag" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -339,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/16/日期前后几天/" data-id="ck7xg3td5008nl4uw3zzjjzlh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/16/日期前后几天/" data-id="ck7xgnhd2008uwkuwdy1ua946" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -377,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="ck7xg3tci007sl4uwm9yrqhn0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="ck7xgnhcd007rwkuwlhgd1xws" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -415,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/08/读文件/" data-id="ck7xg3tdy009jl4uwja7flz6e" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/08/读文件/" data-id="ck7xgnhdt009swkuwu5ca4tl4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -453,9 +415,73 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="ck7xg3tba0064l4uwneprz7b5" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="ck7xgnhb4005zwkuwju1ywnmt" class="article-share-link">Teilen</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-maven基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/25/maven基本使用/" class="article-date">
+  <time datetime="2018-01-25T00:57:33.000Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/25/maven基本使用/">maven基本使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>maven 坐标</li>
+<li><ul>
+<li>groupId:项目开发者的域名</li>
+</ul>
+</li>
+<li><ul>
+<li>artifactId:指定项目名</li>
+</ul>
+</li>
+<li><ul>
+<li>packaging:指定新项目打包类型</li>
+</ul>
+</li>
+<li><ul>
+<li>version：指定项目的版本<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pom.xml</span><br><span class="line"></span><br><span class="line">&lt;groupId&gt;org.fkjava&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;mavenQs&lt;/artifactId&gt;</span><br><span class="line">&lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>maven 资源库</p>
+</li>
+<li><ul>
+<li>Maven资源库用于保存maven插件、各种第三方框架.Maven用到的插件、项目依赖的各种jar包，都保存在资源库中.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="ck7xgnh9x004dwkuwmanjvxui" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
     </footer>
   </div>
   
@@ -491,7 +517,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 14.17px;">SQL</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 19.17px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 15px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 20px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.38px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 14.62px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.85px;">SQL</a> <a href="/tags/Sort/" style="font-size: 17.69px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.92px;">demo</a> <a href="/tags/docker/" style="font-size: 16.15px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 12.31px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.46px;">java</a> <a href="/tags/jvm/" style="font-size: 11.54px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.31px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.62px;">logstash</a> <a href="/tags/php/" style="font-size: 11.54px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.08px;">python</a> <a href="/tags/springboot/" style="font-size: 16.15px;">springboot</a> <a href="/tags/util/" style="font-size: 19.23px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.77px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.08px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.77px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.54px;">线程</a>
     </div>
   </div>
 
