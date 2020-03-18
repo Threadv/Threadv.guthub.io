@@ -87,7 +87,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ck7xgnh8f0028wkuwoej3317x" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ck7xio8n70025i8uwkykmxga5" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -365,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="ck7xgnh9r0046wkuwuq9oxrg7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="ck7xio8on0049i8uw8htgj74z" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -405,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/UML/" data-id="ck7xgnh86001vwkuw2ny6678r" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/UML/" data-id="ck7xio8n0001vi8uwd54j97lb" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -527,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ck7xgnhc5007dwkuwh1y9wqqs" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ck7xio8r5007fi8uwn7xijvav" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -638,7 +638,45 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ck7xgnhck0083wkuw0ssit2tg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ck7xio8rk0084i8uwg8an7alz" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ck7xio8rl0086i8uwtcvub1vw" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -683,45 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="ck7xgnhcm0086wkuw5cx7eqqx" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ck7xgnhco0088wkuwynexaw24" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="ck7xio8rn0088i8uwy2mi2bc3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -806,7 +806,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="ck7xgnh70000gwkuw229oo255" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="ck7xio8ls000di8uw0cq2w3mj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -851,7 +851,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="ck7xgnh96003bwkuwdha6x2sb" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="ck7xio8o2003ei8uw19md640y" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -956,7 +956,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http_method/" data-id="ck7xgnh910034wkuwhhqjjttj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/14/http_method/" data-id="ck7xio8nv0034i8uwvla7njtu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
@@ -986,7 +986,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -996,7 +996,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.38px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 14.62px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.85px;">SQL</a> <a href="/tags/Sort/" style="font-size: 17.69px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.92px;">demo</a> <a href="/tags/docker/" style="font-size: 16.15px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 12.31px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.46px;">java</a> <a href="/tags/jvm/" style="font-size: 11.54px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.31px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.62px;">logstash</a> <a href="/tags/php/" style="font-size: 11.54px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.08px;">python</a> <a href="/tags/springboot/" style="font-size: 16.15px;">springboot</a> <a href="/tags/util/" style="font-size: 19.23px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.77px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.08px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.77px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.54px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 14.17px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 11.67px;">SQL</a> <a href="/tags/Sort/" style="font-size: 17.5px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/docker/" style="font-size: 15.83px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.33px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.17px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 15.83px;">springboot</a> <a href="/tags/sql/" style="font-size: 11.67px;">sql</a> <a href="/tags/util/" style="font-size: 19.17px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 

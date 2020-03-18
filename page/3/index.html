@@ -61,9 +61,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-数据库-性能优化篇" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sql_数据库性能优化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/14/数据库-性能优化篇/" class="article-date">
+    <a href="/2019/01/14/sql_数据库性能优化/" class="article-date">
   <time datetime="2019-01-14T02:43:14.000Z" itemprop="datePublished">2019-01-14</time>
 </a>
     
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/14/数据库-性能优化篇/">数据库-性能优化篇</a>
+      <a class="article-title" href="/2019/01/14/sql_数据库性能优化/">数据库-性能优化</a>
     </h1>
   
 
@@ -83,30 +83,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据库-性能优化篇</p>
-<h1 id="1、-为什么要进行数据库优化？"><a href="#1、-为什么要进行数据库优化？" class="headerlink" title="1、   为什么要进行数据库优化？"></a>1、   为什么要进行数据库优化？</h1><h2 id="1-1、-避免网站页面出现访问错误"><a href="#1-1、-避免网站页面出现访问错误" class="headerlink" title="1.1、 避免网站页面出现访问错误"></a>1.1、 避免网站页面出现访问错误</h2><p>由于数据库连接timeout产生页面5xx错误</p>
+        <h2 id="1、-为什么要进行数据库优化？"><a href="#1、-为什么要进行数据库优化？" class="headerlink" title="1、   为什么要进行数据库优化？"></a>1、   为什么要进行数据库优化？</h2><h3 id="1-1、-避免网站页面出现访问错误"><a href="#1-1、-避免网站页面出现访问错误" class="headerlink" title="1.1、 避免网站页面出现访问错误"></a>1.1、 避免网站页面出现访问错误</h3><p>由于数据库连接timeout产生页面5xx错误</p>
 <p>由于慢查询造成页面无法加载</p>
 <p>由于阻塞造成数据无法提交</p>
-<h2 id="1-2、-增加数据库的稳定性"><a href="#1-2、-增加数据库的稳定性" class="headerlink" title="1.2、 增加数据库的稳定性"></a>1.2、 增加数据库的稳定性</h2><p>很多数据库问题都是由于低效的查询引起的</p>
-<h2 id="1-3、-优化用户体验"><a href="#1-3、-优化用户体验" class="headerlink" title="1.3、 优化用户体验"></a>1.3、 优化用户体验</h2><p>流畅页面的访问速度</p>
+<h3 id="1-2、-增加数据库的稳定性"><a href="#1-2、-增加数据库的稳定性" class="headerlink" title="1.2、 增加数据库的稳定性"></a>1.2、 增加数据库的稳定性</h3><p>很多数据库问题都是由于低效的查询引起的</p>
+<h3 id="1-3、-优化用户体验"><a href="#1-3、-优化用户体验" class="headerlink" title="1.3、 优化用户体验"></a>1.3、 优化用户体验</h3><p>流畅页面的访问速度</p>
 <p>良好的网站功能体验</p>
-<h1 id="2、mysql数据库优化"><a href="#2、mysql数据库优化" class="headerlink" title="2、mysql数据库优化"></a>2、mysql数据库优化</h1><p>可以从哪几个方面进行数据库的优化？如下图所示：</p>
+<h2 id="2、mysql数据库优化"><a href="#2、mysql数据库优化" class="headerlink" title="2、mysql数据库优化"></a>2、mysql数据库优化</h2><p>可以从哪几个方面进行数据库的优化？如下图所示：</p>
 <p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" alt=""></p>
-<h2 id="2-1、-SQL及索引优化"><a href="#2-1、-SQL及索引优化" class="headerlink" title="2.1、 SQL及索引优化"></a>2.1、 SQL及索引优化</h2><p>​    根据需求写出良好的SQL，并创建有效的索引，实现某一种需求可以多种写法，这时候我们就要选择一种效率最高的写法。这个时候就要了解sql优化</p>
-<h2 id="2-2、-数据库表结构优化"><a href="#2-2、-数据库表结构优化" class="headerlink" title="2.2、 数据库表结构优化"></a>2.2、 数据库表结构优化</h2><p>根据数据库的范式，设计表结构，表结构设计的好直接关系到写SQL语句。</p>
-<h2 id="2-3、-系统配置优化"><a href="#2-3、-系统配置优化" class="headerlink" title="2.3、 系统配置优化"></a>2.3、 系统配置优化</h2><p>大多数运行在Linux机器上，如tcp连接数的限制、打开文件数的限制、安全性的限制，因此我们要对这些配置进行相应的优化。</p>
-<h2 id="2-4、硬件配置优化"><a href="#2-4、硬件配置优化" class="headerlink" title="2.4、硬件配置优化"></a>2.4、硬件配置优化</h2><p>选择适合数据库服务的cpu，更快的IO，更高的内存；cpu并不是越多越好，某些数据库版本有最大的限制，IO操作并不是减少阻塞。</p>
+<h3 id="2-1、-SQL及索引优化"><a href="#2-1、-SQL及索引优化" class="headerlink" title="2.1、 SQL及索引优化"></a>2.1、 SQL及索引优化</h3><p>​    根据需求写出良好的SQL，并创建有效的索引，实现某一种需求可以多种写法，这时候我们就要选择一种效率最高的写法。这个时候就要了解sql优化</p>
+<h3 id="2-2、-数据库表结构优化"><a href="#2-2、-数据库表结构优化" class="headerlink" title="2.2、 数据库表结构优化"></a>2.2、 数据库表结构优化</h3><p>根据数据库的范式，设计表结构，表结构设计的好直接关系到写SQL语句。</p>
+<h3 id="2-3、-系统配置优化"><a href="#2-3、-系统配置优化" class="headerlink" title="2.3、 系统配置优化"></a>2.3、 系统配置优化</h3><p>大多数运行在Linux机器上，如tcp连接数的限制、打开文件数的限制、安全性的限制，因此我们要对这些配置进行相应的优化。</p>
+<h3 id="2-4、硬件配置优化"><a href="#2-4、硬件配置优化" class="headerlink" title="2.4、硬件配置优化"></a>2.4、硬件配置优化</h3><p>选择适合数据库服务的cpu，更快的IO，更高的内存；cpu并不是越多越好，某些数据库版本有最大的限制，IO操作并不是减少阻塞。</p>
 <p>注：通过上图可以看出，该金字塔中，优化的成本从下而上逐渐增高，而优化的效果会逐渐降低。</p>
-<h1 id="3、SQL及索引优化"><a href="#3、SQL及索引优化" class="headerlink" title="3、SQL及索引优化"></a>3、SQL及索引优化</h1><h2 id="3-1、查看mysql的版本"><a href="#3-1、查看mysql的版本" class="headerlink" title="3.1、查看mysql的版本"></a>3.1、查看mysql的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select @@version;</span><br><span class="line"></span><br><span class="line">mysql&gt; select @@version;</span><br><span class="line">+-----------+</span><br><span class="line">| @@version |</span><br><span class="line">+-----------+</span><br><span class="line">| 5.6.25    |</span><br><span class="line">+-----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-<h2 id="3-2、准备数据"><a href="#3-2、准备数据" class="headerlink" title="3.2、准备数据"></a>3.2、准备数据</h2><p><strong>网址：<a href="https://dev.mysql.com/doc/sakila/en/sakila-installation.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/sakila/en/sakila-installation.html</a></strong></p>
-<p>![(file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt=""></p>
-<p>sakila-db.zip压缩包所包含的文件如下解释</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png" alt=""></p>
-<p>加载数据</p>
-<p>步骤如下图所示</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png" alt=""></p>
+<h2 id="3、SQL及索引优化"><a href="#3、SQL及索引优化" class="headerlink" title="3、SQL及索引优化"></a>3、SQL及索引优化</h2><h3 id="3-1、查看mysql的版本"><a href="#3-1、查看mysql的版本" class="headerlink" title="3.1、查看mysql的版本"></a>3.1、查看mysql的版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select @@version;</span><br><span class="line"></span><br><span class="line">mysql&gt; select @@version;</span><br><span class="line">+-----------+</span><br><span class="line">| @@version |</span><br><span class="line">+-----------+</span><br><span class="line">| 5.6.25    |</span><br><span class="line">+-----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h3 id="3-2、准备数据"><a href="#3-2、准备数据" class="headerlink" title="3.2、准备数据"></a>3.2、准备数据</h3><p><strong>网址：<a href="https://dev.mysql.com/doc/sakila/en/sakila-installation.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/sakila/en/sakila-installation.html</a></strong></p>
 <p> 步骤：</p>
 <p>1、通过命令行来连接数据库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; mysql -u root -p</span><br></pre></td></tr></table></figure>
@@ -120,31 +111,22 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br><span class="line"></span><br><span class="line">+----------------------------+</span><br><span class="line">| Tables_in_sakila           |</span><br><span class="line">+----------------------------+</span><br><span class="line">| actor                      |</span><br><span class="line">| actor_info                 |</span><br><span class="line">| address                    |</span><br><span class="line">| category                   |</span><br><span class="line">| city                       |</span><br><span class="line">| country                    |</span><br><span class="line">| customer                   |</span><br><span class="line">| customer_list              |</span><br><span class="line">| film                       |</span><br><span class="line">| film_actor                 |</span><br><span class="line">| film_category              |</span><br><span class="line">| film_list                  |</span><br><span class="line">| film_text                  |</span><br><span class="line">| inventory                  |</span><br><span class="line">| language                   |</span><br><span class="line">| nicer_but_slower_film_list |</span><br><span class="line">| payment                    |</span><br><span class="line">| rental                     |</span><br><span class="line">| sales_by_film_category     |</span><br><span class="line">| sales_by_store             |</span><br><span class="line">| staff                      |</span><br><span class="line">| staff_list                 |</span><br><span class="line">| store                      |</span><br><span class="line">+----------------------------+</span><br></pre></td></tr></table></figure>
 <p>6、检验数据是否加载进去</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select count(*) from film;</span><br><span class="line">+----------+</span><br><span class="line">| count(*) |</span><br><span class="line">+----------+</span><br><span class="line">|     1000 |</span><br><span class="line">+----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; select count(*) from payment ;</span><br><span class="line">+----------+</span><br><span class="line">| count(*) |</span><br><span class="line">+----------+</span><br><span class="line">|    16049 |</span><br><span class="line">+----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select count(*) from staff ;</span><br><span class="line">+----------+</span><br><span class="line">| count(*) |</span><br><span class="line">+----------+</span><br><span class="line">|        2 |</span><br><span class="line">+----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select count(*) from store;</span><br><span class="line">+----------+</span><br><span class="line">| count(*) |</span><br><span class="line">+----------+</span><br><span class="line">|        2 |</span><br><span class="line">+----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image012.png" alt=""></p>
-<p> 检验数据是否加载进去</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image014.png" alt=""></p>
-<h2 id="3-3、表结构关系"><a href="#3-3、表结构关系" class="headerlink" title="3.3、表结构关系"></a>3.3、表结构关系</h2><p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image016.png" alt=""></p>
 <p>注：该表结构关系是用工具生成的。（powerDisigner）</p>
-<h2 id="3-4、如何发现有问题的SQL"><a href="#3-4、如何发现有问题的SQL" class="headerlink" title="3.4、如何发现有问题的SQL"></a>3.4、如何发现有问题的SQL</h2><p>MySQL慢查日志的开启方式和存储格式</p>
-<h3 id="3-4-1、检查慢查日志是否开启："><a href="#3-4-1、检查慢查日志是否开启：" class="headerlink" title="3.4.1、检查慢查日志是否开启："></a>3.4.1、检查慢查日志是否开启：</h3><p>​    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;slow_query_log&apos;</span><br><span class="line"></span><br><span class="line">mysql&gt; show variables like &apos;slow_query_log&apos;;</span><br><span class="line">+----------------+-------+</span><br><span class="line">| Variable_name  | Value |</span><br><span class="line">+----------------+-------+</span><br><span class="line">| slow_query_log | OFF   |</span><br><span class="line">+----------------+-------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-2、查看所有日志的变量信息"><a href="#3-4-2、查看所有日志的变量信息" class="headerlink" title="3.4.2、查看所有日志的变量信息"></a>3.4.2、查看所有日志的变量信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;%log%&apos;;</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br><span class="line"></span><br><span class="line">| Variable_name                           | Value                              |</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br><span class="line"></span><br><span class="line">| back_log                               |80                                 |</span><br><span class="line"></span><br><span class="line">| binlog_cache_size                       | 32768                              |</span><br><span class="line"></span><br><span class="line">| binlog_checksum                         | CRC32                              |</span><br><span class="line"></span><br><span class="line">| binlog_direct_non_transactional_updates |OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_error_action                     | IGNORE_ERROR                       |</span><br><span class="line"></span><br><span class="line">| binlog_format                           | STATEMENT                          |</span><br><span class="line"></span><br><span class="line">| binlog_gtid_simple_recovery             | OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_max_flush_queue_time             | 0                                  |</span><br><span class="line"></span><br><span class="line">| binlog_order_commits                    | ON                                 |</span><br><span class="line"></span><br><span class="line">| binlog_row_image                        | FULL                               |</span><br><span class="line"></span><br><span class="line">| binlog_rows_query_log_events            | OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_stmt_cache_size                  | 32768                              |</span><br><span class="line"></span><br><span class="line">| binlogging_impossible_mode              | IGNORE_ERROR                       |</span><br><span class="line"></span><br><span class="line">| expire_logs_days                        | 0                                  |</span><br><span class="line"></span><br><span class="line">| general_log                             | OFF                                |</span><br><span class="line"></span><br><span class="line">| general_log_file                        |/var/lib/mysql/mysql-host.log      |</span><br><span class="line"></span><br><span class="line">| innodb_api_enable_binlog                | OFF                                |</span><br><span class="line"></span><br><span class="line">| innodb_flush_log_at_timeout             | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_flush_log_at_trx_commit          | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_locks_unsafe_for_binlog          | OFF                                |</span><br><span class="line"></span><br><span class="line">| innodb_log_buffer_size                  | 8388608                            |</span><br><span class="line"></span><br><span class="line">| innodb_log_compressed_pages             | ON                                 |</span><br><span class="line"></span><br><span class="line">| innodb_log_file_size                    | 50331648                           |</span><br><span class="line"></span><br><span class="line">| innodb_log_files_in_group               | 2                                  |</span><br><span class="line"></span><br><span class="line">| innodb_log_group_home_dir               | ./                                 |</span><br><span class="line"></span><br><span class="line">| innodb_mirrored_log_groups              | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_online_alter_log_max_size        | 134217728                          |</span><br><span class="line"></span><br><span class="line">| innodb_undo_logs                        | 128                                |</span><br><span class="line"></span><br><span class="line">| log_bin                                 | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_bin_basename                        |                                    |</span><br><span class="line"></span><br><span class="line">| log_bin_index                           |                                    |</span><br><span class="line"></span><br><span class="line">| log_bin_trust_function_creators         | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_bin_use_v1_row_events               | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_error                               |/var/log/mysqld.log                |</span><br><span class="line"></span><br><span class="line">| log_output                              | FILE                               |</span><br><span class="line"></span><br><span class="line">| log_queries_not_using_indexes           | ON                                 |</span><br><span class="line"></span><br><span class="line">| log_slave_updates                       | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_slow_admin_statements               | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_slow_slave_statements               | OFF                                |</span><br><span class="line"></span><br><span class="line">|log_throttle_queries_not_using_indexes  |0                                  |</span><br><span class="line"></span><br><span class="line">| log_warnings                            | 1                                  |</span><br><span class="line"></span><br><span class="line">| max_binlog_cache_size                   | 18446744073709547520               |</span><br><span class="line"></span><br><span class="line">| max_binlog_size                         | 1073741824                         |</span><br><span class="line"></span><br><span class="line">| max_binlog_stmt_cache_size              | 18446744073709547520               |</span><br><span class="line"></span><br><span class="line">| max_relay_log_size                      | 0                                  |</span><br><span class="line"></span><br><span class="line">| relay_log                               |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_basename                      |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_index                         |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_info_file                     | relay-log.info                     |</span><br><span class="line"></span><br><span class="line">| relay_log_info_repository               | FILE                               |</span><br><span class="line"></span><br><span class="line">| relay_log_purge                         | ON                                 |</span><br><span class="line"></span><br><span class="line">| relay_log_recovery                      | OFF                                |</span><br><span class="line"></span><br><span class="line">| relay_log_space_limit                   | 0                                  |</span><br><span class="line"></span><br><span class="line">| simplified_binlog_gtid_recovery         | OFF                                |</span><br><span class="line"></span><br><span class="line">|slow_query_log                          |OFF                                |</span><br><span class="line"></span><br><span class="line">| slow_query_log_file                     |/var/lib/mysql/mysql-host-slow.log |</span><br><span class="line"></span><br><span class="line">| sql_log_bin                             | ON                                 |</span><br><span class="line"></span><br><span class="line">| sql_log_off                             | OFF                                |</span><br><span class="line"></span><br><span class="line">| sync_binlog                             | 0                                  |</span><br><span class="line"></span><br><span class="line">| sync_relay_log                          | 10000                              |</span><br><span class="line"></span><br><span class="line">| sync_relay_log_info                     | 10000                              |</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br></pre></td></tr></table></figure>
+<h3 id="3-3、如何发现有问题的SQL"><a href="#3-3、如何发现有问题的SQL" class="headerlink" title="3.3、如何发现有问题的SQL"></a>3.3、如何发现有问题的SQL</h3><p>MySQL慢查日志的开启方式和存储格式</p>
+<h4 id="3-3-1、检查慢查日志是否开启："><a href="#3-3-1、检查慢查日志是否开启：" class="headerlink" title="3.3.1、检查慢查日志是否开启："></a>3.3.1、检查慢查日志是否开启：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">_query_log&apos;</span><br><span class="line"></span><br><span class="line">mysql&gt; show variables like &apos;slow_query_log&apos;;</span><br><span class="line">+----------------+-------+</span><br><span class="line">| Variable_name  | Value |</span><br><span class="line">+----------------+-------+</span><br><span class="line">| slow_query_log | OFF   |</span><br><span class="line">+----------------+-------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-2、查看所有日志的变量信息"><a href="#3-3-2、查看所有日志的变量信息" class="headerlink" title="3.3.2、查看所有日志的变量信息"></a>3.3.2、查看所有日志的变量信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;%log%&apos;;</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br><span class="line"></span><br><span class="line">| Variable_name                           | Value                              |</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br><span class="line"></span><br><span class="line">| back_log                               |80                                 |</span><br><span class="line"></span><br><span class="line">| binlog_cache_size                       | 32768                              |</span><br><span class="line"></span><br><span class="line">| binlog_checksum                         | CRC32                              |</span><br><span class="line"></span><br><span class="line">| binlog_direct_non_transactional_updates |OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_error_action                     | IGNORE_ERROR                       |</span><br><span class="line"></span><br><span class="line">| binlog_format                           | STATEMENT                          |</span><br><span class="line"></span><br><span class="line">| binlog_gtid_simple_recovery             | OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_max_flush_queue_time             | 0                                  |</span><br><span class="line"></span><br><span class="line">| binlog_order_commits                    | ON                                 |</span><br><span class="line"></span><br><span class="line">| binlog_row_image                        | FULL                               |</span><br><span class="line"></span><br><span class="line">| binlog_rows_query_log_events            | OFF                                |</span><br><span class="line"></span><br><span class="line">| binlog_stmt_cache_size                  | 32768                              |</span><br><span class="line"></span><br><span class="line">| binlogging_impossible_mode              | IGNORE_ERROR                       |</span><br><span class="line"></span><br><span class="line">| expire_logs_days                        | 0                                  |</span><br><span class="line"></span><br><span class="line">| general_log                             | OFF                                |</span><br><span class="line"></span><br><span class="line">| general_log_file                        |/var/lib/mysql/mysql-host.log      |</span><br><span class="line"></span><br><span class="line">| innodb_api_enable_binlog                | OFF                                |</span><br><span class="line"></span><br><span class="line">| innodb_flush_log_at_timeout             | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_flush_log_at_trx_commit          | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_locks_unsafe_for_binlog          | OFF                                |</span><br><span class="line"></span><br><span class="line">| innodb_log_buffer_size                  | 8388608                            |</span><br><span class="line"></span><br><span class="line">| innodb_log_compressed_pages             | ON                                 |</span><br><span class="line"></span><br><span class="line">| innodb_log_file_size                    | 50331648                           |</span><br><span class="line"></span><br><span class="line">| innodb_log_files_in_group               | 2                                  |</span><br><span class="line"></span><br><span class="line">| innodb_log_group_home_dir               | ./                                 |</span><br><span class="line"></span><br><span class="line">| innodb_mirrored_log_groups              | 1                                  |</span><br><span class="line"></span><br><span class="line">| innodb_online_alter_log_max_size        | 134217728                          |</span><br><span class="line"></span><br><span class="line">| innodb_undo_logs                        | 128                                |</span><br><span class="line"></span><br><span class="line">| log_bin                                 | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_bin_basename                        |                                    |</span><br><span class="line"></span><br><span class="line">| log_bin_index                           |                                    |</span><br><span class="line"></span><br><span class="line">| log_bin_trust_function_creators         | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_bin_use_v1_row_events               | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_error                               |/var/log/mysqld.log                |</span><br><span class="line"></span><br><span class="line">| log_output                              | FILE                               |</span><br><span class="line"></span><br><span class="line">| log_queries_not_using_indexes           | ON                                 |</span><br><span class="line"></span><br><span class="line">| log_slave_updates                       | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_slow_admin_statements               | OFF                                |</span><br><span class="line"></span><br><span class="line">| log_slow_slave_statements               | OFF                                |</span><br><span class="line"></span><br><span class="line">|log_throttle_queries_not_using_indexes  |0                                  |</span><br><span class="line"></span><br><span class="line">| log_warnings                            | 1                                  |</span><br><span class="line"></span><br><span class="line">| max_binlog_cache_size                   | 18446744073709547520               |</span><br><span class="line"></span><br><span class="line">| max_binlog_size                         | 1073741824                         |</span><br><span class="line"></span><br><span class="line">| max_binlog_stmt_cache_size              | 18446744073709547520               |</span><br><span class="line"></span><br><span class="line">| max_relay_log_size                      | 0                                  |</span><br><span class="line"></span><br><span class="line">| relay_log                               |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_basename                      |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_index                         |                                    |</span><br><span class="line"></span><br><span class="line">| relay_log_info_file                     | relay-log.info                     |</span><br><span class="line"></span><br><span class="line">| relay_log_info_repository               | FILE                               |</span><br><span class="line"></span><br><span class="line">| relay_log_purge                         | ON                                 |</span><br><span class="line"></span><br><span class="line">| relay_log_recovery                      | OFF                                |</span><br><span class="line"></span><br><span class="line">| relay_log_space_limit                   | 0                                  |</span><br><span class="line"></span><br><span class="line">| simplified_binlog_gtid_recovery         | OFF                                |</span><br><span class="line"></span><br><span class="line">|slow_query_log                          |OFF                                |</span><br><span class="line"></span><br><span class="line">| slow_query_log_file                     |/var/lib/mysql/mysql-host-slow.log |</span><br><span class="line"></span><br><span class="line">| sql_log_bin                             | ON                                 |</span><br><span class="line"></span><br><span class="line">| sql_log_off                             | OFF                                |</span><br><span class="line"></span><br><span class="line">| sync_binlog                             | 0                                  |</span><br><span class="line"></span><br><span class="line">| sync_relay_log                          | 10000                              |</span><br><span class="line"></span><br><span class="line">| sync_relay_log_info                     | 10000                              |</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+------------------------------------+</span><br></pre></td></tr></table></figure>
 <p>61 rows in set (0.01 sec)</p>
 <p>开启慢查日志：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;%log%&apos;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">log_queries_not_using_indexes           | ON                            |</span><br><span class="line"></span><br><span class="line"> slow_query_log                          | OFF                           |</span><br><span class="line">| slow_query_log_file                     | /var/lib/mysql/mysql-slow.log |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//通过这个命令来查看是否开启慢日志</span><br><span class="line">mysql&gt; set global slow_query_log=on;</span><br><span class="line">Query OK, 0 rows affected (0.32 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">log_queries_not_using_indexes           | ON                            |</span><br><span class="line"></span><br><span class="line"> slow_query_log                          | OFF                           |</span><br><span class="line">| slow_query_log_file                     | /var/lib/mysql/mysql-slow.log |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//通过这个命令来设置开启慢日志</span><br><span class="line">mysql&gt; set global slow_query_log=on;</span><br><span class="line">Query OK, 0 rows affected (0.32 sec)</span><br></pre></td></tr></table></figure>
 <p>验证慢查询日志是否开启：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Time: 181026  0:39:29</span><br><span class="line"># User@Host: root[root] @ localhost []  Id:     3</span><br><span class="line"># Query_time: 0.000098  Lock_time: 0.000050 Rows_sent: 1  Rows_examined: 2</span><br><span class="line">SET timestamp=1540485569;</span><br><span class="line">select count(*) from staff;</span><br></pre></td></tr></table></figure>
 <p>在mysql操作中，</p>
-<p>Show databases;</p>
-<p>Use sakila;</p>
-<p>select * from store;</p>
-<p>select * from staff; </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Show databases;</span><br><span class="line"></span><br><span class="line">Use sakila;</span><br><span class="line"></span><br><span class="line">select * from store;</span><br><span class="line"></span><br><span class="line">select * from staff;</span><br></pre></td></tr></table></figure>
 <p>监听日志文件，看是否写入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /var/lib/mysql/mysql-slow.log</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-3、MySQL慢查日志的存储格式"><a href="#3-4-3、MySQL慢查日志的存储格式" class="headerlink" title="3.4.3、MySQL慢查日志的存储格式"></a>3.4.3、MySQL慢查日志的存储格式</h3><p>如下图所示：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt=""></p>
-<p>说明：</p>
+<h4 id="3-3-3、MySQL慢查日志的存储格式"><a href="#3-3-3、MySQL慢查日志的存储格式" class="headerlink" title="3.3.3、MySQL慢查日志的存储格式"></a>3.3.3、MySQL慢查日志的存储格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show variables like &apos;slow%&apos;;</span><br><span class="line"></span><br><span class="line">+---------------------+---------------------------------------------------------------------+</span><br><span class="line">| Variable_name       | Value                                                               |</span><br><span class="line">+---------------------+---------------------------------------------------------------------+</span><br><span class="line">| slow_launch_time    | 2                                                                   |</span><br><span class="line">| slow_query_log      | OFF                                                                 |</span><br><span class="line">| slow_query_log_file | C:\ProgramData\MySQL\MySQL Server 5.5\Data\DESKTOP-2LA2VDS-slow.log |</span><br><span class="line">+---------------------+---------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
 <pre><code>1、# Time: 180526  1:06:54 -------à查询的执行时间
 
 2、# User@Host: root[root] @ localhost []  Id:     4 -------à执行sql的主机信息
@@ -162,19 +144,18 @@
 4、SET timestamp=1527268014; -------àSQL执行时间
 
 5、select * from staff; -------àSQL的执行内容
-</code></pre><h1 id="4、MySQL慢查日志分析工具（mysqldumpslow）"><a href="#4、MySQL慢查日志分析工具（mysqldumpslow）" class="headerlink" title="4、MySQL慢查日志分析工具（mysqldumpslow）"></a>4、MySQL慢查日志分析工具（mysqldumpslow）</h1><h2 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h2><p>如何进行查看慢查询日志，如果开启了慢查询日志，就会生成很多的数据，然后我们就可以通过对日志的分析，生成分析报表，然后通过报表进行优化。</p>
-<h2 id="2、用法"><a href="#2、用法" class="headerlink" title="2、用法"></a>2、用法</h2><p>接下来我们查看一下这个工具的用法：</p>
+</code></pre><h2 id="4、MySQL慢查日志分析工具（mysqldumpslow）"><a href="#4、MySQL慢查日志分析工具（mysqldumpslow）" class="headerlink" title="4、MySQL慢查日志分析工具（mysqldumpslow）"></a>4、MySQL慢查日志分析工具（mysqldumpslow）</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><p>如何进行查看慢查询日志，如果开启了慢查询日志，就会生成很多的数据，然后我们就可以通过对日志的分析，生成分析报表，然后通过报表进行优化。</p>
+<h3 id="2、用法"><a href="#2、用法" class="headerlink" title="2、用法"></a>2、用法</h3><p>接下来我们查看一下这个工具的用法</p>
 <p>注意：在mysql数据库所在的服务器上，而不是在mysql&gt;命令行中</p>
 <p>该工具如何使用：<strong>mysqldumpslow -h</strong></p>
 <p><strong>查看verbose信息</strong></p>
 <p><strong>Mysqldumpslow -v</strong></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg" alt=""></p>
 <p>查看慢查询日志的前10个，mysqldumpslow 分析的结果如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql ~]# mysqldumpslow -t 10 /var/lib/mysql/mysql-slow.log</span><br><span class="line"></span><br><span class="line">Reading mysql slow query log from /var/lib/mysql/mysql-slow.log</span><br><span class="line">Count: 1  Time=0.01s (0s)  Lock=0.00s (0s)  Rows=1000.0 (1000), root[root]@localhost</span><br><span class="line">  select * from film</span><br><span class="line"></span><br><span class="line">Count: 1  Time=0.00s (0s)  Lock=0.00s (0s)  Rows=200.0 (200), root[root]@localhost</span><br><span class="line">  select * from actor</span><br><span class="line"></span><br><span class="line">Count: 2  Time=0.00s (0s)  Lock=0.00s (0s)  Rows=1.0 (2), root[root]@localhost</span><br><span class="line">  select count(*) from film</span><br><span class="line"></span><br><span class="line">Count: 2  Time=0.00s (0s)  Lock=0.00s (0s)  Rows=1.0 (2), root[root]@localhost</span><br><span class="line">  select count(*) from staff</span><br><span class="line"></span><br><span class="line">Died at /usr/bin/mysqldumpslow line 161, &lt;&gt; chunk 6.</span><br></pre></td></tr></table></figure>
 <p>如上图两条就是分析的结果，每条结果都显示是执行时间，锁定时间，发送的行数，扫描的行数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql mysql]# tail -f /var/lib/mysql/mysql-slow.log</span><br><span class="line"># Time: 181026  0:41:46</span><br><span class="line"># User@Host: root[root] @ localhost []  Id:     3</span><br><span class="line"># Query_time: 0.000121  Lock_time: 0.000059 Rows_sent: 1  Rows_examined: 2</span><br><span class="line">SET timestamp=1540485706;</span><br><span class="line">select count(*) from staff;</span><br><span class="line"># Time: 181026  0:42:12</span><br><span class="line"># User@Host: root[root] @ localhost []  Id:     3</span><br><span class="line"># Query_time: 0.000634  Lock_time: 0.000069 Rows_sent: 200  Rows_examined: 200</span><br><span class="line">SET timestamp=1540485732;</span><br><span class="line">select * from actor;</span><br><span class="line"># Time: 181026  1:05:41</span><br><span class="line"># User@Host: root[root] @ localhost []  Id:     3</span><br><span class="line"># Query_time: 0.008336  Lock_time: 0.000101 Rows_sent: 1000  Rows_examined: 1000</span><br><span class="line">SET timestamp=1540487141;</span><br><span class="line">select * from film;</span><br></pre></td></tr></table></figure>
 <p>这个工具是最常用的工具，通过安装mysql进行附带安装，但是该工具统计的结果比较少，对我们的优化锁表现的数据还是比较少。</p>
-<h1 id="5、MySQL慢查日志分析工具-pt-query-digest"><a href="#5、MySQL慢查日志分析工具-pt-query-digest" class="headerlink" title="5、MySQL慢查日志分析工具(pt-query-digest)"></a>5、MySQL慢查日志分析工具(pt-query-digest)</h1><h2 id="1、介绍及作用"><a href="#1、介绍及作用" class="headerlink" title="1、介绍及作用"></a>1、介绍及作用</h2><pre><code>作为一名优秀的mysql dba也需要有掌握几个好用的mysql管理工具，所以我也一直在整理和查找一些能够便于管理mysql的利器。以后的一段时间内，将会花一大部分的精力去搜索这些工具。
+<h2 id="5、MySQL慢查日志分析工具-pt-query-digest"><a href="#5、MySQL慢查日志分析工具-pt-query-digest" class="headerlink" title="5、MySQL慢查日志分析工具(pt-query-digest)"></a>5、MySQL慢查日志分析工具(pt-query-digest)</h2><h3 id="1、介绍及作用"><a href="#1、介绍及作用" class="headerlink" title="1、介绍及作用"></a>1、介绍及作用</h3><pre><code>作为一名优秀的mysql dba也需要有掌握几个好用的mysql管理工具，所以我也一直在整理和查找一些能够便于管理mysql的利器。以后的一段时间内，将会花一大部分的精力去搜索这些工具。
 </code></pre><p>性 能的管理一直都是摆在第一位的，dba的很多工作管理层都看不到也没有办法衡量价值，但是如果一个系统慢的跟蜗牛一样，dba通过监控调优把系统从崩溃边缘重新拉回到高铁时代。这种价值和触动应该是巨大的。（很多企业的领导认为系统跑不动了就需要换更快的CPU、更大的内存、更快的存储，而且这还不是少数，所以DBA的价值也一直体现不出来，薪水自然也就不会很高）</p>
 <p>mysql 的日志是跟踪mysql性能瓶颈的最快和最直接的方式了，系统性能出现瓶颈的时候，首先要打开慢查询日志，进行跟踪；这段时间关于慢查询日志的管理和查看已经整理过两篇文章了，不经意间又发现了一个查看慢查询日志的工具：mk-query-digest，这个工具网上号称mysql dba必须掌握的十大工具之首。</p>
 <h2 id="2、安装pt-query-digest工具"><a href="#2、安装pt-query-digest工具" class="headerlink" title="2、安装pt-query-digest工具"></a>2、安装pt-query-digest工具</h2><h3 id="1-1、快速安装（注：必须先要安装wget）"><a href="#1-1、快速安装（注：必须先要安装wget）" class="headerlink" title="1.1、快速安装（注：必须先要安装wget）"></a>1.1、快速安装（注：必须先要安装wget）</h3><h3 id="1-2、检查是否安装完成："><a href="#1-2、检查是否安装完成：" class="headerlink" title="1.2、检查是否安装完成："></a>1.2、检查是否安装完成：</h3><pre><code>命令行中输入：pt-summary
@@ -208,10 +189,10 @@
 <h2 id="2、IO大的sql"><a href="#2、IO大的sql" class="headerlink" title="2、IO大的sql"></a>2、IO大的sql</h2><pre><code>注意pt-query-digest分析中的Rows examine项。扫描的行数越多，IO越大。
 </code></pre><h2 id="3、未命中的索引的SQL"><a href="#3、未命中的索引的SQL" class="headerlink" title="3、未命中的索引的SQL"></a>3、未命中的索引的SQL</h2><pre><code>注意pt-query-digest分析中的Rows examine 和Rows Send的对比。说明该SQL的索引命中率不高，对于这种SQL，我们要重点进行关注。
 </code></pre><h1 id="7、通过explain查询分析SQL的执行计划"><a href="#7、通过explain查询分析SQL的执行计划" class="headerlink" title="7、通过explain查询分析SQL的执行计划"></a>7、通过explain查询分析SQL的执行计划</h1><h2 id="1、使用explain查询SQL的执行计划"><a href="#1、使用explain查询SQL的执行计划" class="headerlink" title="1、使用explain查询SQL的执行计划"></a>1、使用explain查询SQL的执行计划</h2><p>SQL的执行计划侧面反映出了SQL的执行效率，具体执行方式如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN SELECT * FROM `user`</span><br><span class="line">  JOIN `post` ON `user`.id = `post`.uid</span><br><span class="line">WHERE user.`created_at` &lt; &apos;2018-10-01 00:00:00&apos; AND `post`.status = 1;</span><br></pre></td></tr></table></figure>
 <p>在执行的SQL前面加上explain关键词即可；</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg" alt=""></p>
-<h2 id="2、每个字段的说明："><a href="#2、每个字段的说明：" class="headerlink" title="2、每个字段的说明："></a>2、每个字段的说明：</h2><p>1）、id列数字越大越先执行，如果说数字一样大，那么就从上往下依次执行，id列为null的就表是这是一个结果集，不需要使用它来进行查询。</p>
-<p>2）、select_type列常见的有：</p>
+<h2 id="2、每个字段的说明："><a href="#2、每个字段的说明：" class="headerlink" title="2、每个字段的说明："></a>2、每个字段的说明：</h2><p>1）id列数字越大越先执行，如果说数字一样大，那么就从上往下依次执行，id列为null的就表是这是一个结果集，不需要使用它来进行查询。</p>
+<p>2）select_type列常见的有：</p>
 <p>A：simple：表示不需要union操作或者不包含子查询的简单select查询。有连接查询时，外层的查询为simple，且只有一个</p>
 <p>B：primary：一个需要union操作或者含有子查询的select，位于最外层的单位查询的select_type即为primary。且只有一个</p>
 <p>C：union：union连接的两个select查询，第一个查询是dervied派生表，除了第一个表外，第二个以后的表select_type都是union</p>
@@ -220,9 +201,9 @@
 <p>F：subquery：除了from字句中包含的子查询外，其他地方出现的子查询都可能是subquery</p>
 <p>G：dependentsubquery：与dependent union类似，表示这个subquery的查询要受到外部表查询的影响</p>
 <p>H：derived：from字句中出现的子查询，也叫做派生表，其他数据库中可能叫做内联视图或嵌套select</p>
-<p>3）、table</p>
+<p>3）table</p>
 <p>显示的查询表名，如果查询使用了别名，那么这里显示的是别名，如果不涉及对数据表的操作，那么这显示为null，如果显示为尖括号括起来的<derived n="">就表示这个是临时表，后边的N就是执行计划中的id，表示结果来自于这个查询产生。如果是尖括号括起来的<union m,n="">，与<derived n="">类似，也是一个临时表，表示这个结果来自于union查询的id为M,N的结果集。</derived></union></derived></p>
-<p>4）、type</p>
+<p>4）type</p>
 <p>依次从好到差：system，const，eq_ref，ref，fulltext，ref_or_null，unique_subquery，index_subquery，range，index_merge，index，ALL，除了all之外，其他的type都可以使用到索引，除了index_merge之外，其他的type只可以用到一个索引</p>
 <p>A：system：表中只有一行数据或者是空表，且只能用于myisam和memory表。如果是Innodb引擎表，type列在这个情况通常都是all或者index</p>
 <p>B：const：使用唯一索引或者主键，返回记录一定是1行记录的等值where条件时，通常type是const。其他数据库也叫做唯一索引扫描</p>
@@ -234,19 +215,19 @@
 <p>H：index_subquery：用于in形式子查询使用到了辅助索引或者in常数列表，子查询可能返回重复值，可以使用索引将子查询去重。</p>
 <p>I：range：索引范围扫描，常见于使用&gt;,&lt;,is null,between ,in ,like等运算符的查询中。</p>
 <p>J：index_merge：表示查询使用了两个以上的索引，最后取交集或者并集，常见and ，or的条件使用了不同的索引，官方排序这个在ref_or_null之后，但是实际上由于要读取所个索引，性能可能大部分时间都不如range</p>
-<p>K：index：索引全表扫描，把索引从头到尾扫一遍，常见于使用索引列就可以处理不需要读取数据文件的查询、可以使用索引排序或者分组的查询。</p>
+<p>K：index：索引全表扫描，把索引从头到尾扫一遍，常见于使用索引列就可以处理不需要读取数据文件的查询、可以使用索引排序或者分组的查询。 </p>
 <p>L：all：这个就是全表扫描数据文件，然后再在server层进行过滤返回符合要求的记录。</p>
-<p>5）、possible_keys</p>
+<p>5）possible_keys</p>
 <p>查询可能使用到的索引都会在这里列出来</p>
-<p>6）、key</p>
+<p>6）key</p>
 <p>查询真正使用到的索引，select_type为index_merge时，这里可能出现两个以上的索引，其他的select_type这里只会出现一个。</p>
-<p>7）、key_len</p>
+<p>7）key_len</p>
 <p>用于处理查询的索引长度，如果是单列索引，那就整个索引长度算进去，如果是多列索引，那么查询不一定都能使用到所有的列，具体使用到了多少个列的索引，这里就会计算进去，没有使用到的列，这里不会计算进去。留意下这个列的值，算一下你的多列索引总长度就知道有没有使用到所有的列了。要注意，mysql的ICP特性使用到的索引不会计入其中。另外，key_len只计算where条件用到的索引长度，而排序和分组就算用到了索引，也不会计算到key_len中。</p>
-<p>8）、ref</p>
+<p>8）ref</p>
 <p>如果是使用的常数等值查询，这里会显示const，如果是连接查询，被驱动表的执行计划这里会显示驱动表的关联字段，如果是条件使用了表达式或者函数，或者条件列发生了内部隐式转换，这里可能显示为func</p>
-<p>9）、rows</p>
+<p>9）rows</p>
 <p>这里是执行计划中估算的扫描行数，不是精确值</p>
-<p>10）、extra</p>
+<p>10）extra</p>
 <p>这个列可以显示的信息非常多，有几十种，常用的有</p>
 <p>A：distinct：在select部分使用了distinc关键字</p>
 <p>B：no tables used：不带from字句的查询或者From dual查询</p>
@@ -263,100 +244,15 @@
 <p>J：firstmatch(tb_name)：5.6.x开始引入的优化子查询的新特性之一，常见于where字句含有in()类型的子查询。如果内表的数据量比较大，就可能出现这个</p>
 <p>K：loosescan(m..n)：5.6.x之后引入的优化子查询的新特性之一，在in()类型的子查询中，子查询返回的可能有重复记录时，就可能出现这个</p>
 <p>除了这些之外，还有很多查询数据字典库，执行计划过程中就发现不可能存在结果的一些提示信息</p>
-<p>11）、filtered</p>
+<p>11）filtered</p>
 <p>使用explain extended时会出现这个列，5.7之后的版本默认就有这个字段，不需要使用explain extended了。这个字段表示存储引擎返回的数据在server层过滤后，剩下多少满足查询的记录数量的比例，注意是百分比，不是具体记录数。</p>
-<p>附图：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image024.png" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image026.png" alt=""></p>
-<h2 id="3、具体慢查询的优化案例"><a href="#3、具体慢查询的优化案例" class="headerlink" title="3、具体慢查询的优化案例"></a>3、具体慢查询的优化案例</h2><h3 id="1、函数Max-的优化"><a href="#1、函数Max-的优化" class="headerlink" title="1、函数Max()的优化"></a>1、函数Max()的优化</h3><p>用途：查询最后支付时间-优化max（）函数</p>
-<p>语句：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image028.jpg" alt=""></p>
-<p>执行计划：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg" alt=""></p>
-<p>可以看到显示的执行计划，并不是很高效，可以拖慢服务器的效率，如何优化了？</p>
-<p>创建索引</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg" alt=""></p>
-<p>索引是顺序操作的，不需要扫描表，执行效率就会比较恒定，</p>
-<h3 id="2、函数Count-的优化"><a href="#2、函数Count-的优化" class="headerlink" title="2、函数Count()的优化"></a>2、函数Count()的优化</h3><p>需求：在一条SQL中同事查处2006年和2007年电影的数量</p>
-<p>错误的方式：</p>
-<p>语句：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg" alt=""></p>
-<p>2006和2007年分别是多少，判断不出来</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg" alt=""></p>
-<p>正确的编写方式：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg" alt=""></p>
-<p>区别：count（*）和count（id）</p>
-<p>创建表并插入语句</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg" alt=""></p>
-<p>Count（<em>）：select count(</em>)from t;</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image045.png" alt=""></p>
-<p>Count（id）：select count(id)from t;</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image046.png" alt=""></p>
-<p>说明：</p>
-<p>Count（id）是不包含null的值</p>
-<p>Count（*）是包含null的值</p>
-<h3 id="3、子查询的优化"><a href="#3、子查询的优化" class="headerlink" title="3、子查询的优化"></a>3、子查询的优化</h3><p>子查询是我们在开发过程中经常使用的一种方式，在通常情况下，需要把子查询优化为join查询但在优化是需要注意关联键是否有一对多的关系，要注意重复数据。</p>
-<p>查看我们所创建的t表</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg" alt=""></p>
-<p>接下来我们创建一个t1表</p>
-<p>并插入一条数据</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image050.jpg" alt=""></p>
-<p>我们要进行一个子查询，需求：查询t表中id在t1表中tid的所有数据；</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg" alt=""></p>
-<p>接下来我们用join的操作来进行操作</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg" alt=""></p>
-<p>通过上面结果来看，查询的结果是一致的，我们就将子查询的方式优化为join操作。</p>
-<p>接下来，我们在t1表中再插入一条数据</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image055.png" alt=""></p>
-<p>在这种情况下，如果我们使用子查询方式进行查询，返回的结果就是如下图所示：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image057.jpg" alt=""></p>
-<p>如果使用join方式进行查找，如下图所示：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image059.jpg" alt=""></p>
-<p>在这种情况下出现了一对多的关系，会出现数据的重复，我们为了方式数据重复，不得不使用distinct关键词进行去重操作</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image061.jpg" alt=""></p>
-<p>注意：这个一对多的关系是我们开发过程中遇到的一个坑，出现数据重复，需要大家注意一下。</p>
-<p>例子：查询sandra出演的所有影片：</p>
-<h3 id="4、group-by的优化"><a href="#4、group-by的优化" class="headerlink" title="4、group by的优化"></a>4、group by的优化</h3><p>最好使用同一表中的列，</p>
-<p>需求：每个演员所参演影片的数量-（影片表和演员表） </p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image063.jpg" alt=""></p>
-<p>优化后的SQL：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image065.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image067.jpg" alt=""></p>
-<p>说明：从上面的执行计划来看，这种优化后的方式没有使用临时文件和文件排序的方式了，取而代之的是使用了索引。查询效率老高了。</p>
-<p>这个时候我们表中的数据比较大，会大量的占用IO操作，优化了sql执行的效率，节省了服务器的资源，因此我们就需要优化。</p>
-<p>注意：</p>
-<p>1、mysql 中using关键词的作用：也就是说要使用using,那么表a和表b必须要有相同的列。</p>
-<p>2、在用Join进行多表联合查询时，我们通常使用On来建立两个表的关系。其实还有一个更方便的关键字，那就是Using。</p>
-<p>3、如果两个表的关联字段名是一样的，就可以使用Using来建立关系，简洁明了。</p>
-<h3 id="5、Limit查询的优化"><a href="#5、Limit查询的优化" class="headerlink" title="5、Limit查询的优化"></a>5、Limit查询的优化</h3><p>Limit常用于分页处理，时长会伴随orderby从句使用，因此大多时候回使用Filesorts这样会造成大量的IO问题。</p>
-<p>例子：</p>
-<pre><code>需求：查询影片id和描述信息，并根据主题进行排序，取出从序号50条开始的5条数据。
-</code></pre><p>执行的结果：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image069.jpg" alt=""></p>
-<p>在查看一下它的执行计划：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image071.jpg" alt=""></p>
-<p>对于这种操作，我们该用什么样的优化方式了？</p>
+<h2 id="3-具体慢查询的优化案例"><a href="#3-具体慢查询的优化案例" class="headerlink" title="3  具体慢查询的优化案例"></a>3  具体慢查询的优化案例</h2><h3 id="1、Limit查询的优化"><a href="#1、Limit查询的优化" class="headerlink" title="1、Limit查询的优化"></a>1、Limit查询的优化</h3><p>Limit常用于分页处理，时长会伴随orderby从句使用，因此大多时候回使用Filesorts这样会造成大量的IO问题。</p>
 <p>优化步骤1：</p>
 <p>使用有索引的列或主键进行order by操作，因为大家知道，innodb是按照主键的逻辑顺序进行排序的。可以避免很多的IO操作。</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image073.jpg" alt=""></p>
-<p>查看一下执行计划</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image075.jpg" alt=""></p>
-<p>那如果我们获取从500行开始的5条记录，执行计划又是什么样的了？</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image077.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image079.jpg" alt=""></p>
-<p>随着我们翻页越往后，IO操作会越来越大的，如果一个表有几千万行数据，翻页越后面，会越来越慢，因此我们要进一步的来优化。</p>
 <p>优化步骤2、记录上次返回的主键， 在下次查询时使用主键过滤。（说明：避免了数据量大时扫描过多的记录）</p>
-<p>上次limit是50,5的操作，因此我们在这次优化过程需要使用上次的索引记录值，</p>
-<p>查看执行计划：</p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image081.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image083.jpg" alt=""></p>
-<p><img src="file:///C:/Users/Deborah/AppData/Local/Temp/msohtmlclip1/01/clip_image085.jpg" alt=""></p>
-<p>结论：<strong>扫描行数不变，执行计划是很固定，效率也是很固定的</strong></p>
 <p>注意事项：</p>
 <p>主键要顺序排序并连续的，如果主键中间空缺了某一列，或者某几列，会出现列出数据不足5行的数据；如果不连续的情况，建立一个附加的列index_id列，保证这一列数据要自增的，并添加索引即可。</p>
-<h3 id="6、索引的优化"><a href="#6、索引的优化" class="headerlink" title="6、索引的优化"></a>6、索引的优化</h3><h4 id="1、什么是索引？"><a href="#1、什么是索引？" class="headerlink" title="1、什么是索引？"></a>1、什么是索引？</h4><p>索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。</p>
+<h3 id="2、索引的优化"><a href="#2、索引的优化" class="headerlink" title="2、索引的优化"></a>2、索引的优化</h3><h4 id="1、什么是索引？"><a href="#1、什么是索引？" class="headerlink" title="1、什么是索引？"></a>1、什么是索引？</h4><p>索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。</p>
 <p>数据库使用索引以找到特定值，然后顺指针找到包含该值的行。在表中建立索引，然后在索引中找到符合查询条件的索引值，最后通过保存在索引中的ROWID（相当于页码）快速找到表中对应的记录。索引的建立是表中比较有指向性的字段，相当于目录，比如说行政区域代码，同一个地域的行政区域代码都是相同的，那么给这一列加上索引，避免让它重复扫描，从而达到优化的目的！</p>
 <h4 id="2、如何创建索引"><a href="#2、如何创建索引" class="headerlink" title="2、如何创建索引"></a>2、如何创建索引</h4><p>在执行CREATE TABLE语句时可以创建索引，也可以单独用CREATE INDEX或ALTER TABLE来为表增加索引。</p>
 <pre><code>1、ALTER TABLE
@@ -468,10 +364,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/14/数据库-性能优化篇/" data-id="ck7xgnhf800ajwkuw923rkh1t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/14/sql_数据库性能优化/" data-id="ck7xiph6v0000vguw3hzdyigp" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 
     </footer>
   </div>
@@ -480,9 +376,9 @@
 
 
   
-    <article id="post-数据库-进阶篇" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sql_数据库进阶" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/14/数据库-进阶篇/" class="article-date">
+    <a href="/2019/01/14/sql_数据库进阶/" class="article-date">
   <time datetime="2019-01-14T02:42:06.000Z" itemprop="datePublished">2019-01-14</time>
 </a>
     
@@ -494,7 +390,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/14/数据库-进阶篇/">数据库-进阶篇</a>
+      <a class="article-title" href="/2019/01/14/sql_数据库进阶/">数据库-进阶</a>
     </h1>
   
 
@@ -502,130 +398,128 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数据库高级部分"><a href="#数据库高级部分" class="headerlink" title="数据库高级部分"></a>数据库高级部分</h1><h1 id="1、编码mysql"><a href="#1、编码mysql" class="headerlink" title="1、编码mysql"></a>1、编码mysql</h1><h2 id="1-1、查看mysql编码"><a href="#1-1、查看mysql编码" class="headerlink" title="1.1、查看mysql编码"></a>1.1、查看mysql编码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;character%&apos;;</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name            | Value                      |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_set_client     | utf8                       |</span><br><span class="line">| character_set_connection | utf8                       |</span><br><span class="line">| character_set_database   | latin1                     |</span><br><span class="line">| character_set_filesystem | binary                     |</span><br><span class="line">| character_set_results    | utf8                       |</span><br><span class="line">| character_set_server     | latin1                     |</span><br><span class="line">| character_set_system     | utf8                       |</span><br><span class="line">| character_sets_dir       | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure>
-<h2 id="1-2、设置mysql编码"><a href="#1-2、设置mysql编码" class="headerlink" title="1.2、设置mysql编码"></a>1.2、设置mysql编码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/my.cnf</span><br><span class="line">如下(少补)：</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci </span><br><span class="line">sql_mode=&apos;NO_ENGINE_SUBSTITUTION&apos;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysql.server]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">重启mysql</span><br><span class="line"></span><br><span class="line"># service mysqld restart</span><br><span class="line">再次查看编码：</span><br><span class="line"></span><br><span class="line"># mysql -uroot -p</span><br><span class="line">mysql&gt; show variables like &apos;character%&apos;;</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_set_client | utf8 |</span><br><span class="line">| character_set_connection | utf8 |</span><br><span class="line">| character_set_database | utf8 |</span><br><span class="line">| character_set_filesystem | binary |</span><br><span class="line">| character_set_results | utf8 |</span><br><span class="line">| character_set_server | utf8 |</span><br><span class="line">| character_set_system | utf8 |</span><br><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">8 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-<h1 id="2、mysql的目录及配置文件"><a href="#2、mysql的目录及配置文件" class="headerlink" title="2、mysql的目录及配置文件"></a>2、mysql的目录及配置文件</h1><p>A、<strong>/etc/my.cnf</strong> 这是mysql的主配置文件</p>
-<p>B、/var/lib/mysql   mysql数据库的数据库文件存放位置</p>
+        <h2 id="1-编码mysql"><a href="#1-编码mysql" class="headerlink" title="1  编码mysql"></a>1  编码mysql</h2><h4 id="1-1-查看mysql编码"><a href="#1-1-查看mysql编码" class="headerlink" title="1.1 查看mysql编码"></a>1.1 查看mysql编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;character%&apos;;</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name            | Value                      |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_set_client     | utf8                       |</span><br><span class="line">| character_set_connection | utf8                       |</span><br><span class="line">| character_set_database   | latin1                     |</span><br><span class="line">| character_set_filesystem | binary                     |</span><br><span class="line">| character_set_results    | utf8                       |</span><br><span class="line">| character_set_server     | latin1                     |</span><br><span class="line">| character_set_system     | utf8                       |</span><br><span class="line">| character_sets_dir       | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-设置mysql编码"><a href="#1-2-设置mysql编码" class="headerlink" title="1.2 设置mysql编码"></a>1.2 设置mysql编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/my.cnf</span><br><span class="line">如下(少补)：</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci </span><br><span class="line">sql_mode=&apos;NO_ENGINE_SUBSTITUTION&apos;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysql.server]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">重启mysql</span><br><span class="line"></span><br><span class="line"># service mysqld restart</span><br><span class="line">再次查看编码：</span><br><span class="line"></span><br><span class="line"># mysql -uroot -p</span><br><span class="line">mysql&gt; show variables like &apos;character%&apos;;</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">| character_set_client | utf8 |</span><br><span class="line">| character_set_connection | utf8 |</span><br><span class="line">| character_set_database | utf8 |</span><br><span class="line">| character_set_filesystem | binary |</span><br><span class="line">| character_set_results | utf8 |</span><br><span class="line">| character_set_server | utf8 |</span><br><span class="line">| character_set_system | utf8 |</span><br><span class="line">| character_sets_dir | /usr/share/mysql/charsets/ |</span><br><span class="line">+--------------------------+----------------------------+</span><br><span class="line">8 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h2 id="2-mysql的目录及配置文件"><a href="#2-mysql的目录及配置文件" class="headerlink" title="2  mysql的目录及配置文件"></a>2  mysql的目录及配置文件</h2><p>A<strong>/etc/my.cnf</strong> 这是mysql的主配置文件</p>
+<p>B/var/lib/mysql   mysql数据库的数据库文件存放位置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql etc]# cd /var/lib/mysql/</span><br><span class="line">[root@mysql mysql]# ll</span><br><span class="line">total 176172</span><br><span class="line">-rw-rw----. 1 mysql mysql       56 Oct 20 00:10 auto.cnf</span><br><span class="line">-rw-rw----. 1 mysql mysql 79691776 Oct 21 04:46 ibdata1</span><br><span class="line">-rw-rw----. 1 mysql mysql 50331648 Oct 21 04:46 ib_logfile0</span><br><span class="line">-rw-rw----. 1 mysql mysql 50331648 Oct 20 00:09 ib_logfile1</span><br><span class="line">drwx------. 2 mysql mysql     4096 Oct 21 01:38 test11</span><br><span class="line">drwx------. 2 mysql mysql     4096 Oct 21 04:45 menagerie</span><br><span class="line">drwx--x--x. 2 mysql mysql     4096 Oct 20 00:09 mysql</span><br><span class="line">-rw-r-----. 1 mysql root      2219 Oct 20 00:14 mysql.err</span><br><span class="line">-rw-rw----. 1 mysql mysql        5 Oct 20 00:10 mysql.pid</span><br><span class="line">srwxrwxrwx. 1 mysql mysql        0 Oct 20 00:10 mysql.sock</span><br><span class="line">drwx------. 2 mysql mysql     4096 Oct 20 00:09 performance_schema</span><br><span class="line">-rw-r--r--. 1 root  root       111 Oct 20 00:09 RPM_UPGRADE_HISTORY</span><br><span class="line">-rw-r--r--. 1 mysql mysql      111 Oct 20 00:09 RPM_UPGRADE_MARKER-LAST</span><br><span class="line">drwxr-xr-x. 2 mysql mysql     4096 Oct 20 00:09 test</span><br></pre></td></tr></table></figure>
 <p>我们的mysql数据库的数据库文件通常是存放在了/ver/lib/mysql这个目录下</p>
-<p>C、/var/log/mysql数据库的日志输出存放位置</p>
-<p>D、查看端口。Netstat –nltp 看是否能找到3306的端口</p>
+<p>C/var/log/mysql数据库的日志输出存放位置</p>
+<p>D查看端口。Netstat –nltp 看是否能找到3306的端口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@mysql menagerie]# netstat -nltp</span><br><span class="line">Active Internet connections (only servers)</span><br><span class="line">Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name   </span><br><span class="line">tcp        0      0 0.0.0.0:57958               0.0.0.0:*                   LISTEN      1306/rpc.statd      </span><br><span class="line">tcp        0      0 0.0.0.0:111                 0.0.0.0:*                   LISTEN      1284/rpcbind        </span><br><span class="line">tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1573/sshd           </span><br><span class="line">tcp        0      0 127.0.0.1:631               0.0.0.0:*                   LISTEN      1362/cupsd          </span><br><span class="line">tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      1654/master         </span><br><span class="line">tcp        0      0 :::3306                     :::*                        LISTEN      37860/mysqld        </span><br><span class="line">tcp        0      0 :::49647                    :::*                        LISTEN      1306/rpc.statd      </span><br><span class="line">tcp        0      0 :::111                      :::*                        LISTEN      1284/rpcbind        </span><br><span class="line">tcp        0      0 :::22                       :::*                        LISTEN      1573/sshd           </span><br><span class="line">tcp        0      0 ::1:631                     :::*                        LISTEN      1362/cupsd          </span><br><span class="line">tcp        0      0 ::1:25                      :::*                        LISTEN      1654/master</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[root@mysql mysql]#  cat mysql.pid</span><br><span class="line">37860</span><br></pre></td></tr></table></figure>
-<h1 id="3、数据库-原理部分"><a href="#3、数据库-原理部分" class="headerlink" title="3、数据库-原理部分"></a>3、数据库-原理部分</h1><p>常用的术语</p>
-<p>##3.1、数据模型</p>
-<p>​    数据模型（Data model）是数据库结构的基础，是用来描述数据的一组概念和定义，数据模型主要有三个要素：数据结构、数据操作、数据约束条件。</p>
+<h2 id="3-数据库-原理部分"><a href="#3-数据库-原理部分" class="headerlink" title="3  数据库-原理部分"></a>3  数据库-原理部分</h2><p>常用的术语</p>
+<h4 id="3-1数据模型"><a href="#3-1数据模型" class="headerlink" title="3.1数据模型"></a>3.1数据模型</h4><p>​    数据模型（Data model）是数据库结构的基础，是用来描述数据的一组概念和定义，数据模型主要有三个要素：数据结构数据操作数据约束条件。</p>
 <p>数据结构：对象类型的集合，是对静态属性的描述。</p>
 <p>数据操作：是对数据库中的各种对象性数据，允许执行的操作的集合，如增删改查等；数据操作是对系统动态热性的描述。</p>
 <p>数据的约束条件：是一组完整性规则的集合，也就是说，对于具体的应用必须先遵循特定的语义约束条件。比如：性别只能取  “男”或者“女”中的之一。考试成绩：（满分100）只能是0-100的数值。</p>
-<p>##3.2、数据库</p>
-<p>​    数据库（database）是长期存储在计算机外存上有结构，可共享的数据集合；数据库中的数据按照一定的数据模型描述、组织和存储，具有较小的冗余度，较高的数据独立性和可扩展性，并可以为多个用户共享。</p>
+<h4 id="3-2数据库"><a href="#3-2数据库" class="headerlink" title="3.2数据库"></a>3.2数据库</h4><p>​    数据库（database）是长期存储在计算机外存上有结构，可共享的数据集合；数据库中的数据按照一定的数据模型描述组织和存储，具有较小的冗余度，较高的数据独立性和可扩展性，并可以为多个用户共享。</p>
 <p>常见数据库分类：</p>
 <p>关系型数据库：如：MySQL，oracle，sqlserver</p>
 <p>非关系型数据库：如：redis，hbase等</p>
-<h2 id="3-3、数据库管理系统"><a href="#3-3、数据库管理系统" class="headerlink" title="3.3、数据库管理系统"></a>3.3、数据库管理系统</h2><p>​    数据库管理系统（database managerment system， DBMS）是指数据库系统中对数据库进行管理的软件系统，是数据库系统的核心组成部分。数据库的一切操作，如增删改查以及各种控制，都是通过DBMS进行的。</p>
+<h4 id="3-3数据库管理系统"><a href="#3-3数据库管理系统" class="headerlink" title="3.3数据库管理系统"></a>3.3数据库管理系统</h4><p>​    数据库管理系统（database managerment system， DBMS）是指数据库系统中对数据库进行管理的软件系统，是数据库系统的核心组成部分。数据库的一切操作，如增删改查以及各种控制，都是通过DBMS进行的。</p>
 <p>具有以下4个基本的功能：</p>
-<p>1、数据定义功能</p>
+<p>1数据定义功能</p>
 <p>用户可以通过DBMS提供的数据定义语言对数据库的数据进行定义。</p>
-<p>2、数据操纵功能</p>
+<p>2数据操纵功能</p>
 <p>用户可以通过数据操纵语言实现对数据库的增删改查操作</p>
-<p>3、数据库运行管理</p>
-<p>管理数据库的运行是DBMS运行时的核心工作。所有访问数据库的操作都要在DBMS的统一管理下进行，以保证数据的安全性、完整性、一致性以及多用户对数据库的并发使用。</p>
-<p>4、数据库的建立和维护</p>
+<p>3数据库运行管理</p>
+<p>管理数据库的运行是DBMS运行时的核心工作。所有访问数据库的操作都要在DBMS的统一管理下进行，以保证数据的安全性完整性一致性以及多用户对数据库的并发使用。</p>
+<p>4数据库的建立和维护</p>
 <p>建立数据库，包括数据库初始数据的输入与数据转换等。维护数据库，包括数据库的转储与恢复，数据库的重组织，性能监控和分析。</p>
-<h2 id="3-4、数据库系统相关人员"><a href="#3-4、数据库系统相关人员" class="headerlink" title="3.4、数据库系统相关人员"></a>3.4、数据库系统相关人员</h2><p>数据库系统的相关人员是数据库系统的重要组成部分，具体可以分为以下的三类人员</p>
-<p>1、数据库管理员</p>
-<p>职责：负责数据库的建立、使用、维护的专门人员</p>
-<p>2、应用程序开发人员</p>
+<h4 id="3-4数据库系统相关人员"><a href="#3-4数据库系统相关人员" class="headerlink" title="3.4数据库系统相关人员"></a>3.4数据库系统相关人员</h4><p>数据库系统的相关人员是数据库系统的重要组成部分，具体可以分为以下的三类人员</p>
+<p>1数据库管理员</p>
+<p>职责：负责数据库的建立使用维护的专门人员</p>
+<p>2应用程序开发人员</p>
 <p>职责：开发数据库应用程序的人员，可以使用数据库管理系统的所有功能。</p>
-<p>3、最终用户</p>
+<p>3最终用户</p>
 <p>职责：一般来说，是通过应用程序使用数据库的人员，最终用户无需自己编写应用程序。</p>
-<h2 id="3-5、数据库系统"><a href="#3-5、数据库系统" class="headerlink" title="3.5、数据库系统"></a>3.5、数据库系统</h2><p>​    数据库系统（database system DBS）是由硬件系统，数据库管理系统，数据库，数据库应用程序，数据库系统相关人员构成的人-机系统，是指有数据库的整个计算机系统。</p>
+<h4 id="3-5数据库系统"><a href="#3-5数据库系统" class="headerlink" title="3.5数据库系统"></a>3.5数据库系统</h4><p>​    数据库系统（database system DBS）是由硬件系统，数据库管理系统，数据库，数据库应用程序，数据库系统相关人员构成的人-机系统，是指有数据库的整个计算机系统。</p>
 <p>说明：在许多场合下，数据库，数据库管理系统，数据库系统不做严格区分；</p>
-<h1 id="4、关系代数分类"><a href="#4、关系代数分类" class="headerlink" title="4、关系代数分类"></a>4、关系代数分类</h1><h2 id="4-1、基本运算"><a href="#4-1、基本运算" class="headerlink" title="4.1、基本运算"></a>4.1、基本运算</h2><p>​    并、差、笛卡尔积、选择、投影；</p>
-<p>关系代数的基本操作（原始运算）：“选择”、“投影”、笛卡尔积（也叫做“叉积”或“交叉连接”）、并集、差集和“重命名”。</p>
-<h2 id="4-2、组合运算"><a href="#4-2、组合运算" class="headerlink" title="4.2、组合运算"></a>4.2、组合运算</h2><p>​    交、连接、自然连接和除；</p>
-<p>​    其中最重要的是<strong>交集、除法和自然连接</strong>。(inner join     [join])</p>
-<h2 id="4-3、扩充的关系代数操作"><a href="#4-3、扩充的关系代数操作" class="headerlink" title="4.3、扩充的关系代数操作"></a>4.3、扩充的关系代数操作</h2><p>​    外连接（左外和右外）、外部并和半连接；(left join ,right join)</p>
-<h1 id="5、数据库设计"><a href="#5、数据库设计" class="headerlink" title="5、数据库设计"></a>5、数据库设计</h1><p>关系型数据库的设计分为以下5个阶段：</p>
-<h2 id="5-1、需求分析"><a href="#5-1、需求分析" class="headerlink" title="5.1、需求分析"></a>5.1、需求分析</h2><p>(1)      明确用户需求，到底做什么？</p>
-<h2 id="5-2、概念模式设计"><a href="#5-2、概念模式设计" class="headerlink" title="5.2、概念模式设计"></a>5.2、概念模式设计</h2><p>(1)     该阶段是整个数据库设计的关键，它通过对用户需求进行综合、归纳与抽象。主要是通过E-R图表示。</p>
+<h2 id="4-关系代数分类"><a href="#4-关系代数分类" class="headerlink" title="4 关系代数分类"></a>4 关系代数分类</h2><h4 id="4-1-基本运算"><a href="#4-1-基本运算" class="headerlink" title="4.1 基本运算"></a>4.1 基本运算</h4><p>​    并差笛卡尔积选择投影；</p>
+<p>关系代数的基本操作（原始运算）：“选择”“投影”笛卡尔积（也叫做“叉积”或“交叉连接”）并集差集和“重命名”。</p>
+<h4 id="4-2-组合运算"><a href="#4-2-组合运算" class="headerlink" title="4.2 组合运算"></a>4.2 组合运算</h4><p>​    交连接自然连接和除；</p>
+<p>​    其中最重要的是<strong>交集除法和自然连接</strong>。(inner join     [join])</p>
+<h4 id="4-3-扩充的关系代数操作"><a href="#4-3-扩充的关系代数操作" class="headerlink" title="4.3 扩充的关系代数操作"></a>4.3 扩充的关系代数操作</h4><p>​    外连接（左外和右外）外部并和半连接；(left join ,right join)</p>
+<h2 id="5-数据库设计"><a href="#5-数据库设计" class="headerlink" title="5 数据库设计"></a>5 数据库设计</h2><p>关系型数据库的设计分为以下5个阶段：</p>
+<h4 id="5-1需求分析"><a href="#5-1需求分析" class="headerlink" title="5.1需求分析"></a>5.1需求分析</h4><p>(1)      明确用户需求，到底做什么？</p>
+<h4 id="5-2概念模式设计"><a href="#5-2概念模式设计" class="headerlink" title="5.2概念模式设计"></a>5.2概念模式设计</h4><p>(1)     该阶段是整个数据库设计的关键，它通过对用户需求进行综合归纳与抽象。主要是通过E-R图表示。</p>
 <p>(2)      优点：</p>
-<p>A、简单明了，容易理解</p>
-<p>B、独立于计算机与具体的RDBMS无关。</p>
+<p>A简单明了，容易理解</p>
+<p>B独立于计算机与具体的RDBMS无关。</p>
 <p>(3)      E-R模型的基本元素</p>
-<p>A、实体（Entity） 如：学生</p>
-<p>B、属性（attribute）如：姓名</p>
-<p>C、键码（key）如：身份证号码；</p>
-<p>D、关系（relationship）如：两个实体之间的关系</p>
+<p>A实体（Entity） 如：学生</p>
+<p>B属性（attribute）如：姓名</p>
+<p>C键码（key）如：身份证号码；</p>
+<p>D关系（relationship）如：两个实体之间的关系</p>
 <p>a)        一对一（1:1）： 一个人一个身份证号码；一个学校一个校长</p>
 <p>b)       一对多（1：n）：学校和老师的关系</p>
 <p>c)        多对多（n：n）：学生选课，一个学生可以选择多门课程，一门课程课被多名学生进行选修。</p>
-<p>E、E-R符号表示：</p>
-<h2 id="5-3、逻辑模式设计"><a href="#5-3、逻辑模式设计" class="headerlink" title="5.3、逻辑模式设计"></a>5.3、逻辑模式设计</h2><p>(1)      该阶段会涉及到更多的概念，方法，理论。</p>
+<p>EE-R符号表示：</p>
+<h4 id="5-3-逻辑模式设计"><a href="#5-3-逻辑模式设计" class="headerlink" title="5.3 逻辑模式设计"></a>5.3 逻辑模式设计</h4><p>(1)      该阶段会涉及到更多的概念，方法，理论。</p>
 <p>(2)      主要任务：</p>
-<p>A、与具体的数据库相关</p>
-<p>B、规范化处理，尽可能的消除关系操作过程中的异常情况。</p>
-<p>C、E-R图转换为如下的关系模式</p>
+<p>A与具体的数据库相关</p>
+<p>B规范化处理，尽可能的消除关系操作过程中的异常情况。</p>
+<p>CE-R图转换为如下的关系模式</p>
 <p>电影（片名，出品年份，影片长度，影片类型，公司名称）</p>
 <p>明星（姓名，联系地址，公司名称）</p>
 <p>扮演（片名，出品年份，姓名，角色）</p>
 <p>影片公司（公司名称，地址）</p>
 <p>卡通片（片名，出品年份，设计平台）</p>
-<h2 id="5-4、数据库实施"><a href="#5-4、数据库实施" class="headerlink" title="5.4、数据库实施"></a>5.4、数据库实施</h2><p>(1)      创建数据库，定义数据库结构，组织数据入库，调试数据库并进行数据库的试运行。</p>
-<h2 id="5-5、数据库的运行和维护"><a href="#5-5、数据库的运行和维护" class="headerlink" title="5.5、数据库的运行和维护"></a>5.5、数据库的运行和维护</h2><p>(1)      数据库正式运行之后，对数据库运行过程中对其进行评价，调整，修改，调优等。</p>
-<p>#6、数据库设计遵循的原则</p>
-<h2 id="6-1、范式概念"><a href="#6-1、范式概念" class="headerlink" title="6.1、范式概念"></a>6.1、范式概念</h2><p>概念：范式就是符合某一规范级别的关系模式的集合。共有7种范式：</p>
+<h4 id="5-4-数据库实施"><a href="#5-4-数据库实施" class="headerlink" title="5.4 数据库实施"></a>5.4 数据库实施</h4><p>(1)      创建数据库，定义数据库结构，组织数据入库，调试数据库并进行数据库的试运行。</p>
+<h4 id="5-5-数据库的运行和维护"><a href="#5-5-数据库的运行和维护" class="headerlink" title="5.5 数据库的运行和维护"></a>5.5 数据库的运行和维护</h4><p>(1)      数据库正式运行之后，对数据库运行过程中对其进行评价，调整，修改，调优等。</p>
+<p>#6数据库设计遵循的原则</p>
+<h3 id="6-1-范式概念"><a href="#6-1-范式概念" class="headerlink" title="6.1 范式概念"></a>6.1 范式概念</h3><p>概念：范式就是符合某一规范级别的关系模式的集合。共有7种范式：</p>
 <p>1NF ⊃2NF⊃3NF⊃BCNF⊃4NF⊃5NF⊃6NF</p>
-<h3 id="6-1-1、第一范式（First-Normal-Form）"><a href="#6-1-1、第一范式（First-Normal-Form）" class="headerlink" title="6.1.1、第一范式（First Normal Form）"></a>6.1.1、第一范式（First Normal Form）</h3><p>如果一个关系模式R的所有属性都是不可分割的基本数据项，则这个关系属于第一范式。</p>
+<h4 id="6-1-1-第一范式（First-Normal-Form）"><a href="#6-1-1-第一范式（First-Normal-Form）" class="headerlink" title="6.1.1 第一范式（First Normal Form）"></a>6.1.1 第一范式（First Normal Form）</h4><p>如果一个关系模式R的所有属性都是不可分割的基本数据项，则这个关系属于第一范式。</p>
 <p>举例说明：(学生选课：学号，姓名，系别，系部地址，课程名称，课程成绩)</p>
 <p>Student(s_no,s_name,s_dept,s_location,s_course_name,s_grade)</p>
 <p>注：1NF是关系模式应具备的最起码的条件，如果数据库设计不能满足第一范式，就不能称作是关系模式；关系数据库设计研究的关系规范化是在1NF基础之上进行的。</p>
-<h3 id="6-1-2、第二范式（Second-Normal-Form）"><a href="#6-1-2、第二范式（Second-Normal-Form）" class="headerlink" title="6.1.2、第二范式（Second Normal Form）"></a>6.1.2、第二范式（Second Normal Form）</h3><p>定义：若关系模式R属于第一范式，且每个非主属性都是完全函数依赖于主键，则R属于第二范式。</p>
+<h4 id="6-1-2-第二范式（Second-Normal-Form）"><a href="#6-1-2-第二范式（Second-Normal-Form）" class="headerlink" title="6.1.2 第二范式（Second Normal Form）"></a>6.1.2 第二范式（Second Normal Form）</h4><p>定义：若关系模式R属于第一范式，且每个非主属性都是完全函数依赖于主键，则R属于第二范式。</p>
 <p>说明：从2NF的定义可以看出，从2NF开始讨论的是主键和非主属性之间的函数依赖关系，所以分析关系模式是属于2NF，首先指明关系模式的主键，然后在讨论非主属性和主键之间的函数依赖关系。</p>
 <p>例如：选课关系模式</p>
 <p>SC（s_no,c_no,score）中，主键为（s_no,c_no），而非主属性score与主键之间不存在部分函数依赖关系，所以关系模式SC属于2NF</p>
-<h3 id="6-1-3、第三范式（Third-Normal-Form）"><a href="#6-1-3、第三范式（Third-Normal-Form）" class="headerlink" title="6.1.3、第三范式（Third Normal Form）"></a>6.1.3、第三范式（Third Normal Form）</h3><p>定义：若关系模式R属于第一范式，且每个非主属性都不传递函数依赖于主键，则R属于第三范式。</p>
+<h4 id="6-1-3-第三范式（Third-Normal-Form）"><a href="#6-1-3-第三范式（Third-Normal-Form）" class="headerlink" title="6.1.3 第三范式（Third Normal Form）"></a>6.1.3 第三范式（Third Normal Form）</h4><p>定义：若关系模式R属于第一范式，且每个非主属性都不传递函数依赖于主键，则R属于第三范式。</p>
 <p>说明：3NF说明的是非主属性和主键之间的函数依赖关系</p>
 <p>例如：选课关系模式</p>
 <p>SC（s_no,c_no,score）中,由于除了主键之外，只有一个非主属性score，所以score不可能构成与主键之间的传递函数依赖，所以SC属于3NF</p>
-<h3 id="6-1-4、BCNF（Boyce-Codd-Normal-Form）"><a href="#6-1-4、BCNF（Boyce-Codd-Normal-Form）" class="headerlink" title="6.1.4、BCNF（Boyce-Codd Normal Form）"></a>6.1.4、BCNF（Boyce-Codd Normal Form）</h3><p>定义：若关系模式R属于第一范式，且每个属性都不传递依赖于主键，则R属于BC范式。</p>
+<h4 id="6-1-4-BCNF（Boyce-Codd-Normal-Form）"><a href="#6-1-4-BCNF（Boyce-Codd-Normal-Form）" class="headerlink" title="6.1.4 BCNF（Boyce-Codd Normal Form）"></a>6.1.4 BCNF（Boyce-Codd Normal Form）</h4><p>定义：若关系模式R属于第一范式，且每个属性都不传递依赖于主键，则R属于BC范式。</p>
 <p>说明：也就是说，在关系模式R中，凡是决定因素的属性或属性集包含键码，决定因素是函数依赖的左部属性集，比如X-&gt;Y，X称为决定因素。</p>
 <p>由BC范式的定义可以得到以下的结论，一个满足BC范式的关系模式有：</p>
-<p>​    1、所有非主属性对每一个候选码都是完全函数依赖</p>
-<p>​    2、所有的主属性对每一个不包含它的候选码都是完全函数依赖</p>
-<p>​    3、没有任何属性完全函数依赖于非候选码的任何一组属性</p>
-<h1 id="7、事务并发操作出现几种问题"><a href="#7、事务并发操作出现几种问题" class="headerlink" title="7、事务并发操作出现几种问题"></a>7、事务并发操作出现几种问题</h1><p>​    所谓事务，是用户定义的一个数据库操作序列，是数据库环境中的逻辑工作单元，是一个不可分割的整体。</p>
+<p>​    1所有非主属性对每一个候选码都是完全函数依赖</p>
+<p>​    2所有的主属性对每一个不包含它的候选码都是完全函数依赖</p>
+<p>​    3没有任何属性完全函数依赖于非候选码的任何一组属性</p>
+<h2 id="7-事务并发操作出现几种问题"><a href="#7-事务并发操作出现几种问题" class="headerlink" title="7 事务并发操作出现几种问题"></a>7 事务并发操作出现几种问题</h2><p>​    所谓事务，是用户定义的一个数据库操作序列，是数据库环境中的逻辑工作单元，是一个不可分割的整体。</p>
 <p>事务的这个4个特性简称为ACID特性，事务ACID特性可能遭到破坏的因素有：</p>
 <pre><code>①多个事务并发执行，不同事务的操作交叉执行；
 
 ②事务在运行过程中被强行终止。
 </code></pre><p>如何保证在多个事务并发执行的过程中不发生上述的两种情况，是数据库管理系统并发控制的主要责任。</p>
-<h2 id="7-1、丢失修改数据"><a href="#7-1、丢失修改数据" class="headerlink" title="7.1、丢失修改数据"></a>7.1、丢失修改数据</h2><pre><code>举例：银行卡有100元，事务A取10元，事务B取10元，事务AB两人同时取钱，初始值都是100
-</code></pre><h2 id="7-2、读“脏”数据"><a href="#7-2、读“脏”数据" class="headerlink" title="7.2、读“脏”数据"></a>7.2、读“脏”数据</h2><pre><code>数据库技术中，如果正常提交的事务A使用了事务B未提交的撤销数据，这种数据成为“脏数据”，会造成数据的脏读和污读。
-</code></pre><h2 id="7-3、不一致分析"><a href="#7-3、不一致分析" class="headerlink" title="7.3、不一致分析"></a>7.3、不一致分析</h2><pre><code>造成这种数据不一致的主要原因是并发执行的两个事务中，一个事务在读取数据时，另一个事务正在修改同一个数据。这样就可能导致两个事务的相互干扰及“读”事务的错误执行结果。
-</code></pre><h1 id="8、数据库并发的控制（了解部分）"><a href="#8、数据库并发的控制（了解部分）" class="headerlink" title="8、数据库并发的控制（了解部分）"></a>8、数据库并发的控制（了解部分）</h1><h2 id="8-1、并发调度的可串行化"><a href="#8-1、并发调度的可串行化" class="headerlink" title="8.1、并发调度的可串行化"></a>8.1、并发调度的可串行化</h2><pre><code>可串行化准则：多个事务的并发执行时正确的，当且仅当其结果按某一次序串行执行它们时的结果相同，这种调度策略称为可串行化调度。可串行化是并发事务正确性的准则，一个给定的并发调度，当且仅当它是可串行化的，才认为是正确的。
-</code></pre><h2 id="8-2、封锁"><a href="#8-2、封锁" class="headerlink" title="8.2、封锁"></a>8.2、封锁</h2><p>封锁是实现并发控制的非常重要的技术。封锁是指某事务在对某数据对象进行操作以前，先请求系统对其加锁，成功加锁之后该事务就对该数据对象有了控制权，只有该事务对其进行解锁之后，其他的事务才能更新它，DBMS有两种锁：</p>
+<h4 id="7-1-丢失修改数据"><a href="#7-1-丢失修改数据" class="headerlink" title="7.1 丢失修改数据"></a>7.1 丢失修改数据</h4><pre><code>举例：银行卡有100元，事务A取10元，事务B取10元，事务AB两人同时取钱，初始值都是100
+</code></pre><h4 id="7-2-读“脏”数据"><a href="#7-2-读“脏”数据" class="headerlink" title="7.2 读“脏”数据"></a>7.2 读“脏”数据</h4><pre><code>数据库技术中，如果正常提交的事务A使用了事务B未提交的撤销数据，这种数据成为“脏数据”，会造成数据的脏读和污读。
+</code></pre><h4 id="7-3-不一致分析"><a href="#7-3-不一致分析" class="headerlink" title="7.3 不一致分析"></a>7.3 不一致分析</h4><pre><code>造成这种数据不一致的主要原因是并发执行的两个事务中，一个事务在读取数据时，另一个事务正在修改同一个数据。这样就可能导致两个事务的相互干扰及“读”事务的错误执行结果。
+</code></pre><h2 id="8-数据库并发的控制（了解部分）"><a href="#8-数据库并发的控制（了解部分）" class="headerlink" title="8 数据库并发的控制（了解部分）"></a>8 数据库并发的控制（了解部分）</h2><h4 id="8-1-并发调度的可串行化"><a href="#8-1-并发调度的可串行化" class="headerlink" title="8.1 并发调度的可串行化"></a>8.1 并发调度的可串行化</h4><pre><code>可串行化准则：多个事务的并发执行时正确的，当且仅当其结果按某一次序串行执行它们时的结果相同，这种调度策略称为可串行化调度。可串行化是并发事务正确性的准则，一个给定的并发调度，当且仅当它是可串行化的，才认为是正确的。
+</code></pre><h4 id="8-2-封锁"><a href="#8-2-封锁" class="headerlink" title="8.2 封锁"></a>8.2 封锁</h4><p>封锁是实现并发控制的非常重要的技术。封锁是指某事务在对某数据对象进行操作以前，先请求系统对其加锁，成功加锁之后该事务就对该数据对象有了控制权，只有该事务对其进行解锁之后，其他的事务才能更新它，DBMS有两种锁：</p>
 <p>①  排它锁（也称作X锁）</p>
 <p>​    如果事务T在对某个数据对象实施了X锁，那么其他的事务必须要等到T事务接触对该数据对象的X锁之后，才能对这个数据进行加锁。</p>
 <p>②  共享锁（也称作S锁）</p>
 <p>​     如果事务T在对某个数据对象实施了S锁，那么其他的事务也能对该数据对象实施S锁，但是对这个数据对象施加的所有S锁都接触之前不允许任何事务对该数据对象实施X锁。</p>
-<h2 id="8-3、死锁"><a href="#8-3、死锁" class="headerlink" title="8.3、死锁"></a>8.3、死锁</h2><pre><code>封锁技术可以避免一些并发操作引起的不一致错误，但也会产生其他的一些问题，活锁和死锁。
+<h4 id="8-3-死锁"><a href="#8-3-死锁" class="headerlink" title="8.3 死锁"></a>8.3 死锁</h4><pre><code>封锁技术可以避免一些并发操作引起的不一致错误，但也会产生其他的一些问题，活锁和死锁。
 </code></pre><p>①  活锁</p>
 <p>如果某个事务处在永远等待的状态，得不到封锁的机会，这种现象为活锁，避免这种锁最好的方法就是采用先来先服务的策略。</p>
 <p>②  死锁</p>
 <p>两个或两个以上的事务都处于等待状态每个事务都在等待对方事务接触封锁，它才能继续执行下去，这样任何事务都处于等待状态而无法继续执行的现象称为死锁</p>
 <p>解决死锁问题方法有两类：</p>
-<p>A、 死锁的预防</p>
-<p>B、 死锁的诊断与预防</p>
+<p>A 死锁的预防</p>
+<p>B 死锁的诊断与预防</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/14/数据库-进阶篇/" data-id="ck7xgnhcy008nwkuw7mf65nn9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/14/sql_数据库进阶/" data-id="ck7xio8pq005ri8uwm1yhz785" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 
     </footer>
   </div>
@@ -634,9 +528,9 @@
 
 
   
-    <article id="post-数据库-基础篇" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sql_数据库基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/14/数据库-基础篇/" class="article-date">
+    <a href="/2019/01/14/sql_数据库基础/" class="article-date">
   <time datetime="2019-01-14T02:16:28.000Z" itemprop="datePublished">2019-01-14</time>
 </a>
     
@@ -648,7 +542,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/14/数据库-基础篇/">数据库-基础篇</a>
+      <a class="article-title" href="/2019/01/14/sql_数据库基础/">数据库-基础篇</a>
     </h1>
   
 
@@ -2187,7 +2081,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/14/数据库-基础篇/" data-id="ck7xgnhf700ahwkuwrnmpteod" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/14/sql_数据库基础/" data-id="ck7xio8ue00ani8uwy4dclr16" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -2226,7 +2120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/vue-select/" data-id="ck7xgnhbc006bwkuw8iqjyauv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/11/vue-select/" data-id="ck7xio8qa006ei8uw6l4yh153" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
@@ -2268,7 +2162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/文件上传_springMVCweb/" data-id="ck7xgnhd1008swkuwzc70yzlf" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/08/文件上传_springMVCweb/" data-id="ck7xio8rz008qi8uwzj8p128x" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -2315,7 +2209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/05/hello-world/" data-id="ck7xgnh8u002uwkuwvu0d2d1t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/01/05/hello-world/" data-id="ck7xio8np002ui8uwkvxecxrs" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -2359,7 +2253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/29/nginx文件大小限制/" data-id="ck7xgnhaa004uwkuwabkp0yr9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/29/nginx文件大小限制/" data-id="ck7xio8p1004si8uwsp7jrnbz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -2633,7 +2527,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/Docker/" data-id="ck7xgnh6r0005wkuwm1gro72f" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/Docker/" data-id="ck7xio8lk0004i8uwd5oulvmo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -3063,7 +2957,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/JVM-优化/" data-id="ck7xgnh72000iwkuwbzix4lsk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/JVM-优化/" data-id="ck7xio8lz000li8uw72vb84gl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
@@ -3390,7 +3284,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/28/Jvm-GC/" data-id="ck7xgnh7k000zwkuw7lzgvunc" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/28/Jvm-GC/" data-id="ck7xio8mf0011i8uwty4uo8p1" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
@@ -3420,7 +3314,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aop/">aop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -3430,7 +3324,7 @@ Docker也不关心你要把容器运到何方：我们可以在自己的笔记�
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.38px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 14.62px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 13.85px;">SQL</a> <a href="/tags/Sort/" style="font-size: 17.69px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.92px;">demo</a> <a href="/tags/docker/" style="font-size: 16.15px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 12.31px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.46px;">java</a> <a href="/tags/jvm/" style="font-size: 11.54px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.31px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.62px;">logstash</a> <a href="/tags/php/" style="font-size: 11.54px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.08px;">python</a> <a href="/tags/springboot/" style="font-size: 16.15px;">springboot</a> <a href="/tags/util/" style="font-size: 19.23px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.77px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.08px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.77px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.54px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15px;">Design Patterns</a> <a href="/tags/JavaScript/" style="font-size: 14.17px;">JavaScript</a> <a href="/tags/SQL/" style="font-size: 11.67px;">SQL</a> <a href="/tags/Sort/" style="font-size: 17.5px;">Sort</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/docker/" style="font-size: 15.83px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.33px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.17px;">logstash</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 15.83px;">springboot</a> <a href="/tags/sql/" style="font-size: 11.67px;">sql</a> <a href="/tags/util/" style="font-size: 19.17px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
     </div>
   </div>
 
