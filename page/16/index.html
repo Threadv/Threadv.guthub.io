@@ -61,44 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-maven项目目录约定" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/25/maven项目目录约定/" class="article-date">
-  <time datetime="2018-01-25T00:57:33.000Z" itemprop="datePublished">2018-01-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/25/maven项目目录约定/">maven项目目录约定</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- maven项目目录约定： </span><br><span class="line">	src/main/java:只能编译java代码 </span><br><span class="line">	src/main/resources:编译配置文件 </span><br><span class="line">	为了满足Mybatis接口开发规范：接口和映射文件必须在同一个目录 </span><br><span class="line">		放行xml文件，让xml文件在src/main/java也能被编译 --&gt;</span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;resources&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">		&lt;/resources&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="ck456j4fz004z78uwqx6i5h4f" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-finalize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/16/finalize/" class="article-date">
@@ -167,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/16/finalize/" data-id="ck456j4ed002z78uwbt7qcbp3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/16/finalize/" data-id="ck7xf9tjl002zdwuw54wrqp6f" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -210,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="ck456j4hm006x78uwqwx4ho35" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="ck7xf9tml006zdwuwl7ridqmr" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -250,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/POI导出/" data-id="ck456j4d9001i78uw3lkfk5im" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/POI导出/" data-id="ck7xf9tie001idwuwc2mq0vrm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -309,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/统计访客数量/" data-id="ck456j4ji009g78uw32cdc0yv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/统计访客数量/" data-id="ck7xf9toy009kdwuwv06j426x" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -351,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/cookie存信息/" data-id="ck456j4e6002t78uw462oar6j" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/23/cookie存信息/" data-id="ck7xf9tjf002tdwuw0p5v1gg7" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -414,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/22/数组2字符串/" data-id="ck456j4j3008y78uw6tp4qsa3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/22/数组2字符串/" data-id="ck7xf9toa008udwuwvywqyafy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
@@ -468,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/接口/" data-id="ck456j4iq008h78uwigjyo222" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/16/接口/" data-id="ck7xf9tnz008jdwuwtx0xqlu4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -537,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/IOC/" data-id="ck456j4cc000k78uwtnd57zs2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/15/IOC/" data-id="ck7xf9thh000kdwuwj69ypx6t" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -603,10 +565,48 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/mybatis/" data-id="ck456j4fx004v78uw2mrrgpud" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/14/mybatis/" data-id="ck7xf9tkw004tdwuwca8wmkfm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/10/io/" class="article-date">
+  <time datetime="2017-12-10T09:52:45.000Z" itemprop="datePublished">2017-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/10/io/">io</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="io"><a href="#io" class="headerlink" title="io"></a>io</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FileReader reader = <span class="keyword">new</span> FileReader(<span class="string">"d:\\test.txt"</span>);</span><br><span class="line">		<span class="comment">// 创建一个bufferReader缓冲流</span></span><br><span class="line">		BufferedReader br = <span class="keyword">new</span> BufferedReader(reader);</span><br><span class="line">		FileWriter writer = <span class="keyword">new</span> FileWriter(<span class="string">"d:\\example.txt"</span>);</span><br><span class="line">		BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(writer);</span><br><span class="line"></span><br><span class="line">		String str;</span><br><span class="line">		<span class="keyword">while</span> ((str = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			bw.write(str);</span><br><span class="line">			bw.newLine();</span><br><span class="line">		&#125;</span><br><span class="line">		br.close();</span><br><span class="line">		bw.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/10/io/" data-id="ck7xf9tk1003mdwuw7pgkidhb" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
 
     </footer>
   </div>
@@ -696,7 +696,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -61,44 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-wxUserInfoUtil" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/28/wxUserInfoUtil/" class="article-date">
-  <time datetime="2018-06-28T11:09:12.000Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/28/wxUserInfoUtil/">wxUserInfoUtil</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="wxUserInfoUtil"><a href="#wxUserInfoUtil" class="headerlink" title="wxUserInfoUtil"></a>wxUserInfoUtil</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title">wxUserInfo</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        String appid = <span class="string">"wxxxxxxxxxxxxxxxxxf"</span>;</span><br><span class="line">        String appsecret = <span class="string">"6xxxxxxxxxxxxxxxxxxxxxxxx1"</span>;</span><br><span class="line"></span><br><span class="line">        String url = <span class="string">"https://api.weixin.qq.com/sns/oauth2/access_token?appid="</span>+appid+<span class="string">"&amp;secret="</span>+appsecret+<span class="string">"&amp;code="</span>+code+<span class="string">"&amp;grant_type=authorization_code"</span>;</span><br><span class="line">        String loadJson = LoadJsonUtil.getJSON(url);</span><br><span class="line">        <span class="comment">//解析相应内容（转换成json对象）</span></span><br><span class="line">        JSONObject json = JSONObject.fromObject(loadJson);</span><br><span class="line">        <span class="comment">//用户的唯一标识（openid）</span></span><br><span class="line">        String openid = String.valueOf(json.get(<span class="string">"openid"</span>));</span><br><span class="line">        String access_token = String.valueOf(json.get(<span class="string">"access_token"</span>));</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">"openid"</span>, openid);</span><br><span class="line">        map.put(<span class="string">"access_token"</span>, access_token);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</span></span><br><span class="line">        String requestUrl =<span class="string">"https://api.weixin.qq.com/sns/userinfo?access_token="</span>+access_token+<span class="string">"&amp;openid="</span>+openid+<span class="string">"&amp;scope=snsapi_userinfo"</span>+<span class="string">"&amp;lang=zh_CN"</span>;</span><br><span class="line">        <span class="comment">//请求</span></span><br><span class="line">        String userInfoJson =LoadJsonUtil.getJSON(requestUrl);</span><br><span class="line"></span><br><span class="line">        JSONObject userInfo = JSONObject.fromObject(userInfoJson);</span><br><span class="line">        <span class="comment">//nick,phone,type,unionId,openId,icon</span></span><br><span class="line">        String nickname = String.valueOf(userInfo.get(<span class="string">"nickname"</span>));</span><br><span class="line">        String unionid = String.valueOf(userInfo.get(<span class="string">"unionid"</span>));</span><br><span class="line">        <span class="comment">//icon 图标</span></span><br><span class="line">        String headimgurl = String.valueOf(userInfo.get(<span class="string">"headimgurl"</span>));</span><br><span class="line">        String sex = String.valueOf(userInfo.get(<span class="string">"sex"</span>));</span><br><span class="line">        String country = String.valueOf(userInfo.get(<span class="string">"country"</span>));</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">"nickname"</span>, nickname);</span><br><span class="line">        map.put(<span class="string">"unionid"</span>, unionid);</span><br><span class="line">        map.put(<span class="string">"headimgurl"</span>, headimgurl);</span><br><span class="line">        map.put(<span class="string">"sex"</span>, sex);</span><br><span class="line">        map.put(<span class="string">"country"</span>, country);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/wxUserInfoUtil/" data-id="ck456j4hh006v78uw8odi8iot" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-时间复杂度" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/26/时间复杂度/" class="article-date">
@@ -145,7 +107,7 @@ o(1)＜o(log2n)＜o(n)＜o(n log2 n)＜o(n^2)＜o(n^3)＜o(2^n)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/26/时间复杂度/" data-id="ck456j4j1008w78uwbxuz4jll" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/26/时间复杂度/" data-id="ck7xf9toe0090dwuw4k2f89hn" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -236,7 +198,7 @@ o(1)＜o(log2n)＜o(n)＜o(n log2 n)＜o(n^2)＜o(n^3)＜o(2^n)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/ClassLoader/" data-id="ck456j4br000178uwo99afjno" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/24/ClassLoader/" data-id="ck7xf9tgz0003dwuwriwtsz4d" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -294,7 +256,7 @@ o(1)＜o(log2n)＜o(n)＜o(n log2 n)＜o(n^2)＜o(n^3)＜o(2^n)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/21/运算符优先级/" data-id="ck456j4ju009y78uw2j97qvin" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/21/运算符优先级/" data-id="ck7xf9tpa009ydwuwd7agpbys" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -397,7 +359,7 @@ public static void main(String args[]) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/数据类型的转换/" data-id="ck456j4ix008q78uwd0df0x5t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/19/数据类型的转换/" data-id="ck7xf9to8008sdwuws5s9jhql" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -549,7 +511,7 @@ public class Test
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/Java异常/" data-id="ck456j4ck000t78uwpw2krcnr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/19/Java异常/" data-id="ck7xf9thx000wdwuwn2bk5jes" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -739,7 +701,7 @@ public class Test
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/15/常用存储引擎/" data-id="ck456j4ie008178uw2nwt1z88" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/15/常用存储引擎/" data-id="ck7xf9tnj0083dwuw4pwnw4zs" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li></ul>
@@ -797,7 +759,7 @@ public class Test
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/14/final、finally、finalize/" data-id="ck456j4ef003278uw15ef7ngh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/14/final、finally、finalize/" data-id="ck7xf9tjn0032dwuwoa6l34bg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -835,7 +797,7 @@ public class Test
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/HttpRequest/" data-id="ck456j4c7000g78uwbv6g8qs0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/HttpRequest/" data-id="ck7xf9thd000gdwuwejc0fzyd" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -873,7 +835,45 @@ public class Test
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/HttpUtils/" data-id="ck456j4ca000i78uwyzwh6t4n" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/HttpUtils/" data-id="ck7xf9thf000idwuwrl3zjvu2" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Map2StringUtil" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/Map2StringUtil/" class="article-date">
+  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/Map2StringUtil/">Map2StringUtil</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Map2StringUtil"><a href="#Map2StringUtil" class="headerlink" title="Map2StringUtil"></a>Map2StringUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map2StringUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法名称:transMapToString</span></span><br><span class="line"><span class="comment">     * 传入参数:map</span></span><br><span class="line"><span class="comment">     * 返回值:String 形如 username'chenziwen^password'1234</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">transMapToString</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">        java.util.Map.Entry entry;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span>(Iterator iterator = map.entrySet().iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            entry = (java.util.Map.Entry)iterator.next();</span><br><span class="line">            sb.append(entry.getKey().toString()).append( <span class="string">"'"</span> ).append(<span class="keyword">null</span>==entry.getValue()?<span class="string">""</span>:</span><br><span class="line">                    entry.getValue().toString()).append (iterator.hasNext() ? <span class="string">"^"</span> : <span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/Map2StringUtil/" data-id="ck7xf9ti9001bdwuwgkho4n1b" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -966,7 +966,7 @@ public class Test
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

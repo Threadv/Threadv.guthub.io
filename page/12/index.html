@@ -61,44 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Map2StringUtil" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/31/Map2StringUtil/" class="article-date">
-  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/Map2StringUtil/">Map2StringUtil</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Map2StringUtil"><a href="#Map2StringUtil" class="headerlink" title="Map2StringUtil"></a>Map2StringUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map2StringUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法名称:transMapToString</span></span><br><span class="line"><span class="comment">     * 传入参数:map</span></span><br><span class="line"><span class="comment">     * 返回值:String 形如 username'chenziwen^password'1234</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">transMapToString</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">        java.util.Map.Entry entry;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span>(Iterator iterator = map.entrySet().iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            entry = (java.util.Map.Entry)iterator.next();</span><br><span class="line">            sb.append(entry.getKey().toString()).append( <span class="string">"'"</span> ).append(<span class="keyword">null</span>==entry.getValue()?<span class="string">""</span>:</span><br><span class="line">                    entry.getValue().toString()).append (iterator.hasNext() ? <span class="string">"^"</span> : <span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/Map2StringUtil/" data-id="ck456j4d4001b78uwte4prwx9" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-SHA1加密" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/31/SHA1加密/" class="article-date">
@@ -125,7 +87,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/SHA1加密/" data-id="ck456j4db001l78uwxhdgdp8v" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/SHA1加密/" data-id="ck7xf9tig001ldwuw19ovhiqg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -163,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ck456j4dw002e78uwgzy1xep5" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ck7xf9tj7002hdwuwkqugxi3m" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -441,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="ck456j4fp004m78uw8x31hb95" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="ck7xf9tkn004hdwuw2jsm04n9" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -485,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/session/" data-id="ck456j4gt005w78uwh3eh5h26" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/session/" data-id="ck7xf9tlo005wdwuwsw3z1o46" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -525,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/UML/" data-id="ck456j4dr002778uwo788oljq" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/UML/" data-id="ck7xf9tiw0025dwuwm1az1qyd" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -647,7 +609,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ck456j4i4007n78uwinoylv4y" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ck7xf9tn5007pdwuwflun14dy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -758,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ck456j4ik008978uwr2utxqxj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ck7xf9tnu008bdwuwvm2uwwe2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -803,7 +765,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="ck456j4il008b78uwyizp8dq6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序/" data-id="ck7xf9tnv008ddwuwrhj6ij2x" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -841,10 +803,95 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ck456j4in008d78uwnl0yzwyr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ck7xf9tnw008fdwuw6z6s2k86" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HQL：hibernate查询语言" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/29/HQL：hibernate查询语言/" class="article-date">
+  <time datetime="2018-05-29T06:05:35.000Z" itemprop="datePublished">2018-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/HQL：hibernate查询语言/">hibernate查询语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="HQL：hibernate查询语言"><a href="#HQL：hibernate查询语言" class="headerlink" title="HQL：hibernate查询语言"></a>HQL：hibernate查询语言</h5><h6 id="from子句"><a href="#from子句" class="headerlink" title="from子句"></a>from子句</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat</span><br></pre></td></tr></table></figure>
+<ul>
+<li>子句可以同时出现多个类，查询结果是产生一个笛卡尔积或产生跨表的连接。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula as form ,Parameter as param</span><br></pre></td></tr></table></figure>
+<h6 id="关联-Association-与连接-Join"><a href="#关联-Association-与连接-Join" class="headerlink" title="关联(Association)与连接(Join)"></a>关联(Association)与连接(Join)</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner jon cat.mate as mate</span><br><span class="line">    left outer cat.kittens as kitten</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.mate.kittens as kittens</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula form full jon form.parameter param</span><br></pre></td></tr></table></figure>
+<ul>
+<li>inner jon (内连接)</li>
+<li>left outer join (左外连接)</li>
+<li>right outer join (右外连接)</li>
+<li>full join (全连接，不常用)</li>
+</ul>
+<p>通过HQL的with关键字，你可以提供额外的join条件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.kittens as kitten </span><br><span class="line">    with kitten.bodyWeight &gt; 10.0</span><br></pre></td></tr></table></figure>
+<p>一个”fetch”连接允许仅仅使用一个选择语句就将相关联的对象或一组值的集合随着他们的父对象的初始化而被初始化，这种方法在使用到集合的情况下尤其有用，对于关联和集合来说，它有效的代替了映射文件中的外联接 与延迟声明（lazy declarations）. </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens</span><br></pre></td></tr></table></figure>
+<p>一个fetch连接通常不需要被指定别名, 因为相关联的对象不应当被用在 where 子句 (或其它任何子句)中。同时，相关联的对象 并不在查询的结果中直接返回，但可以通过他们的父对象来访问到他们。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens child</span><br><span class="line">    left join fetch child.kittens</span><br></pre></td></tr></table></figure>
+<p>如果你使用属性级别的延迟获取（lazy fetching）（这是通过重新编写字节码实现的），可以使用 fetch all properties 来强制Hibernate立即取得那些原本需要延迟加载的属性（在第一个查询中）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document fetch all properties order by name</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document doc fetch all properties where lower(doc.name) like '%cats%'</span><br></pre></td></tr></table></figure>
+<h6 id="select-子句"><a href="#select-子句" class="headerlink" title="select 子句"></a>select 子句</h6><p>select 子句选择将哪些对象与属性返 回到查询结果集中.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mate </span><br><span class="line">    <span class="keyword">from</span> Cat <span class="keyword">as</span> cat</span><br><span class="line">    <span class="keyword">inner</span> jon cat.mate <span class="keyword">as</span> mate</span><br></pre></td></tr></table></figure></p>
+<p>可以更简洁的用以下的查询语句表达相同的含义:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.mate <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
+<p>查询语句可以返回值为任何类型的属性，包括返回类型为某种组件(Component)的属性:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.name <span class="keyword">from</span> DomesticCat cat</span><br><span class="line">    <span class="keyword">where</span> cat.name <span class="keyword">like</span> <span class="string">'fri%'</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cust.name.firstName <span class="keyword">from</span> Customer <span class="keyword">as</span> cust</span><br></pre></td></tr></table></figure>
+<p>查询语句可以返回多个对象和（或）属性，存放在Object[]队列中，</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mother,offspr,mate.name</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure>
+<p>或存放在一个List对象中，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> <span class="keyword">list</span>(mother,offspr,mate.name)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
+<p>也可能直接返回一个实际的类型安全的Java对象，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> Family(mother,mate,offspr)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
+<h6 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h6><p>HQL查询甚至可以返回作用于属性之上的聚集函数的计算结果: </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(cat.weight),<span class="keyword">sum</span>(cat.weight),<span class="keyword">max</span>(cat.weight),<span class="keyword">count</span>(cat)</span><br><span class="line"><span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure>
+<p>受支持的聚集函数如下： </p>
+<ul>
+<li>avg(…), sum(…), min(…), max(…) </li>
+<li>count(*) </li>
+<li>count(…), count(distinct …), count(all…)</li>
+</ul>
+<p>选择子句中使用数学操作符、连接以及经过验证的sql函数：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.weight + <span class="keyword">sum</span>(kitten.weight)</span><br><span class="line">    <span class="keyword">from</span> Cat cat</span><br><span class="line">    <span class="keyword">join</span> cat.kittens kitten</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> cat.id,cat.weight</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> firstName||<span class="string">' '</span>||<span class="keyword">initial</span>||<span class="string">' '</span>||<span class="keyword">upper</span>(lastName) <span class="keyword">from</span> Person</span><br></pre></td></tr></table></figure>
+<p>关键字distinct与all 也可以使用，它们具有与SQL相同的语义.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> cat.name <span class="keyword">from</span> Cat cat</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> cat.name), <span class="keyword">count</span>(cat) <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
+<h6 id="where-子句"><a href="#where-子句" class="headerlink" title="where 子句"></a>where 子句</h6><p>where 子句允许将返回的实例列表的范围缩小。如果没有指定别名，可以使用属性名直接引用属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat where name = 'Fritz'</span><br></pre></td></tr></table></figure>
+<p>如果指派了别名，需要使用完整的属性名：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat where cat.name = 'Fritz'</span><br></pre></td></tr></table></figure></p>
+<p>返回名为（属性name等于）’Fritz‘ 的Cat 实例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> foo </span><br><span class="line">    <span class="keyword">from</span> Foo foo ,Bar bar</span><br><span class="line">    <span class="keyword">where</span> foo.startDate = bar.date</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="ck7xf9th9000ddwuwf8nxldgu" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
 
     </footer>
   </div>
@@ -934,7 +981,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

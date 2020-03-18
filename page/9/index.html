@@ -61,61 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-template" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/01/template/" class="article-date">
-  <time datetime="2018-10-01T03:12:36.000Z" itemprop="datePublished">2018-10-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/01/template/">设计模式-模板</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="设计模式-模板"><a href="#设计模式-模板" class="headerlink" title="设计模式-模板"></a>设计模式-模板</h5><blockquote>
-<p><a href="http://www.runoob.com/design-pattern/template-pattern.html" target="_blank" rel="noopener">http://www.runoob.com/design-pattern/template-pattern.html</a></p>
-</blockquote>
-<ul>
-<li>创建一个抽象类，它的模板方法被设置为 final</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Game</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">startPlay</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">endPlay</span><span class="params">()</span></span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">//模板</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">//初始化游戏</span></span><br><span class="line">      initialize();</span><br><span class="line"> </span><br><span class="line">      <span class="comment">//开始游戏</span></span><br><span class="line">      startPlay();</span><br><span class="line"> </span><br><span class="line">      <span class="comment">//结束游戏</span></span><br><span class="line">      endPlay();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>实体类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cricket</span> <span class="keyword">extends</span> <span class="title">Game</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">endPlay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Cricket Game Finished!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">initialize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Cricket Game Initialized! Start playing."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">startPlay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Cricket Game Started. Enjoy the game!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Football</span> <span class="keyword">extends</span> <span class="title">Game</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">endPlay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Football Game Finished!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">initialize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Football Game Initialized! Start playing."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">startPlay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Football Game Started. Enjoy the game!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>client</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TemplatePatternDemo</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">      Game game = <span class="keyword">new</span> Cricket();</span><br><span class="line">      game.play();</span><br><span class="line">      System.out.println();</span><br><span class="line">      game = <span class="keyword">new</span> Football();</span><br><span class="line">      game.play();      </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>out: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Cricket Game Initialized! Start playing.</span><br><span class="line">Cricket Game Started. Enjoy the game!</span><br><span class="line">Cricket Game Finished!</span><br><span class="line"></span><br><span class="line">Football Game Initialized! Start playing.</span><br><span class="line">Football Game Started. Enjoy the game!</span><br><span class="line">Football Game Finished!</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/01/template/" data-id="ck456j4h5006d78uwvtdtynix" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-设计模式-工厂" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/01/设计模式-工厂/" class="article-date">
@@ -165,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/01/设计模式-工厂/" data-id="ck456j4jm009m78uw1rr58mjz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/01/设计模式-工厂/" data-id="ck7xf9tp7009sdwuwst91rdwg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -256,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/基数排序(RadixSort)/" data-id="ck456j4hy007e78uwhl88sbfn" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/基数排序(RadixSort)/" data-id="ck7xf9tn1007jdwuwntkvw26f" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -343,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/堆排序(HeapSort)/" data-id="ck456j4i2007l78uwx3ffoecg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/堆排序(HeapSort)/" data-id="ck7xf9tn3007ndwuwlsvj9usz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -435,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/归并排序(Merge Sort)/" data-id="ck456j4ig008378uw76om4xnd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/归并排序(Merge Sort)/" data-id="ck7xf9tnk0085dwuwh4s95ngy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -486,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/Input常用的输入框验证/" data-id="ck456j4cf000m78uwjh2nqxa1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/20/Input常用的输入框验证/" data-id="ck7xf9thk000mdwuwc49v7qy6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li></ul>
@@ -536,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/input输入数字/" data-id="ck456j4eu003k78uwkc4gnbea" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/20/input输入数字/" data-id="ck7xf9tk0003kdwuwedxbq34c" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li></ul>
@@ -624,7 +569,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/11/插入排序(Insertion Sort)/" data-id="ck456j4is008k78uwiqdho4iv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/11/插入排序(Insertion Sort)/" data-id="ck7xf9to1008mdwuwkgvcnkl4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -715,7 +660,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/11/希尔排序(Shell Sort)/" data-id="ck456j4ic007x78uwlxultobg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/11/希尔排序(Shell Sort)/" data-id="ck7xf9tni0081dwuw3yqwdt54" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -819,7 +764,95 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/05/冒泡排序(BubbleSort)/" data-id="ck456j4ho007178uwobyf0c77" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/05/冒泡排序(BubbleSort)/" data-id="ck7xf9tmn0073dwuw6w2hu6py" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-选择排序(SelctionSort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/05/选择排序(SelctionSort)/" class="article-date">
+  <time datetime="2018-09-05T04:39:46.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/选择排序(SelctionSort)/">选择排序(SelctionSort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选择排序-SelctionSort"><a href="#选择排序-SelctionSort" class="headerlink" title="选择排序(SelctionSort)"></a>选择排序(SelctionSort)</h5><ul>
+<li><p>基本思想：<br>在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；<br>第二次遍历n-2个数，找到最小的数值与第二个元素交换；<br>。。。<br>第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</p>
+</li>
+<li><p>平均时间复杂度：O(n2)</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> array[],<span class="keyword">int</span> lenth)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenth-<span class="number">1</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> minIndex = i;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;lenth;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(array[j]&lt;array[minIndex])&#123;</span><br><span class="line">              minIndex = j;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>(minIndex != i)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = array[i];</span><br><span class="line">           array[i] = array[minIndex];</span><br><span class="line">           array[minIndex] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/05/选择排序(SelctionSort)/" data-id="ck7xf9tpc00a0dwuwakddlfsz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -912,7 +945,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

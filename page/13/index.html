@@ -61,91 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-HQL：hibernate查询语言" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/29/HQL：hibernate查询语言/" class="article-date">
-  <time datetime="2018-05-29T06:05:35.000Z" itemprop="datePublished">2018-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/29/HQL：hibernate查询语言/">hibernate查询语言</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="HQL：hibernate查询语言"><a href="#HQL：hibernate查询语言" class="headerlink" title="HQL：hibernate查询语言"></a>HQL：hibernate查询语言</h5><h6 id="from子句"><a href="#from子句" class="headerlink" title="from子句"></a>from子句</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat</span><br></pre></td></tr></table></figure>
-<ul>
-<li>子句可以同时出现多个类，查询结果是产生一个笛卡尔积或产生跨表的连接。</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula as form ,Parameter as param</span><br></pre></td></tr></table></figure>
-<h6 id="关联-Association-与连接-Join"><a href="#关联-Association-与连接-Join" class="headerlink" title="关联(Association)与连接(Join)"></a>关联(Association)与连接(Join)</h6><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner jon cat.mate as mate</span><br><span class="line">    left outer cat.kittens as kitten</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.mate.kittens as kittens</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Formula form full jon form.parameter param</span><br></pre></td></tr></table></figure>
-<ul>
-<li>inner jon (内连接)</li>
-<li>left outer join (左外连接)</li>
-<li>right outer join (右外连接)</li>
-<li>full join (全连接，不常用)</li>
-</ul>
-<p>通过HQL的with关键字，你可以提供额外的join条件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat left join cat.kittens as kitten </span><br><span class="line">    with kitten.bodyWeight &gt; 10.0</span><br></pre></td></tr></table></figure>
-<p>一个”fetch”连接允许仅仅使用一个选择语句就将相关联的对象或一组值的集合随着他们的父对象的初始化而被初始化，这种方法在使用到集合的情况下尤其有用，对于关联和集合来说，它有效的代替了映射文件中的外联接 与延迟声明（lazy declarations）. </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens</span><br></pre></td></tr></table></figure>
-<p>一个fetch连接通常不需要被指定别名, 因为相关联的对象不应当被用在 where 子句 (或其它任何子句)中。同时，相关联的对象 并不在查询的结果中直接返回，但可以通过他们的父对象来访问到他们。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat </span><br><span class="line">    inner join fetch cat.mate</span><br><span class="line">    left join fetch cat.kittens child</span><br><span class="line">    left join fetch child.kittens</span><br></pre></td></tr></table></figure>
-<p>如果你使用属性级别的延迟获取（lazy fetching）（这是通过重新编写字节码实现的），可以使用 fetch all properties 来强制Hibernate立即取得那些原本需要延迟加载的属性（在第一个查询中）。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document fetch all properties order by name</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Document doc fetch all properties where lower(doc.name) like '%cats%'</span><br></pre></td></tr></table></figure>
-<h6 id="select-子句"><a href="#select-子句" class="headerlink" title="select 子句"></a>select 子句</h6><p>select 子句选择将哪些对象与属性返 回到查询结果集中.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mate </span><br><span class="line">    <span class="keyword">from</span> Cat <span class="keyword">as</span> cat</span><br><span class="line">    <span class="keyword">inner</span> jon cat.mate <span class="keyword">as</span> mate</span><br></pre></td></tr></table></figure></p>
-<p>可以更简洁的用以下的查询语句表达相同的含义:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.mate <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
-<p>查询语句可以返回值为任何类型的属性，包括返回类型为某种组件(Component)的属性:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.name <span class="keyword">from</span> DomesticCat cat</span><br><span class="line">    <span class="keyword">where</span> cat.name <span class="keyword">like</span> <span class="string">'fri%'</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cust.name.firstName <span class="keyword">from</span> Customer <span class="keyword">as</span> cust</span><br></pre></td></tr></table></figure>
-<p>查询语句可以返回多个对象和（或）属性，存放在Object[]队列中，</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mother,offspr,mate.name</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure>
-<p>或存放在一个List对象中，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> <span class="keyword">list</span>(mother,offspr,mate.name)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">inner</span> <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
-<p>也可能直接返回一个实际的类型安全的Java对象，<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">new</span> Family(mother,mate,offspr)</span><br><span class="line">    <span class="keyword">from</span> DomesticCat <span class="keyword">as</span> mother</span><br><span class="line">    <span class="keyword">join</span> mother.mate <span class="keyword">as</span> mate</span><br><span class="line">    <span class="keyword">left</span> <span class="keyword">join</span> mother.kittens <span class="keyword">as</span> offspr</span><br></pre></td></tr></table></figure></p>
-<h6 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h6><p>HQL查询甚至可以返回作用于属性之上的聚集函数的计算结果: </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(cat.weight),<span class="keyword">sum</span>(cat.weight),<span class="keyword">max</span>(cat.weight),<span class="keyword">count</span>(cat)</span><br><span class="line"><span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure>
-<p>受支持的聚集函数如下： </p>
-<ul>
-<li>avg(…), sum(…), min(…), max(…) </li>
-<li>count(*) </li>
-<li>count(…), count(distinct …), count(all…)</li>
-</ul>
-<p>选择子句中使用数学操作符、连接以及经过验证的sql函数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cat.weight + <span class="keyword">sum</span>(kitten.weight)</span><br><span class="line">    <span class="keyword">from</span> Cat cat</span><br><span class="line">    <span class="keyword">join</span> cat.kittens kitten</span><br><span class="line">    <span class="keyword">group</span> <span class="keyword">by</span> cat.id,cat.weight</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> firstName||<span class="string">' '</span>||<span class="keyword">initial</span>||<span class="string">' '</span>||<span class="keyword">upper</span>(lastName) <span class="keyword">from</span> Person</span><br></pre></td></tr></table></figure>
-<p>关键字distinct与all 也可以使用，它们具有与SQL相同的语义.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> cat.name <span class="keyword">from</span> Cat cat</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> cat.name), <span class="keyword">count</span>(cat) <span class="keyword">from</span> Cat cat</span><br></pre></td></tr></table></figure></p>
-<h6 id="where-子句"><a href="#where-子句" class="headerlink" title="where 子句"></a>where 子句</h6><p>where 子句允许将返回的实例列表的范围缩小。如果没有指定别名，可以使用属性名直接引用属性</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat where name = 'Fritz'</span><br></pre></td></tr></table></figure>
-<p>如果指派了别名，需要使用完整的属性名：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from Cat as cat where cat.name = 'Fritz'</span><br></pre></td></tr></table></figure></p>
-<p>返回名为（属性name等于）’Fritz‘ 的Cat 实例<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> foo </span><br><span class="line">    <span class="keyword">from</span> Foo foo ,Bar bar</span><br><span class="line">    <span class="keyword">where</span> foo.startDate = bar.date</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/HQL：hibernate查询语言/" data-id="ck456j4c5000d78uwnzbyu2jb" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-java-io&amp;encode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/26/java-io&encode/" class="article-date">
@@ -179,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="ck456j4ex003o78uw35242pwv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="ck7xf9tk3003odwuw1pu84hhg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -262,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="ck456j4e5002r78uwuhlemhj6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/19/cookie/" data-id="ck7xf9tje002rdwuwpmtfitjl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -380,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="ck456j4i0007h78uwzm2nb6rw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/19/四层和七层负载均衡的区别/" data-id="ck7xf9tmz007gdwuwldyooybn" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -432,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="ck456j4hf006t78uwrkoayq0t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/17/七层模型/" data-id="ck7xf9tmj006xdwuwy8el5kcx" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -493,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="ck456j4eq003g78uwml3rn27r" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/16/http-连接/" data-id="ck7xf9tjz003idwuw9nyxk25o" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -541,77 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http-协议版本/" data-id="ck456j4ek003978uw7mvgd9j5" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http-资源" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/14/http-资源/" class="article-date">
-  <time datetime="2018-05-14T03:33:06.000Z" itemprop="datePublished">2018-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/http-资源/">http资源</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="http-资源"><a href="#http-资源" class="headerlink" title="http-资源"></a>http-资源</h6><p>Web服务器是Web资源（Web  resource）的宿主。Web资源是Web内容的源头。最简单的Web资源就是Web服务器文件的静态文件。</p>
-<ul>
-<li>媒体类型<br>因特网上有数千种不同的数据类型，HTTP仔细地给每种要通过Web传输的对象都打上了名为MIME类型（MIME type）的数据格式标签。</li>
-</ul>
-<p>MIME类型是一种文本标记，表示一种主要的对象类型和一个特定的子类型，中间由一条斜杠来分隔。</p>
-<ul>
-<li>HTML格式的文本文档由text/html类型来标记。</li>
-<li>普通的ASCII文本文档由•ext/plain类型来标记。</li>
-<li>JPEG格式的图片为image/jpeg类型。</li>
-<li>GIF格式的图片为image/gif类型。</li>
-<li>Apple的QuickTime电影为video/quicktime类型。</li>
-<li>微软的PowerPoint演示文件为application/vnd.ms-powerpoint类型。</li>
-</ul>
-<blockquote>
-<p>URI</p>
-</blockquote>
-<p>服务器资源名被称为统一资源标识符（Uniform Resource Identifier，URI）。URI就像因特网上的邮政地址一样，在世界范围内唯一标识并定位信息资源。</p>
-<blockquote>
-<p>URL</p>
-</blockquote>
-<p>统一资源定位符（URL）是资源标识符最常见的形式。URL描述了一台特定服务器上某资源的特定位置。它们可以明确说明如何从一个精确、固定的位置获取资源。</p>
-<ul>
-<li>URL 格式 </li>
-<li>方案（scheme），说明了访问资源所使用的协议类型。这部分通常就是HTTP协议（<a href="http://）。" target="_blank" rel="noopener">http://）。</a></li>
-<li>第二部分给出了服务器的因特网地址（比如，www.joes-hardware.com）。</li>
-<li>其余部分指定了Web服务器上的某个资源（比如，/specials/saw-blade.gif）。</li>
-<li>现在，几乎所有的URI都是URL</li>
-</ul>
-<blockquote>
-<p>URN</p>
-</blockquote>
-<p>URI的第二种形式就是统一资源名（URN）.URN是作为特定内容的唯一名称使用的，与目前的资源所在地无关.使用这些与位置无关的URN，就可以将资源四处搬移.通过URN，还可以用同一个名字通过多种网络访问协议来访问资源.<br>比如，不论因特网标准文档RFC 2141位于何处（甚至可以将其复制到多个地方），都可以用下列URN来命名它：<br>urn:ietf:rfc:2141<br>URN仍然处于试验阶段，还未大范围使用.为了更有效地工作，URN需要一个支撑架构来解析资源的位置.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http-资源/" data-id="ck456j4eo003d78uwkjb6r74x" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/14/http-协议版本/" data-id="ck7xf9tjt003bdwuwiyl0kasg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -716,7 +561,77 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http-报文、方法/" data-id="ck456j4es003i78uwf0680aak" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/14/http-报文、方法/" data-id="ck7xf9tju003ddwuw0c5liu3e" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-http-资源" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/14/http-资源/" class="article-date">
+  <time datetime="2018-05-14T03:33:06.000Z" itemprop="datePublished">2018-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/14/http-资源/">http资源</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="http-资源"><a href="#http-资源" class="headerlink" title="http-资源"></a>http-资源</h6><p>Web服务器是Web资源（Web  resource）的宿主。Web资源是Web内容的源头。最简单的Web资源就是Web服务器文件的静态文件。</p>
+<ul>
+<li>媒体类型<br>因特网上有数千种不同的数据类型，HTTP仔细地给每种要通过Web传输的对象都打上了名为MIME类型（MIME type）的数据格式标签。</li>
+</ul>
+<p>MIME类型是一种文本标记，表示一种主要的对象类型和一个特定的子类型，中间由一条斜杠来分隔。</p>
+<ul>
+<li>HTML格式的文本文档由text/html类型来标记。</li>
+<li>普通的ASCII文本文档由•ext/plain类型来标记。</li>
+<li>JPEG格式的图片为image/jpeg类型。</li>
+<li>GIF格式的图片为image/gif类型。</li>
+<li>Apple的QuickTime电影为video/quicktime类型。</li>
+<li>微软的PowerPoint演示文件为application/vnd.ms-powerpoint类型。</li>
+</ul>
+<blockquote>
+<p>URI</p>
+</blockquote>
+<p>服务器资源名被称为统一资源标识符（Uniform Resource Identifier，URI）。URI就像因特网上的邮政地址一样，在世界范围内唯一标识并定位信息资源。</p>
+<blockquote>
+<p>URL</p>
+</blockquote>
+<p>统一资源定位符（URL）是资源标识符最常见的形式。URL描述了一台特定服务器上某资源的特定位置。它们可以明确说明如何从一个精确、固定的位置获取资源。</p>
+<ul>
+<li>URL 格式 </li>
+<li>方案（scheme），说明了访问资源所使用的协议类型。这部分通常就是HTTP协议（<a href="http://）。" target="_blank" rel="noopener">http://）。</a></li>
+<li>第二部分给出了服务器的因特网地址（比如，www.joes-hardware.com）。</li>
+<li>其余部分指定了Web服务器上的某个资源（比如，/specials/saw-blade.gif）。</li>
+<li>现在，几乎所有的URI都是URL</li>
+</ul>
+<blockquote>
+<p>URN</p>
+</blockquote>
+<p>URI的第二种形式就是统一资源名（URN）.URN是作为特定内容的唯一名称使用的，与目前的资源所在地无关.使用这些与位置无关的URN，就可以将资源四处搬移.通过URN，还可以用同一个名字通过多种网络访问协议来访问资源.<br>比如，不论因特网标准文档RFC 2141位于何处（甚至可以将其复制到多个地方），都可以用下列URN来命名它：<br>urn:ietf:rfc:2141<br>URN仍然处于试验阶段，还未大范围使用.为了更有效地工作，URN需要一个支撑架构来解析资源的位置.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/14/http-资源/" data-id="ck7xf9tjw003gdwuw9p97ee4n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
@@ -891,7 +806,77 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/08/js内置对象/" data-id="ck456j4f7004078uwbgc1tu6g" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/08/js内置对象/" data-id="ck7xf9tka003ydwuwfeghjvqr" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/08/js面向对象/" class="article-date">
+  <time datetime="2018-05-08T10:06:35.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/js面向对象/">js创建对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="js创建对象"><a href="#js创建对象" class="headerlink" title="js创建对象"></a>js创建对象</h5><ul>
+<li>工厂模式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> o = nwe</span><br><span class="line">     <span class="built_in">Object</span>();</span><br><span class="line">     o.name = name;</span><br><span class="line">     o.age = age;</span><br><span class="line">     o.job = job;</span><br><span class="line">     <span class="number">0.</span></span><br><span class="line">     sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.name)</span><br><span class="line">     &#125;;</span><br><span class="line">     <span class="keyword">return</span> o;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">"Nicholas"</span>,<span class="number">29</span>,<span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">"Greg"</span>,<span class="number">27</span>,<span class="string">"Docker"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造函数模式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> person21 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person22 = <span class="keyword">new</span> Person(<span class="string">"Greg"</span>, <span class="number">24</span>, <span class="string">"Docker"</span>);</span><br><span class="line"></span><br><span class="line">alert(person21.constructor == Person);      <span class="comment">//true</span></span><br><span class="line">alert(person22.constructor == Person);      <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">alert(person21 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true</span></span><br><span class="line">alert(person21 <span class="keyword">instanceof</span> Person);      <span class="comment">//true</span></span><br><span class="line">alert(person22 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true</span></span><br><span class="line">alert(person22 <span class="keyword">instanceof</span> Person);      <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="number">2</span>、构造函数--&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将构造函数当做函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!--将构造函数当做函数--&gt;</span><br><span class="line"><span class="comment">//当做构造函数使用</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>,<span class="number">24</span>,<span class="string">"Software Engineer"</span>);</span><br><span class="line">person.sayName();       <span class="comment">//"Nicholas"</span></span><br><span class="line"><span class="comment">//当做普通函数调用</span></span><br><span class="line">Person(<span class="string">"Greg"</span>,<span class="number">32</span>,<span class="string">"Docker"</span>);</span><br><span class="line"><span class="built_in">window</span>.sayName();       <span class="comment">//"Greg"</span></span><br><span class="line"><span class="comment">//在另一个对象的作用域中调用</span></span><br><span class="line"><span class="keyword">var</span> 丿= <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">Person .call(o,<span class="string">"Kristen"</span>,<span class="number">32</span>,<span class="string">"Nurse"</span>);</span><br><span class="line">o.sayName();        <span class="comment">//"Kristen"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>[ECMAScript中的函数是对象，每定义一个函数，也就是实例化了一个对象 ] </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.job=job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"alert()this.name"</span>);    <span class="comment">//与声明函数在逻辑上等价</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>原型模式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">    原型模式--&gt;</span><br><span class="line">    <span class="comment">//创建每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，用途是包含可以由特定类型的所有实例共享的属性和方法。</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Person.prototype.name = <span class="string">"Nocjolas"</span>;</span><br><span class="line">    Person.prototype.age = <span class="number">22</span>;</span><br><span class="line">    Person.prototype.job = <span class="string">"Soft ware"</span></span><br><span class="line">    Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> person31 = <span class="keyword">new</span> Person();</span><br><span class="line">    person31.sayName();     <span class="comment">//"Nicholas"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> person32= <span class="keyword">new</span> Person();</span><br><span class="line">    person32.sayName();     <span class="comment">//"Nicholas"</span></span><br><span class="line">    alert(person31.sayName == person32.sayName);    <span class="comment">//trues</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>hasOwnProperty()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person41 = <span class="keyword">new</span> Person();</span><br><span class="line">   <span class="keyword">var</span> person42 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line">   person41.name=<span class="string">"Greg"</span>;                       <span class="comment">//来自实例</span></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>)) ;    <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">   alert(person42.name);                       <span class="comment">//"Nicholas" 来自原型</span></span><br><span class="line">   alert(person42.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">delete</span> person41.name;</span><br><span class="line">   alert(person41.name);                       <span class="comment">//"Nicholas"  来自原型</span></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &lt;!--</span><br><span class="line">   原型模式--&gt;</span><br><span class="line">   <span class="comment">//创建每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，用途是包含可以由特定类型的所有实例共享的属性和方法。</span></span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Person.prototype.name = <span class="string">"Nocjolas"</span>;</span><br><span class="line">   Person.prototype.age = <span class="number">22</span>;</span><br><span class="line">   Person.prototype.job = <span class="string">"Soft ware"</span></span><br><span class="line">   Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       alert(<span class="keyword">this</span>.name)</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>调用构造函数时会为实例添加一个指向最初原型的<br>[[Prototype]]指针，而把原型修改为另外一个对象就等于切断了构造函数与最初原型之间的联系。<br>请记住：实例中的指针仅指向原型，而不指向构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> friend = <span class="keyword">new</span> Person();</span><br><span class="line">  Person.prototype=&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">constructor</span>:Person,</span><br><span class="line">      name:"Greg",</span><br><span class="line">      aage:21,</span><br><span class="line">      job:"Docker",</span><br><span class="line">      sayName:function () &#123;</span><br><span class="line">          alert(<span class="keyword">this</span>.name);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  friend.sayName();       <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，我们先创建了 Person 的一个实例，然后又重写了其原型对象。然后在调用<br>friend.sayName()时发生了错误，因为 friend 指向的原型中不包含以该名字命名的属性。</p>
+<ul>
+<li>原型对象的问题</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype =&#123;</span><br><span class="line">    <span class="keyword">constructor</span>:Person,</span><br><span class="line">    name:"jack",</span><br><span class="line">    age:23,</span><br><span class="line">    job:"Engineer",</span><br><span class="line">    friends :["Shlby","Court"],</span><br><span class="line">    sayName:function () &#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line"></span><br><span class="line">alert(perosn1.friends);                     <span class="comment">//"Shekby","Court","van"</span></span><br><span class="line">alert(perosn2.friends);                     <span class="comment">//"Shekby","Court","van"</span></span><br><span class="line">alert(perosn1.friends === person2.friends); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/08/js面向对象/" data-id="ck7xf9tki004adwuwcomfp27y" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -984,7 +969,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

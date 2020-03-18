@@ -61,49 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-添加数据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/16/添加数据/" class="article-date">
-  <time datetime="2018-10-16T13:30:21.000Z" itemprop="datePublished">2018-10-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/16/添加数据/">添加数据</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--查看数据--&gt;</span><br><span class="line"> dump($xxx);</span><br><span class="line"> <span class="keyword">die</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 发送</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $notice_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'noticeId'</span>,$notice_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'send'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $userList = explode(<span class="string">','</span>, $data[<span class="string">'user_id'</span>]);</span><br><span class="line">           <span class="keyword">foreach</span>($userList <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">               $insData[<span class="string">'notice_id'</span>] = $data[<span class="string">'notice_id'</span>];</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = $val;</span><br><span class="line">               $insData[<span class="string">'is_read'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_del'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               Db::table(<span class="string">'xxx_user'</span>)-&gt;insert($insData);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $code_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'codeId'</span>,$code_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'add'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $num = intval($data[<span class="string">'num'</span>]);</span><br><span class="line">           <span class="keyword">for</span> ($n=<span class="number">0</span>;$n&lt;$num;$n++)&#123;</span><br><span class="line">               $insData[<span class="string">'name'</span>] = $data[<span class="string">'name'</span>];</span><br><span class="line">               $insData[<span class="string">'goods_id'</span>] = $data[<span class="string">'goods_id'</span>];</span><br><span class="line">               $insData[<span class="string">'activity_id'</span>] = <span class="number">4</span>;</span><br><span class="line">               $insData[<span class="string">'pay_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'status'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_expire'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               $insData[<span class="string">'end_time'</span>] = date(<span class="string">'2099-12-12 00:00:00'</span>);</span><br><span class="line">               $insData[<span class="string">'code'</span>] = <span class="string">''</span>;</span><br><span class="line">               $codeId =Db::table(<span class="string">'story_pre_sale_code'</span>)-&gt;insertGetId($insData);</span><br><span class="line">               $r = rand(<span class="number">10</span>,<span class="number">99</span>);</span><br><span class="line">               $pre=<span class="string">""</span>;</span><br><span class="line">               <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">8</span>-strlen($codeId);$i++)&#123;</span><br><span class="line">                   $pre = $pre.<span class="string">"0"</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               $newCode = $r.$pre.$codeId;</span><br><span class="line">               $newCode16 = base_convert($newCode, <span class="number">10</span>, <span class="number">16</span>);</span><br><span class="line">               Db::table(<span class="string">'xxx_code'</span>)-&gt;where(<span class="string">'id'</span>, $codeId)-&gt;setField(<span class="string">'code'</span>,$newCode16);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/16/添加数据/" data-id="ck456j4jh009e78uwxc9yjv2b" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Exception" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/15/Exception/" class="article-date">
@@ -138,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/15/Exception/" data-id="ck456j4c1000878uwfn8nxfew" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/15/Exception/" data-id="ck7xf9th40008dwuwga7z8yi1" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -183,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/15/Swagger-ui/" data-id="ck456j4do002278uwcz2s06uh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/15/Swagger-ui/" data-id="ck7xf9tiu0022dwuw5fpc4zbk" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -221,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="ck456j4hb006m78uw9s9b2y4f" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="ck7xf9tm7006ndwuwosjav44h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -262,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/枚举类型/" data-id="ck456j4ja009678uwf1pyz2w2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/12/枚举类型/" data-id="ck7xf9toq0098dwuwcrrs843t" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -332,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/SpringBoot中注解/" data-id="ck456j4dk001x78uw2wq17iup" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/12/SpringBoot中注解/" data-id="ck7xf9tiq001xdwuwwjkabyl6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -373,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/application.properties/" data-id="ck456j4e1002m78uw0b5hadet" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/12/application.properties/" data-id="ck7xf9tja002mdwuw47fj4p8v" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -425,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/Jrebel/" data-id="ck456j4cp001078uw6ig4d7lb" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/10/Jrebel/" data-id="ck7xf9ti40015dwuwsgknht4v" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
@@ -501,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/07/Spring boot 创建/" data-id="ck456j4di001v78uwpstjdzkf" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/07/Spring boot 创建/" data-id="ck7xf9tio001vdwuw9j5jc68d" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -591,10 +548,48 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/07/springboot之乐观锁和悲观锁/" data-id="ck456j4gx006178uwwqt4g93o" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/07/springboot之乐观锁和悲观锁/" data-id="ck7xf9tls0063dwuwgk9nw6dr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-logstash.conf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/05/logstash.conf/" class="article-date">
+  <time datetime="2018-10-05T13:30:21.000Z" itemprop="datePublished">2018-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/05/logstash.conf/">logstash.conf</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="logstash-conf"><a href="#logstash-conf" class="headerlink" title="logstash.conf"></a>logstash.conf</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  file &#123;</span><br><span class="line">	#要过滤的日志</span><br><span class="line">    path =&gt; &quot;/var/log/nginx/log/xxx-host.access.log&quot;</span><br><span class="line">    type =&gt; &quot;syslog&quot;</span><br><span class="line">	#标签</span><br><span class="line">	 tags =&gt; [&quot;tag1&quot;]</span><br><span class="line">     codec =&gt; plain</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  jdbc &#123;</span><br><span class="line">  # mysql jdbc connection string to our backup databse  后面的test对应mysql中的test数据库</span><br><span class="line">  jdbc_connection_string =&gt; &quot;jdbc:mysql://xxxxxx:3306/testlog&quot;</span><br><span class="line">  # the user we wish to excute our statement as</span><br><span class="line">  jdbc_user =&gt; &quot;root&quot;</span><br><span class="line">  jdbc_password =&gt; &quot;root&quot;</span><br><span class="line">  # the path to our downloaded jdbc driver mysql jar </span><br><span class="line">  jdbc_driver_library =&gt; &quot;/usr/share/logstash/lib/mysql-connector-java-5.1.44-bin.jar&quot;</span><br><span class="line">  # the name of the driver class for mysql</span><br><span class="line">  jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">  jdbc_paging_enabled =&gt; &quot;true&quot;</span><br><span class="line">  jdbc_page_size =&gt; &quot;500&quot;</span><br><span class="line">#以下对应着要执行的sql的绝对路径。</span><br><span class="line">  statement_filepath =&gt; &quot;/usr/share/logstash/logstash_count/mysql_user.sql&quot;</span><br><span class="line">#定时字段 各字段含义（由左至右）分、时、天、月、年，全部为*默认含义为每分钟都更新（测试结果，不同的话请留言指出）</span><br><span class="line">#设定ES索引类型</span><br><span class="line">  type =&gt; &quot;jdbc&quot;</span><br><span class="line">  tags =&gt; [&quot;userCount&quot;]</span><br><span class="line">  schedule =&gt; &quot;* * * * *&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  jdbc &#123;</span><br><span class="line">  # mysql jdbc connection string to our backup databse  后面的test对应mysql中的test数据库</span><br><span class="line">  jdbc_connection_string =&gt; &quot;jdbc:mysql://rxxx.comm:3306/user2&quot;</span><br><span class="line">  # the user we wish to excute our statement as</span><br><span class="line">  jdbc_user =&gt; &quot;root&quot;</span><br><span class="line">  jdbc_password =&gt; &quot;root&quot;</span><br><span class="line">  # the path to our downloaded jdbc driver</span><br><span class="line">  jdbc_driver_library =&gt; &quot;/usr/share/logstash/lib/mysql-connector-java-5.1.44-bin.jar&quot;</span><br><span class="line">  # the name of the driver class for mysql</span><br><span class="line">  jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">  jdbc_paging_enabled =&gt; &quot;true&quot;</span><br><span class="line">  jdbc_page_size =&gt; &quot;500&quot;</span><br><span class="line">#以下对应着要执行的sql的绝对路径。</span><br><span class="line">  statement_filepath =&gt; &quot;/usr/share/logstash/logstash_count/mysql_user2.sql&quot;</span><br><span class="line">#定时字段 各字段含义（由左至右）分、时、天、月、年，全部为*默认含义为每分钟都更新（测试结果，不同的话请留言指出）</span><br><span class="line">#设定ES索引类型</span><br><span class="line">  type =&gt; &quot;jdbc&quot;</span><br><span class="line">  tags =&gt; [&quot;user2Count&quot;]</span><br><span class="line">  schedule =&gt; &quot;* * * * *&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">   jdbc &#123;</span><br><span class="line">  # mysql jdbc connection string to our backup databse  后面的test对应mysql中的test数据库</span><br><span class="line">  jdbc_connection_string =&gt; &quot;jdbc:mysql://rxxxx.com:3306/user3&quot;</span><br><span class="line">  # the user we wish to excute our statement as</span><br><span class="line">  jdbc_user =&gt; &quot;root&quot;</span><br><span class="line">  jdbc_password =&gt; &quot;root&quot;</span><br><span class="line">  # the path to our downloaded jdbc driver</span><br><span class="line">  jdbc_driver_library =&gt; &quot;/usr/share/logstash/lib/mysql-connector-java-5.1.44-bin.jar&quot;</span><br><span class="line">  # the name of the driver class for mysql</span><br><span class="line">  jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;</span><br><span class="line">  jdbc_paging_enabled =&gt; &quot;true&quot;</span><br><span class="line">  jdbc_page_size =&gt; &quot;500&quot;</span><br><span class="line">#以下对应着要执行的sql的绝对路径。</span><br><span class="line">  statement_filepath =&gt; &quot;/usr/share/logstash/logstash_count/mysql_user3.sql&quot;</span><br><span class="line">#定时字段 各字段含义（由左至右）分、时、天、月、年，全部为*默认含义为每分钟都更新（测试结果，不同的话请留言指出）</span><br><span class="line">#设定ES索引类型</span><br><span class="line">  type =&gt; &quot;jdbc&quot;</span><br><span class="line">  tags =&gt; [&quot;user3Count&quot;]</span><br><span class="line">  schedule =&gt; &quot;* * * * *&quot;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter &#123;</span><br><span class="line"># json &#123;</span><br><span class="line"> # source =&gt; &quot;message&quot;</span><br><span class="line"> # remove_field =&gt; [&quot;message&quot;]</span><br><span class="line"> # &#125;</span><br><span class="line">if [type] == &quot;syslog&quot; &#123;</span><br><span class="line">grok &#123;</span><br><span class="line">	patterns_dir =&gt; &quot;/etc/logstash/patterns&quot;</span><br><span class="line">	# nginx/patterns</span><br><span class="line">	match =&gt; &#123; &quot;message&quot; =&gt; &quot;%&#123;NGINXACCESS&#125;&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">if[type]==&quot;jdbc&quot;&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">output &#123;</span><br><span class="line">#  stdout &#123;</span><br><span class="line">#以JSON格式输出</span><br><span class="line">#codec =&gt; json_lines</span><br><span class="line">#  &#125;</span><br><span class="line"></span><br><span class="line">if &quot;_jsonparsefailure&quot; not in [tags] &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if &quot;userCount&quot; in [tags] &#123;</span><br><span class="line">	 elasticsearch &#123;</span><br><span class="line">#ESIP地址与端口</span><br><span class="line"> 	 hosts =&gt; &quot;10.xx.xx.xx:9200&quot;</span><br><span class="line">#ES索引名称（自己定义的）</span><br><span class="line">  	index =&gt; &quot;userCount&quot;</span><br><span class="line">#自增ID编号</span><br><span class="line">  	user=&gt;&quot;elastic&quot;</span><br><span class="line">  	password=&gt;&quot;elastic&quot;</span><br><span class="line">	document_type=&gt;&quot;syslog&quot;</span><br><span class="line">    codec=&gt;json</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if &quot;user2Count&quot; in [tags] &#123;</span><br><span class="line">	 elasticsearch &#123;</span><br><span class="line">#ESIP地址与端口</span><br><span class="line"> 	 hosts =&gt; &quot;10.xx.xx.xx:9200&quot;</span><br><span class="line">#ES索引名称（自己定义的）</span><br><span class="line">  	index =&gt; &quot;user2Count&quot;</span><br><span class="line">#自增ID编号</span><br><span class="line">  	document_id =&gt; &quot;%&#123;id&#125;&quot;</span><br><span class="line">  	user=&gt;&quot;elastic&quot;</span><br><span class="line">  	password=&gt;&quot;elastic&quot;</span><br><span class="line">#  	document_type=&gt;&quot;syslog&quot;</span><br><span class="line">#	document_id =&gt; &quot;%&#123;id&#125;&quot;</span><br><span class="line">	codec=&gt;json</span><br><span class="line">  	&#125; </span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> if &quot;user3Count&quot; in [tags] &#123;</span><br><span class="line">	 elasticsearch &#123;</span><br><span class="line">#ESIP地址与端口</span><br><span class="line"> 	 hosts =&gt; &quot;10.xx.xx.xx:9200&quot;</span><br><span class="line">#ES索引名称（自己定义的）</span><br><span class="line">  	index =&gt; &quot;user3Count&quot;</span><br><span class="line">#自增ID编号</span><br><span class="line">  	document_id =&gt; &quot;%&#123;id&#125;&quot;</span><br><span class="line">  	user=&gt;&quot;elastic&quot;</span><br><span class="line">  	password=&gt;&quot;elastic&quot;</span><br><span class="line">#  	document_type=&gt;&quot;syslog&quot;</span><br><span class="line">#	document_id =&gt; &quot;%&#123;id&#125;&quot;</span><br><span class="line">	codec=&gt;json</span><br><span class="line">  	&#125; </span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/05/logstash.conf/" data-id="ck7xf9tkq004kdwuw0235r8p2" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logstash/">logstash</a></li></ul>
 
     </footer>
   </div>
@@ -684,7 +679,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 chen v<br>
+      &copy; 2020 chen v<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
