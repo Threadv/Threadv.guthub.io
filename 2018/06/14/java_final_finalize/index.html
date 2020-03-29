@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>final、finally、finalize | Threadv</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="final、finally、finalize1.final final可以用于控制成员、方法，或者是一个类是否可被覆写或继承等功能，这些特点使final在Java中拥有了一个不可或缺的地位，也是学习Java时必须要知道和掌握的关键字之一。 （1）final成员 当在类中定义变量时，若在其前面加上final关键字，那就是">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="final、finally、finalize">
+<meta property="og:url" content="http://yoursite.com/2018/06/14/java_final_finalize/index.html">
+<meta property="og:site_name" content="Threadv">
+<meta property="og:description" content="final、finally、finalize1.final final可以用于控制成员、方法，或者是一个类是否可被覆写或继承等功能，这些特点使final在Java中拥有了一个不可或缺的地位，也是学习Java时必须要知道和掌握的关键字之一。 （1）final成员 当在类中定义变量时，若在其前面加上final关键字，那就是说，这个变量一旦被初始化，便不可改变，这里不可改变的意思对基本类型来说是其值不可">
+<meta property="og:updated_time" content="2020-03-29T10:01:32.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="final、finally、finalize">
+<meta name="twitter:description" content="final、finally、finalize1.final final可以用于控制成员、方法，或者是一个类是否可被覆写或继承等功能，这些特点使final在Java中拥有了一个不可或缺的地位，也是学习Java时必须要知道和掌握的关键字之一。 （1）final成员 当在类中定义变量时，若在其前面加上final关键字，那就是说，这个变量一旦被初始化，便不可改变，这里不可改变的意思对基本类型来说是其值不可">
+  
+    <link rel="alternate" href="/atom.xml" title="Threadv" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Threadv</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-java_final_finalize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/14/java_final_finalize/" class="article-date">
+  <time datetime="2018-06-14T07:18:12.000Z" itemprop="datePublished">2018-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      final、finally、finalize
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="final、finally、finalize"><a href="#final、finally、finalize" class="headerlink" title="final、finally、finalize"></a>final、finally、finalize</h6><p>1.final</p>
+<p>final可以用于控制成员、方法，或者是一个类是否可被覆写或继承等功能，这些特点使final在Java中拥有了一个不可或缺的地位，也是学习Java时必须要知道和掌握的关键字之一。</p>
+<p>（1）final成员</p>
+<p>当在类中定义变量时，若在其前面加上final关键字，那就是说，这个变量一旦被初始化，便不可改变，这里不可改变的意思对基本类型来说是其值不可变，而对于对象变量来说是其引用不可变。其初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。</p>
+<p>还有一种用法是定义方法中的参数为final。对于基本类型的变量，这样做并没有什么实际意义，因为基本类型的变量在调用方法时是传值的，也就是说，你可以在方法中更改这个参数变量而不会影响到调用语句，然而对于对象变量，却显得很实用，因为对象变量在传递时是传递其引用的，这样，你在方法中对对象变量的修改也会影响到调用语句中的对象变量。当你在方法中不需要改变作为参数的对象变量时，明确使用final进行声明，会防止你无意地修改而影响到调用方法。</p>
+<p>（2）final方法</p>
+<p>将方法声明为final有两个原因，第一就是说明已经知道这个方法提供的功能满足要求，不需要进行扩展，并且也不允许任何从此类继承的类来覆写这个方法，但是仍然可以继承这个方法，也就是说，可以直接使用。第二就是允许编译器将所有对此方法的调用转化为inline（行内）调用的机制，它会在调用final方法时，直接将方法主体插入到调用处，而不是进行例行的方法调用，例如，保存断点、压栈等，这样可能会使程序效率有所提高。然而当方法主体非常庞大时，或在多处调用此方法时，调用主体代码便会迅速膨胀，可能反而会影响效率，所以要慎用final进行方法定义。</p>
+<p>（3）final类</p>
+<p>当将final用于类时，就需要仔细考虑，因为一个final类是无法被任何人继承的，那也就意味着此类在一个继承树中是一个叶子类，并且此类的设计已被认为很完美，不需要进行修改或扩展。对于final类中的成员，可以定义其为final，也可以不是final。而对于方法，由于所属类为final的关系，自然也就成了final型的。也可以明确地给final类中的方法加上一个final，但这显然没有意义。</p>
+<p>2.finally</p>
+<p>finally关键字是对Java异常处理模型的最佳补充。finally结构使代码总会执行，而不管有无异常发生。使用finally可以维护对象的内部状态，并可以清理非内存资源。如果没有finally，你的代码就会很费解。</p>
+<p>3.finalize</p>
+<p>根据Java语言规范，JVM保证调用finalize函数之前，这个对象是不可达的，但是JVM不保证这个函数一定会被调用。另外，规范还保证finalize函数最多运行一次。<br>通常，finalize用于一些不容易控制，并且非常重要的资源的释放，例如，一些I/O的操作、数据的连接。这些资源的释放对整个应用程序是非常关键的。在这种情况下，程序员应该以通过程序本身管理（包括释放）这些资源为主，以finalize函数释放资源方式为辅，形成一种双保险的管理机制，而不应该仅仅依靠finalize来释放资源。</p>
+<hr>
+<p>1.final修饰符（关键字）</p>
+<p>如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。因此，一个类不能既被声明为abstract，又被声明为final。将变量或方法声明为final，可以保证它们在使用中不被改变。其初始化可以在两个地方：一是其定义处，也就是说，在final变量定义时直接给其赋值；二是在构造函数中。这两个地方只能选其一，要么在定义时给值，要么在构造函数中给值，不能同时既在定义时给了值，又在构造函数中给另外的值，而在以后的引用中只能读取，不可修改。被声明为final的方法也同样只能使用，不能重写（override）。</p>
+<p>2.finally</p>
+<p>在异常处理时提供finally块来执行任何清除操作。如果抛出一个异常，那么相匹配的catch子句就会执行，然后控制就会进入finally块（如果有的话）。</p>
+<p>3.finalize</p>
+<p>finalize是方法名。Java技术允许使用finalize()方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在Object类中定义的，因此，所有的类都继承了它。子类覆盖finalize()方法以整理系统资源或者执行其他清理工作。finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/14/java_final_finalize/" data-id="ck8cwcehz002u0wuwg129b2cj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/19/Java异常/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java异常
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/31/http_request/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HttpRequest</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.5px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 13.33px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.5px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.17px;">mysql</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 19.17px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/27/python_字典/">python_dict</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/27/python_时间/">python-时间</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/26/git取消修改/">git-取消修改</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/26/python_list操作/">python-list</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/26/python_元组/">python-元祖</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 chen v<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
