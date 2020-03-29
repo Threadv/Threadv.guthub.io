@@ -61,6 +61,158 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WXPayUtil" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/02/WXPayUtil/" class="article-date">
+  <time datetime="2018-07-02T12:09:32.000Z" itemprop="datePublished">2018-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/02/WXPayUtil/">WXPayUtil</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="WXPayUtil"><a href="#WXPayUtil" class="headerlink" title="WXPayUtil"></a>WXPayUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.ifenghui.storybookapi.util.weixin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.ifenghui.storybookapi.util.weixin.WXPayConstants.SignType;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.w3c.dom.Node;</span><br><span class="line"><span class="keyword">import</span> org.w3c.dom.NodeList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.crypto.Mac;</span><br><span class="line"><span class="keyword">import</span> javax.crypto.spec.SecretKeySpec;</span><br><span class="line"><span class="keyword">import</span> javax.xml.parsers.DocumentBuilder;</span><br><span class="line"><span class="keyword">import</span> javax.xml.parsers.DocumentBuilderFactory;</span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.OutputKeys;</span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.Transformer;</span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.TransformerFactory;</span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.dom.DOMSource;</span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.stream.StreamResult;</span><br><span class="line"><span class="keyword">import</span> java.io.ByteArrayInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.StringWriter;</span><br><span class="line"><span class="keyword">import</span> java.security.MessageDigest;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXPayUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * XML格式字符串转换为Map</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> strXML XML字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> XML数据转换后的Map</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title">xmlToMap</span><span class="params">(String strXML)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Map&lt;String, String&gt; data = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();</span><br><span class="line">            InputStream stream = <span class="keyword">new</span> ByteArrayInputStream(strXML.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">            org.w3c.dom.Document doc = documentBuilder.parse(stream);</span><br><span class="line">            doc.getDocumentElement().normalize();</span><br><span class="line">            NodeList nodeList = doc.getDocumentElement().getChildNodes();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> idx = <span class="number">0</span>; idx &lt; nodeList.getLength(); ++idx) &#123;</span><br><span class="line">                Node node = nodeList.item(idx);</span><br><span class="line">                <span class="keyword">if</span> (node.getNodeType() == Node.ELEMENT_NODE) &#123;</span><br><span class="line">                    org.w3c.dom.Element element = (org.w3c.dom.Element) node;</span><br><span class="line">                    data.put(element.getNodeName(), element.getTextContent());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                stream.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">                <span class="comment">// do nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> data;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            WXPayUtil.getLogger().warn(<span class="string">"Invalid XML, can not convert to map. Error message: &#123;&#125;. XML content: &#123;&#125;"</span>, ex.getMessage(), strXML);</span><br><span class="line">            <span class="keyword">throw</span> ex;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将Map转换为XML格式的字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> XML格式的字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">mapToXml</span><span class="params">(Map&lt;String, String&gt; data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">        DocumentBuilder documentBuilder= documentBuilderFactory.newDocumentBuilder();</span><br><span class="line">        org.w3c.dom.Document document = documentBuilder.newDocument();</span><br><span class="line">        org.w3c.dom.Element root = document.createElement(<span class="string">"xml"</span>);</span><br><span class="line">        document.appendChild(root);</span><br><span class="line">        <span class="keyword">for</span> (String key: data.keySet()) &#123;</span><br><span class="line">            String value = data.get(key);</span><br><span class="line">            <span class="keyword">if</span> (value == <span class="keyword">null</span>) &#123;</span><br><span class="line">                value = <span class="string">""</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            value = value.trim();</span><br><span class="line">            org.w3c.dom.Element filed = document.createElement(key);</span><br><span class="line">            filed.appendChild(document.createTextNode(value));</span><br><span class="line">            root.appendChild(filed);</span><br><span class="line">        &#125;</span><br><span class="line">        TransformerFactory tf = TransformerFactory.newInstance();</span><br><span class="line">        Transformer transformer = tf.newTransformer();</span><br><span class="line">        DOMSource source = <span class="keyword">new</span> DOMSource(document);</span><br><span class="line">        transformer.setOutputProperty(OutputKeys.ENCODING, <span class="string">"UTF-8"</span>);</span><br><span class="line">        transformer.setOutputProperty(OutputKeys.INDENT, <span class="string">"yes"</span>);</span><br><span class="line">        StringWriter writer = <span class="keyword">new</span> StringWriter();</span><br><span class="line">        StreamResult result = <span class="keyword">new</span> StreamResult(writer);</span><br><span class="line">        transformer.transform(source, result);</span><br><span class="line">        String output = writer.getBuffer().toString(); <span class="comment">//.replaceAll("\n|\r", "");</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writer.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成带有 sign 的 XML 格式字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 含有sign字段的XML</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateSignedXml</span><span class="params">(<span class="keyword">final</span> Map&lt;String, String&gt; data, String key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> generateSignedXml(data, key, SignType.MD5);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成带有 sign 的 XML 格式字符串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> signType 签名类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 含有sign字段的XML</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateSignedXml</span><span class="params">(<span class="keyword">final</span> Map&lt;String, String&gt; data, String key, SignType signType)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        String sign = generateSignature(data, key, signType);</span><br><span class="line">        data.put(WXPayConstants.FIELD_SIGN, sign);</span><br><span class="line">        <span class="keyword">return</span> mapToXml(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断签名是否正确</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> xmlStr XML格式数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 签名是否正确</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSignatureValid</span><span class="params">(String xmlStr, String key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Map&lt;String, String&gt; data = xmlToMap(xmlStr);</span><br><span class="line">        <span class="keyword">if</span> (!data.containsKey(WXPayConstants.FIELD_SIGN) ) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String sign = data.get(WXPayConstants.FIELD_SIGN);</span><br><span class="line">        <span class="keyword">return</span> generateSignature(data, key).equals(sign);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断签名是否正确，必须包含sign字段，否则返回false。使用MD5签名。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 签名是否正确</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSignatureValid</span><span class="params">(Map&lt;String, String&gt; data, String key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> isSignatureValid(data, key, SignType.MD5);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断签名是否正确，必须包含sign字段，否则返回false。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data Map类型数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> signType 签名方式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 签名是否正确</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSignatureValid</span><span class="params">(Map&lt;String, String&gt; data, String key, SignType signType)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!data.containsKey(WXPayConstants.FIELD_SIGN) ) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String sign = data.get(WXPayConstants.FIELD_SIGN);</span><br><span class="line">        <span class="keyword">return</span> generateSignature(data, key, signType).equals(sign);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成签名</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 待签名数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 签名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateSignature</span><span class="params">(<span class="keyword">final</span> Map&lt;String, String&gt; data, String key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> generateSignature(data, key, SignType.MD5);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成签名. 注意，若含有sign_type字段，必须和signType参数保持一致。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 待签名数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key API密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> signType 签名方式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 签名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateSignature</span><span class="params">(<span class="keyword">final</span> Map&lt;String, String&gt; data, String key, SignType signType)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Set&lt;String&gt; keySet = data.keySet();</span><br><span class="line">        String[] keyArray = keySet.toArray(<span class="keyword">new</span> String[keySet.size()]);</span><br><span class="line">        Arrays.sort(keyArray);</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (String k : keyArray) &#123;</span><br><span class="line">            <span class="keyword">if</span> (k.equals(WXPayConstants.FIELD_SIGN)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (data.get(k).trim().length() &gt; <span class="number">0</span>) <span class="comment">// 参数值为空，则不参与签名</span></span><br><span class="line">                sb.append(k).append(<span class="string">"="</span>).append(data.get(k).trim()).append(<span class="string">"&amp;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(<span class="string">"key="</span>).append(key);</span><br><span class="line">        <span class="keyword">if</span> (SignType.MD5.equals(signType)) &#123;</span><br><span class="line">            <span class="keyword">return</span> MD5(sb.toString()).toUpperCase();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (SignType.HMACSHA256.equals(signType)) &#123;</span><br><span class="line">            <span class="keyword">return</span> HMACSHA256(sb.toString(), key);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(String.format(<span class="string">"Invalid sign_type: %s"</span>, signType));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取随机字符串 Nonce Str</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 随机字符串</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateNonceStr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> UUID.randomUUID().toString().replaceAll(<span class="string">"-"</span>, <span class="string">""</span>).substring(<span class="number">0</span>, <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成 MD5</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 待处理数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> MD5结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">MD5</span><span class="params">(String data)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        MessageDigest md = MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line">        <span class="keyword">byte</span>[] array = md.digest(data.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">byte</span> item : array) &#123;</span><br><span class="line">            sb.append(Integer.toHexString((item &amp; <span class="number">0xFF</span>) | <span class="number">0x100</span>).substring(<span class="number">1</span>, <span class="number">3</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString().toUpperCase();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成 HMACSHA256</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> data 待处理数据</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key 密钥</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 加密结果</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">HMACSHA256</span><span class="params">(String data, String key)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Mac sha256_HMAC = Mac.getInstance(<span class="string">"HmacSHA256"</span>);</span><br><span class="line">        SecretKeySpec secret_key = <span class="keyword">new</span> SecretKeySpec(key.getBytes(<span class="string">"UTF-8"</span>), <span class="string">"HmacSHA256"</span>);</span><br><span class="line">        sha256_HMAC.init(secret_key);</span><br><span class="line">        <span class="keyword">byte</span>[] array = sha256_HMAC.doFinal(data.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">byte</span> item : array) &#123;</span><br><span class="line">            sb.append(Integer.toHexString((item &amp; <span class="number">0xFF</span>) | <span class="number">0x100</span>).substring(<span class="number">1</span>, <span class="number">3</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString().toUpperCase();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 日志</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Logger <span class="title">getLogger</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Logger logger = LoggerFactory.getLogger(<span class="string">"wxpay java sdk"</span>);</span><br><span class="line">        <span class="keyword">return</span> logger;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取当前时间戳，单位秒</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">getCurrentTimestamp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> System.currentTimeMillis()/<span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取当前时间戳，单位毫秒</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">getCurrentTimestampMs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> System.currentTimeMillis();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成 uuid， 即用来标识一笔单，也用做 nonce_str</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">generateUUID</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> UUID.randomUUID().toString().replaceAll(<span class="string">"-"</span>, <span class="string">""</span>).substring(<span class="number">0</span>, <span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/02/WXPayUtil/" data-id="ck8cxwcnm0020vguw7e4ecx8q" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SortedMap转化成 xml格式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/02/SortedMap转化成 xml格式/" class="article-date">
+  <time datetime="2018-07-02T11:09:35.000Z" itemprop="datePublished">2018-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/02/SortedMap转化成 xml格式/">SortedMap 集合转化成 xml格式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="SortedMap-集合转化成-xml格式"><a href="#SortedMap-集合转化成-xml格式" class="headerlink" title="SortedMap 集合转化成 xml格式"></a>SortedMap<object,object> 集合转化成 xml格式</object,object></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 将SortedMap&lt;Object,Object&gt; 集合转化成 xml格式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getRequestXml</span><span class="params">(SortedMap&lt;Object,Object&gt; parameters)</span></span>&#123;</span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    sb.append(<span class="string">"&lt;xml&gt;"</span>);</span><br><span class="line">    Set es = parameters.entrySet();</span><br><span class="line">    Iterator it = es.iterator();</span><br><span class="line">    <span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">        Map.Entry entry = (Map.Entry)it.next();</span><br><span class="line">        String k = (String)entry.getKey();</span><br><span class="line">        String v = (String)entry.getValue();</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"attach"</span>.equalsIgnoreCase(k)||<span class="string">"body"</span>.equalsIgnoreCase(k)||<span class="string">"sign"</span>.equalsIgnoreCase(k)) &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+<span class="string">"&lt;![CDATA["</span>+v+<span class="string">"]]&gt;&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            sb.append(<span class="string">"&lt;"</span>+k+<span class="string">"&gt;"</span>+v+<span class="string">"&lt;/"</span>+k+<span class="string">"&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sb.append(<span class="string">"&lt;/xml&gt;"</span>);</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/02/SortedMap转化成 xml格式/" data-id="ck8cxwcn4001cvguwxg590qtu" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-XML格式字符串转换为Map" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/02/XML格式字符串转换为Map/" class="article-date">
+  <time datetime="2018-07-02T11:09:35.000Z" itemprop="datePublished">2018-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/02/XML格式字符串转换为Map/">XML格式字符串转换为Map</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="XML格式字符串转换为Map"><a href="#XML格式字符串转换为Map" class="headerlink" title="XML格式字符串转换为Map"></a>XML格式字符串转换为Map</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * XML格式字符串转换为Map</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> strXML XML字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> XML数据转换后的Map</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title">xmlToMap</span><span class="params">(String strXML)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Map&lt;String, String&gt; data = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();</span><br><span class="line">        InputStream stream = <span class="keyword">new</span> ByteArrayInputStream(strXML.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">        org.w3c.dom.Document doc = documentBuilder.parse(stream);</span><br><span class="line">        doc.getDocumentElement().normalize();</span><br><span class="line">        NodeList nodeList = doc.getDocumentElement().getChildNodes();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> idx = <span class="number">0</span>; idx &lt; nodeList.getLength(); ++idx) &#123;</span><br><span class="line">            Node node = nodeList.item(idx);</span><br><span class="line">            <span class="keyword">if</span> (node.getNodeType() == Node.ELEMENT_NODE) &#123;</span><br><span class="line">                org.w3c.dom.Element element = (org.w3c.dom.Element) node;</span><br><span class="line">                data.put(element.getNodeName(), element.getTextContent());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            stream.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            <span class="comment">// do nothing</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">        WXPayUtil.getLogger().warn(<span class="string">"Invalid XML, can not convert to map. </span></span><br><span class="line"><span class="string">        Error message: &#123;&#125;. XML content: &#123;&#125;"</span>, ex.getMessage(), strXML);</span><br><span class="line">        <span class="keyword">throw</span> ex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/02/XML格式字符串转换为Map/" data-id="ck8cxwcnp0022vguws9p9gwxi" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-月初和月末" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/月初和月末/" class="article-date">
+  <time datetime="2018-06-30T12:15:19.000Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/30/月初和月末/">月初和月末</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="月初和月末"><a href="#月初和月末" class="headerlink" title="月初和月末"></a>月初和月末</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Calendar cale = Calendar.getInstance();</span><br><span class="line">  <span class="comment">// 获取当月第一天和最后一天</span></span><br><span class="line">  SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)</span><br><span class="line">  String firstday, lastday;</span><br><span class="line">  <span class="comment">// 获取前月的第一天</span></span><br><span class="line">  cale.add(Calendar.MONTH, <span class="number">0</span>);</span><br><span class="line">  cale.set(Calendar.DAY_OF_MONTH, <span class="number">1</span>);</span><br><span class="line">  firstday = format.format(cale.getTime());</span><br><span class="line">  Date firstDay = format.parse(firstday);</span><br><span class="line">  <span class="comment">// 获取前月的最后一天</span></span><br><span class="line">  cale = Calendar.getInstance();</span><br><span class="line">  cale.add(Calendar.MONTH, <span class="number">1</span>);</span><br><span class="line">  cale.set(Calendar.DAY_OF_MONTH, <span class="number">0</span>);</span><br><span class="line">  lastday = format.format(cale.getTime());</span><br><span class="line">  Date lastDay = format.parse(lastday);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/30/月初和月末/" data-id="ck8cxwctp008yvguwb349nmn0" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Map转换为XML格式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/30/Map转换为XML格式/" class="article-date">
@@ -87,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/30/Map转换为XML格式/" data-id="ck8cwfks5000sksuwvlrn4tle" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/30/Map转换为XML格式/" data-id="ck8cxwcmv0012vguwbiujjp5i" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -417,7 +569,7 @@ D. new RandomAccessFile raf = new RandomAccessFile(&quot;myfile.txt&quot;,&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/问题/" data-id="ck8cwfkxv0095ksuw7udfzszj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/29/问题/" data-id="ck8cxwcug009zvguwyxdtmlk5" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -534,7 +686,7 @@ D.false true true
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/问题2/" data-id="ck8cwfkxy0098ksuw93o3x7kc" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/29/问题2/" data-id="ck8cxwcuh00a1vguwzl5kdges" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -572,7 +724,7 @@ D.false true true
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/LoadJsonUtil/" data-id="ck8cwfks1000mksuwp7voa553" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/28/LoadJsonUtil/" data-id="ck8cxwcmo000uvguwieecdstp" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -610,7 +762,7 @@ D.false true true
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/wxUserInfoUtil/" data-id="ck8cwfkw4006eksuwzluppvy0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/28/wxUserInfoUtil/" data-id="ck8cxwcrw006lvguwpx6hl2hk" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -668,411 +820,7 @@ o(1)＜o(log2n)＜o(n)＜o(n log2 n)＜o(n^2)＜o(n^3)＜o(2^n)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/26/时间复杂度/" data-id="ck8cwfkx90084ksuwvjmunel0" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ClassLoader" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/ClassLoader/" class="article-date">
-  <time datetime="2018-06-24T11:20:35.000Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/ClassLoader/">ClassLoader</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="ClassLoader"><a href="#ClassLoader" class="headerlink" title="ClassLoader"></a>ClassLoader</h5><ul>
-<li><p>基本概念</p>
-<p>  与C或C++编写的程序不同，Java程序并不是一个可执行文件，而是由许多独立的类文件组成的，每一个文件对应一个Java类。此外，这些类文件并非全部装入内存，而是根据程序需要逐渐载入。ClassLoader是JVM实现的一部分，ClassLoader包括bootstrap classloader（启动类加载器），ClassLoader在JVM运行的时候加载Java核心的API，以满足Java程序最基本的需求，其中就包括用户定义的ClassLoader，这里所谓的用户定义，是指通过Java程序实现的两个ClassLoader：一个是ExtClassLoader，它的作用是用来加载Java的扩展API，也就是/lib/ext中的类；第二个是AppClassLoader，它是用来加载用户机器上CLASSPATH设置目录中的Class的，通常在没有指定ClassLoader的情况下，程序员自定义的类就由该ClassLoader进行加载。</p>
-</li>
-<li><p>ClassLoader加载流程</p>
-<p>  当运行一个程序的时候，JVM启动，运行bootstrap classloader，该ClassLoader加载Java核心API（ExtClassLoader和AppClassLoader也在此时被加载），然后调用ExtClassLoader加载扩展API，最后AppClassLoader加载CLASSPATH目录下定义的Class，这就是一个程序最基本的加载流程。</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">synchronized</span> Class <span class="title">loadClass</span><span class="params">(String name, <span class="keyword">boolean</span> resolve)</span></span></span><br><span class="line"><span class="function"><span class="keyword">throws</span> ClassNotFoundException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">// 首先检查该name指定的class是否有被加载</span></span><br><span class="line">Class c = findLoadedClass(name);</span><br><span class="line"><span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</span><br><span class="line"><span class="comment">//如果parent不为null，则调用parent的loadClass进行加载</span></span><br><span class="line">c = parent.loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//parent为null，则调用BootstrapClassLoader进行加载</span></span><br><span class="line">c = findBootstrapClass0(name);</span><br><span class="line">&#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line"><span class="comment">//如果仍然无法加载成功，则调用自身的findClass进行加载</span></span><br><span class="line">c = findClass(name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (resolve) &#123;</span><br><span class="line">resolveClass(c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从上面一段代码中可以看出，一个类加载的过程使用了一种父类委托模式。为什么要使用这种父类委托模式呢？<br>第1个原因就是这样可以避免重复加载，当父类已经加载了该类的时候，就没有必要子ClassLoader再加载一次。<br>第2个原因就是考虑到安全因素，如果不使用这种委托模式，那么可以随时使用自定义的String来动态替代Java核心API中定义的类型，这样会存在非常大的安全隐患，而父类委托的方式就可以避免这种情况，因为String已经在启动时被加载，所以，用户自定义类是无法加载一个自定义的ClassLoader。</p>
-<ul>
-<li>一些重要的方法</li>
-</ul>
-<ol>
-<li>loadClass方法。<br> ClassLoader.loadClass() 是ClassLoader的入口点。该方法的定义如下：</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Class <span class="title">loadClass</span><span class="params">(String name,<span class="keyword">boolean</span> resolve)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>name是指JVM需要的类的名称，如Foo或java.lang.Object。resolve参数告诉方法是否需要解析类。在准备执行类之前，应考虑类解析。注意：并不总是需要解析，如果JVM只需要知道该类是否存在或找出该类的超类，那么就不需要解析。</p>
-<ol>
-<li><p>defineClass方法。</p>
-<p> defineClass方法接受由原始字节组成的数组，并把它转换成Class对象。原始数组包含如从文件系统或网络装入的数据。defineClass管理JVM的许多复杂的实现层面——它把字节码分析成运行时数据结构、校验有效性等。因为defineClass方法被标记成final的，所以也不能覆盖它。</p>
-</li>
-<li><p>findSystemClass方法。</p>
-<p> findSystemClass方法从本地文件系统装入文件。它在本地文件系统中寻找类文件，如果存在，就使用defineClass将原始字节转换成Class对象，以将该文件转换成类。当运行Java应用程序时，这是JVM正常装入类的默认机制。对于定制的ClassLoader，只有在尝试其他方法装入类之后，再使用findSystemClass。这是因为ClassLoader是负责执行装入类的相关步骤，不负责所有类的所有信息。例如，即使ClassLoader从远程的Web站点装入了某些类，仍然需要在本地机器上装入大量的基本Java库。而这些类库不是我们所关心的，所以要JVM以默认方式从本地文件系统装入它们，这就是findSystemClass的用途。</p>
-</li>
-</ol>
-<ol>
-<li><p>resolveClass方法。</p>
-<p> 正如前面所提到的，可以不完全地（不带解析）装入类，也可以完全地（带解析）装入类。当编写我们自己的loadClass时，可以调用resolveClass，这取决于loadClass的resolve参数的值。</p>
-</li>
-<li><p>findLoadedClass方法。</p>
-<p> findLoadedClass充当一个缓存：当请求loadClass装入类时，它调用该方法来查看ClassLoader是否已装入这个类，这样可以避免重新装入已存在类所造成的麻烦。</p>
-</li>
-<li><p>findClass方法。</p>
-<p> loadClass默认实现调用这个新方法。findClass的用途包含ClassLoader的所有特殊代码，而无须复制其他代码（例如，当专门的方法失败时，调用系统ClassLoader）。</p>
-<p> 目的是从本地文件系统使用实现的类装载器装载一个类。为了创建自己的类装载器，应该扩展ClassLoader类，这是一个抽象类。可以创建一个FileClassLoaderextends ClassLoader，然后覆盖ClassLoader中的findClass(String name)方法，这个方法通过类的名字得到一个Class对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Class <span class="title">findClass</span><span class="params">(String name)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          <span class="keyword">byte</span> [] data = loadClassData(name);</span><br><span class="line">          <span class="keyword">return</span> defineClass(name, data, <span class="number">0</span> , data.length);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>getSystemClassLoader方法。</p>
-<p> 如果覆盖findClass或loadClass，getSystemClassLoader能以实际的ClassLoader对象来访问系统ClassLoader（而不是固定地从findSystemClass调用它）。为了将类请求委托给父类ClassLoader，这个新方法允许ClassLoader获取它的父类Class Loader。当使用特殊方法，定制的ClassLoader不能找到类时，可以使用这种方法。<br> 父类ClassLoader被定义成创建该ClassLoader所包含代码的对象的ClassLoader。</p>
-</li>
-<li><p>forName方法。</p>
-<p><strong> Class类中有一个静态方法forName，这个方法和ClassLoader中的loadClass方法的目的一样，都是用来加载class的，但是两者在作用上却有所区别。</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class clazz = Class.forName(<span class="string">"something"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>或者<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClassLoadercl = Thread.currentThread().getContextClassLoader();</span><br><span class="line">Class clazz = cl.loadClass(<span class="string">"something"</span>);</span><br></pre></td></tr></table></figure></p>
-<pre><code>Class.forName()调用Class.forName(name, initialize, loader)；也就是Class. forName(&quot;something&quot;)；等同于Class.forName (&quot;something&quot;, true, CALLCLASS. class.getClassLoader())；
-第二个参数“true”是用于设置加载类的时候是否连接该类，true就连接，否则就不连接。关于连接，在此解释一下，在JVM加载类的时候，需要经过三个步骤：装载、连接、初始化。装载就是找到相应的class文件，读入JVM；初始化就是class文件初始化。这里详述一下连接，连接分三步。
-第一步是验证class是否符合规格。
-第二步是准备，就是为类变量分配内存的同时设置默认初始值。
-第三步就是解释，而这步是可选的，根据上面loadClass方法的第二个参数来判定是否需要解释，这里的解释是指根据类中的符号引用查找相应的实体，再把符号引用替换成一个直接引用的过程。
-在Java API文档中，loadClass方法的定义是protected，也就是说，该方法是被保护的，而用户使用的方法是一个参数，一个参数的loadClass方法实际上就是调用了两个参数，第二个参数默认为false。因此，在这里可以看出通过loadClass加载类实际上就是加载的时候并不对该类进行解释，因此不会初始化该类。而Class类的forName方法则相反，使用forName加载的时候就会将Class进行解释和初始化。
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/24/ClassLoader/" data-id="ck8cwfkrc0000ksuwa5f6u0ja" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-运算符优先级" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/21/运算符优先级/" class="article-date">
-  <time datetime="2018-06-21T11:18:59.000Z" itemprop="datePublished">2018-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/21/运算符优先级/">运算符优先级</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h5><pre><code>1级    ——   .  ()
-2级    ——   ++   --
-3级    ——   new
-4级    ——   ＊   /   %
-5级    ——   +   -
-6级    ——   ＞＞   ＜＜   ＞＞ ＞
-7级    ——   ＞   ＜   ＞ =   ＜=
-8级    ——   ==   !=
-9级    ——   &amp;
-10级   ——   ^
-11级   ——   !
-12级   ——   &amp;&amp;
-13级   ——   ||
-14级   ——   ?:
-15级   ——   =   +=   -=   ＊=   /=   %=   ^=
-16级   ——   &amp;=   ＜＜=   ＞＞=
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(a&lt;b)?<span class="number">10.2</span>:<span class="number">3</span> （<span class="number">14</span>）</span><br><span class="line">java会根据运算符的精度类型进行自动类型转换。<span class="number">3</span>-&gt;<span class="number">3.0</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<pre><code>java编程规范：当后俩个表达式有一个是常量表达式，另外一个类型是T时，而常量表达式可以被T表示时（representable in type T），输出结果是T类型（15）
-</code></pre></blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/21/运算符优先级/" data-id="ck8cwfkxt0090ksuw8u4arrr4" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据类型的转换" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/数据类型的转换/" class="article-date">
-  <time datetime="2018-06-19T11:18:26.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/数据类型的转换/">数据类型的转换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h6><p>Java的数据类型分为三大类，即布尔型、字符型和数值型，其中，数值型又分为整型和浮点型。相对于数据类型，Java的变量类型为布尔型boolean；字符型char；整型byte、short、int、long；浮点型float、double。其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类变量，即String和Date。</p>
-<ol>
-<li><p>数据类型转换的种类</p>
-<p> Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换、字符串与其他数据类型的转换、其他实用数据类型的转换。</p>
-</li>
-<li><p>简单数据类型之间的转换</p>
-<p> 在Java中，整型、实型、字符型被视为简单数据类型，这些类型由低级到高级分别为(byte，short，char)—int—long—float—double。</p>
-<p> 简单数据类型之间的转换又可以分为：低级到高级的自动类型转换、高级到低级的强制类型转换、包装类过渡类型能够转换。</p>
-</li>
-</ol>
-<p>2.1. 自动类型转换。</p>
-<pre><code>低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在Java中直接通过：
-
-byte b;int i=b;long l=b;float f=b;double d=b;
-</code></pre><p>如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCII码值，例如：</p>
-<pre><code>char c=&apos;c&apos;;   int i=c;   System.out.println(&quot;output:&quot;+i);
-输出：output:99;
-</code></pre><p>对于byte、short、char三种类型而言，它们是相同级别的，因此，不能相互自动转换，可以使用下述的强制类型转换。</p>
-<pre><code>short i=99;char c=(char)i;System.out.println(&quot;output:&quot;+c);
-输出：output:c;
-</code></pre><p>2.2. 强制类型转换。</p>
-<p>将高级变量转换为低级变量时，情况会复杂一些，你可以使用强制类型转换。如：</p>
-<pre><code>int i=99;byte b=(byte)i;char c=(char)i;
-</code></pre><p>这种转换可能会导致溢出或精度的下降。</p>
-<p>2.3. 包装类过渡类型转换。</p>
-<p>Java的包装类就是可以直接将简单类型的变量表示为一个类。Java共有六个包装类，分别是Boolean、Character、Integer、Long、Float和Double，从字面上可以看出它们分别对应于boolean、char、int、long、float和double。而String和Date本身就是类，不存在包装类的概念。</p>
-<p>在进行简单数据类型之间的转换（自动转换或强制转换）时，可以利用包装类进行中间过渡。一般情况下，首先声明一个变量，然后生成一个对应的包装类，就可以利用包装类的各种方法进行类型转换了。</p>
-<p>例1，当希望把float型转换为double型时：</p>
-<pre><code>float f1=100.00f;
-Float F1=new float(f1);
-Double d1=F1.doubleValue();
-</code></pre><p>例2，当希望把double型转换为int型时：</p>
-<pre><code>double d1=100.00;   Double D1=new Double(d1);   int i1=D1.intValue();
-</code></pre><p>例3，当希望把int型转换为double型时，自动转换：</p>
-<pre><code>int i1=200;   double d1=i1;;
-</code></pre><p>例4，简单类型的变量转换为相应的包装类，可以利用包装类的构造函数。</p>
-<pre><code>Boolean(boolean value)
-Character(char value)
-Integer(int value)
-Long(long value)
-Float(float value)
-Double(double value)
-</code></pre><p>利用这种方法也可以实现不同数值型变量间的转换，例如，对于一个双精度实型类，int Value()可以得到其对应的整型变量，而double Value()可以得到其对应的双精度实型变量。</p>
-<ol>
-<li>字符串型与其他数据类型的转换</li>
-</ol>
-<p>通过查阅类库中各个类提供的成员方法可以看到，几乎从java.lang.Object类派生的所有类都提供了toString()方法，即将该类转换为字符串。例如，Characrer、Integer、Float、Double、Boolean、Short等类的toString()方法用于将字符、整数、浮点数、双精度数、逻辑数、短整型等类转换为字符串，如下所示：</p>
-<pre><code>class Test {
-public static void main(String args[]) {
-      int i1 = 10;
-      float f1 = 3.14f;
-      double d1 = 3.1415926;
-      Integer I1 = new Integer(i1);
-      Float F1 = new Float(f1)
-      Double D1 = new Double(d1);
-      String si1=I1.toString();
-      String sf1=F1.toString();
-      String sd1=D1.toString();
-      System.out.println(&quot;si1&quot; + si1);
-      System.out.println(&quot;sf1&quot; + sf1);
-      System.out.println(&quot;sd1&quot; + sd1);
-}
-}
-</code></pre><p>（4）将字符型直接作为数值转换为其他数据类型</p>
-<p>将字符型变量转换为数值型变量实际上有两种对应关系：一种是将其转换成对应的ASCII码；另一种是转换关系，例如，’1’就是指数值1，而不是其ASCII码，对于这种转换，可以使用Character的getNumericValue(char ch)方法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/数据类型的转换/" data-id="ck8cwfkx3007uksuwvyp9phrp" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Java异常" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/Java异常/" class="article-date">
-  <time datetime="2018-06-19T01:18:26.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/Java异常/">Java异常</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Java异常"><a href="#Java异常" class="headerlink" title="Java异常"></a>Java异常</h5><p>1.什么是异常</p>
-<p>在Java程序运行时，常常会出现一些非正常的现象，这种情况称为运行错误。根据其性质可以分为错误和异常。Java程序中（无论是谁写的代码），所有抛出（throw）的异常都必须从Throwable派生而来。类Throwable有两个直接子类：Error和Exception。</p>
-<p>一般来说，最常见的错误有程序进入死循环、内存泄漏等。这种情况下，程序运行时本身无法解决，只能通过其他程序干预。Java对应的类为Error类。Error类对象由Java虚拟机生成并抛弃（通常Java程序不对这类异常进行处理）。</p>
-<p>异常是程序执行时遇到的非正常情况或意外行为。以下这些情况一般都可以引发异常：代码或调用的代码（如共享库）中有错误，操作系统资源不可用，公共语言运行库遇到意外情况（如无法验证代码）等。常见的有数组下标越界、算法溢出（超出数值表达范围）、除数为零、无效参数、内存溢出等。这种情况不像错误类那样，程序运行时本身可以解决，由异常代码调整程序运行方向，使程序仍可继续运行，直至正常结束。</p>
-<p>Java异常对应的类为Exception类。Exception类对象是Java程序处理或抛弃的对象，它有各种不同的子类分别对应于不同类型的异常。Java编译器要求程序必须捕获或声明所有的非运行时异常，但对运行时异常可以不做处理。其中类RuntimeException代表运行时由Java虚拟机生成的异常，原因是编程错误。其他则为非运行时异常，原因是程序碰到了意外情况，如输入/输出异常IOException等。</p>
-<p>2.异常关键字</p>
-<p>Java异常处理的关键语句有五个：try、catch、throw、throws、finally。其中，try、catch、finally三个语句块应注意的问题如下。</p>
-<p>1）try、catch、finally三个语句块均不能单独使用，三者可以组成try…catch…finally、try…catch、try…finally三种结构，catch语句可以有一个或多个，finally语句最多一个。</p>
-<p>2）try、catch、finally三个代码块中变量的作用域为代码块内部，分别独立而不能相互访问。如果要在三个块中都可以访问，则需要将变量定义到这些块的外面。</p>
-<p>3）若有多个catch块，只会匹配其中一个异常类并执行catch块代码，而不会再执行别的catch块，并且匹配catch语句的顺序是由上到下的。</p>
-<p>throw、throws关键字的区别如下。</p>
-<p>throw关键字用于方法体内部，用来抛出一个Throwable类型的异常。如果抛出了检查异常，则还应该在头部声明方法可能抛出的异常类型。该方法的调用者也必须检查处理抛出的异常。如果所有的方法都层层上抛获取的异常，最终JVM会进行处理，处理也很简单，就是打印异常消息和堆栈信息。如果抛出的是Error或RuntimeException，则该方法的调用者可选择处理该异常。</p>
-<p>throws关键字用于方法体外部的方法声明部分，用来声明方法可能会抛出某些异常。仅当抛出了检查异常，该方法的调用者才必须处理或者重新抛出该异常。当方法的调用者无力处理该异常的时候，应该继续抛出，而不是囫囵吞枣般地在catch块中打印堆栈信息来做处理。</p>
-<p>3.Java异常和C++异常的区别</p>
-<p>在C++异常处理模型中，它给予程序员最大的自由度和发挥空间，允许程序员抛出任何想要的异常对象，它可以是语言系统中原本所提供的各种简单数据类型（如int 、float 、double等），也可以是用户自定义的抽象数据对象（如class的object实例）。但是C++语言规范中并无此约束，况且由于各个子系统（基础运行库）不是一个厂商（某一个人）统一设计的，所以导致每个子系统设计出的异常对象系统彼此相差甚远。这给最终使用（重用）这些库的程序员带来了很大的不一致性，甚至是很大的麻烦，需要花费很多时间来学习和熟悉这些不同的异常对象子系统。更大的问题是，这些不同子系统之间语义上的不一致，从而造成程序员在最终处理这些异常时，将很难把它们统一起来，例如，MFC库系统中，采用CMemoryException来表示一个与内存操作相关的异常；而其他的库系统中很可能就会采用另外一个class来表示内存操作的异常错误。本质上说，缺乏规范和统一所造成的恶劣后果。所以，设计Java语言的时候，就要充分考虑到这些问题，把它们纳入语言的统一规范中，这对广大的程序员来说，无疑是一件好事。</p>
-<p>实际的Java编程中，由于JDK平台已经为我们设计好了非常丰富和完整的异常对象分类模型。因此，Java程序员一般不需要重新定义自己的异常对象，而且即便是需要扩展自定义的异常对象，也往往会从Exception派生而来。所以，对于Java程序员而言，它一般只需要在它的顶级函数中用catch (Exception ex)就可以捕获出所有的异常对象，而不必像C++中采用catch (…) 那样的语法。</p>
-<p>4.异常处理中常见的问题</p>
-<p>（1）过于庞大的try块</p>
-<p>某些程序员把大量的代码放入单个try块，试图用一个catch语句捕获所有的异常和处理所有可能出现的异常，实际上这是一个坏习惯。原因就在于为了图省事，不愿花时间分析一大块代码中哪几行代码会抛出异常、异常的具体类型是什么。把大量的语句装入单个巨大的try块就像是出门旅游时把全部家当塞入集装箱带走，虽然东西是带上了，但要找出来可不容易。</p>
-<p>对于这种问题，可以设置多个异常抛出点来解决。异常对象从产生点产生后，到被捕捉后终止生命的全过程中，实际上是一个传值过程，所以，应根据实际来合理控制检测异常个数。catch语句表示会出现某种异常，而且希望能够处理该异常。所以在catch语句中就应该尽量指定具体异常类型，也可使用多个catch，用于分别处理不同的异常。例如，要捕获一个最明显的异常是SQLException，这是JDBC操作中常见的异常。另一个可能的异常是IOException，因为它要操作OutputStreamWriter。显然，在同一个catch块中处理这两种截然不同的异常是不合适的。如果用两个catch块分别捕获SQLException和IOException就要好多了。</p>
-<p>（2）异常的完整性</p>
-<p>在Java语言中，如果一个函数运行时可能会向上层调用者函数抛出一个异常，那么，它就必须在该函数的声明中显式地注明（采用throws关键字）。否则编译器会报出错误信息“must be caught or declared to be thrown”。其中“must be caught”指在Java的异常处理模型中，要求所有被抛出的异常都必须有对应的“异常处理模块”。如果你在程序中利用throw出现一个异常，那么在你的程序（函数）中就必须要用catch处理这个异常。例如下面的例子中，抛出了一个Exception类型的异常，所以在该函数中，就必须有一个catch，并处理此异常。如果没有这个catch，Java语言在编译时就直接拦住这种可能出现错误的情况，不让程序通过。</p>
-<pre><code>try {
-      ......
-// throw Exception
-}
-catch(Exception ex)
-{
-    // find Exception
-      // hand of it
-}
-</code></pre><p>“declared to be thrown”指的是“必须显式地声明某个函数可能会向外部抛出一个异常”，也即是说，如果一个函数内部，它可能抛出了一种类型的异常，但该函数内部又不想用catch处理这种类型的异常，此时，它就必须（强制性）使用throws关键字来显式地声明该函数可能会向外部抛出一个异常，以便该函数的调用者知晓并能够及时处理这种类型的异常。如下列代码：</p>
-<pre><code>class MyException extends Exception {
-  MyException() {
-  }
- }
-class My1Exception extends Exception {
-  My1Exception() {
-  }
- }
-class A {
- public int format(String str) {
-      int i = Integer.valueof(str);
-      // throw new MyException();
-      return i;
- }
- public static void testTester() throws MyException, My1Exception {
- new A().format(&quot;S&quot;);
- }
-}
-public class Test
-{
- public static void main(String[] args) throws MyException, My1Exception {
-      A.testTester();
- }
-}
-</code></pre><p>5.RuntimeException异常</p>
-<p>在Java异常处理中，一般有两类异常：其一，就是通过throw语句，程序员在代码中人为抛出的异常（由于运行时动态地监测到了一个错误）；另外一个是系统运行时异常，例如，“被零除”、“空字符串”、“无效句柄”等，对于这类异常，程序员实际上完全可以避免它，只要我们写代码时足够小心严谨。因此，为了彻底解决这种隐患，提高程序整体可靠性（不至于因为编码时考虑不周或一个小疏忽导致系统运行时崩溃），使用RuntimeException异常就是为了实现这样的功能。</p>
-<p>Java语言中的这两种异常中，前者叫checked exception，它是从java.lang. Exception类衍生出来的；后者叫runtime exception，它是从java.lang.Runtime Exception类衍生出来的。<br>下面就是一个被零除的例子：</p>
-<pre><code>public class Test {
- public static void main(String[] args) {
-    test();
-}
-static void test() {
-    int i = 4;
-    int j = 0;
-    //运行时，这里将触发了一个ArithmeticException
-    //ArithmeticException从RuntimeException派生而来
-    System.out.println(&quot;i / j = &quot; + i / j);
- }
-}
-</code></pre><p>运行结果如下：</p>
-<pre><code>java.lang.ArithmeticException: / by zero
-at Test.test(Test.java:16)
-at Test.main(Test.java:8)
-Exception in thread &quot;main&quot;
-</code></pre><p>下面是一个空String的例子：</p>
-<pre><code>import java.io.＊;
-public class Test
-{
- public static void main(String[] args)
- {
-    test();
- }
- static void test()
- {
-    String str = null;
-    str.compareTo(&quot;abc&quot;);
-    // 运行时，这里将触发了一个NullPointerException
-    // NullPointerException从RuntimeException派生而来
- }
-}
-</code></pre><p>针对RuntimeException类型的异常，javac是无法通过编译时的静态语法检测来判断到底哪些函数（或哪些区域的代码）可能抛出这类异常（这完全取决于运行时状态，或者说运行态所决定的），也正因为如此，Java异常处理模型中的“must be caught or declared to be thrown”规则也不适用于RuntimeException。但是Java虚拟机却需要有效地捕获并处理此类异常。当然，RuntimeException也可以被程序员显式地抛出，而且为了程序的可靠性，对一些可能出现“运行时异常（RuntimeException）”的代码区域，程序员最好能够及时地处理这些意外的异常，即通过catch（RuntimeExcetion）或catch（Exception）来捕获它们。如下面的示例程序，代码如下：</p>
-<pre><code>import java.io.＊;
-public class Test
-{
- public static void main(String[] args)
- {
-      try
-      {
-        test();
-      }
-      catch (Exception e)
-      {
-          System.out.println(&quot;A Exception!&quot;);
-          e.printStackTrace();
-      }
-  }
-  static void test() throws RuntimeException
-  {
-      String str = null;
-      str.compareTo(&quot;abc&quot;);
-  }
-}
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/19/Java异常/" data-id="ck8cwfkrq0009ksuwl0v9yctq" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/26/时间复杂度/" data-id="ck8cxwctk008tvguwxntt5l4n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -1088,7 +836,7 @@ public class Test
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/11/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -1102,7 +850,7 @@ public class Test
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付转账/">支付转账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -1112,7 +860,7 @@ public class Test
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 15.83px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.5px;">Http</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.33px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/docker/" style="font-size: 16.67px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 13.33px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.5px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.17px;">mysql</a> <a href="/tags/php/" style="font-size: 11.67px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/util/" style="font-size: 19.17px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.83px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.33px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.83px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.67px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 15.38px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.31px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 14.62px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 17.69px;">Sort</a> <a href="/tags/basic/" style="font-size: 20px;">basic</a> <a href="/tags/demo/" style="font-size: 16.92px;">demo</a> <a href="/tags/docker/" style="font-size: 16.15px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18.46px;">java</a> <a href="/tags/jvm/" style="font-size: 11.54px;">jvm</a> <a href="/tags/linux/" style="font-size: 12.31px;">linux</a> <a href="/tags/logstash/" style="font-size: 14.62px;">logstash</a> <a href="/tags/mysql/" style="font-size: 13.85px;">mysql</a> <a href="/tags/php/" style="font-size: 11.54px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.08px;">python</a> <a href="/tags/springboot/" style="font-size: 16.15px;">springboot</a> <a href="/tags/util/" style="font-size: 19.23px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.77px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/支付转账/" style="font-size: 13.08px;">支付转账</a> <a href="/tags/消息队列/" style="font-size: 10.77px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.54px;">线程</a>
     </div>
   </div>
 
@@ -1121,7 +869,7 @@ public class Test
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -1134,6 +882,14 @@ public class Test
       <ul>
         
           <li>
+            <a href="/2020/03/29/UML/">UML</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/27/python_字典/">python_dict</a>
           </li>
         
@@ -1143,14 +899,6 @@ public class Test
         
           <li>
             <a href="/2019/10/26/git取消修改/">git-取消修改</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/26/python_list操作/">python-list</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/26/python_元组/">python-元祖</a>
           </li>
         
       </ul>
