@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -61,9 +61,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-maven基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-maven项目目录约定" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/25/maven基本使用/" class="article-date">
+    <a href="/2018/01/25/maven项目目录约定/" class="article-date">
   <time datetime="2018-01-25T00:57:33.000Z" itemprop="datePublished">2018-01-25</time>
 </a>
     
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/25/maven基本使用/">maven基本使用</a>
+      <a class="article-title" href="/2018/01/25/maven项目目录约定/">maven项目目录约定</a>
     </h1>
   
 
@@ -83,37 +83,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>maven 坐标</li>
-<li><ul>
-<li>groupId:项目开发者的域名</li>
-</ul>
-</li>
-<li><ul>
-<li>artifactId:指定项目名</li>
-</ul>
-</li>
-<li><ul>
-<li>packaging:指定新项目打包类型</li>
-</ul>
-</li>
-<li><ul>
-<li>version：指定项目的版本<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pom.xml</span><br><span class="line"></span><br><span class="line">&lt;groupId&gt;org.fkjava&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;mavenQs&lt;/artifactId&gt;</span><br><span class="line">&lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>maven 资源库</p>
-</li>
-<li><ul>
-<li>Maven资源库用于保存maven插件、各种第三方框架.Maven用到的插件、项目依赖的各种jar包，都保存在资源库中.</li>
-</ul>
-</li>
-</ul>
-
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- maven项目目录约定： </span><br><span class="line">	src/main/java:只能编译java代码 </span><br><span class="line">	src/main/resources:编译配置文件 </span><br><span class="line">	为了满足Mybatis接口开发规范：接口和映射文件必须在同一个目录 </span><br><span class="line">		放行xml文件，让xml文件在src/main/java也能被编译 --&gt;</span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;resources&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">			&lt;resource&gt;</span><br><span class="line">				&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">				&lt;includes&gt;</span><br><span class="line">					&lt;include&gt;**<span class="comment">/*.properties&lt;/include&gt;</span></span><br><span class="line">					&lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">				&lt;/includes&gt;</span><br><span class="line">				&lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">			&lt;/resource&gt;</span><br><span class="line">		&lt;/resources&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="ck8d2g9sv004kucuwnudmwha4" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="ck8l06c0f004zxouwgv924yuw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -156,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="ck8d2g9uk006hucuw3szppe24" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="ck8l06c1o006ixouw9bwcsdn5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/java_excel导出/" data-id="ck8d2g9qs002vucuwz0tvj2y7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/java_excel导出/" data-id="ck8l06byo0032xouwlzfej8i7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -238,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/java_cookie存信息/" data-id="ck8d2g9qp002sucuwhzw7kt4g" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/23/java_cookie存信息/" data-id="ck8l06byc002oxouwvuemvmbj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -301,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/22/java_数组2字符串/" data-id="ck8d2g9ri003hucuwmxupor41" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/22/java_数组2字符串/" data-id="ck8l06bz1003fxouwqeklz0pn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -355,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/java_interface/" data-id="ck8d2g9qz0032ucuwck7gj2oy" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/16/java_interface/" data-id="ck8l06byj002xxouwmhb6cfe2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -397,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/java_TreeMap/" data-id="ck8d2g9qm002qucuwcbmcl4n1" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/10/java_TreeMap/" data-id="ck8l06byl0030xouwzrwryhu0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -450,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/09/java_map遍历/" data-id="ck8d2g9r10035ucuwo40gry83" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/09/java_map遍历/" data-id="ck8l06bz5003kxouw089uqrk8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -498,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/java_thread/" data-id="ck8d2g9r7003aucuwish3y1iw" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/07/java_thread/" data-id="ck8l06bz7003mxouwib1egjyi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -536,7 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/algorithm_日期(一年第几天)/" data-id="ck8d2g9p1001qucuwsjveeqnr" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/06/algorithm_日期(一年第几天)/" data-id="ck8l06bxv0020xouw9j44nmc5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
@@ -552,7 +526,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -583,7 +557,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -593,7 +567,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
