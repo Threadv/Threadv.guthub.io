@@ -61,47 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-application.properties" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/12/application.properties/" class="article-date">
-  <time datetime="2018-10-12T12:16:52.000Z" itemprop="datePublished">2018-10-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/12/application.properties/">application.properties</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="spring-boot-application-properties"><a href="#spring-boot-application-properties" class="headerlink" title="spring boot application.properties"></a>spring boot application.properties</h4><ul>
-<li>application.properties</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//128.37.136.265/test?characterEncoding=utf-8</span></span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=root</span><br><span class="line">spring.datasource.driver-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=com.mysql.jdbc.Driver</span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource</span><br><span class="line"></span><br><span class="line"># ??????????????????????????????????????</span><br><span class="line"># ???????С????С?????</span><br><span class="line">spring.datasource.initialSize=<span class="number">1</span></span><br><span class="line">spring.datasource.minIdle=<span class="number">1</span></span><br><span class="line">spring.datasource.maxActive=<span class="number">5</span></span><br><span class="line"># ????????????????????</span><br><span class="line">spring.datasource.maxWait=<span class="number">60000</span></span><br><span class="line"># ???ü????ò??????μ??????????????????????λ?????</span><br><span class="line">spring.datasource.timeBetweenEvictionRunsMillis=<span class="number">60000</span></span><br><span class="line"># ??????????????????С??????????λ?????</span><br><span class="line">spring.datasource.minEvictableIdleTimeMillis=<span class="number">300000</span></span><br><span class="line">spring.datasource.validationQuery=SELECT <span class="number">1</span> FROM DUAL</span><br><span class="line">spring.datasource.testWhileIdle=<span class="keyword">true</span></span><br><span class="line">spring.datasource.testOnBorrow=<span class="keyword">false</span></span><br><span class="line">spring.datasource.testOnReturn=<span class="keyword">false</span></span><br><span class="line"># ??PSCache??????????????????PSCache???С</span><br><span class="line">spring.datasource.poolPreparedStatements=<span class="keyword">true</span></span><br><span class="line">spring.datasource.maxPoolPreparedStatementPerConnectionSize=<span class="number">20</span></span><br><span class="line"># ???ü??????????filters????????????sql???????'wall'????????</span><br><span class="line">spring.datasource.filters=stat,wall,log4j</span><br><span class="line"># ???connectProperties????????mergeSql???????SQL???</span><br><span class="line">spring.datasource.connectionProperties=druid.stat.mergeSql=<span class="keyword">true</span>;druid.stat.slowSqlMillis=<span class="number">5000</span></span><br><span class="line"># ??????DruidDataSource????????</span><br><span class="line">#spring.datasource.useGlobalDataSourceStat=true</span><br><span class="line"></span><br><span class="line">#spring.jpa.properties.hibernate.cache.use_second_level_cache=true</span><br><span class="line">#spring.jpa.properties.hibernate.cache.use_query_cache=true</span><br><span class="line">#spring.jpa.properties.hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory</span><br><span class="line">spring.jpa.properties.javax.persistence.sharedCache.mode=ALL</span><br><span class="line"></span><br><span class="line">test.preSaleUser.ids=<span class="number">115</span>,<span class="number">103</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">18</span>,<span class="number">23</span>,<span class="number">25</span>,<span class="number">27</span></span><br><span class="line">server.tomcat.access-log-enabled=<span class="keyword">true</span></span><br><span class="line"># REDIS (RedisProperties)</span><br><span class="line"># database name</span><br><span class="line">spring.redis.database=<span class="number">4</span></span><br><span class="line"># server host</span><br><span class="line">spring.redis.host=<span class="number">101.37</span>.174.227</span><br><span class="line"># server password</span><br><span class="line">spring.redis.password=</span><br><span class="line"># connection port</span><br><span class="line">spring.redis.port=<span class="number">6379</span></span><br><span class="line"># pool settings ...</span><br><span class="line">spring.redis.pool.max-idle=<span class="number">8</span></span><br><span class="line">spring.redis.pool.min-idle=<span class="number">1</span></span><br><span class="line">spring.redis.pool.max-active=<span class="number">8</span></span><br><span class="line">spring.redis.pool.max-wait=-<span class="number">1</span></span><br><span class="line">cache.defaultexpiration=<span class="number">86400</span></span><br><span class="line"></span><br><span class="line">#spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br><span class="line">#spring.jpa.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">#spring.view.prefix: classpath:/template/</span><br><span class="line">spring.view.suffix: .html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#JPA Configuration:</span><br><span class="line">spring.jpa.show-sql=<span class="keyword">true</span></span><br><span class="line">spring.jpa.properties.hibernate.show_sql=<span class="keyword">true</span></span><br><span class="line">## LOGGING</span><br><span class="line">logging.path=/home/logs/test/</span><br><span class="line"></span><br><span class="line">debug=<span class="keyword">true</span></span><br><span class="line"></span><br><span class="line">spring.freemarker.enabled=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.cache=<span class="keyword">false</span></span><br><span class="line">spring.freemarker.charset=UTF-<span class="number">8</span></span><br><span class="line">spring.freemarker.check-template-location=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.content-type=text/html</span><br><span class="line">spring.freemarker.expose-request-attributes=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.expose-session-attributes=<span class="keyword">true</span></span><br><span class="line">spring.freemarker.request-context-attribute=request</span><br><span class="line">spring.freemarker.suffix=.html</span><br><span class="line">spring.freemarker.settings.number_format=0.##</span><br><span class="line"></span><br><span class="line">#spring.profiles.active=dev</span><br><span class="line">server.port = <span class="number">8080</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/application.properties/" data-id="ck8rb5p6a001p9wuwwryr9nom" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Jrebel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/10/Jrebel/" class="article-date">
@@ -142,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/Jrebel/" data-id="ck8rb5p5e000h9wuwosjiqtbo" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/10/Jrebel/" data-id="cka40hnzm000hxwuwgqdkptro" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
@@ -218,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/07/Spring boot 创建/" data-id="ck8rb5p5w00139wuwzonh4jsd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/07/Spring boot 创建/" data-id="cka40ho020013xwuw67oadi2h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -308,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/07/springboot之乐观锁和悲观锁/" data-id="ck8rb5p8z005u9wuwcvm5zvk6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/07/springboot之乐观锁和悲观锁/" data-id="cka40ho3m0066xwuwp7nquxud" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
@@ -346,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/logstash.conf/" data-id="ck8rb5p7v00499wuwdmfu64c2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/05/logstash.conf/" data-id="cka40ho2i004qxwuwgo9kecyk" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logstash/">logstash</a></li></ul>
@@ -384,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/history_/" data-id="ck8rb5pc100959wuwh6fdrmtm" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/05/history_/" data-id="cka40ho76009zxwuw0qlt3qpd" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logstash/">logstash</a></li></ul>
@@ -422,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/logstash/" data-id="ck8rb5p7w004b9wuw26z2dd1v" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/05/logstash/" data-id="cka40ho2h004oxwuw686430hd" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logstash/">logstash</a></li></ul>
@@ -463,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/patterns/" data-id="ck8rb5p8e004s9wuwae6xvo9t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/05/patterns/" data-id="cka40ho2u0055xwuw5lj7yt3s" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logstash/">logstash</a></li></ul>
@@ -552,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/03/observer/" data-id="ck8rb5p8f004u9wuw3wc0eqcj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/03/observer/" data-id="cka40ho2t0053xwuwbdk2jm11" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -659,7 +618,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/03/singleton/" data-id="ck8rb5p8x005p9wuw9zwflh7r" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/03/singleton/" data-id="cka40ho3l0063xwuwd694jn33" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-设计模式-工厂(泛型)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/03/设计模式-工厂(泛型)/" class="article-date">
+  <time datetime="2018-10-03T13:12:36.000Z" itemprop="datePublished">2018-10-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/03/设计模式-工厂(泛型)/">设计模式-工厂(泛型)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="factory"><a href="#factory" class="headerlink" title="factory"></a>factory</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 颜色</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//说话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhiteHuman</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白色=+++++"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白English 单字节+++++"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractHumanFactory</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> &lt;T extends Human&gt;<span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> <span class="keyword">extends</span> <span class="title">AbstractHumanFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T extends Human&gt; <span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//生产的人种</span></span><br><span class="line">        Human human = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">//产生人种</span></span><br><span class="line">            human = (T)Class.forName(c.getName()).newInstance();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T)human;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">       <span class="comment">//</span></span><br><span class="line">       AbstractHumanFactory abstractHumanFactory = <span class="keyword">new</span> HumanFactory();</span><br><span class="line">       <span class="comment">// white</span></span><br><span class="line">       System.out.println(<span class="string">"白色"</span>);</span><br><span class="line">       Human whiteHuman = abstractHumanFactory.createuman(WhiteHuman.class);</span><br><span class="line">       whiteHuman.getColor();</span><br><span class="line">       whiteHuman.talk();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/03/设计模式-工厂(泛型)/" data-id="cka40ho5e008zxwuw7ufy2xwu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -725,10 +726,6 @@
           </li>
         
           <li>
-            <a href="/2020/03/29/UML/">UML</a>
-          </li>
-        
-          <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
           </li>
         
@@ -738,6 +735,10 @@
         
           <li>
             <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go控制结构/">go控制结构</a>
           </li>
         
       </ul>

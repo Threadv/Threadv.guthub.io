@@ -61,76 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-js面向对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/js面向对象/" class="article-date">
-  <time datetime="2018-05-08T10:06:35.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/js面向对象/">js创建对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="js创建对象"><a href="#js创建对象" class="headerlink" title="js创建对象"></a>js创建对象</h5><ul>
-<li>工厂模式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> o = nwe</span><br><span class="line">     <span class="built_in">Object</span>();</span><br><span class="line">     o.name = name;</span><br><span class="line">     o.age = age;</span><br><span class="line">     o.job = job;</span><br><span class="line">     <span class="number">0.</span></span><br><span class="line">     sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">         alert(<span class="keyword">this</span>.name)</span><br><span class="line">     &#125;;</span><br><span class="line">     <span class="keyword">return</span> o;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">"Nicholas"</span>,<span class="number">29</span>,<span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">"Greg"</span>,<span class="number">27</span>,<span class="string">"Docker"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>构造函数模式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> person21 = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>, <span class="number">29</span>, <span class="string">"Software Engineer"</span>);</span><br><span class="line"><span class="keyword">var</span> person22 = <span class="keyword">new</span> Person(<span class="string">"Greg"</span>, <span class="number">24</span>, <span class="string">"Docker"</span>);</span><br><span class="line"></span><br><span class="line">alert(person21.constructor == Person);      <span class="comment">//true</span></span><br><span class="line">alert(person22.constructor == Person);      <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">alert(person21 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true</span></span><br><span class="line">alert(person21 <span class="keyword">instanceof</span> Person);      <span class="comment">//true</span></span><br><span class="line">alert(person22 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true</span></span><br><span class="line">alert(person22 <span class="keyword">instanceof</span> Person);      <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="number">2</span>、构造函数--&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>将构造函数当做函数</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!--将构造函数当做函数--&gt;</span><br><span class="line"><span class="comment">//当做构造函数使用</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">"Nicholas"</span>,<span class="number">24</span>,<span class="string">"Software Engineer"</span>);</span><br><span class="line">person.sayName();       <span class="comment">//"Nicholas"</span></span><br><span class="line"><span class="comment">//当做普通函数调用</span></span><br><span class="line">Person(<span class="string">"Greg"</span>,<span class="number">32</span>,<span class="string">"Docker"</span>);</span><br><span class="line"><span class="built_in">window</span>.sayName();       <span class="comment">//"Greg"</span></span><br><span class="line"><span class="comment">//在另一个对象的作用域中调用</span></span><br><span class="line"><span class="keyword">var</span> 丿= <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">Person .call(o,<span class="string">"Kristen"</span>,<span class="number">32</span>,<span class="string">"Nurse"</span>);</span><br><span class="line">o.sayName();        <span class="comment">//"Kristen"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>[ECMAScript中的函数是对象，每定义一个函数，也就是实例化了一个对象 ] </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.job=job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"alert()this.name"</span>);    <span class="comment">//与声明函数在逻辑上等价</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>原型模式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">    原型模式--&gt;</span><br><span class="line">    <span class="comment">//创建每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，用途是包含可以由特定类型的所有实例共享的属性和方法。</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Person.prototype.name = <span class="string">"Nocjolas"</span>;</span><br><span class="line">    Person.prototype.age = <span class="number">22</span>;</span><br><span class="line">    Person.prototype.job = <span class="string">"Soft ware"</span></span><br><span class="line">    Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> person31 = <span class="keyword">new</span> Person();</span><br><span class="line">    person31.sayName();     <span class="comment">//"Nicholas"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> person32= <span class="keyword">new</span> Person();</span><br><span class="line">    person32.sayName();     <span class="comment">//"Nicholas"</span></span><br><span class="line">    alert(person31.sayName == person32.sayName);    <span class="comment">//trues</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>hasOwnProperty()</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person41 = <span class="keyword">new</span> Person();</span><br><span class="line">   <span class="keyword">var</span> person42 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line">   person41.name=<span class="string">"Greg"</span>;                       <span class="comment">//来自实例</span></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>)) ;    <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">   alert(person42.name);                       <span class="comment">//"Nicholas" 来自原型</span></span><br><span class="line">   alert(person42.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">delete</span> person41.name;</span><br><span class="line">   alert(person41.name);                       <span class="comment">//"Nicholas"  来自原型</span></span><br><span class="line">   alert(person41.hasOwnProperty(<span class="string">"name"</span>));     <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &lt;!--</span><br><span class="line">   原型模式--&gt;</span><br><span class="line">   <span class="comment">//创建每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，用途是包含可以由特定类型的所有实例共享的属性和方法。</span></span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Person.prototype.name = <span class="string">"Nocjolas"</span>;</span><br><span class="line">   Person.prototype.age = <span class="number">22</span>;</span><br><span class="line">   Person.prototype.job = <span class="string">"Soft ware"</span></span><br><span class="line">   Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       alert(<span class="keyword">this</span>.name)</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>调用构造函数时会为实例添加一个指向最初原型的<br>[[Prototype]]指针，而把原型修改为另外一个对象就等于切断了构造函数与最初原型之间的联系。<br>请记住：实例中的指针仅指向原型，而不指向构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> friend = <span class="keyword">new</span> Person();</span><br><span class="line">  Person.prototype=&#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">constructor</span>:Person,</span><br><span class="line">      name:"Greg",</span><br><span class="line">      aage:21,</span><br><span class="line">      job:"Docker",</span><br><span class="line">      sayName:function () &#123;</span><br><span class="line">          alert(<span class="keyword">this</span>.name);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  friend.sayName();       <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
-<p>在这个例子中，我们先创建了 Person 的一个实例，然后又重写了其原型对象。然后在调用<br>friend.sayName()时发生了错误，因为 friend 指向的原型中不包含以该名字命名的属性。</p>
-<ul>
-<li>原型对象的问题</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype =&#123;</span><br><span class="line">    <span class="keyword">constructor</span>:Person,</span><br><span class="line">    name:"jack",</span><br><span class="line">    age:23,</span><br><span class="line">    job:"Engineer",</span><br><span class="line">    friends :["Shlby","Court"],</span><br><span class="line">    sayName:function () &#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line"></span><br><span class="line">alert(perosn1.friends);                     <span class="comment">//"Shekby","Court","van"</span></span><br><span class="line">alert(perosn2.friends);                     <span class="comment">//"Shekby","Court","van"</span></span><br><span class="line">alert(perosn1.friends === person2.friends); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/08/js面向对象/" data-id="ck8rb5p7p003z9wuw8a5tsw5z" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-js基本包装类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/07/js基本包装类型/" class="article-date">
@@ -237,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/js基本包装类型/" data-id="ck8rb5p7l003s9wuwbgtbqy7x" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/07/js基本包装类型/" data-id="cka40ho1z003zxwuwx3laql5n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -326,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/07/js函数/" data-id="ck8rb5p7k003p9wuwho2maofk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/07/js函数/" data-id="cka40ho1y003xxwuwg1rkq93h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -527,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/01/js时间日期/" data-id="ck8rb5p7o003w9wuw382s4y7l" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/01/js时间日期/" data-id="cka40ho220044xwuwqwvnkxum" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -567,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/29/js位置方法/" data-id="ck8rb5p8a004o9wuw1d3d0w02" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/29/js位置方法/" data-id="cka40ho1w003uxwuwj7a8dwdh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -621,7 +551,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/28/js数组排序/" data-id="ck8rb5p7m003u9wuw1hri5srl" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/28/js数组排序/" data-id="cka40ho210042xwuw1oo2nhl3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -677,7 +607,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/28/java_定时任务/" data-id="ck8rb5p7a00399wuw0rggdvsc" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/28/java_定时任务/" data-id="cka40ho1m003dxwuwq2w3xjr5" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -715,7 +645,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/json2Map/" data-id="ck8rb5p7i003l9wuwqel1magt" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/18/json2Map/" data-id="cka40ho1t003pxwuwimcn3g3m" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -770,7 +700,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/10/linux_cron表达式/" data-id="ck8rb5p7r00419wuw5t3kflle" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/10/linux_cron表达式/" data-id="cka40ho2b004gxwuwfdids5l2" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -808,10 +738,53 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/08/java_getip/" data-id="ck8rb5p72002w9wuwlkvxcucx" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/04/08/java_getip/" data-id="cka40ho1c002yxwuw6caudta9" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SendSms" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/22/SendSms/" class="article-date">
+  <time datetime="2018-03-22T02:35:26.000Z" itemprop="datePublished">2018-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/22/SendSms/">云通信短信service（阿里云）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="SendSms"><a href="#SendSms" class="headerlink" title="SendSms"></a>SendSms</h4><ul>
+<li>依赖配置<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;3.2.8&lt;/version&gt; 注：如提示报错，先升级基础包版，无法解决可联系技术支持</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeyid&#125;"</span>)</span><br><span class="line">    String accessKeyId;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeysecret&#125;"</span>)</span><br><span class="line">    String accessKeySecret;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//产品名称:云通信短信API产品,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String product = <span class="string">"Dysmsapi"</span>;</span><br><span class="line">        <span class="comment">//产品域名,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String domain = <span class="string">"dysmsapi.aliyuncs.com"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)</span></span><br><span class="line"><span class="comment">//        final String accessKeyId = "yourAccessKeyId";</span></span><br><span class="line"><span class="comment">//        final String accessKeySecret = "yourAccessKeySecret";</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  SendSmsResponse <span class="title">sendSms</span><span class="params">(String phone,String templateCode, Map&lt;String,String&gt; map)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//可自助调整超时时间</span></span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultConnectTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultReadTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//初始化acsClient,暂不支持region化</span></span><br><span class="line">            IClientProfile profile = DefaultProfile.getProfile(<span class="string">"cn-hangzhou"</span>, accessKeyId, accessKeySecret);</span><br><span class="line">            DefaultProfile.addEndpoint(<span class="string">"cn-hangzhou"</span>, <span class="string">"cn-hangzhou"</span>, product, domain);</span><br><span class="line">            IAcsClient acsClient = <span class="keyword">new</span> DefaultAcsClient(profile);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//组装请求对象-具体描述见控制台-文档部分内容</span></span><br><span class="line">            SendSmsRequest request = <span class="keyword">new</span> SendSmsRequest();</span><br><span class="line">            <span class="comment">//必填:待发送手机号</span></span><br><span class="line">            request.setPhoneNumbers(phone);</span><br><span class="line">            <span class="comment">//必填:短信签名-可在短信控制台中找到</span></span><br><span class="line">            request.setSignName(<span class="string">"signature"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//必填:短信模板-可在短信控制台中找到</span></span><br><span class="line"><span class="comment">//            request.setTemplateCode("SMS_1000000");</span></span><br><span class="line">            <span class="comment">//可选:模板中的变量替换JSON串,如模板内容为"亲爱的$&#123;name&#125;,您的验证码为$&#123;code&#125;"时,此处的值为</span></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"name\":\"Tom\", \"code\":\"123\"&#125;");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//根据模板id判断模板类型</span></span><br><span class="line">            request.setTemplateCode(templateCode);</span><br><span class="line">            <span class="comment">//获得map所有键放入set集合中</span></span><br><span class="line">            Set&lt;Map.Entry&lt;String,String&gt;&gt; entrySet = map.entrySet();</span><br><span class="line">            Iterator&lt;Map.Entry&lt;String, String&gt;&gt; iterator = entrySet.iterator();</span><br><span class="line">            String str = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;map.size();i++)&#123;</span><br><span class="line">                <span class="comment">//将键值取出放入map.entry接口中</span></span><br><span class="line">                Map.Entry&lt;String, String&gt; mapEntry = iterator.next();</span><br><span class="line">                String key = mapEntry.getKey();</span><br><span class="line">                Object value = mapEntry.getValue();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//拼接字符串</span></span><br><span class="line">                <span class="keyword">if</span>(i&lt;map.size()-<span class="number">1</span>)&#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>+<span class="string">","</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//拼接之后完整的字符串放入&#123;&#125;</span></span><br><span class="line">            request.setTemplateParam(<span class="string">"&#123;"</span>+str+<span class="string">"&#125;"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"gift\":"+ gift +", \"express\":"+express+", \"code\":"+code+", \"number\":"+number+", \"tel\":"+tel+"&#125;");</span></span><br><span class="line">            <span class="comment">//选填-上行短信扩展码(无特殊需求用户请忽略此字段)</span></span><br><span class="line">            <span class="comment">//request.setSmsUpExtendCode("90997");</span></span><br><span class="line">            <span class="comment">//可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者</span></span><br><span class="line"><span class="comment">//            request.setOutId("yourOutId");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//hint 此处可能会抛出异常，注意catch</span></span><br><span class="line">            SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);</span><br><span class="line">            <span class="keyword">return</span> sendSmsResponse;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/22/SendSms/" data-id="cka40hnzz000xxwuwjsopvf46" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
 
     </footer>
   </div>
@@ -874,10 +847,6 @@
           </li>
         
           <li>
-            <a href="/2020/03/29/UML/">UML</a>
-          </li>
-        
-          <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
           </li>
         
@@ -887,6 +856,10 @@
         
           <li>
             <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go控制结构/">go控制结构</a>
           </li>
         
       </ul>
