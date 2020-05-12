@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,63 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-linux_bash" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/11/linux_bash/" class="article-date">
+  <time datetime="2020-04-11T07:02:19.000Z" itemprop="datePublished">2020-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/11/linux_bash/">bash</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="bash："><a href="#bash：" class="headerlink" title="bash："></a>bash：</h5><ul>
+<li>变量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=&quot;hello world&quot;</span><br><span class="line">c=&quot;hello world&quot;</span><br></pre></td></tr></table></figure>
+<p>❖ = 左右不要有空格<br>❖ 如果内容有空格，需要使⽤单引号或者双引号<br>❖ 双引号⽀持转义  $开头的变量会被⾃动替换</p>
+<ul>
+<li>变量使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $a </span><br><span class="line">echo $&#123;b&#125;</span><br><span class="line">echo &quot;$c&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>❖ 使⽤$var  或 ${var}来访问变量。后者更为严谨。$var_x ${var}_x 是不同的。<br>❖ 变量不需要定义也可以使⽤。引⽤未定义的变量，默认为空值。</p>
+<ul>
+<li>预定义变量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo $PWD </span><br><span class="line">echo $USER </span><br><span class="line">echo $HOME </span><br><span class="line">echo ~ </span><br><span class="line">echo $PATH </span><br><span class="line">echo $RANDOM</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">❖ 双引号⽤于括起⼀段字符串值，⽀持$var形式的变量替换 </span><br><span class="line">❖ 单引号也表⽰其内容是字符串值，不⽀持转义 </span><br><span class="line">❖ &#123;1..10&#125; 等价于  seq 1 10，表⽰1到10 </span><br><span class="line">❖ seq 1 3 10 表⽰⽣成⼀个1到10，步进为3</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">字符串 a=&quot;xx&quot; </span><br><span class="line">数字 i=1314 </span><br><span class="line">布尔 true  false </span><br><span class="line">数组 array=(a b c) </span><br><span class="line">函数 foo() &#123; echo hello world &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/11/linux_bash/" data-id="cka40d43i0004s4uwx1r4fhew" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-UML" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -89,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/29/UML/" data-id="ck8rb21c20013gwuwh875qemo" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2020/03/29/UML/" data-id="ck8rb5p60001a9wuw3g55m69u" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -134,9 +191,440 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="ck8rb21cm0021gwuwj757uxs1" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="ck8rb5p6j00249wuw6ow3w2o7" class="article-share-link">Teilen</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go基础/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go基础/">go基础知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go基础知识"><a href="#go基础知识" class="headerlink" title="go基础知识"></a>go基础知识</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">   fmt.Println(<span class="string">"Hello, World!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每个Go应用程序都包含一个名为 main 的包</li>
+<li>“{“ 不能在单独的一行</li>
+<li>import的包如果下面没有使用到的话会报错;变量同是如此</li>
+</ul>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><ul>
+<li>在 Go 语言中，采用的是后置类型的声明方式    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;命名&gt; &lt;类型&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x <span class="keyword">int</span> <span class="comment">// 定义 x 为整数类型</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在 Go 语言中通常我们使用关键字 var 来声明变量</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="keyword">int</span> <span class="comment">// 表示声明一个名为 x 的整数变量</span></span><br><span class="line"><span class="keyword">var</span> b <span class="keyword">int</span> = <span class="number">1</span> <span class="comment">// 表示声明一个名为 b 的整数变量，并且附上初始值为 1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可同时声明</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    a, b <span class="keyword">int</span>  <span class="comment">// 同时声明 a, b 的整数</span></span><br><span class="line">    c <span class="keyword">float64</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>简短声明方式</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">1</span> <span class="comment">// 声明 a 为 1 的整数</span></span><br><span class="line">b := <span class="keyword">int64</span>(<span class="number">1</span>)  <span class="comment">// 声明 b 为 1 的 64 位整数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h3><ul>
+<li>常量指定的值类型主要有三类： 布尔，数字，字符串， 其中数字类型包含（rune, integer, floating-point, complex), 它们都属于基本数据类型。</li>
+<li>不能使用 :=<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">64</span> <span class="comment">// 定义常量值为 64 的值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  b = <span class="number">4</span></span><br><span class="line">  c = <span class="number">0.1</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Go-语言中的基本数据类型"><a href="#Go-语言中的基本数据类型" class="headerlink" title="Go 语言中的基本数据类型"></a>Go 语言中的基本数据类型</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">bool      the set of boolean (true, false)</span><br><span class="line"></span><br><span class="line">uint8      the set of all unsigned  8-bit integers (0 to 255)</span><br><span class="line">uint16      the set of all unsigned 16-bit integers (0 to 65535)</span><br><span class="line">uint32      the set of all unsigned 32-bit integers (0 to 4294967295)</span><br><span class="line">uint64      the set of all unsigned 64-bit integers (0 to 18446744073709551615)</span><br><span class="line"></span><br><span class="line">int8      the set of all signed  8-bit integers (-128 to 127)</span><br><span class="line">int16      the set of all signed 16-bit integers (-32768 to 32767)</span><br><span class="line">int32      the set of all signed 32-bit integers (-2147483648 to 2147483647)</span><br><span class="line">int64      the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)</span><br><span class="line"></span><br><span class="line">float32      the set of all IEEE-754 32-bit floating-point numbers</span><br><span class="line">float64      the set of all IEEE-754 64-bit floating-point numbers</span><br><span class="line"></span><br><span class="line">complex64      the set of all complex numbers with float32 real and imaginary parts</span><br><span class="line">complex128      the set of all complex numbers with float64 real and imaginary parts</span><br><span class="line"></span><br><span class="line">byte      alias for uint8</span><br><span class="line">rune      alias for int32</span><br><span class="line">uint      either 32 or 64 bits</span><br><span class="line">int      same size as uint</span><br><span class="line">uintptr      an unsigned integer large enough to store the uninterpreted bits of a pointer value</span><br><span class="line"></span><br><span class="line">string      the set of string value (eg: "hi")</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>布尔类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="keyword">bool</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span></span><br><span class="line">a := <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数字类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">  a <span class="keyword">uint8</span> = <span class="number">1</span></span><br><span class="line">  b <span class="keyword">int8</span> = <span class="number">1</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">    c <span class="keyword">int</span> = <span class="number">64</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"hello"</span> <span class="comment">//单行字符串</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"\""</span> <span class="comment">// 转义符</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">`hello`</span> <span class="comment">//原样输出</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="string">`line3  //多行输出</span></span><br><span class="line"><span class="string">line1</span></span><br><span class="line"><span class="string">line2</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"hello, 世界"</span></span><br><span class="line"></span><br><span class="line">b := str[<span class="number">0</span>]  <span class="comment">//b is a uint8 type, like byte</span></span><br><span class="line">fmt.Println(b)  <span class="comment">// 104</span></span><br><span class="line">fmt.Println(<span class="keyword">string</span>(b)) <span class="comment">// h</span></span><br><span class="line"></span><br><span class="line">fmt.Println(<span class="built_in">len</span>(str)) <span class="comment">//12, 查看字符串有多少个字节</span></span><br><span class="line">fmt.Println(<span class="built_in">len</span>([]<span class="keyword">rune</span>(str))) <span class="comment">// 8 查看有多少个字符</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特殊类型</p>
+</li>
+<li>byte，uint8 别名，用于表示二进制数据的 bytes</li>
+<li>rune，int32 别名, 用于表示一个符号<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello, 世界"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _, char := <span class="keyword">range</span> str &#123;</span><br><span class="line">  fmt.Printf(<span class="string">"%T"</span>, char)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li>位运算</li>
+</ul>
+<ol>
+<li><p>按位与&amp;： T（true）替换为 1， F（false）替换为 0</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 &amp; 1 -&gt; 1</span><br><span class="line">1 &amp; 0 -&gt; 0</span><br><span class="line">0 &amp; 1 -&gt; 0</span><br><span class="line">0 &amp; 0 -&gt; 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按位或 |： T（true）替换为 1， F（false）替换为 0</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 | 1 -&gt; 1</span><br><span class="line">1 | 0 -&gt; 1</span><br><span class="line">0 | 1 -&gt; 1</span><br><span class="line">0 | 0 -&gt; 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按位异或 ^： 相同为0，不同为1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 ^ 1 -&gt; 0</span><br><span class="line">1 ^ 0 -&gt; 1</span><br><span class="line">0 ^ 1 -&gt; 1</span><br><span class="line">0 ^ 0 -&gt; 0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>逻辑运算符</li>
+</ul>
+<ol>
+<li><p>非运算符：!</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!T -&gt; false</span><br><span class="line">!F -&gt; true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>和运算符：&amp;&amp;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">T &amp;&amp; T -&gt; true</span><br><span class="line">T &amp;&amp; F -&gt; false</span><br><span class="line">F &amp;&amp; T -&gt; false</span><br><span class="line">F &amp;&amp; F -&gt; false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或运算符：||</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">T || T -&gt; true</span><br><span class="line">T || F -&gt; true</span><br><span class="line">F || T -&gt; true</span><br><span class="line">F || F -&gt; fals</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<ul>
+<li>算术运算符</li>
+</ul>
+<ol>
+<li>常见可用于整数和浮点数的二元运算符有 +、-、* 和 /。</li>
+<li>/ 对与整数运算而言，结果依旧为整数，例如：9 / 4 -&gt; 2。</li>
+<li>取余运算符只能作用于整数：9 % 4 -&gt; 1。</li>
+</ol>
+<p>可以将语句 b = b + a 简写为 b+=a，同样的写法也可用于 -=、*=、/=、%=<br>对于整数和浮点数，你可以使用一元运算符 ++（递增）和 –（递减），但只能用于后缀：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i++ -&gt; i += 1 -&gt; i = i + 1</span><br><span class="line">i-- -&gt; i -= 1 -&gt; i = i - 1</span><br></pre></td></tr></table></figure></p>
+<p>带有 ++ 和 – 的只能作为语句，而非表达式，因此 n = i++ 这种写法是无效的，其它像 f(i++) 或者 a[i]=b[i++] 这些可以用于 C、C++ 和 Java 中的写法在 Go 中也是不允许的。</p>
+<ul>
+<li>运算符与优先级 ↑<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">优先级     运算符</span><br><span class="line"> 7         ^ !</span><br><span class="line"> 6         * / % &lt;&lt; &gt;&gt; &amp; &amp;^</span><br><span class="line"> 5         + - | ^</span><br><span class="line"> 4         == != &lt; &lt;= &gt;= &gt;</span><br><span class="line"> 3         &lt;-</span><br><span class="line"> 2         &amp;&amp;</span><br><span class="line"> 1         ||</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> week time.Duration</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    t := time.Now()</span><br><span class="line">    fmt.Println(t) <span class="comment">// e.g. Wed Dec 21 09:52:14 +0100 RST 2011</span></span><br><span class="line">    fmt.Printf(<span class="string">"%02d.%02d.%4d\n"</span>, t.Day(), t.Month(), t.Year())</span><br><span class="line">    <span class="comment">// 21.12.2011</span></span><br><span class="line">    t = time.Now().UTC()</span><br><span class="line">    fmt.Println(t) <span class="comment">// Wed Dec 21 08:52:14 +0000 UTC 2011</span></span><br><span class="line">    fmt.Println(time.Now()) <span class="comment">// Wed Dec 21 09:52:14 +0100 RST 2011</span></span><br><span class="line">    <span class="comment">// calculating times:</span></span><br><span class="line">    week = <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">7</span> * <span class="number">1e9</span> <span class="comment">// must be in nanosec</span></span><br><span class="line">    week_from_now := t.Add(week)</span><br><span class="line">    fmt.Println(week_from_now) <span class="comment">// Wed Dec 28 08:52:14 +0000 UTC 2011</span></span><br><span class="line">    <span class="comment">// formatting times:</span></span><br><span class="line">    fmt.Println(t.Format(time.RFC822)) <span class="comment">// 21 Dec 11 0852 UTC</span></span><br><span class="line">    fmt.Println(t.Format(time.ANSIC)) <span class="comment">// Wed Dec 21 08:56:34 2011</span></span><br><span class="line">    fmt.Println(t.Format(<span class="string">"02 Jan 2006 15:04"</span>)) <span class="comment">// 21 Dec 2011 08:52</span></span><br><span class="line">    s := t.Format(<span class="string">"20060102"</span>)</span><br><span class="line">    fmt.Println(t, <span class="string">"=&gt;"</span>, s)</span><br><span class="line">    <span class="comment">// Wed Dec 21 08:52:14 +0000 UTC 2011 =&gt; 20111221</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go基础/" data-id="cka40d42p0000s4uwg769221s" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go安装和配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go安装和配置/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go安装和配置/">go安装和配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go安装和配置"><a href="#go安装和配置" class="headerlink" title="go安装和配置"></a>go安装和配置</h1><ul>
+<li>下载地址1：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a>  </li>
+<li>下载地址2：<a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">https://golang.google.cn/dl/</a>  </li>
+<li>配置go环境变量</li>
+<li>检查go安装  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go安装和配置/" data-id="cka40d42t0001s4uwe56v1zb6" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go控制结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go控制结构/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go控制结构/">go控制结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go控制结构"><a href="#go控制结构" class="headerlink" title="go控制结构"></a>go控制结构</h1><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><ul>
+<li>go if去除了条件的（）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> first <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> cond <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> first &lt;= <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is less than or equal to 0\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> first &gt; <span class="number">0</span> &amp;&amp; first &lt; <span class="number">5</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is between 0 and 5\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is 5 or greater\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> cond = <span class="number">5</span>; cond &gt; <span class="number">10</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is greater than 10\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is not greater than 10\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="switch-结构"><a href="#switch-结构" class="headerlink" title="switch 结构"></a>switch 结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num1 <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> num1 &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">98</span>, <span class="number">99</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 98"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>: </span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 100"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's not equal to 98 or 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out: It's equal to 100</span><br></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"This is the %d iteration\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for 结构的第二种形式是没有头部的条件判断迭代（类似其它语言中的 while 循环），基本形式为：for 条件语句 {}。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">        i = i - <span class="number">1</span></span><br><span class="line">        fmt.Printf(<span class="string">"The variable i is now: %d\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The variable i is now: 4</span><br><span class="line">The variable i is now: 3</span><br><span class="line">The variable i is now: 2</span><br><span class="line">The variable i is now: 1</span><br><span class="line">The variable i is now: 0</span><br><span class="line">The variable i is now: -1</span><br></pre></td></tr></table></figure>
+<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break continue"></a>break continue</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">5</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"  "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">012345 012345 012345</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">" "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 6 7 8 9</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go控制结构/" data-id="cka40d43g0003s4uwj11oswpu" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_awk" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/linux_awk/" class="article-date">
+  <time datetime="2020-01-01T07:09:12.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/linux_awk/">linux—awk</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="linux—awk"><a href="#linux—awk" class="headerlink" title="linux—awk"></a>linux—awk</h3><h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">awk [选项参数] &apos;script&apos; var=value file(s)</span><br><span class="line">或</span><br><span class="line">awk [选项参数] -f scriptfile var=value file(s)</span><br></pre></td></tr></table></figure>
+<h5 id="awk内置变量"><a href="#awk内置变量" class="headerlink" title="awk内置变量"></a>awk内置变量</h5><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0</td>
+<td>当前记录，一整行</td>
+</tr>
+<tr>
+<td>$1,$2,3….a</td>
+<td>当前记录的第n个区域，区域间由FS分隔。</td>
+</tr>
+<tr>
+<td>FS</td>
+<td>输入区域分隔符，默认是空格。field separator</td>
+</tr>
+<tr>
+<td>NF</td>
+<td>当前记录中的区域个数，就是有多少列。number of field</td>
+</tr>
+<tr>
+<td>NR</td>
+<td>已经读出的记录数，就是行号，从1开始。number of record</td>
+</tr>
+<tr>
+<td>RS</td>
+<td>输入的记录分隔符默认为换行符。record separator</td>
+</tr>
+<tr>
+<td>OFS</td>
+<td>输出区域分隔符，默认也是空格。output record separator</td>
+</tr>
+<tr>
+<td>FNR</td>
+<td>当前文件的读入记录号，每个文件重新计算。</td>
+</tr>
+<tr>
+<td>FILENAME</td>
+<td>当前正在处理的文件的文件名</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选项参数说明："><a href="#选项参数说明：" class="headerlink" title="选项参数说明："></a>选项参数说明：</h5><ul>
+<li>-F fs or –field-separator fs<br>指定输入文件折分隔符，fs是一个字符串或者是一个正则表达式，如-F:。</li>
+<li>-v var=value or –asign var=value<br>赋值一个用户定义变量。</li>
+<li>-f scripfile or –file scriptfile<br>从脚本文件中读取awk命令。</li>
+<li>-mf nnn and -mr nnn<br>对nnn值设置内在限制，-mf选项限制分配给nnn的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。</li>
+<li>-W compact or –compat, -W traditional or –traditional<br>在兼容模式下运行awk。所以gawk的行为和标准的awk完全一样，所有的awk扩展都被忽略。</li>
+<li>-W copyleft or –copyleft, -W copyright or –copyright<br>打印简短的版权信息。</li>
+<li>-W help or –help, -W usage or –usage<br>打印全部awk选项和每个选项的简短说明。</li>
+<li>-W lint or –lint<br>打印不能向传统unix平台移植的结构的警告。</li>
+<li>-W lint-old or –lint-old<br>打印关于不能向传统unix平台移植的结构的警告。</li>
+<li>-W posix<br>打开兼容模式。但有以下限制，不识别：/x、函数关键字、func、换码序列以及当fs是一个空格时，将新行作为一个域分隔符；操作符<strong>和</strong>=不能代替^和^=；fflush无效。</li>
+<li>-W re-interval or –re-inerval<br>允许间隔正则表达式的使用，参考(grep中的Posix字符类)，如括号表达式[[:alpha:]]。</li>
+<li>-W source program-text or –source program-text<br>使用program-text作为源代码，可与-f命令混用。</li>
+<li>-W version or –version<br>打印bug报告信息的版本。</li>
+</ul>
+<hr>
+<ul>
+<li>record  记录，行</li>
+<li>filed  域，区域，字段，列</li>
+<li>NF（number of field）表示一行中的区域（列）数量，$NF取最后一个区域。</li>
+<li>$符号表示取某个列（区域），$1,2,NF</li>
+<li>NR (number of record) 行号,awk对每一行的记录号都有一个内置变量NR来保存，每处理完一条记录NR的值就会自动+1</li>
+<li>FS（-F）field separator 列分隔符，以什么把行分隔成多列</li>
+<li></li>
+</ul>
+<h5 id="用法一"><a href="#用法一" class="headerlink" title="用法一"></a>用法一</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &apos;&#123;[pattern] action&#125;&apos; &#123;filenames&#125;   # 行匹配语句 awk &apos;&apos; 只能用单引号</span><br></pre></td></tr></table></figure>
+<ul>
+<li>awk ‘BEGIN{}END{}’  # 开始和结束</li>
+<li>awk ‘/Running/‘     # 正则匹配</li>
+<li>awk ‘/aa/,/bb/‘     # 区间匹配</li>
+<li>awk ‘$2~/XXX/‘      # 字段匹配 </li>
+<li>awk ‘$2!~/XXX/‘     # 字段匹配 </li>
+<li>awk ‘NR==2’         # 取第二行</li>
+<li>awk ‘NR&gt;1’          # 去掉第一行</li>
+</ul>
+<hr>
+<ul>
+<li>-F 参数指定字段分隔符</li>
+<li>BEGIN{FS=””} 也可以表示分隔符</li>
+<li>$0 代表原来的行</li>
+<li>$1 代表第一个字段</li>
+<li>$N 代表第N个字段</li>
+<li>$NF 代表最后一个字段</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">统计行数</span><br><span class="line">awk &apos;END&#123;print NR&#125;&apos; test.log</span><br><span class="line">wc -l test.log</span><br><span class="line"></span><br><span class="line">分割</span><br><span class="line">awk -F &quot;#&quot; &apos;&#123;print $NF&#125;&apos; awk.txt </span><br><span class="line">awk -F &apos;[#$]&apos; &apos;&#123;print $NF&#125;&apos; awk.txt </span><br><span class="line">分割 （条件动作）</span><br><span class="line">awk -F &quot;#&quot; &apos;NR==2&#123;print $1&#125;&apos; awk.txt</span><br><span class="line">多个模式和动作</span><br><span class="line">awk -F &quot;#&quot; &apos;NR==1&#123;print $NF&#125;NR==3&#123;print $NF&#125;&apos; awk.txt</span><br><span class="line">FNR与NR类似，不过多文件记录不递增，每个文件都从1开始</span><br><span class="line">awk &apos;&#123;print FNR&#125;&apos; awk.txt awk_space.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li>正则</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>功能</th>
+<th>示例</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>字符串开头</td>
+<td>/^cre</td>
+<td>匹配所有以cre开头的字符串</td>
+</tr>
+<tr>
+<td>$</td>
+<td>字符串结尾</td>
+<td>/cre$/</td>
+<td>匹配所有以cr结尾的字符串</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配任意单个字符串</td>
+<td>/c..l/</td>
+<td>匹配字母c，任意两个字符再以l结尾的行，如 caal</td>
+</tr>
+<tr>
+<td>*</td>
+<td>重复0个或多个前一个字符</td>
+<td>/a*cal/</td>
+<td>匹配0个或多个a之后紧跟cal的行,如cal、aaacal</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一个字符一次或者一次以上</td>
+<td>/a+b/</td>
+<td>匹配一个或多个a加b的行</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配一个或一个前导字符</td>
+<td>/a?b/</td>
+<td>匹配a或ab的行</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>匹配字符组内的任一个字符</td>
+<td>/^[abc]/</td>
+<td>匹配以字母a或b或c开头的行</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td>匹配不再指定字符组内的任一字符</td>
+<td>/^[^abc]/</td>
+<td>匹配<strong>不</strong>以字母a或b或c开头的行</td>
+</tr>
+<tr>
+<td>()</td>
+<td>子表达式组合</td>
+<td>/(coo)+/</td>
+<td>表示一个或coo组合，当有一些字符需要组合时，使用括号</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>或</td>
+<td>/(cl)</td>
+<td>B/</td>
+<td>匹配cl或者字母B的行</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">以#为分隔符，显示第一列以B开头或最后一列以1结尾的行</span><br><span class="line">awk -F &quot;#&quot; &apos;$1~/^B/&#123;print $0&#125;$NF~/1$/&#123;print $0&#125;&apos; awk.txt</span><br><span class="line">以#为分隔符，显示第一列以B或C开头的行</span><br><span class="line">awk -F &quot;#&quot; &apos;$1~/^B|^C/&#123;print $0&#125;&apos; awk.txt</span><br><span class="line">awk -F &quot;#&quot; &apos;$1~/^[BC]/&#123;print $0&#125;&apos; awk.txt</span><br><span class="line">awk -F &quot;#&quot; &apos;$1~/^(B|C)/&#123;print $0&#125;&apos; awk.txt </span><br><span class="line">awk -F &quot;#&quot; &apos;$1!~/^A/&#123;print $0&#125;&apos; awk.txt </span><br><span class="line"></span><br><span class="line">比较显示</span><br><span class="line">awk &apos;NR==2&#123;print $0&#125;NR==3&#123;print $0&#125;&apos; awk.txt </span><br><span class="line">awk &apos;NR&gt;=1&#123;print $0&#125;&apos; awk.txt </span><br><span class="line">awk &apos;/BAC/,/CBA/&#123;print $0&#125;&apos; awk.txt</span><br></pre></td></tr></table></figure>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">awk &apos;BEGIN&#123;a=8;b=90;print a+b,a-c,a/b,a%b&#125;&apos;</span><br><span class="line"># 98 8 0.0888889 8</span><br><span class="line"></span><br><span class="line">#统计空行</span><br><span class="line">grep &quot;^$&quot; test.log  |wc -l</span><br><span class="line">sed -n &apos;/^$/p&apos; test.log |wc -l</span><br><span class="line">awk &apos;/^$/&apos; test.log |wc -l</span><br><span class="line">awk &apos;/^$/&#123;i=i+1&#125;END&#123;print i&#125;&apos; test.log</span><br><span class="line"></span><br><span class="line"># 累加100</span><br><span class="line">seq 100|awk &apos;&#123;i=i+$0&#125;END&#123;print i&#125;&apos;</span><br><span class="line"></span><br><span class="line">判断</span><br><span class="line">awk &apos;&#123;if($2&gt;=90 )print $0&#125;&apos; score.txt</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/linux_awk/" data-id="ck8u70fku0000z8uw5n98tjoq" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -188,7 +676,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/python_字典/" data-id="ck8rb21em005igwuwyrraa545" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/10/27/python_字典/" data-id="ck8rb5p8r005f9wuwb8iio4yv" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -239,7 +727,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/python_时间/" data-id="ck8rb21eq005sgwuw0m3dmhdi" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/10/27/python_时间/" data-id="ck8rb5p8u005k9wuw830k9957" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -281,504 +769,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/git取消修改/" data-id="ck8rb21cl001zgwuwnaetaci2" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/10/26/git取消修改/" data-id="ck8rb5p6h00219wuw75cmsmzx" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python_list操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/26/python_list操作/" class="article-date">
-  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/python_list操作/">python-list</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="python-list"><a href="#python-list" class="headerlink" title="python-list"></a>python-list</h2><h3 id="list-sort方法和内置函数sorted"><a href="#list-sort方法和内置函数sorted" class="headerlink" title="list.sort方法和内置函数sorted"></a>list.sort方法和内置函数sorted</h3><ul>
-<li>list.sort : 排序本列表，返回none</li>
-<li>内置函数 sorted ：会新建一个列表作为返回值</li>
-<li>list.sort 、 sorted都有可选的关键字参数：</li>
-<li><ul>
-<li>reverse  如果被设定为 True，被排序的序列里的元素会以降序输出（也就是说把最大值当作最 小值来排序）。这个参数的默认值是 False。</li>
-</ul>
-</li>
-<li><ul>
-<li>key  一个只有一个参数的函数，这个函数会被用在序列里的每一个元素上，所产生的结果 将是排序算法依赖的对比关键字。比如说，在对一些字符串排序时，可以用 key=str. lower 来实现忽略大小写的排序，或者是用 key=len 进行基于字符串长度的排序。这个参数的默认值是恒等函数（identity function），也就是默认用元素自己的值来排序。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line">print(sorted(fruits)) </span><br><span class="line"><span class="comment">#['apple', 'banana', 'grape', 'raspberry']  </span></span><br><span class="line"><span class="keyword">print</span> (fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">sorted(fruits, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment">#['raspberry', 'grape', 'banana', 'apple'] </span></span><br><span class="line">sorted(fruits, key=len) </span><br><span class="line"><span class="comment"># ['grape', 'apple', 'banana', 'raspberry']</span></span><br><span class="line">sorted(fruits, key=len, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment"># ['raspberry', 'banana', 'grape', 'apple'] </span></span><br><span class="line">print(fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">fruits.sort()   </span><br><span class="line">print(fruits)</span><br><span class="line"><span class="comment"># ['apple', 'banana', 'grape', 'raspberry']</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/python_list操作/" data-id="ck8rb21eg0056gwuwssd0bjom" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python_元组" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/26/python_元组/" class="article-date">
-  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/python_元组/">python-元祖</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="python-元祖"><a href="#python-元祖" class="headerlink" title="python-元祖"></a>python-元祖</h2><h3 id="元组和记录"><a href="#元组和记录" class="headerlink" title="元组和记录"></a>元组和记录</h3><ul>
-<li><p>元组记录、拆包 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 记录</span></span><br><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>)</span><br><span class="line">city, year, pop, chg, area = (<span class="string">'Tokyo'</span>, <span class="number">2003</span>, <span class="number">32450</span>, <span class="number">0.66</span>, <span class="number">8014</span>)</span><br><span class="line">traveler_ids = [(<span class="string">'USA'</span>, <span class="string">'31195855'</span>), (<span class="string">'BRA'</span>, <span class="string">'CE342567'</span>),(<span class="string">'ESP'</span>, <span class="string">'XDA205856'</span>)]</span><br><span class="line"><span class="keyword">for</span> passport <span class="keyword">in</span> sorted(traveler_ids):</span><br><span class="line">    print(<span class="string">'%s/%s'</span> % passport)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">BRA/CE342567</span></span><br><span class="line"><span class="string">ESP/XDA205856</span></span><br><span class="line"><span class="string">USA/31195855</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> country, _ <span class="keyword">in</span> traveler_ids:</span><br><span class="line">    print(country) </span><br><span class="line">    </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">USA</span></span><br><span class="line"><span class="string">BRA</span></span><br><span class="line"><span class="string">ESP</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拆包</span></span><br><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>) </span><br><span class="line">latitude, longitude = lax_coordinates </span><br><span class="line">print(latitude,longitude)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">33.9425 -118.408056</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>具名元组  namedtuple</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line">City = namedtuple(<span class="string">'City'</span>, <span class="string">'name country population coordinates'</span>)</span><br><span class="line">tokyo = City(<span class="string">'Tokyo'</span>, <span class="string">'JP'</span>, <span class="number">36.933</span>, (<span class="number">35.689722</span>, <span class="number">139.691667</span>))</span><br><span class="line">City(name=<span class="string">'Tokyo'</span>, country=<span class="string">'JP'</span>, population=<span class="number">36.933</span>, coordinates=(<span class="number">35.689722</span>, <span class="number">139.691667</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(tokyo.country)</span></span><br><span class="line"><span class="comment"># print(City._fields )</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">➊ 创建一个具名元组需要两个参数，一个是类名，另一个是类的各个字段的名字。后者可 以是由数个字符串组成的可迭代对象，或者是由空格分隔开的字段名组成的字符串。</span></span><br><span class="line"><span class="string">➋ 存放在对应字段里的数据要以一串参数的形式传入到构造函数中（注意，元组的构造函 数却只接受单一的可迭代对象）</span></span><br><span class="line"><span class="string">➌ 你可以通过字段名或者位置来获取一个字段的信息。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LatLong = namedtuple(<span class="string">'LatLong'</span>, <span class="string">'lat long'</span>)</span><br><span class="line">delhi_data = (<span class="string">'Delhi NCR'</span>, <span class="string">'IN'</span>, <span class="number">21.935</span>, LatLong(<span class="number">28.613889</span>, <span class="number">77.208889</span>))</span><br><span class="line">delhi = City._make(delhi_data)</span><br><span class="line">print(delhi._asdict())  </span><br><span class="line"></span><br><span class="line"><span class="comment"># OrderedDict([('name', 'Delhi NCR'), ('country', 'IN'), ('population', 21.935), ('coordinates', LatLong(lat=28.613889, long=77.208889))])  </span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">➊ _fields 属性是一个包含这个类所有字段名称的元组。 </span></span><br><span class="line"><span class="string">➋ 用 _make() 通过接受一个可迭代对象来生成这个类的一个实例，它的作用跟 City(*delhi_data) 是一样的。 </span></span><br><span class="line"><span class="string">➌ _asdict() 把具名元组以 collections.OrderedDict 的形式返回，我们可以利用它来把元 组里的信息友好地呈现出来</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">``</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>序列使用+和*  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] </span><br><span class="line">print(l * <span class="number">5</span>) </span><br><span class="line"><span class="comment"># [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3] </span></span><br><span class="line">``` </span><br><span class="line">+和* 都遵循这个规律，不修改原有的操作对象，而是构建一个全新的序列</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">board = [[<span class="string">'_'</span>] * <span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)] </span><br><span class="line">board[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">'X'</span> </span><br><span class="line">print(board )</span><br><span class="line"><span class="comment"># [['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""**含有 3 个指向同一对象的引用的列表是毫无用处的** """</span></span><br><span class="line">weird_board = [[<span class="string">'_'</span>] * <span class="number">3</span>] * <span class="number">3</span> </span><br><span class="line">weird_board[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">'O'</span> </span><br><span class="line">print(weird_board)</span><br><span class="line"><span class="comment"># [['_', '_', 'O'], ['_', '_', 'O'], ['_', '_', 'O']]</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/python_元组/" data-id="ck8rb21ek005dgwuw7qm83h0p" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python_序列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/26/python_序列/" class="article-date">
-  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/python_序列/">python-序列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="python-序列"><a href="#python-序列" class="headerlink" title="python-序列"></a>python-序列</h2><h5 id="内置序列类型"><a href="#内置序列类型" class="headerlink" title="内置序列类型"></a>内置序列类型</h5><p>容器序列<br>　　list、tuple 和 collections.deque 这些序列能存放不同类型的数据。<br>扁平序列<br>　　str、bytes、bytearray、memoryview 和 array.array，这类序列只能容纳一种类型。  </p>
-<p>可变序列<br>　　list、bytearray、array.array、collections.deque 和 memoryview。<br>不可变序列<br>　　tuple、str 和 bytes。  </p>
-<ul>
-<li><p>　列表推导式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">symbols = <span class="string">'$¢£¥€¤'</span> </span><br><span class="line">beyond_ascii = [ord(s) <span class="keyword">for</span> s <span class="keyword">in</span> symbols <span class="keyword">if</span> ord(s) &gt; <span class="number">127</span>] </span><br><span class="line">beyond_ascii [<span class="number">162</span>, <span class="number">163</span>, <span class="number">165</span>, <span class="number">8364</span>, <span class="number">164</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>　生成器表达式<br>生成器表达式的语法跟列表推导差不多，把方括号换成圆括号。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">symbols = <span class="string">'$¢£¥€¤'</span> </span><br><span class="line">tuple(ord(symbol) <span class="keyword">for</span> symbol <span class="keyword">in</span> symbols) </span><br><span class="line">(<span class="number">36</span>, <span class="number">162</span>, <span class="number">163</span>, <span class="number">165</span>, <span class="number">8364</span>, <span class="number">164</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">'black'</span>, <span class="string">'white'</span>] </span><br><span class="line">sizes = [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">'L'</span>]</span><br><span class="line"><span class="keyword">for</span> tshirt <span class="keyword">in</span> (<span class="string">'%s %s'</span> % (c, s) <span class="keyword">for</span> c <span class="keyword">in</span> colors <span class="keyword">for</span> s <span class="keyword">in</span> sizes):</span><br><span class="line">    print(tshirt)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/python_序列/" data-id="ck8rb21en005kgwuwrxdqgbc4" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pytes_基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/03/pytes_基础/" class="article-date">
-  <time datetime="2019-08-03T05:07:26.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/pytes_基础/">pytest—基础知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="pytest—基础知识"><a href="#pytest—基础知识" class="headerlink" title="pytest—基础知识"></a>pytest—基础知识</h5><ol>
-<li><strong>测试文件命名规则</strong></li>
-</ol>
-<ul>
-<li>测试文件应当命名为test_<something>.py 或者 <something>_test.py</something></something></li>
-<li>测试函数、测试类方法应该命名为test_<something></something></li>
-<li>测试类应该命名为Test<something></something></li>
-</ul>
-<ol>
-<li><strong>测试函数返回的结果类型</strong></li>
-</ol>
-<ul>
-<li>PASSED(.) 测试通过</li>
-<li>FAILED(F) 测试失败（也有可能是XPASS状态与strict选项冲突造成的失败）</li>
-<li>SKIPPED(s) 测试未被执行，指定跳过执行可以将测试标记为@pytest.mark.skip(),或者使用@pytest.mark.skipif()指定跳过测试的条件</li>
-<li>xfail(x) 预期测试失败，并且确实失败，使用@pytest.mark.xfail()指定你认为会失败的测试用例</li>
-<li>XPASS(X) 预期测试失败，但实际上通过，不符合预期</li>
-<li>ERROR(E) 测试用例之外的代码触发了异常，可能由fixture引起，也可能由hook函数引起</li>
-</ul>
-<ol>
-<li><strong>运行测试用例命令</strong></li>
-</ol>
-<ul>
-<li><p>pytest -v git_test_project/test_case/test_a.py（执行文件中所有case）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v git_test_project/test_case/test_a.py</span><br><span class="line">=============================== test session starts ===============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                            </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                         [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                         [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                          [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                          [100%]</span><br><span class="line"></span><br><span class="line">================================= FAILURES ========================================</span><br><span class="line"></span><br><span class="line">___________________________ test_03 ___________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line">================= 1 failed, 1 passed, 2 skipped, 1 warnings in 0.07 seconds =================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>pytest -v git_test_project/test_case/test_a.py::test_01 （执行文件单个case test_01）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 1 item                                                                                                            </span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                    [100%]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol>
-<li><strong>命令行的选项</strong>  可使用pytest –help 查看全部选项</li>
-</ol>
-<ul>
-<li><p>–tb=no : 关闭错误信息回溯</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v --tb=no</span><br><span class="line">=========================== test session starts ===========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                     </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                         [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                         [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                          [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                          [100%]</span><br><span class="line"></span><br><span class="line">=========== 1 failed, 1 passed, 2 skipped, 1 warnings in 0.15 seconds ====================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>–collect-only : 使用–collect-only 选项可以展示在给定的配置下哪些测试用例会被运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --collect-only</span><br><span class="line">======================== test session starts ==============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items                                    </span><br><span class="line"></span><br><span class="line">&lt;Package G:\vchen\github\project\project\git_test_project\test_case&gt;</span><br><span class="line">  &lt;Module test_a.py&gt;</span><br><span class="line">    &lt;Function test_01&gt;</span><br><span class="line">    &lt;Function test_02&gt;</span><br><span class="line">    </span><br><span class="line">====================== no tests ran in 0.40 seconds ========================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>-k : 允许使用表达式指定希望运行的测试用例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -k "test_01 or test_02" --collect-only</span><br><span class="line">================================test session starts ==================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items             </span><br><span class="line"></span><br><span class="line">&lt;Package G:\vchen\github\project\project\git_test_project\test_case&gt;</span><br><span class="line">  &lt;Module test_a.py&gt;</span><br><span class="line">    &lt;Function test_01&gt;</span><br><span class="line">    &lt;Function test_02&gt;</span><br><span class="line"></span><br><span class="line">============================ no tests ran in 0.13 seconds ============================</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pytest -k "test_01 or test_02"</span><br><span class="line">=================================== test session starts ===============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items                                 </span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py ..                        [100%]</span><br><span class="line"></span><br><span class="line">================================ 2 passed in 0.10 seconds =============================</span><br></pre></td></tr></table></figure>
-<ul>
-<li>-m : 标记（marker）用于标记测试并分组，以便快速选中并运行<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.finished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_01</span><span class="params">()</span>:</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --verbose  git_test_project/test_case/test_a.py -m "finished and unfinished"</span><br><span class="line">====================== test session starts =====================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items / 4 deselected                </span><br><span class="line"></span><br><span class="line">===============4 deselected, 2 warnings in 0.02 seconds  ====================</span><br></pre></td></tr></table></figure>
-<ul>
-<li>-x : 正常情况，pytest 会运行每一个搜索到的测试用例。如果某个测试函数被断言失败，或者触发了外部异常，则该测试用例的运行就会到此为止<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">assert</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) == (<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -x -v</span><br><span class="line">========================== test session starts ==========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                                  </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                   [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                   [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                    [ 75%]</span><br><span class="line"></span><br><span class="line">================================= FAILURES =================================</span><br><span class="line">_______________________________ test_03 _______________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line"></span><br><span class="line">==============1 failed, 2 skipped, 1 warnings in 0.13 seconds ==================</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>–maxfail=num : -x特点是一旦遇到失败就会全局停止。使用–maxfail可以明指定失败几次</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v git_test_project/test_case/test_a.py  --maxfail=2 --tb=no</span><br><span class="line">============================== test session starts ==============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items               </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                           [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                           [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                            [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                            [100%]</span><br><span class="line"></span><br><span class="line">================= 1 failed, 1 passed, 2 skipped, 1 warnings in 0.05 seconds =================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>-s与–capture=method : -s 允许终端在测试运行时输出某些结果，包括任何符合标准的输出流信息。-s等价于–capture=no。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_01</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_02</span><span class="params">()</span>:</span></span><br><span class="line">       print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">assert</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) == (<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_04</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest git_test_project/test_case -sv --tb=no</span><br><span class="line">================================ test session starts ================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items        </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 222222222</span><br><span class="line">PASSED</span><br><span class="line"></span><br><span class="line">======================= 1 failed, 3 passed, 1 warnings in 0.06 seconds =========================</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>-lf(–last-failed) : 当一个或多个测试失败时，定位到最后一个失败的测试用例并重新运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --lf -v --tb=no</span><br><span class="line">================================= test session starts ===========================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items / 3 deselected / 1 selected                  </span><br><span class="line"></span><br><span class="line">run-last-failure: rerun previous 1 failure (skipped 66 files)</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                  [100%]</span><br><span class="line">======================= 1 failed, 3 deselected, 1 warnings in 0.11 seconds =======================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>–ff(–failed-first) : 与lf作用基本相同，不同在于–ff会运行完剩余的测试用例</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --ff -v --tb=no</span><br><span class="line">===================================== test session starts ======================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                         </span><br><span class="line"></span><br><span class="line">run-last-failure: rerun previous 1 failure first</span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                 [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                                 [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 PASSED                                 [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                                 [100%]</span><br><span class="line"></span><br><span class="line">======================== 1 failed, 3 passed, 1 warnings in 0.13 seconds ========================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>-v(–verbose) : 输出信息更详细。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v --tb=no</span><br><span class="line">=================================== test session starts ===================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items            </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                                   [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 PASSED                                   [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                   [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                                   [100%]</span><br><span class="line"></span><br><span class="line">====================== 1 failed, 3 passed, 1 warnings in 0.13 seconds =======================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>-q(–quiet) : 与-v/–verbose作用相反，简化输出信息</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -q</span><br><span class="line">..F.                                                                 [100%]</span><br><span class="line">================================= FAILURES =================================</span><br><span class="line"></span><br><span class="line">__________________________________ test_03 __________________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:12: AssertionError</span><br><span class="line"></span><br><span class="line">1 failed, 3 passed, 1 warnings in 0.12 seconds</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>-l(–showlocals) : </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -l</span><br><span class="line">========================== test session starts ==========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                       </span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py ..F.                                [100%]</span><br><span class="line">=================================== FAILURES ===================================</span><br><span class="line">__________________________________________ test_03 ______________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Use -v to get the full diff</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:12: AssertionError</span><br><span class="line"></span><br><span class="line">============== 1 failed, 3 passed, 1 warnings in 0.14 seconds =================</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>–tb=style : 决定捕捉到失败时输出信息的显示方式。常用类型short,line,no</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">short: 仅输出assert的一行以及系统判定内容（不显示上下文）</span><br><span class="line">line: 只使用一行输出显示所有的错误信息</span><br><span class="line">no： 直接屏蔽全部回溯信息</span><br><span class="line">long: 输出详尽回溯信息</span><br><span class="line">auto: 默认值，如果多个测试用例失败，仅打印第一个和最后一个用例的回溯信息（格式与long模式一致）</span><br><span class="line">native： 只输出python标准库的回溯信息，不显示额外信息</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>–duration=N :  加快测试节奏。不关心测试如何运行，只统计测试过程中哪几个阶段是最慢的（包括每个测试用例的call,setup,teardown过程）。显示最慢的N个阶段耗时越长越靠前。如果使用–duration=0，则会将所有阶段按耗时从长到短排序后显示。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest git_test_project/test_case -sv --durations=3</span><br><span class="line">===================================== test session starts =====================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 222222222</span><br><span class="line">PASSED</span><br><span class="line"></span><br><span class="line">======================================== FAILURES ========================================</span><br><span class="line">________________________________________ test_03 __________________________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line"></span><br><span class="line">==================================== slowest 3 test durations ====================================</span><br><span class="line">5.00s call     git_test_project/test_case/test_a.py::test_04</span><br><span class="line">3.00s call     git_test_project/test_case/test_a.py::test_01</span><br><span class="line"></span><br><span class="line">(0.00 durations hidden.  Use -vv to show these durations.)</span><br><span class="line">======================== 1 failed, 3 passed, 1 warnings in 8.25 seconds ==========================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/pytes_基础/" data-id="ck8rb21eh0058gwuwo7f564wr" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pytest/">pytest</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/12/linux常用命令/" class="article-date">
-  <time datetime="2019-06-12T07:09:11.000Z" itemprop="datePublished">2019-06-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/linux常用命令/">linux常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h4><h6 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bin  (binaries)存放二进制可执行文件</span><br><span class="line"></span><br><span class="line">sbin  (super user binaries)存放二进制可执行文件，只有root才能访问</span><br><span class="line"></span><br><span class="line">etc (etcetera)存放系统配置文件</span><br><span class="line"></span><br><span class="line">usr  (unix shared resources)用于存放共享的系统资源</span><br><span class="line"></span><br><span class="line">home 存放用户文件的根目录</span><br><span class="line"></span><br><span class="line">root  超级用户目录</span><br><span class="line"></span><br><span class="line">dev (devices)用于存放设备文件</span><br><span class="line"></span><br><span class="line">lib  (library)存放跟文件系统中的程序运行所需要的共享库及内核模块</span><br><span class="line"></span><br><span class="line">mnt  (mount)系统管理员安装临时文件系统的安装点</span><br><span class="line"></span><br><span class="line">boot 存放用于系统引导时使用的各种文件</span><br><span class="line"></span><br><span class="line">tmp  (temporary)用于存放各种临时文件</span><br><span class="line"></span><br><span class="line">var  (variable)用于存放运行时需要改变数据的文件</span><br></pre></td></tr></table></figure>
-<h6 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令格式：命令  -选项  参数 （选项和参数可以为空）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>文件及目录</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>参数</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cd</td>
-<td>-</td>
-<td>cd /usr</td>
-<td>切换目录</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>-</td>
-<td>pwd</td>
-<td>当前目录</td>
-</tr>
-<tr>
-<td>touch</td>
-<td>-</td>
-<td>touch a.java</td>
-<td>创建空文件</td>
-</tr>
-<tr>
-<td>mkdir</td>
-<td>-</td>
-<td>mkdir dir</td>
-<td>创建新目录</td>
-</tr>
-<tr>
-<td>mkdir</td>
-<td>-p</td>
-<td>mkdir -p /usr/dir/java</td>
-<td>创建多级目录</td>
-</tr>
-<tr>
-<td>cp</td>
-<td>-</td>
-<td>cp a.java /usr</td>
-<td>复制文件或目录</td>
-</tr>
-<tr>
-<td>cp</td>
-<td>-r</td>
-<td>cp -f /usr/dir/a.txt /root</td>
-<td>递归处理</td>
-</tr>
-<tr>
-<td>rmdir</td>
-<td>-</td>
-<td>rmdir dirxx</td>
-<td>删除空目录</td>
-</tr>
-<tr>
-<td>more</td>
-<td>-</td>
-<td>more a.txt</td>
-<td>分页显示文本文件内容 空格后，b向前</td>
-</tr>
-<tr>
-<td>less</td>
-<td>-</td>
-<td>less a.txt</td>
-<td>同上，支持底行</td>
-</tr>
-<tr>
-<td>head</td>
-<td>-</td>
-<td>head a.txt</td>
-<td>查看开头 默认10行</td>
-</tr>
-<tr>
-<td>head</td>
-<td>-num</td>
-<td>head -20 a.txt</td>
-<td>查看开头指定行</td>
-</tr>
-<tr>
-<td>tail</td>
-<td>-</td>
-<td>tail a.txt</td>
-<td>查看文本结尾，默认10行</td>
-</tr>
-<tr>
-<td>tail</td>
-<td>-num</td>
-<td>tail -20 a.txt</td>
-<td>查看文本结尾，指定行数</td>
-</tr>
-<tr>
-<td>tail</td>
-<td>-f</td>
-<td>tail a.txt</td>
-<td>循环滚动读取并动态显示</td>
-</tr>
-<tr>
-<td>wc</td>
-<td>-</td>
-<td>wc a.txt</td>
-<td>统计文本的行数，字数，字符数</td>
-</tr>
-<tr>
-<td>wc</td>
-<td>-m</td>
-<td>wc -m a.txt</td>
-<td>字符数</td>
-</tr>
-<tr>
-<td>wc</td>
-<td>-w</td>
-<td>wc -w a.txt</td>
-<td>文本字数</td>
-</tr>
-<tr>
-<td>wc</td>
-<td>-l</td>
-<td>cd -l a.txt</td>
-<td>文本行数</td>
-</tr>
-<tr>
-<td>find</td>
-<td>-name</td>
-<td>find / -name a.txt</td>
-<td>指定目录查文件</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>vi / vim</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>光标前插入</td>
-</tr>
-<tr>
-<td>l</td>
-<td>在光标当前行开始插入</td>
-</tr>
-<tr>
-<td>a</td>
-<td>光标后插入</td>
-</tr>
-<tr>
-<td>A</td>
-<td>在光标当前行末尾插入</td>
-</tr>
-<tr>
-<td>o</td>
-<td>在当前行下一行插入</td>
-</tr>
-<tr>
-<td>O</td>
-<td>在当前行上一行插入</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>保存退出</td>
-</tr>
-<tr>
-<td>:q</td>
-<td>退出</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/12/linux常用命令/" data-id="ck8rb21dz004ggwuw7p4sdrfs" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -791,7 +785,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">Siguiente &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -805,7 +799,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -813,18 +807,18 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 13.64px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -832,9 +826,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/linux_bash/">bash</a>
+          </li>
         
           <li>
             <a href="/2020/03/29/UML/">UML</a>
@@ -845,15 +843,11 @@
           </li>
         
           <li>
-            <a href="/2019/10/27/python_字典/">python_dict</a>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
-            <a href="/2019/10/27/python_时间/">python-时间</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/26/git取消修改/">git-取消修改</a>
+            <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
           </li>
         
       </ul>
@@ -869,7 +863,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 chen v<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

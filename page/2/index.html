@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,500 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-python_list操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/26/python_list操作/" class="article-date">
+  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/26/python_list操作/">python-list</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python-list"><a href="#python-list" class="headerlink" title="python-list"></a>python-list</h2><h3 id="list-sort方法和内置函数sorted"><a href="#list-sort方法和内置函数sorted" class="headerlink" title="list.sort方法和内置函数sorted"></a>list.sort方法和内置函数sorted</h3><ul>
+<li>list.sort : 排序本列表，返回none</li>
+<li>内置函数 sorted ：会新建一个列表作为返回值</li>
+<li>list.sort 、 sorted都有可选的关键字参数：</li>
+<li><ul>
+<li>reverse  如果被设定为 True，被排序的序列里的元素会以降序输出（也就是说把最大值当作最 小值来排序）。这个参数的默认值是 False。</li>
+</ul>
+</li>
+<li><ul>
+<li>key  一个只有一个参数的函数，这个函数会被用在序列里的每一个元素上，所产生的结果 将是排序算法依赖的对比关键字。比如说，在对一些字符串排序时，可以用 key=str. lower 来实现忽略大小写的排序，或者是用 key=len 进行基于字符串长度的排序。这个参数的默认值是恒等函数（identity function），也就是默认用元素自己的值来排序。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line">print(sorted(fruits)) </span><br><span class="line"><span class="comment">#['apple', 'banana', 'grape', 'raspberry']  </span></span><br><span class="line"><span class="keyword">print</span> (fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">sorted(fruits, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment">#['raspberry', 'grape', 'banana', 'apple'] </span></span><br><span class="line">sorted(fruits, key=len) </span><br><span class="line"><span class="comment"># ['grape', 'apple', 'banana', 'raspberry']</span></span><br><span class="line">sorted(fruits, key=len, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment"># ['raspberry', 'banana', 'grape', 'apple'] </span></span><br><span class="line">print(fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">fruits.sort()   </span><br><span class="line">print(fruits)</span><br><span class="line"><span class="comment"># ['apple', 'banana', 'grape', 'raspberry']</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/26/python_list操作/" data-id="ck8rb5p8o00589wuwdi8mp0yt" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python_元组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/26/python_元组/" class="article-date">
+  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/26/python_元组/">python-元祖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python-元祖"><a href="#python-元祖" class="headerlink" title="python-元祖"></a>python-元祖</h2><h3 id="元组和记录"><a href="#元组和记录" class="headerlink" title="元组和记录"></a>元组和记录</h3><ul>
+<li><p>元组记录、拆包 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 记录</span></span><br><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>)</span><br><span class="line">city, year, pop, chg, area = (<span class="string">'Tokyo'</span>, <span class="number">2003</span>, <span class="number">32450</span>, <span class="number">0.66</span>, <span class="number">8014</span>)</span><br><span class="line">traveler_ids = [(<span class="string">'USA'</span>, <span class="string">'31195855'</span>), (<span class="string">'BRA'</span>, <span class="string">'CE342567'</span>),(<span class="string">'ESP'</span>, <span class="string">'XDA205856'</span>)]</span><br><span class="line"><span class="keyword">for</span> passport <span class="keyword">in</span> sorted(traveler_ids):</span><br><span class="line">    print(<span class="string">'%s/%s'</span> % passport)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">BRA/CE342567</span></span><br><span class="line"><span class="string">ESP/XDA205856</span></span><br><span class="line"><span class="string">USA/31195855</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> country, _ <span class="keyword">in</span> traveler_ids:</span><br><span class="line">    print(country) </span><br><span class="line">    </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">USA</span></span><br><span class="line"><span class="string">BRA</span></span><br><span class="line"><span class="string">ESP</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拆包</span></span><br><span class="line">lax_coordinates = (<span class="number">33.9425</span>, <span class="number">-118.408056</span>) </span><br><span class="line">latitude, longitude = lax_coordinates </span><br><span class="line">print(latitude,longitude)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">33.9425 -118.408056</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>具名元组  namedtuple</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line">City = namedtuple(<span class="string">'City'</span>, <span class="string">'name country population coordinates'</span>)</span><br><span class="line">tokyo = City(<span class="string">'Tokyo'</span>, <span class="string">'JP'</span>, <span class="number">36.933</span>, (<span class="number">35.689722</span>, <span class="number">139.691667</span>))</span><br><span class="line">City(name=<span class="string">'Tokyo'</span>, country=<span class="string">'JP'</span>, population=<span class="number">36.933</span>, coordinates=(<span class="number">35.689722</span>, <span class="number">139.691667</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(tokyo.country)</span></span><br><span class="line"><span class="comment"># print(City._fields )</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">➊ 创建一个具名元组需要两个参数，一个是类名，另一个是类的各个字段的名字。后者可 以是由数个字符串组成的可迭代对象，或者是由空格分隔开的字段名组成的字符串。</span></span><br><span class="line"><span class="string">➋ 存放在对应字段里的数据要以一串参数的形式传入到构造函数中（注意，元组的构造函 数却只接受单一的可迭代对象）</span></span><br><span class="line"><span class="string">➌ 你可以通过字段名或者位置来获取一个字段的信息。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LatLong = namedtuple(<span class="string">'LatLong'</span>, <span class="string">'lat long'</span>)</span><br><span class="line">delhi_data = (<span class="string">'Delhi NCR'</span>, <span class="string">'IN'</span>, <span class="number">21.935</span>, LatLong(<span class="number">28.613889</span>, <span class="number">77.208889</span>))</span><br><span class="line">delhi = City._make(delhi_data)</span><br><span class="line">print(delhi._asdict())  </span><br><span class="line"></span><br><span class="line"><span class="comment"># OrderedDict([('name', 'Delhi NCR'), ('country', 'IN'), ('population', 21.935), ('coordinates', LatLong(lat=28.613889, long=77.208889))])  </span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">➊ _fields 属性是一个包含这个类所有字段名称的元组。 </span></span><br><span class="line"><span class="string">➋ 用 _make() 通过接受一个可迭代对象来生成这个类的一个实例，它的作用跟 City(*delhi_data) 是一样的。 </span></span><br><span class="line"><span class="string">➌ _asdict() 把具名元组以 collections.OrderedDict 的形式返回，我们可以利用它来把元 组里的信息友好地呈现出来</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">``</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>序列使用+和*  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] </span><br><span class="line">print(l * <span class="number">5</span>) </span><br><span class="line"><span class="comment"># [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3] </span></span><br><span class="line">``` </span><br><span class="line">+和* 都遵循这个规律，不修改原有的操作对象，而是构建一个全新的序列</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">board = [[<span class="string">'_'</span>] * <span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)] </span><br><span class="line">board[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">'X'</span> </span><br><span class="line">print(board )</span><br><span class="line"><span class="comment"># [['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""**含有 3 个指向同一对象的引用的列表是毫无用处的** """</span></span><br><span class="line">weird_board = [[<span class="string">'_'</span>] * <span class="number">3</span>] * <span class="number">3</span> </span><br><span class="line">weird_board[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">'O'</span> </span><br><span class="line">print(weird_board)</span><br><span class="line"><span class="comment"># [['_', '_', 'O'], ['_', '_', 'O'], ['_', '_', 'O']]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/26/python_元组/" data-id="ck8rb5p8q005d9wuwj8xl6zsu" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python_序列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/26/python_序列/" class="article-date">
+  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/26/python_序列/">python-序列</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python-序列"><a href="#python-序列" class="headerlink" title="python-序列"></a>python-序列</h2><h5 id="内置序列类型"><a href="#内置序列类型" class="headerlink" title="内置序列类型"></a>内置序列类型</h5><p>容器序列<br>　　list、tuple 和 collections.deque 这些序列能存放不同类型的数据。<br>扁平序列<br>　　str、bytes、bytearray、memoryview 和 array.array，这类序列只能容纳一种类型。  </p>
+<p>可变序列<br>　　list、bytearray、array.array、collections.deque 和 memoryview。<br>不可变序列<br>　　tuple、str 和 bytes。  </p>
+<ul>
+<li><p>　列表推导式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">symbols = <span class="string">'$¢£¥€¤'</span> </span><br><span class="line">beyond_ascii = [ord(s) <span class="keyword">for</span> s <span class="keyword">in</span> symbols <span class="keyword">if</span> ord(s) &gt; <span class="number">127</span>] </span><br><span class="line">beyond_ascii [<span class="number">162</span>, <span class="number">163</span>, <span class="number">165</span>, <span class="number">8364</span>, <span class="number">164</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>　生成器表达式<br>生成器表达式的语法跟列表推导差不多，把方括号换成圆括号。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">symbols = <span class="string">'$¢£¥€¤'</span> </span><br><span class="line">tuple(ord(symbol) <span class="keyword">for</span> symbol <span class="keyword">in</span> symbols) </span><br><span class="line">(<span class="number">36</span>, <span class="number">162</span>, <span class="number">163</span>, <span class="number">165</span>, <span class="number">8364</span>, <span class="number">164</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">'black'</span>, <span class="string">'white'</span>] </span><br><span class="line">sizes = [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">'L'</span>]</span><br><span class="line"><span class="keyword">for</span> tshirt <span class="keyword">in</span> (<span class="string">'%s %s'</span> % (c, s) <span class="keyword">for</span> c <span class="keyword">in</span> colors <span class="keyword">for</span> s <span class="keyword">in</span> sizes):</span><br><span class="line">    print(tshirt)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/26/python_序列/" data-id="ck8rb5p8t005i9wuw2aw9d98v" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pytes_基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/03/pytes_基础/" class="article-date">
+  <time datetime="2019-08-03T05:07:26.000Z" itemprop="datePublished">2019-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/03/pytes_基础/">pytest—基础知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="pytest—基础知识"><a href="#pytest—基础知识" class="headerlink" title="pytest—基础知识"></a>pytest—基础知识</h5><ol>
+<li><strong>测试文件命名规则</strong></li>
+</ol>
+<ul>
+<li>测试文件应当命名为test_<something>.py 或者 <something>_test.py</something></something></li>
+<li>测试函数、测试类方法应该命名为test_<something></something></li>
+<li>测试类应该命名为Test<something></something></li>
+</ul>
+<ol>
+<li><strong>测试函数返回的结果类型</strong></li>
+</ol>
+<ul>
+<li>PASSED(.) 测试通过</li>
+<li>FAILED(F) 测试失败（也有可能是XPASS状态与strict选项冲突造成的失败）</li>
+<li>SKIPPED(s) 测试未被执行，指定跳过执行可以将测试标记为@pytest.mark.skip(),或者使用@pytest.mark.skipif()指定跳过测试的条件</li>
+<li>xfail(x) 预期测试失败，并且确实失败，使用@pytest.mark.xfail()指定你认为会失败的测试用例</li>
+<li>XPASS(X) 预期测试失败，但实际上通过，不符合预期</li>
+<li>ERROR(E) 测试用例之外的代码触发了异常，可能由fixture引起，也可能由hook函数引起</li>
+</ul>
+<ol>
+<li><strong>运行测试用例命令</strong></li>
+</ol>
+<ul>
+<li><p>pytest -v git_test_project/test_case/test_a.py（执行文件中所有case）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v git_test_project/test_case/test_a.py</span><br><span class="line">=============================== test session starts ===============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                            </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                         [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                         [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                          [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                          [100%]</span><br><span class="line"></span><br><span class="line">================================= FAILURES ========================================</span><br><span class="line"></span><br><span class="line">___________________________ test_03 ___________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line">================= 1 failed, 1 passed, 2 skipped, 1 warnings in 0.07 seconds =================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pytest -v git_test_project/test_case/test_a.py::test_01 （执行文件单个case test_01）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 1 item                                                                                                            </span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                    [100%]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><strong>命令行的选项</strong>  可使用pytest –help 查看全部选项</li>
+</ol>
+<ul>
+<li><p>–tb=no : 关闭错误信息回溯</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v --tb=no</span><br><span class="line">=========================== test session starts ===========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                     </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                         [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                         [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                          [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                          [100%]</span><br><span class="line"></span><br><span class="line">=========== 1 failed, 1 passed, 2 skipped, 1 warnings in 0.15 seconds ====================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>–collect-only : 使用–collect-only 选项可以展示在给定的配置下哪些测试用例会被运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --collect-only</span><br><span class="line">======================== test session starts ==============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items                                    </span><br><span class="line"></span><br><span class="line">&lt;Package G:\vchen\github\project\project\git_test_project\test_case&gt;</span><br><span class="line">  &lt;Module test_a.py&gt;</span><br><span class="line">    &lt;Function test_01&gt;</span><br><span class="line">    &lt;Function test_02&gt;</span><br><span class="line">    </span><br><span class="line">====================== no tests ran in 0.40 seconds ========================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-k : 允许使用表达式指定希望运行的测试用例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -k "test_01 or test_02" --collect-only</span><br><span class="line">================================test session starts ==================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items             </span><br><span class="line"></span><br><span class="line">&lt;Package G:\vchen\github\project\project\git_test_project\test_case&gt;</span><br><span class="line">  &lt;Module test_a.py&gt;</span><br><span class="line">    &lt;Function test_01&gt;</span><br><span class="line">    &lt;Function test_02&gt;</span><br><span class="line"></span><br><span class="line">============================ no tests ran in 0.13 seconds ============================</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pytest -k "test_01 or test_02"</span><br><span class="line">=================================== test session starts ===============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 2 items                                 </span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py ..                        [100%]</span><br><span class="line"></span><br><span class="line">================================ 2 passed in 0.10 seconds =============================</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-m : 标记（marker）用于标记测试并分组，以便快速选中并运行<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.finished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_01</span><span class="params">()</span>:</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --verbose  git_test_project/test_case/test_a.py -m "finished and unfinished"</span><br><span class="line">====================== test session starts =====================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items / 4 deselected                </span><br><span class="line"></span><br><span class="line">===============4 deselected, 2 warnings in 0.02 seconds  ====================</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-x : 正常情况，pytest 会运行每一个搜索到的测试用例。如果某个测试函数被断言失败，或者触发了外部异常，则该测试用例的运行就会到此为止<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">assert</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) == (<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -x -v</span><br><span class="line">========================== test session starts ==========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                                  </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                   [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                   [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                    [ 75%]</span><br><span class="line"></span><br><span class="line">================================= FAILURES =================================</span><br><span class="line">_______________________________ test_03 _______________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line"></span><br><span class="line">==============1 failed, 2 skipped, 1 warnings in 0.13 seconds ==================</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>–maxfail=num : -x特点是一旦遇到失败就会全局停止。使用–maxfail可以明指定失败几次</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v git_test_project/test_case/test_a.py  --maxfail=2 --tb=no</span><br><span class="line">============================== test session starts ==============================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items               </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 SKIPPED                           [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 SKIPPED                           [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                            [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                            [100%]</span><br><span class="line"></span><br><span class="line">================= 1 failed, 1 passed, 2 skipped, 1 warnings in 0.05 seconds =================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-s与–capture=method : -s 允许终端在测试运行时输出某些结果，包括任何符合标准的输出流信息。-s等价于–capture=no。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_01</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_02</span><span class="params">()</span>:</span></span><br><span class="line">       print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_03</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">assert</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) == (<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.unfinished</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_04</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"222222222"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest git_test_project/test_case -sv --tb=no</span><br><span class="line">================================ test session starts ================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items        </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 222222222</span><br><span class="line">PASSED</span><br><span class="line"></span><br><span class="line">======================= 1 failed, 3 passed, 1 warnings in 0.06 seconds =========================</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>-lf(–last-failed) : 当一个或多个测试失败时，定位到最后一个失败的测试用例并重新运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --lf -v --tb=no</span><br><span class="line">================================= test session starts ===========================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items / 3 deselected / 1 selected                  </span><br><span class="line"></span><br><span class="line">run-last-failure: rerun previous 1 failure (skipped 66 files)</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                  [100%]</span><br><span class="line">======================= 1 failed, 3 deselected, 1 warnings in 0.11 seconds =======================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>–ff(–failed-first) : 与lf作用基本相同，不同在于–ff会运行完剩余的测试用例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest --ff -v --tb=no</span><br><span class="line">===================================== test session starts ======================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                         </span><br><span class="line"></span><br><span class="line">run-last-failure: rerun previous 1 failure first</span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                 [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                                 [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 PASSED                                 [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                                 [100%]</span><br><span class="line"></span><br><span class="line">======================== 1 failed, 3 passed, 1 warnings in 0.13 seconds ========================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-v(–verbose) : 输出信息更详细。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -v --tb=no</span><br><span class="line">=================================== test session starts ===================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items            </span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 PASSED                                   [ 25%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 PASSED                                   [ 50%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED                                   [ 75%]</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 PASSED                                   [100%]</span><br><span class="line"></span><br><span class="line">====================== 1 failed, 3 passed, 1 warnings in 0.13 seconds =======================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-q(–quiet) : 与-v/–verbose作用相反，简化输出信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -q</span><br><span class="line">..F.                                                                 [100%]</span><br><span class="line">================================= FAILURES =================================</span><br><span class="line"></span><br><span class="line">__________________________________ test_03 __________________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:12: AssertionError</span><br><span class="line"></span><br><span class="line">1 failed, 3 passed, 1 warnings in 0.12 seconds</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>-l(–showlocals) : </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest -l</span><br><span class="line">========================== test session starts ==========================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items                       </span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py ..F.                                [100%]</span><br><span class="line">=================================== FAILURES ===================================</span><br><span class="line">__________________________________________ test_03 ______________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Use -v to get the full diff</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:12: AssertionError</span><br><span class="line"></span><br><span class="line">============== 1 failed, 3 passed, 1 warnings in 0.14 seconds =================</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>–tb=style : 决定捕捉到失败时输出信息的显示方式。常用类型short,line,no</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">short: 仅输出assert的一行以及系统判定内容（不显示上下文）</span><br><span class="line">line: 只使用一行输出显示所有的错误信息</span><br><span class="line">no： 直接屏蔽全部回溯信息</span><br><span class="line">long: 输出详尽回溯信息</span><br><span class="line">auto: 默认值，如果多个测试用例失败，仅打印第一个和最后一个用例的回溯信息（格式与long模式一致）</span><br><span class="line">native： 只输出python标准库的回溯信息，不显示额外信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>–duration=N :  加快测试节奏。不关心测试如何运行，只统计测试过程中哪几个阶段是最慢的（包括每个测试用例的call,setup,teardown过程）。显示最慢的N个阶段耗时越长越靠前。如果使用–duration=0，则会将所有阶段按耗时从长到短排序后显示。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">G:\vchen\github\project\project&gt;pytest git_test_project/test_case -sv --durations=3</span><br><span class="line">===================================== test session starts =====================================</span><br><span class="line">platform win32 -- Python 3.7.4, pytest-5.0.1, py-1.8.0, pluggy-0.12.0 -- d:\python3\python.exe</span><br><span class="line">cachedir: .pytest_cache</span><br><span class="line">rootdir: G:\vchen\github\project\project</span><br><span class="line">plugins: allure-pytest-2.8.0</span><br><span class="line">collected 4 items      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git_test_project/test_case/test_a.py::test_01 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_02 222222222</span><br><span class="line">PASSED</span><br><span class="line">git_test_project/test_case/test_a.py::test_03 FAILED</span><br><span class="line">git_test_project/test_case/test_a.py::test_04 222222222</span><br><span class="line">PASSED</span><br><span class="line"></span><br><span class="line">======================================== FAILURES ========================================</span><br><span class="line">________________________________________ test_03 __________________________________________</span><br><span class="line"></span><br><span class="line">    @pytest.mark.unfinished</span><br><span class="line">    def test_03():</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">       assert (1,2,3) == (3,2,1)</span></span><br><span class="line">E       assert (1, 2, 3) == (3, 2, 1)</span><br><span class="line">E         At index 0 diff: 1 != 3</span><br><span class="line">E         Full diff:</span><br><span class="line">E         - (1, 2, 3)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line">E         + (3, 2, 1)</span><br><span class="line">E         ?  ^     ^</span><br><span class="line"></span><br><span class="line">git_test_project\test_case\test_a.py:14: AssertionError</span><br><span class="line"></span><br><span class="line">==================================== slowest 3 test durations ====================================</span><br><span class="line">5.00s call     git_test_project/test_case/test_a.py::test_04</span><br><span class="line">3.00s call     git_test_project/test_case/test_a.py::test_01</span><br><span class="line"></span><br><span class="line">(0.00 durations hidden.  Use -vv to show these durations.)</span><br><span class="line">======================== 1 failed, 3 passed, 1 warnings in 8.25 seconds ==========================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/03/pytes_基础/" data-id="ck8rb5p8p005a9wuwoi2z18r8" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pytest/">pytest</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/12/linux常用命令/" class="article-date">
+  <time datetime="2019-06-12T07:09:11.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/linux常用命令/">linux常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h4><h6 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bin  (binaries)存放二进制可执行文件</span><br><span class="line"></span><br><span class="line">sbin  (super user binaries)存放二进制可执行文件，只有root才能访问</span><br><span class="line"></span><br><span class="line">etc (etcetera)存放系统配置文件</span><br><span class="line"></span><br><span class="line">usr  (unix shared resources)用于存放共享的系统资源</span><br><span class="line"></span><br><span class="line">home 存放用户文件的根目录</span><br><span class="line"></span><br><span class="line">root  超级用户目录</span><br><span class="line"></span><br><span class="line">dev (devices)用于存放设备文件</span><br><span class="line"></span><br><span class="line">lib  (library)存放跟文件系统中的程序运行所需要的共享库及内核模块</span><br><span class="line"></span><br><span class="line">mnt  (mount)系统管理员安装临时文件系统的安装点</span><br><span class="line"></span><br><span class="line">boot 存放用于系统引导时使用的各种文件</span><br><span class="line"></span><br><span class="line">tmp  (temporary)用于存放各种临时文件</span><br><span class="line"></span><br><span class="line">var  (variable)用于存放运行时需要改变数据的文件</span><br></pre></td></tr></table></figure>
+<h6 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令格式：命令  -选项  参数 （选项和参数可以为空）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>文件及目录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>参数</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>-</td>
+<td>cd /usr</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>-</td>
+<td>pwd</td>
+<td>当前目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>-</td>
+<td>touch a.java</td>
+<td>创建空文件</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>-</td>
+<td>mkdir dir</td>
+<td>创建新目录</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>-p</td>
+<td>mkdir -p /usr/dir/java</td>
+<td>创建多级目录</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>-</td>
+<td>cp a.java /usr</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>-r</td>
+<td>cp -f /usr/dir/a.txt /root</td>
+<td>递归处理</td>
+</tr>
+<tr>
+<td>rmdir</td>
+<td>-</td>
+<td>rmdir dirxx</td>
+<td>删除空目录</td>
+</tr>
+<tr>
+<td>more</td>
+<td>-</td>
+<td>more a.txt</td>
+<td>分页显示文本文件内容 空格后，b向前</td>
+</tr>
+<tr>
+<td>less</td>
+<td>-</td>
+<td>less a.txt</td>
+<td>同上，支持底行</td>
+</tr>
+<tr>
+<td>head</td>
+<td>-</td>
+<td>head a.txt</td>
+<td>查看开头 默认10行</td>
+</tr>
+<tr>
+<td>head</td>
+<td>-num</td>
+<td>head -20 a.txt</td>
+<td>查看开头指定行</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-</td>
+<td>tail a.txt</td>
+<td>查看文本结尾，默认10行</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-num</td>
+<td>tail -20 a.txt</td>
+<td>查看文本结尾，指定行数</td>
+</tr>
+<tr>
+<td>tail</td>
+<td>-f</td>
+<td>tail a.txt</td>
+<td>循环滚动读取并动态显示</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-</td>
+<td>wc a.txt</td>
+<td>统计文本的行数，字数，字符数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-m</td>
+<td>wc -m a.txt</td>
+<td>字符数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-w</td>
+<td>wc -w a.txt</td>
+<td>文本字数</td>
+</tr>
+<tr>
+<td>wc</td>
+<td>-l</td>
+<td>cd -l a.txt</td>
+<td>文本行数</td>
+</tr>
+<tr>
+<td>find</td>
+<td>-name</td>
+<td>find / -name a.txt</td>
+<td>指定目录查文件</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>vi / vim</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>光标前插入</td>
+</tr>
+<tr>
+<td>l</td>
+<td>在光标当前行开始插入</td>
+</tr>
+<tr>
+<td>a</td>
+<td>光标后插入</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在光标当前行末尾插入</td>
+</tr>
+<tr>
+<td>o</td>
+<td>在当前行下一行插入</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在当前行上一行插入</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存退出</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/12/linux常用命令/" data-id="ck8rb5p7t00469wuwxg9jl939" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-反转单链表" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -75,7 +569,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/10/反转单链表/">简单算法题</a>
+      <a class="article-title" href="/2019/06/10/反转单链表/">反转单链表</a>
     </h1>
   
 
@@ -95,10 +589,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/10/反转单链表/" data-id="ck8rb21fh006xgwuwdrkyscgl" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/06/10/反转单链表/" data-id="ck8rb5p9t00779wuw64tpbr7d" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单算法题/">简单算法题</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -133,7 +627,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/08/sql_基础使用/" data-id="ck8rb21et005wgwuwzfpyygss" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/04/08/sql_基础使用/" data-id="ck8rb5p9500629wuwznjd2v5t" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -1345,7 +1839,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/06/java_GItChat_java/" data-id="ck8rb21gx008rgwuw7sey94k7" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/04/06/java_GItChat_java/" data-id="ck8rb5pb700909wuw32careas" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -1449,7 +1943,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/03/rabbitMq/" data-id="ck8rb21el005fgwuw6fjwercw" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/03/03/rabbitMq/" data-id="ck8rb5p8v005n9wuwggthqekm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/消息队列/">消息队列</a></li></ul>
@@ -2157,217 +2651,10 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/18/Java_基础知识/" data-id="ck8rb21bc0008gwuw7i4e1wvi" class="article-share-link">Compartir</a>
+      <a data-url="http://yoursite.com/2019/02/18/Java_基础知识/" data-id="ck8rb5p5j000j9wuw5hewwmsv" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-消息队列简单使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/16/消息队列简单使用/" class="article-date">
-  <time datetime="2019-02-16T11:20:26.000Z" itemprop="datePublished">2019-02-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/16/消息队列简单使用/">MnsUtil</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="消息队列简单使用"><a href="#消息队列简单使用" class="headerlink" title="消息队列简单使用"></a>消息队列简单使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br></pre></td><td class="code"><pre><span class="line">package com.ifenghui.queue;</span><br><span class="line"></span><br><span class="line">import com.aliyun.mns.client.CloudAccount;</span><br><span class="line">import com.aliyun.mns.client.CloudQueue;</span><br><span class="line">import com.aliyun.mns.client.MNSClient;</span><br><span class="line">import com.aliyun.mns.model.Message;</span><br><span class="line">import com.aliyun.mns.model.QueueMeta;</span><br><span class="line">import com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line">import com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line">import com.ifenghui.app.comment.exception.FhException;</span><br><span class="line">import org.apache.log4j.Logger;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.integration.support.json.Jackson2JsonObjectMapper;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">public class MnsUtil&#123;</span><br><span class="line"></span><br><span class="line">    Logger logger= Logger.getLogger(MnsUtil.class);</span><br><span class="line">    public MNSClient getClient() &#123;</span><br><span class="line">        return client;</span><br><span class="line">    &#125;</span><br><span class="line">    private static MNSClient client = null;</span><br><span class="line">    @Value(&quot;$&#123;mns.accountendpoint&#125;&quot;)</span><br><span class="line">    String endPoint;//=&quot;http://20900454.mns.cn-hangzhou.aliyuncs.com&quot;;</span><br><span class="line">    @Value(&quot;$&#123;mns.accesskeyid&#125;&quot;)</span><br><span class="line">    String accessKeyId;//=&quot;xxxxxxxxx&quot;;</span><br><span class="line">    @Value(&quot;$&#123;mns.accesskeysecret&#125;&quot;)</span><br><span class="line">    String accessKeySecret;//=&quot;xxxxxxxxxxxx&quot;;</span><br><span class="line">    @Value(&quot;$&#123;mns.prefix&#125;&quot;)</span><br><span class="line">    String mnsPrefix;</span><br><span class="line">    public MnsUtil() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public MnsUtil(String endPoint,String accessKeyId,String accessKeySecret,String mnsPrefix) &#123;</span><br><span class="line">        this.endPoint=endPoint;</span><br><span class="line">        this.accessKeySecret=accessKeySecret;</span><br><span class="line">        this.accessKeyId=accessKeyId;</span><br><span class="line">        this.mnsPrefix=mnsPrefix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void init()&#123;</span><br><span class="line">        if(client!=null)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        CloudAccount account = new CloudAccount(</span><br><span class="line">                accessKeyId,</span><br><span class="line">                accessKeySecret,</span><br><span class="line">                endPoint);</span><br><span class="line">        client = account.getMNSClient();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public CloudQueue createQueue(String queueName)&#123;</span><br><span class="line">            this.init();</span><br><span class="line">        CloudQueue queue1=null;</span><br><span class="line">        try&#123;</span><br><span class="line">            QueueMeta meta1 = new QueueMeta();</span><br><span class="line">            meta1.setQueueName(this.mnsPrefix+queueName);</span><br><span class="line">            meta1.setPollingWaitSeconds(30);</span><br><span class="line">            meta1.setMaxMessageSize(2048L);</span><br><span class="line">            queue1 = client.createQueue(meta1);</span><br><span class="line">            return queue1;</span><br><span class="line"></span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">            return queue1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void deleteMessage(CloudQueue queue,String messageHandle)&#123;</span><br><span class="line">        this.init();</span><br><span class="line">        queue.deleteMessage(messageHandle);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public &lt;M&gt; void popMessageThread(String queueName,Object listener,Class&lt;M&gt; messageType)&#123;</span><br><span class="line"></span><br><span class="line">        MnsUtil mnsUtil=this;</span><br><span class="line">        try&#123;</span><br><span class="line">            this.createQueue(queueName);</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Runnable task=new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                mnsUtil.popMessage(queueName,listener,messageType);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        Thread t=new Thread(task);</span><br><span class="line">        t.start();</span><br><span class="line">    &#125;</span><br><span class="line">    public &lt;M&gt; Message popMessage(String queueName,Object listener,Class&lt;M&gt; messageType)&#123;</span><br><span class="line">        this.init();</span><br><span class="line">        CloudQueue queue= client.getQueueRef(mnsPrefix+queueName);</span><br><span class="line"></span><br><span class="line">                while (true)&#123;</span><br><span class="line">                    try&#123;</span><br><span class="line">                        Message popMsg=null;</span><br><span class="line">                        try&#123;</span><br><span class="line">                            popMsg = queue.popMessage();</span><br><span class="line">                        &#125;catch (Exception e)&#123;</span><br><span class="line">                            logger.info(&quot;popMessage a message error&gt;&gt;&gt;&gt; currentTime&quot;+new Date());</span><br><span class="line">                            Thread.sleep(60000);</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                        if(popMsg==null)&#123;</span><br><span class="line">                            continue;</span><br><span class="line">                        &#125;</span><br><span class="line">                        logger.info(&quot;read a message&gt;&gt;&gt;&gt;&quot;+popMsg.getMessageBody());</span><br><span class="line"></span><br><span class="line">                        Method method=listener.getClass().getMethod(&quot;process&quot;, messageType);</span><br><span class="line">                        M message=this.getMessageBody(popMsg.getMessageBody(),messageType);</span><br><span class="line">                        method.invoke(listener,message);</span><br><span class="line">                        String handle=popMsg.getReceiptHandle();</span><br><span class="line">                        queue.deleteMessage(handle);</span><br><span class="line">                    &#125;catch (Exception e)&#123;</span><br><span class="line">                        logger.error(&quot;error message&gt;&gt;&gt;&gt;&quot;+e.getMessage()+&quot;:&quot;+queueName);</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                        continue;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    System.out.println(&quot;read a message&quot;);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     public &lt;M&gt; M getMessageBody(String messageBody,Class&lt;M&gt; jsonType) throws Exception &#123;</span><br><span class="line">        Jackson2JsonObjectMapper jackson2JsonObjectMapper=new Jackson2JsonObjectMapper();</span><br><span class="line">        M messageObj=jackson2JsonObjectMapper.fromJson(messageBody,jsonType);</span><br><span class="line"></span><br><span class="line">        return messageObj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Message pushMessage(MnsMessage object) throws JsonProcessingException &#123;</span><br><span class="line">        if(object.getQueueName()==null)&#123;</span><br><span class="line">            logger.error(&quot;queue is null&quot;);</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        this.init();</span><br><span class="line">        ObjectMapper mapper = new ObjectMapper();</span><br><span class="line">        CloudQueue queue= client.getQueueRef(mnsPrefix+MnsMessageListener.mnsQueueName);</span><br><span class="line">        String messageBody=  mapper.writeValueAsString(object);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Message message = new Message();</span><br><span class="line">        message.setMessageBody(messageBody);</span><br><span class="line">        Message putMsg = queue.putMessage(message);</span><br><span class="line">        return putMsg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        MnsUtil mnsUtil=new MnsUtil();</span><br><span class="line">        System.out.println(&quot;over&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ImMessage imMessage=<span class="keyword">new</span> ImMessage();</span><br><span class="line"></span><br><span class="line">imMessage.setContent(p.getContent());</span><br><span class="line">imMessage.setFrom(<span class="string">"29"</span>);</span><br><span class="line">imMessage.setTo(userList);</span><br><span class="line">mnsUtil.pushMessage(imMessage);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/16/消息队列简单使用/" data-id="ck8rb21g50081gwuwj9r5pmb1" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/消息队列/">消息队列</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sql_ 关键字执行顺序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/15/sql_ 关键字执行顺序/" class="article-date">
-  <time datetime="2019-02-15T07:42:06.000Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/sql_ 关键字执行顺序/">关键字执行顺序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="mysql-关键字执行顺序"><a href="#mysql-关键字执行顺序" class="headerlink" title="mysql 关键字执行顺序"></a>mysql 关键字执行顺序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.from</span><br><span class="line">2.on</span><br><span class="line">3.join</span><br><span class="line">4.where</span><br><span class="line">5.group by</span><br><span class="line">6.having</span><br><span class="line">7.select</span><br><span class="line">8.distinct</span><br><span class="line">9.union</span><br><span class="line">10.order by</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/15/sql_ 关键字执行顺序/" data-id="ck8rb21eo005ngwuwib95zl3c" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-elasticsearch 模糊搜索" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/13/elasticsearch 模糊搜索/" class="article-date">
-  <time datetime="2019-02-13T13:44:45.000Z" itemprop="datePublished">2019-02-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/13/elasticsearch 模糊搜索/">elasticsearch 模糊搜索</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="elasticsearch-模糊搜索"><a href="#elasticsearch-模糊搜索" class="headerlink" title="elasticsearch 模糊搜索"></a>elasticsearch 模糊搜索</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">elastic.search.ex.index=xxx-exception</span><br><span class="line">elastic.search.story.index=xx-search</span><br><span class="line">elastic.search.host=xx.xx.62.93</span><br><span class="line">elastic.search.port=9200</span><br><span class="line">elastic.search.user=elastic:xxxxx</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;elastic.search.host&#125;"</span>)</span><br><span class="line">String host;</span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;elastic.search.port&#125;"</span>)</span><br><span class="line">Integer port;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;elastic.search.user&#125;"</span>)</span><br><span class="line">String elasticUser;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"/$&#123;elastic.search.ex.index&#125;/ex"</span>)</span><br><span class="line">String elasticIndex;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;elastic.search.story.index&#125;"</span>)</span><br><span class="line">String elasticIndex_story;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> RestClient restClient;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    Header header;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    String elasticKey="/"+elasticIndex+"/user";</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestClient <span class="title">getClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//        if(restClient==null)&#123;&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">synchronized</span> (ElasticServiceImpl.class) &#123;</span><br><span class="line">            restClient = RestClient.builder(</span><br><span class="line">                    <span class="keyword">new</span> HttpHost(host, port, <span class="string">"http"</span>)</span><br><span class="line"></span><br><span class="line">            ).build();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> restClient;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Header <span class="title">getHeader</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(header==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (ElasticServiceImpl.class) &#123;</span><br><span class="line">                String token = Base64.getEncoder().encodeToString(elasticUser.getBytes());</span><br><span class="line">                header = <span class="keyword">new</span> BasicHeader(<span class="string">"Authorization"</span>, <span class="string">"Basic "</span> + token);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> header;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Page&lt;Map&gt; <span class="title">searchStoryNotNow</span><span class="params">(String content, <span class="keyword">int</span> pageNo, <span class="keyword">int</span> pageSize)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        restClient = <span class="keyword">this</span>.getClient();</span><br><span class="line"></span><br><span class="line">        Pageable pageable=<span class="keyword">new</span> PageRequest(pageNo,pageSize);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,String&gt; params = Collections.emptyMap();</span><br><span class="line">        String jsonString = <span class="string">"&#123;\n"</span> +</span><br><span class="line">                <span class="string">" \"from\": "</span>+pageable.getOffset()+<span class="string">",\n"</span> +</span><br><span class="line">                <span class="string">" \"size\": "</span>+pageable.getPageSize()+<span class="string">",\n"</span> +</span><br><span class="line">                <span class="string">" \"query\": &#123;\n"</span> +</span><br><span class="line">                <span class="string">"    \"bool\": &#123;\n"</span> +</span><br><span class="line">                <span class="string">"        \"should\": [\n"</span> +</span><br><span class="line">                <span class="string">"             &#123; \"match\": &#123; \"name\": \""</span> + content + <span class="string">"\" &#125; &#125;,\n"</span> +</span><br><span class="line">                <span class="string">"             &#123; \"wildcard\": &#123; \"name\": \""</span>+<span class="string">"*"</span>+ content + <span class="string">"*"</span> + <span class="string">"\" &#125; &#125;,\n"</span> +</span><br><span class="line">                <span class="string">"             &#123; \"wildcard\": &#123;\"py_name\": \""</span> +<span class="string">"*"</span>+ content  +<span class="string">"*"</span>+ <span class="string">"\" &#125; &#125;\n"</span> +</span><br><span class="line">                <span class="string">"          ],\n"</span> +</span><br><span class="line">                <span class="string">"         \"must_not\": [\n"</span> +</span><br><span class="line">                <span class="string">"            &#123; \"match\": &#123; \"is_now\": \"1\" &#125; &#125;\n"</span> +</span><br><span class="line">                <span class="string">"           ]\n"</span> +</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="string">"     &#125;\n"</span> +</span><br><span class="line"></span><br><span class="line">                <span class="string">"  &#125;\n"</span> +</span><br><span class="line">                <span class="comment">//如果自定义了排序,那么默认的_score排序就会失效</span></span><br><span class="line"><span class="comment">//                " \"sort\": [\n" +</span></span><br><span class="line"><span class="comment">//                "&#123;\"id\": \"desc\"&#125;\n" +</span></span><br><span class="line"><span class="comment">//                "]\n" +</span></span><br><span class="line">                <span class="string">"&#125;"</span>;</span><br><span class="line">        <span class="comment">//为HttpEntity指定ContentType非常重要，因为它将用于设置Content-Type请求头，以便Elasticsearch可以正确解析内容。</span></span><br><span class="line">        HttpEntity entity = <span class="keyword">new</span> NStringEntity(jsonString, ContentType.APPLICATION_JSON);</span><br><span class="line">        logger.info(<span class="string">"try get elastic_search_story_not_now"</span>);</span><br><span class="line">        Response response = restClient.performRequest(<span class="string">"GET"</span>, <span class="string">"/"</span> +elasticIndex_story +<span class="string">"/"</span> + <span class="string">"_search"</span>, params, entity);</span><br><span class="line">        logger.info(response.toString());</span><br><span class="line">        String resp= EntityUtils.toString(response.getEntity());</span><br><span class="line">        JsonObjectMapper jsonObjectMapper=<span class="keyword">new</span> Jackson2JsonObjectMapper();</span><br><span class="line">        ElasticResp&lt;Story&gt; elasticResp=(ElasticResp&lt;Story&gt;)jsonObjectMapper.fromJson(resp, ElasticResp.class);</span><br><span class="line"></span><br><span class="line">        logger.debug(response.toString());</span><br><span class="line">        List&lt;Story&gt; statusList=elasticResp.getHits().getSouceList();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ElasticResp&lt;Map&gt; elasticResp2=(ElasticResp&lt;Map&gt;)jsonObjectMapper.fromJson(resp,ElasticResp.class);</span><br><span class="line">        List&lt;Map&gt; statusListMap=(List&lt;Map&gt;)elasticResp2.getHits().getSouceList();</span><br><span class="line">        Page&lt;Map&gt; userPage=<span class="keyword">new</span> PageImpl&lt;Map&gt;(statusListMap,pageable,elasticResp.getHits().getTotal());</span><br><span class="line"></span><br><span class="line">        restClient.close();</span><br><span class="line">        <span class="keyword">return</span> userPage;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/13/elasticsearch 模糊搜索/" data-id="ck8rb21ck001xgwuwls5hyfnm" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-我的世界简单指令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/04/我的世界简单指令/" class="article-date">
-  <time datetime="2019-02-04T02:50:36.000Z" itemprop="datePublished">2019-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/04/我的世界简单指令/">我的世界指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="我的世界简单指令"><a href="#我的世界简单指令" class="headerlink" title="我的世界简单指令"></a>我的世界简单指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/kill  自杀</span><br><span class="line"></span><br><span class="line">/gamerule keepInventory true 死亡掉落</span><br><span class="line"></span><br><span class="line">/spawnpoint  重生地</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><span class="line">/give 蓝色小火 Obsidian 64   黑曜石  Obsidian</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">铁矿石  iron_ore</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Stone 石头</span><br><span class="line">Dirt 泥土</span><br><span class="line">Cobblestone 原石</span><br><span class="line">Wood 木板</span><br><span class="line">Sapling 树苗</span><br><span class="line">Water 水</span><br><span class="line">Lava 岩浆</span><br><span class="line">Sand 沙子</span><br><span class="line">Gravel 沙砾</span><br><span class="line">Gold Ore 金矿</span><br><span class="line">Iron Ore 铁矿</span><br><span class="line">Log 木头</span><br><span class="line">Red Log 红木</span><br><span class="line">Birch Log 白杨木</span><br><span class="line">Leaves 树叶</span><br><span class="line">Sponge 海绵</span><br><span class="line">Glass 玻璃</span><br><span class="line">Lapis Lazuli Ore 青金石矿</span><br><span class="line">Lapis Lazuli 青金石</span><br><span class="line">Dispenser 发射器</span><br><span class="line">Sandstone 沙石</span><br><span class="line">Note Block 音符盒</span><br><span class="line">White Wool 白羊毛</span><br><span class="line">Orange Wool 橙羊毛</span><br><span class="line">Magenta Wool 淡紫羊毛</span><br><span class="line">Light Blue Wool 淡蓝羊毛</span><br><span class="line">Yellow Wool 黄羊毛</span><br><span class="line">Light Green Wool 浅绿羊毛</span><br><span class="line">pink Wool	粉红羊毛</span><br><span class="line">Gray Wool 灰羊毛</span><br><span class="line">Light Gray Wool 浅灰羊毛</span><br><span class="line">Cyan Wool</span><br><span class="line">urple Wool	紫羊毛</span><br><span class="line">Blue Wool 蓝羊毛</span><br><span class="line">Brown Wool 棕羊毛</span><br><span class="line">Dark Green Wool 墨绿羊毛</span><br><span class="line">Red Wool 红羊毛</span><br><span class="line">Black Wool 黑羊毛</span><br><span class="line">Yellow Flower 黄花</span><br><span class="line">Red Rose 红玫瑰</span><br><span class="line">Brown Mushroom 棕蘑菇</span><br><span class="line">Red Mushroom 红蘑菇</span><br><span class="line">Gold Block	黄金块</span><br><span class="line">Iron Block	铁块</span><br><span class="line">Stone Slab	石板</span><br><span class="line">Sandstone Slab	砂岩板</span><br><span class="line">Wooden Slab	木制板</span><br><span class="line">Cobblestone Slab	鹅卵石板</span><br><span class="line">Brick	砖</span><br><span class="line">TNT	TNT</span><br><span class="line">Bookcase	书架</span><br><span class="line">Mossy Cobblestone	长满青苔</span><br><span class="line">的鹅卵石</span><br><span class="line">Obsidian	黑曜岩</span><br><span class="line">Torch	火炬</span><br><span class="line">Wooden Stairs	木楼梯</span><br><span class="line">Chest	胸部</span><br><span class="line">Diamond Block	钻石块</span><br><span class="line">Workbench	工作台</span><br><span class="line">Furnace	炉</span><br><span class="line">Ladder	梯子</span><br><span class="line">Minecart Tracks	矿车轨道</span><br><span class="line">Cobblestone Stairs	鹅卵石楼</span><br><span class="line">梯</span><br><span class="line">Lever	杠杆</span><br><span class="line">Stone Pressure Plate	石头压板</span><br><span class="line">Wooden Pressure Plate	木制压板</span><br><span class="line">Redstone Torch	红石火把</span><br><span class="line">Stone Button	石头按钮</span><br><span class="line">Ice	冰</span><br><span class="line">Snow Block	雪块</span><br><span class="line">Cactus	仙人掌</span><br><span class="line">Jukebox	自动点唱机</span><br><span class="line">Fence	栅栏</span><br><span class="line">umpkin	南瓜子仁</span><br><span class="line">Red Mossy Cobblestone	红色长满</span><br><span class="line">青苔的鹅卵石</span><br><span class="line">Slow Sand	慢砂</span><br><span class="line">Lightstone Ore	浅石色矿</span><br><span class="line">Jack-O-Lantern	杰克灯笼</span><br><span class="line">Iron Spade	铁铲</span><br><span class="line">Iron Pickaxe	铁锄</span><br><span class="line">Iron Axe	铁斧</span><br><span class="line">Flint and Steel	打火石</span><br><span class="line">Red Apple	红苹果</span><br><span class="line">Bow	弓</span><br><span class="line">Arrow	箭头</span><br><span class="line">Coal	煤炭</span><br><span class="line">Diamond	钻石</span><br><span class="line">Iron Ingot	铁锭</span><br><span class="line">Gold Ingot	金元宝</span><br><span class="line">Iron Sword	铁剑</span><br><span class="line">Wooden Sword	木剑</span><br><span class="line">Wooden Spade	木铲</span><br><span class="line">Wooden Pickaxe	木柄鹤嘴锄</span><br><span class="line">Wooden Axe	木斧</span><br><span class="line">Stone Sword	石剑</span><br><span class="line">Stone Spade	石锹</span><br><span class="line">Stone Pickaxe	石镐</span><br><span class="line">Stone Axe	石斧头</span><br><span class="line">Diamond Sword	钻石剑</span><br><span class="line">Diamond Spade	钻石锹</span><br><span class="line">Diamond Pickaxe	钻石镐</span><br><span class="line">Diamond Axe	钻石斧</span><br><span class="line">Stick	棍子</span><br><span class="line">Bowl	碗</span><br><span class="line">Mushroom Soup	蘑菇汤</span><br><span class="line">Gold Sword	金剑</span><br><span class="line">Gold Spade	金锹</span><br><span class="line">Gold Pickaxe	金镐</span><br><span class="line">Gold Axe	金斧子</span><br><span class="line">String	线</span><br><span class="line">Feather	羽毛</span><br><span class="line">Gunpowder	火药</span><br><span class="line">Wooden Hoe	木锄</span><br><span class="line">Stone Hoe	石锄</span><br><span class="line">Iron Hoe	铁锄头</span><br><span class="line">Diamond Hoe	钻石锄头</span><br><span class="line">Gold Hoe	金锄头</span><br><span class="line">Seeds	种子</span><br><span class="line">Wheat	小麦</span><br><span class="line">Bread	面包</span><br><span class="line">Leather Helmet	皮革头盔</span><br><span class="line">Leather Chestplate</span><br><span class="line">Leather Pants	皮裤</span><br><span class="line">Leather Boots	皮靴子</span><br><span class="line">Iron Helmet	铁头盔</span><br><span class="line">Iron Chestplate	铁护胸</span><br><span class="line">Iron Pants	铁裤</span><br><span class="line">Iron Boots	铁靴</span><br><span class="line">Diamond Helmet	钻石头盔</span><br><span class="line">Diamond Chestplate</span><br><span class="line">Diamond Pants	钻石的裤子</span><br><span class="line">Diamond Boots	钻石的靴子</span><br><span class="line">Gold Helmet	金头盔</span><br><span class="line">Gold Chestplate	金护胸</span><br><span class="line">Gold Pants	黄金的裤子</span><br><span class="line">Gold Boots	金靴子</span><br><span class="line">Flint	燧石</span><br><span class="line">ork	兽人</span><br><span class="line">Grilled Pork	烤的猪肉</span><br><span class="line">aintings	油画</span><br><span class="line">Golden Apple	金苹果</span><br><span class="line">Sign	标志</span><br><span class="line">Wooden Door	木门</span><br><span class="line">Bucket	桶</span><br><span class="line">Water Bucket	水桶</span><br><span class="line">Lava Bucket	岩浆桶</span><br><span class="line">Mine Cart	矿山车</span><br><span class="line">Saddle	马鞍</span><br><span class="line">Iron Door	铁门</span><br><span class="line">Redstone	红石</span><br><span class="line">Snowball	雪球</span><br><span class="line">Boat	小船</span><br><span class="line">Leather	皮革</span><br><span class="line">Milk Bucket	牛奶桶</span><br><span class="line">Clay Brick	粘土砖</span><br><span class="line">Clay Balls	粘土球</span><br><span class="line">Reed	芦苇</span><br><span class="line">aper	野猪</span><br><span class="line">Book	本书</span><br><span class="line">Slime Ball	泥球</span><br><span class="line">Storage Minecart</span><br><span class="line">owered Minecart	动力矿车</span><br><span class="line">Egg	鸡蛋</span><br><span class="line">Compass	指南针</span><br><span class="line">Fishing Rod	钓鱼杆</span><br><span class="line">Watch	手表</span><br><span class="line">Lightstone Dust	星彩蓝宝石</span><br><span class="line">Raw Fish	生鱼</span><br><span class="line">Cooked Fish	煮熟的鱼</span><br><span class="line">Ink Sac Dye	墨囊染料</span><br><span class="line">Rose Red Dye	玫瑰红染料</span><br><span class="line">Cactus Green Dye</span><br><span class="line">Cocoa Beans Dye	可可豆染料</span><br><span class="line">Lapis Lazuli Dye</span><br><span class="line">urple Dye	紫色染料</span><br><span class="line">Cyan Dye	青色染料</span><br><span class="line">Light Gray Dye	淡灰色染料</span><br><span class="line">Gray Dye	灰色染料</span><br><span class="line">ink Dye	染料墨水</span><br><span class="line">Lime Dye	石灰染料</span><br><span class="line">Dandelion Yellow Dye</span><br><span class="line">Light Blue Dye	淡蓝色染料</span><br><span class="line">MagentaDye	品红色染料</span><br><span class="line">Orange Dye	橙色染料</span><br><span class="line">Bone Meal Dye	肉骨粉染料</span><br><span class="line">Bone	骨</span><br><span class="line">Sugar	糖</span><br><span class="line">Cake	蛋糕</span><br><span class="line">Gold Record	金唱片</span><br><span class="line">Green RecordIf	绿色记录如果</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/04/我的世界简单指令/" data-id="ck8rb21fv007kgwuwvbbjk60f" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的世界/">我的世界</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http_Java信任SSL证书" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/28/http_Java信任SSL证书/" class="article-date">
-  <time datetime="2019-01-28T10:21:46.000Z" itemprop="datePublished">2019-01-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/28/http_Java信任SSL证书/">Java 信任SSL证书</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Java-信任所有SSL证书-解决PKIX-path-building-failed问题"><a href="#Java-信任所有SSL证书-解决PKIX-path-building-failed问题" class="headerlink" title="Java 信任所有SSL证书(解决PKIX path building failed问题)"></a>Java 信任所有SSL证书(解决PKIX path building failed问题)</h5><p><a href="http://javaweb.org/?p=1237" target="_blank" rel="noopener">http://javaweb.org/?p=1237</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</span><br><span class="line">    at sun.security.ssl.Alerts.getSSLException(Alerts.java:<span class="number">192</span>)</span><br><span class="line">    at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:<span class="number">1884</span>)</span><br><span class="line">    at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:<span class="number">276</span>)</span><br><span class="line">    at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:<span class="number">270</span>)</span><br><span class="line">    at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:<span class="number">1341</span>)</span><br><span class="line">    at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:<span class="number">153</span>)</span><br><span class="line">    at sun.security.ssl.Handshaker.processLoop(Handshaker.java:<span class="number">868</span>)</span><br><span class="line">    at sun.security.ssl.Handshaker.process_record(Handshaker.java:<span class="number">804</span>)</span><br><span class="line">    at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:<span class="number">1016</span>)</span><br><span class="line">    at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:<span class="number">1312</span>)</span><br><span class="line">    at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:<span class="number">1339</span>)</span><br><span class="line">    at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:<span class="number">1323</span>)</span><br><span class="line">    at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:<span class="number">563</span>)</span><br><span class="line">    at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:<span class="number">185</span>)</span><br><span class="line">    at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:<span class="number">1300</span>)</span><br><span class="line">    at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:<span class="number">254</span>)</span><br><span class="line">    at SslTest.getRequest(SslTest.java:<span class="number">16</span>)</span><br><span class="line">    at SslTest.main(SslTest.java:<span class="number">40</span>)</span><br><span class="line">Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</span><br><span class="line">    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:<span class="number">385</span>)</span><br><span class="line">    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:<span class="number">230</span>)</span><br><span class="line">    at sun.security.validator.Validator.validate(Validator.java:<span class="number">260</span>)</span><br><span class="line">    at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:<span class="number">326</span>)</span><br><span class="line">    at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:<span class="number">231</span>)</span><br><span class="line">    at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:<span class="number">126</span>)</span><br><span class="line">    at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:<span class="number">1323</span>)</span><br><span class="line">    ... <span class="number">13</span> more</span><br><span class="line">Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</span><br><span class="line">    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:<span class="number">196</span>)</span><br><span class="line">    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:<span class="number">268</span>)</span><br><span class="line">    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:<span class="number">380</span>)</span><br><span class="line">    ... <span class="number">19</span> more</span><br></pre></td></tr></table></figure>
-<p>解决办法：</p>
-<p>1、导入证书到本地证书库</p>
-<p>2、信任所有SSL证书</p>
-<p>最好的解决办法或许是信任所有SSL证书，因为某些时候不能每次都手动的导入证书非常麻烦。现在封装了个方法，在连接openConnection的时候忽略掉证书就行了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SslUtils.ignoreSsl();</span><br></pre></td></tr></table></figure>
-<p><strong>SslUtils.java:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.security.cert.CertificateException;</span><br><span class="line"><span class="keyword">import</span> java.security.cert.X509Certificate;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.HostnameVerifier;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.HttpsURLConnection;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLContext;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLSession;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.X509TrustManager;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SslUtils</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">trustAllHttpsCertificates</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        TrustManager[] trustAllCerts = <span class="keyword">new</span> TrustManager[<span class="number">1</span>];</span><br><span class="line">        TrustManager tm = <span class="keyword">new</span> miTM();</span><br><span class="line">        trustAllCerts[<span class="number">0</span>] = tm;</span><br><span class="line">        SSLContext sc = SSLContext.getInstance(<span class="string">"SSL"</span>);</span><br><span class="line">        sc.init(<span class="keyword">null</span>, trustAllCerts, <span class="keyword">null</span>);</span><br><span class="line">        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">miTM</span> <span class="keyword">implements</span> <span class="title">TrustManager</span>,<span class="title">X509TrustManager</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isServerTrusted</span><span class="params">(X509Certificate[] certs)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isClientTrusted</span><span class="params">(X509Certificate[] certs)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkServerTrusted</span><span class="params">(X509Certificate[] certs, String authType)</span></span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkClientTrusted</span><span class="params">(X509Certificate[] certs, String authType)</span></span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 忽略HTTPS请求的SSL证书，必须在openConnection之前调用</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ignoreSsl</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        HostnameVerifier hv = <span class="keyword">new</span> HostnameVerifier() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">verify</span><span class="params">(String urlHostName, SSLSession session)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"Warning: URL Host: "</span> + urlHostName + <span class="string">" vs. "</span> + session.getPeerHost());</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        trustAllHttpsCertificates();</span><br><span class="line">        HttpsURLConnection.setDefaultHostnameVerifier(hv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>SslTest.java:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.net.URLConnection;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.io.IOUtils;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SslTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getRequest</span><span class="params">(String url,<span class="keyword">int</span> timeOut)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        URL u = <span class="keyword">new</span> URL(url);</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"https"</span>.equalsIgnoreCase(u.getProtocol()))&#123;</span><br><span class="line">            SslUtils.ignoreSsl();</span><br><span class="line">        &#125;</span><br><span class="line">        URLConnection conn = u.openConnection();</span><br><span class="line">        conn.setConnectTimeout(timeOut);</span><br><span class="line">        conn.setReadTimeout(timeOut);</span><br><span class="line">        <span class="keyword">return</span> IOUtils.toString(conn.getInputStream());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">postRequest</span><span class="params">(String urlAddress,String args,<span class="keyword">int</span> timeOut)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        URL url = <span class="keyword">new</span> URL(urlAddress);</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"https"</span>.equalsIgnoreCase(url.getProtocol()))&#123;</span><br><span class="line">            SslUtils.ignoreSsl();</span><br><span class="line">        &#125;</span><br><span class="line">        URLConnection u = url.openConnection();</span><br><span class="line">        u.setDoInput(<span class="keyword">true</span>);</span><br><span class="line">        u.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">        u.setConnectTimeout(timeOut);</span><br><span class="line">        u.setReadTimeout(timeOut);</span><br><span class="line">        OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(u.getOutputStream(), <span class="string">"UTF-8"</span>);</span><br><span class="line">        osw.write(args);</span><br><span class="line">        osw.flush();</span><br><span class="line">        osw.close();</span><br><span class="line">        u.getOutputStream();</span><br><span class="line">        <span class="keyword">return</span> IOUtils.toString(u.getInputStream());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            SslTest st = <span class="keyword">new</span> SslTest();</span><br><span class="line">            String a = st.getRequest(<span class="string">"https://xxx.com/login.action"</span>, <span class="number">3000</span>);</span><br><span class="line">            System.out.println(a);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/28/http_Java信任SSL证书/" data-id="ck8rb21ct002egwuwre17l9ce" class="article-share-link">Compartir</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
 
     </footer>
   </div>
@@ -2380,7 +2667,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">Siguiente &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -2394,7 +2681,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单算法题/">简单算法题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Http/">Http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sort/">Sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logstash/">logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytest/">pytest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/">springboot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/util/">util</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的世界/">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li></ul>
     </div>
   </div>
 
@@ -2402,18 +2689,18 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 13.64px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/简单算法题/" style="font-size: 10px;">简单算法题</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -2421,9 +2708,13 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/linux_bash/">bash</a>
+          </li>
         
           <li>
             <a href="/2020/03/29/UML/">UML</a>
@@ -2434,15 +2725,11 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
           </li>
         
           <li>
-            <a href="/2019/10/27/python_字典/">python_dict</a>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
-            <a href="/2019/10/27/python_时间/">python-时间</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/26/git取消修改/">git-取消修改</a>
+            <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
           </li>
         
       </ul>
@@ -2458,7 +2745,7 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 chen v<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
