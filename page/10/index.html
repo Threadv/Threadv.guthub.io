@@ -61,6 +61,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-选择排序(SelctionSort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/05/选择排序(SelctionSort)/" class="article-date">
+  <time datetime="2018-09-05T04:39:46.000Z" itemprop="datePublished">2018-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/选择排序(SelctionSort)/">选择排序(SelctionSort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>动图 ：<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="选择排序-SelctionSort"><a href="#选择排序-SelctionSort" class="headerlink" title="选择排序(SelctionSort)"></a>选择排序(SelctionSort)</h5><ul>
+<li><p>基本思想：<br>在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；<br>第二次遍历n-2个数，找到最小的数值与第二个元素交换；<br>。。。<br>第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。</p>
+</li>
+<li><p>平均时间复杂度：O(n2)</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> array[],<span class="keyword">int</span> lenth)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenth-<span class="number">1</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> minIndex = i;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;lenth;j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(array[j]&lt;array[minIndex])&#123;</span><br><span class="line">              minIndex = j;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span>(minIndex != i)&#123;</span><br><span class="line">           <span class="keyword">int</span> temp = array[i];</span><br><span class="line">           array[i] = array[minIndex];</span><br><span class="line">           array[minIndex] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/05/选择排序(SelctionSort)/" data-id="cka9ldn5i008wvkuww2lfjzh6" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-内存泄漏" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/29/内存泄漏/" class="article-date">
@@ -104,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/29/内存泄漏/" data-id="cka40ho4h007bxwuwfunjsbch" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/29/内存泄漏/" data-id="cka9ldn4n007evkuw3bfe25h3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -142,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/WXPayUtil/" data-id="cka40ho09001dxwuw14ft4g4i" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/02/WXPayUtil/" data-id="cka9ldmzs001evkuwbwdyghzl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -180,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/SortedMap转化成 xml格式/" data-id="cka40ho00000zxwuw1n79x9bq" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/02/SortedMap转化成 xml格式/" data-id="cka9ldmzj0010vkuw0fm0u6ml" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -218,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/02/XML格式字符串转换为Map/" data-id="cka40ho0c001fxwuwvmcp530h" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/07/02/XML格式字符串转换为Map/" data-id="cka9ldmzw001jvkuw93n7goes" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -256,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/30/月初和月末/" data-id="cka40ho53008fxwuw8ynwecyz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/30/月初和月末/" data-id="cka9ldn540085vkuw58w7nvng" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -294,10 +382,128 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/30/Map转换为XML格式/" data-id="cka40hnzu000qxwuwzegefn3i" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/30/Map转换为XML格式/" data-id="cka9ldmzb000tvkuwedhfz1en" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java_常见问题2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/29/java_常见问题2/" class="article-date">
+  <time datetime="2018-06-29T13:26:41.000Z" itemprop="datePublished">2018-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/29/java_常见问题2/">问题收集2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="基本问题2"><a href="#基本问题2" class="headerlink" title="基本问题2"></a>基本问题2</h4><p><strong>例1 ：</strong> 输出结果？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">        Integer k = <span class="keyword">new</span> Integer(i);</span><br><span class="line">    System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>A. Hello World
+
+B. Hello
+
+C. 编译错误
+
+D. 都不对
+</code></pre><p><strong>例2 ：</strong> Consider a function which, for a given whole number n, returns the number of ones required when writing out all numbers between 0 and n.<br>For example, f(13)=6. Notice that f(1)=1. What is the next largest n such that f(n)=n？（解释：有一个整数n，写一个函数f(n)，返回0～n之间出现的“1”的个数。比如f(1)=1；f(13)=6（1、10、11、12、13一共6个1），问一个最大的f(n)=n中的n是什么？）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>((getonly(n)+res) != n) &#123;</span><br><span class="line">            res+=getonly(n);</span><br><span class="line">            ++n;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getonly</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> number=<span class="number">0</span>;</span><br><span class="line">        String s=num+<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> len=s.length();</span><br><span class="line">        <span class="keyword">if</span>(len!=<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i＜len;i++)&#123;</span><br><span class="line">                    <span class="keyword">char</span> a=s.charAt(i);</span><br><span class="line">                    <span class="keyword">if</span>(a==<span class="string">'1'</span>)&#123;</span><br><span class="line">                        number++;</span><br><span class="line">                    &#125;</span><br><span class="line">              &#125;</span><br><span class="line">        &#125;<span class="keyword">return</span> number;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例3 ：</strong> Which of the choices below correctly describes the amount of time used by the following code(哪个正确描述了代码的调度次数)？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;n;j+=n/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;n;k=<span class="number">2</span>*k)</span><br><span class="line">            x = x + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<pre><code>A. O(n^3)
+
+B. O(n2log n)
+
+C. O(n(log n)*2)
+
+D. O(n log n)
+</code></pre><p><strong>例4 ：</strong> 筛选法100以内的素数？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String argv[])</span></span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">int</span> a[<span class="number">101</span>],i,j;</span><br><span class="line">      <span class="keyword">for</span> (i=<span class="number">1</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">          a[i]=<span class="number">1</span>;</span><br><span class="line">    /＊根据筛选法求出<span class="number">100</span>以内的所有素数，所谓筛选法，是指从小到大筛去一个已知素数的所有倍数。例如，根据<span class="number">2</span>，</span><br><span class="line">我们可筛去<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,...,<span class="number">98</span>,<span class="number">100</span>等数，然后根据<span class="number">3</span>可筛去<span class="number">9</span>,<span class="number">15</span>,... ,<span class="number">99</span>等数(注意此时<span class="number">6</span>、<span class="number">12</span>等数早就被筛去了)，由于<span class="number">4</span>被筛去了，下一个用于筛选的素数是<span class="number">5</span>，以此类推，最后剩余的就是<span class="number">100</span>以内的素数＊/</span><br><span class="line">    <span class="keyword">for</span> ( i=<span class="number">2</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">if</span> (a[i]!=<span class="number">0</span>)</span><br><span class="line">          <span class="keyword">for</span> (j=i+i;j＜<span class="number">101</span>;)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (j%i==<span class="number">0</span>)</span><br><span class="line">                  a[j]=<span class="number">0</span>;</span><br><span class="line">                  j=j+i;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      <span class="keyword">for</span>(i=<span class="number">2</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">          <span class="keyword">if</span> (a[i]!=<span class="number">0</span>)</span><br><span class="line">          System.out.println(i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通算法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">numberIsPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Java内存管理"><a href="#Java内存管理" class="headerlink" title="Java内存管理"></a>Java内存管理</h4><p><strong>例2 ：</strong> 正确结果？</p>
+<pre><code>A. Java虚拟机中的自动垃圾回收机阻止程序运行移除内存
+
+B. 一段程序可以建议垃圾回收执行，但是不能强迫他执行
+
+C. 垃圾回收是一个独立的平台
+
+D. 当一个对象的所有引用都没置为空时，这个对象就可以变为能被垃圾回收
+</code></pre><p><strong>例2 ：</strong> 符合垃圾收集器的收集标准？</p>
+<p>A. object sobj = new object();</p>
+<p>B. object sobj = null;</p>
+<p>C. object sobj = new object();</p>
+<p>D. sobj = new object();</p>
+<p><strong>例3 ：</strong> 符合垃圾收集器的收集标准？</p>
+<pre><code>A. object aobj = new object();
+
+B. object bobj = new object();
+
+C. object cobj = new object();
+
+D. aobj = bobj;
+
+E. aobj = cobj;
+
+F. cobj = null;
+
+G. aobj = null;
+</code></pre><p>​    </p>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p><strong>例1 ：</strong> 编译时会产生错误的？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">reverseIt4</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          EnclosingClass jb2;               <span class="comment">//-----1</span></span><br><span class="line">        System.out.println(jb2.m);          <span class="comment">//-----2</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">EnclosingClass</span>                    //--------3</span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">int</span> m = <span class="number">6</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span>                        //-------4</span></span><br><span class="line"><span class="class">      </span>&#123;</span><br><span class="line">          <span class="keyword">int</span> msquare;</span><br><span class="line">          InnerClass()</span><br><span class="line">          &#123;</span><br><span class="line">              msquare = m＊m;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>A.语句1
+
+B.语句2
+
+C.语句3
+
+D.语句4
+</code></pre><p><strong>例2 ：</strong> 不是Object类所定义的public method？</p>
+<pre><code>A. finalize()
+
+B. clone()
+
+C. wait()
+
+D. sleep()
+</code></pre><p><strong>例3 ：</strong> The code output（下列代码输出结果是什么？）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.＊;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> String value = <span class="keyword">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String v)</span> </span>&#123;</span><br><span class="line">      value = v;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Test o)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">this</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">      <span class="keyword">if</span> (o <span class="keyword">instanceof</span> Test) &#123;</span><br><span class="line">            Test test = (Test) o;</span><br><span class="line">            <span class="keyword">return</span> value.equals(test.value);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">      Test test1 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      Test test2 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      Test test3 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      object test4 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      list.add(test1);</span><br><span class="line">      System.out.println(list.contains(test2));</span><br><span class="line">      System.out.println(test2.equals(test3));</span><br><span class="line">      System.out.println(test3.equals(test4));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>A.false true false
+
+B.true true true
+
+C.false false false
+
+D.false true true
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/29/java_常见问题2/" data-id="cka9ldn2e003mvkuwrpz31m1f" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
     </footer>
   </div>
@@ -633,125 +839,7 @@ D. new RandomAccessFile raf = new RandomAccessFile(&quot;myfile.txt&quot;,&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/java_常见问题/" data-id="cka40ho1p003ixwuwjcgbsyk5" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java_常见问题2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/29/java_常见问题2/" class="article-date">
-  <time datetime="2018-06-29T13:26:41.000Z" itemprop="datePublished">2018-06-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/29/java_常见问题2/">问题收集2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="基本问题2"><a href="#基本问题2" class="headerlink" title="基本问题2"></a>基本问题2</h4><p><strong>例1 ：</strong> 输出结果？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">        Integer k = <span class="keyword">new</span> Integer(i);</span><br><span class="line">    System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>A. Hello World
-
-B. Hello
-
-C. 编译错误
-
-D. 都不对
-</code></pre><p><strong>例2 ：</strong> Consider a function which, for a given whole number n, returns the number of ones required when writing out all numbers between 0 and n.<br>For example, f(13)=6. Notice that f(1)=1. What is the next largest n such that f(n)=n？（解释：有一个整数n，写一个函数f(n)，返回0～n之间出现的“1”的个数。比如f(1)=1；f(13)=6（1、10、11、12、13一共6个1），问一个最大的f(n)=n中的n是什么？）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>((getonly(n)+res) != n) &#123;</span><br><span class="line">            res+=getonly(n);</span><br><span class="line">            ++n;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getonly</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> number=<span class="number">0</span>;</span><br><span class="line">        String s=num+<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> len=s.length();</span><br><span class="line">        <span class="keyword">if</span>(len!=<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i＜len;i++)&#123;</span><br><span class="line">                    <span class="keyword">char</span> a=s.charAt(i);</span><br><span class="line">                    <span class="keyword">if</span>(a==<span class="string">'1'</span>)&#123;</span><br><span class="line">                        number++;</span><br><span class="line">                    &#125;</span><br><span class="line">              &#125;</span><br><span class="line">        &#125;<span class="keyword">return</span> number;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>例3 ：</strong> Which of the choices below correctly describes the amount of time used by the following code(哪个正确描述了代码的调度次数)？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;n;j+=n/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;n;k=<span class="number">2</span>*k)</span><br><span class="line">            x = x + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<pre><code>A. O(n^3)
-
-B. O(n2log n)
-
-C. O(n(log n)*2)
-
-D. O(n log n)
-</code></pre><p><strong>例4 ：</strong> 筛选法100以内的素数？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String argv[])</span></span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">int</span> a[<span class="number">101</span>],i,j;</span><br><span class="line">      <span class="keyword">for</span> (i=<span class="number">1</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">          a[i]=<span class="number">1</span>;</span><br><span class="line">    /＊根据筛选法求出<span class="number">100</span>以内的所有素数，所谓筛选法，是指从小到大筛去一个已知素数的所有倍数。例如，根据<span class="number">2</span>，</span><br><span class="line">我们可筛去<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,...,<span class="number">98</span>,<span class="number">100</span>等数，然后根据<span class="number">3</span>可筛去<span class="number">9</span>,<span class="number">15</span>,... ,<span class="number">99</span>等数(注意此时<span class="number">6</span>、<span class="number">12</span>等数早就被筛去了)，由于<span class="number">4</span>被筛去了，下一个用于筛选的素数是<span class="number">5</span>，以此类推，最后剩余的就是<span class="number">100</span>以内的素数＊/</span><br><span class="line">    <span class="keyword">for</span> ( i=<span class="number">2</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="keyword">if</span> (a[i]!=<span class="number">0</span>)</span><br><span class="line">          <span class="keyword">for</span> (j=i+i;j＜<span class="number">101</span>;)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (j%i==<span class="number">0</span>)</span><br><span class="line">                  a[j]=<span class="number">0</span>;</span><br><span class="line">                  j=j+i;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      <span class="keyword">for</span>(i=<span class="number">2</span>;i＜<span class="number">101</span>;i++)</span><br><span class="line">          <span class="keyword">if</span> (a[i]!=<span class="number">0</span>)</span><br><span class="line">          System.out.println(i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>普通算法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">numberIsPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Java内存管理"><a href="#Java内存管理" class="headerlink" title="Java内存管理"></a>Java内存管理</h4><p><strong>例2 ：</strong> 正确结果？</p>
-<pre><code>A. Java虚拟机中的自动垃圾回收机阻止程序运行移除内存
-
-B. 一段程序可以建议垃圾回收执行，但是不能强迫他执行
-
-C. 垃圾回收是一个独立的平台
-
-D. 当一个对象的所有引用都没置为空时，这个对象就可以变为能被垃圾回收
-</code></pre><p><strong>例2 ：</strong> 符合垃圾收集器的收集标准？</p>
-<p>A. object sobj = new object();</p>
-<p>B. object sobj = null;</p>
-<p>C. object sobj = new object();</p>
-<p>D. sobj = new object();</p>
-<p><strong>例3 ：</strong> 符合垃圾收集器的收集标准？</p>
-<pre><code>A. object aobj = new object();
-
-B. object bobj = new object();
-
-C. object cobj = new object();
-
-D. aobj = bobj;
-
-E. aobj = cobj;
-
-F. cobj = null;
-
-G. aobj = null;
-</code></pre><p>​    </p>
-<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p><strong>例1 ：</strong> 编译时会产生错误的？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">reverseIt4</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          EnclosingClass jb2;               <span class="comment">//-----1</span></span><br><span class="line">        System.out.println(jb2.m);          <span class="comment">//-----2</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">EnclosingClass</span>                    //--------3</span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">int</span> m = <span class="number">6</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span>                        //-------4</span></span><br><span class="line"><span class="class">      </span>&#123;</span><br><span class="line">          <span class="keyword">int</span> msquare;</span><br><span class="line">          InnerClass()</span><br><span class="line">          &#123;</span><br><span class="line">              msquare = m＊m;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<pre><code>A.语句1
-
-B.语句2
-
-C.语句3
-
-D.语句4
-</code></pre><p><strong>例2 ：</strong> 不是Object类所定义的public method？</p>
-<pre><code>A. finalize()
-
-B. clone()
-
-C. wait()
-
-D. sleep()
-</code></pre><p><strong>例3 ：</strong> The code output（下列代码输出结果是什么？）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.＊;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> String value = <span class="keyword">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String v)</span> </span>&#123;</span><br><span class="line">      value = v;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Test o)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (o == <span class="keyword">this</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">      <span class="keyword">if</span> (o <span class="keyword">instanceof</span> Test) &#123;</span><br><span class="line">            Test test = (Test) o;</span><br><span class="line">            <span class="keyword">return</span> value.equals(test.value);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">      Test test1 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      Test test2 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      Test test3 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      object test4 = <span class="keyword">new</span> Test(<span class="string">"object"</span>);</span><br><span class="line">      list.add(test1);</span><br><span class="line">      System.out.println(list.contains(test2));</span><br><span class="line">      System.out.println(test2.equals(test3));</span><br><span class="line">      System.out.println(test3.equals(test4));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>A.false true false
-
-B.true true true
-
-C.false false false
-
-D.false true true
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/29/java_常见问题2/" data-id="cka40ho1q003kxwuwe15mtx3v" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/29/java_常见问题/" data-id="cka9ldn2f003ovkuw6ppxr39r" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -789,45 +877,7 @@ D.false true true
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/LoadJsonUtil/" data-id="cka40hnzr000lxwuw8cvdpmt6" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-wxUserInfoUtil" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/28/wxUserInfoUtil/" class="article-date">
-  <time datetime="2018-06-28T11:09:12.000Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/28/wxUserInfoUtil/">wxUserInfoUtil</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="wxUserInfoUtil"><a href="#wxUserInfoUtil" class="headerlink" title="wxUserInfoUtil"></a>wxUserInfoUtil</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, String&gt; <span class="title">wxUserInfo</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        String appid = <span class="string">"wxxxxxxxxxxxxxxxxxf"</span>;</span><br><span class="line">        String appsecret = <span class="string">"6xxxxxxxxxxxxxxxxxxxxxxxx1"</span>;</span><br><span class="line"></span><br><span class="line">        String url = <span class="string">"https://api.weixin.qq.com/sns/oauth2/access_token?appid="</span>+appid+<span class="string">"&amp;secret="</span>+appsecret+<span class="string">"&amp;code="</span>+code+<span class="string">"&amp;grant_type=authorization_code"</span>;</span><br><span class="line">        String loadJson = LoadJsonUtil.getJSON(url);</span><br><span class="line">        <span class="comment">//解析相应内容（转换成json对象）</span></span><br><span class="line">        JSONObject json = JSONObject.fromObject(loadJson);</span><br><span class="line">        <span class="comment">//用户的唯一标识（openid）</span></span><br><span class="line">        String openid = String.valueOf(json.get(<span class="string">"openid"</span>));</span><br><span class="line">        String access_token = String.valueOf(json.get(<span class="string">"access_token"</span>));</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">"openid"</span>, openid);</span><br><span class="line">        map.put(<span class="string">"access_token"</span>, access_token);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</span></span><br><span class="line">        String requestUrl =<span class="string">"https://api.weixin.qq.com/sns/userinfo?access_token="</span>+access_token+<span class="string">"&amp;openid="</span>+openid+<span class="string">"&amp;scope=snsapi_userinfo"</span>+<span class="string">"&amp;lang=zh_CN"</span>;</span><br><span class="line">        <span class="comment">//请求</span></span><br><span class="line">        String userInfoJson =LoadJsonUtil.getJSON(requestUrl);</span><br><span class="line"></span><br><span class="line">        JSONObject userInfo = JSONObject.fromObject(userInfoJson);</span><br><span class="line">        <span class="comment">//nick,phone,type,unionId,openId,icon</span></span><br><span class="line">        String nickname = String.valueOf(userInfo.get(<span class="string">"nickname"</span>));</span><br><span class="line">        String unionid = String.valueOf(userInfo.get(<span class="string">"unionid"</span>));</span><br><span class="line">        <span class="comment">//icon 图标</span></span><br><span class="line">        String headimgurl = String.valueOf(userInfo.get(<span class="string">"headimgurl"</span>));</span><br><span class="line">        String sex = String.valueOf(userInfo.get(<span class="string">"sex"</span>));</span><br><span class="line">        String country = String.valueOf(userInfo.get(<span class="string">"country"</span>));</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">"nickname"</span>, nickname);</span><br><span class="line">        map.put(<span class="string">"unionid"</span>, unionid);</span><br><span class="line">        map.put(<span class="string">"headimgurl"</span>, headimgurl);</span><br><span class="line">        map.put(<span class="string">"sex"</span>, sex);</span><br><span class="line">        map.put(<span class="string">"country"</span>, country);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/wxUserInfoUtil/" data-id="cka40ho4c0076xwuwyp98cby2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/06/28/LoadJsonUtil/" data-id="cka9ldmz9000ovkuwz99faci6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -867,7 +917,7 @@ D.false true true
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.36px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
@@ -876,7 +926,7 @@ D.false true true
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -889,15 +939,11 @@ D.false true true
       <ul>
         
           <li>
-            <a href="/2020/04/11/linux_bash/">bash</a>
+            <a href="/2020/04/11/linux_bash/">linux—bash</a>
           </li>
         
           <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
@@ -906,6 +952,10 @@ D.false true true
         
           <li>
             <a href="/2020/03/16/go控制结构/">go控制结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
       </ul>

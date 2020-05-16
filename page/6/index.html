@@ -61,6 +61,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pay_ali 转账退款" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/07/pay_ali 转账退款/" class="article-date">
+  <time datetime="2018-12-07T02:57:33.000Z" itemprop="datePublished">2018-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/07/pay_ali 转账退款/">ali 转账退款</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="ali-转账退款"><a href="#ali-转账退款" class="headerlink" title="ali 转账退款"></a>ali 转账退款</h5><ul>
+<li>创建提现申请</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">CashAccountCashApply cashAccountCashApply = <span class="keyword">new</span> CashAccountCashApply();</span><br><span class="line">cashAccountCashApply.setIntro(<span class="string">""</span>);</span><br><span class="line">cashAccountCashApply.setAmount(amount);</span><br><span class="line">cashAccountCashApply.setStatus(<span class="number">1</span>);</span><br><span class="line">cashAccountCashApply.setCallbackStatus(<span class="number">0</span>);</span><br><span class="line">cashAccountCashApply.setResultStatus(<span class="number">0</span>);</span><br><span class="line">cashAccountCashApply.setType(cashAccountApplyStyle);</span><br><span class="line">cashAccountCashApply.setUserId(userId);</span><br><span class="line">cashAccountCashApply.setOrderId(<span class="string">""</span>);</span><br><span class="line"><span class="comment">//支付宝账户</span></span><br><span class="line">cashAccountCashApply.setAccount(account);</span><br><span class="line">cashAccountCashApply.setCallbackMsg(<span class="string">""</span>);</span><br><span class="line">cashAccountCashApply.setUserInfo(userInfo);</span><br><span class="line">cashAccountCashApply.setCreateTime(<span class="keyword">new</span> Date());</span><br><span class="line">cashAccountCashApply.setSuccessTime(<span class="keyword">new</span> Date());</span><br><span class="line">cashAccountCashApplyDao.save(cashAccountCashApply);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>处理ali提现退款</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dealAliPayRefund</span><span class="params">(CashAccountCashApply cashAccountCashApply)</span> </span>&#123;</span><br><span class="line">    String prefix = env.getProperty(<span class="string">"cash.transfer.prefix"</span>);</span><br><span class="line">    String orderStr = prefix + <span class="string">"_"</span> + cashAccountCashApply.getId();</span><br><span class="line">    Float amount = cashAccountCashApply.getAmount().floatValue() / <span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//支付宝相关信息</span></span><br><span class="line">    String app_id = <span class="string">"201xxxxxxxxxxx"</span>;</span><br><span class="line">    String privateKey = env.getProperty(<span class="string">"private_key"</span>);</span><br><span class="line">    String publicKey = env.getProperty(<span class="string">"alipay_public_key"</span>);</span><br><span class="line">    AlipayClient alipayClient = <span class="keyword">new</span> DefaultAlipayClient(<span class="string">"https://openapi.alipay.com/gateway.do"</span>, app_id, privateKey, <span class="string">"json"</span>, <span class="string">"utf-8"</span>, publicKey, <span class="string">"RSA"</span>);</span><br><span class="line">    AlipayFundTransToaccountTransferRequest request = <span class="keyword">new</span> AlipayFundTransToaccountTransferRequest();</span><br><span class="line">    request.setBizContent(<span class="string">"&#123;"</span> +</span><br><span class="line">            <span class="string">"\"out_biz_no\":\""</span> + orderStr + <span class="string">"\","</span> +</span><br><span class="line">            <span class="string">"\"payee_type\":\"ALIPAY_USERID\","</span> +</span><br><span class="line">            <span class="string">"\"payee_account\":\""</span> + cashAccountCashApply.getAccount() + <span class="string">"\","</span> +</span><br><span class="line">            <span class="string">"\"amount\":\""</span> + amount + <span class="string">"\","</span> +</span><br><span class="line">            <span class="string">"\"remark\":\"xxx提现（转账）\""</span> +</span><br><span class="line">            <span class="string">"&#125;"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        AlipayFundTransToaccountTransferResponse response = alipayClient.execute(request);</span><br><span class="line"></span><br><span class="line">        ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        String responseString = <span class="string">"默认转账响应（问题）！"</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            responseString = objectMapper.writeValueAsString(response);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonProcessingException je) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"ali pay refund json serialize error!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (response.isSuccess()) &#123;</span><br><span class="line">            String responseOutBizNo = response.getOutBizNo();</span><br><span class="line">            <span class="keyword">if</span> (response.getCode().equals(<span class="string">"10000"</span>)) &#123;</span><br><span class="line">                <span class="comment">//成功处理逻辑</span></span><br><span class="line">                logger.info(<span class="string">"AliPayRefund-Success: outBizNo is "</span> + response.getOutBizNo());</span><br><span class="line">                Integer orderId = Integer.parseInt(responseOutBizNo.split(<span class="string">"_"</span>)[<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span> (orderId.equals(cashAccountCashApply.getId())) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.changeCashAccountApplyStatus(</span><br><span class="line">                            cashAccountCashApply,</span><br><span class="line">                            responseString,</span><br><span class="line">                            CashAccountApplyStatusStyle.SUCCESS_FINISH, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.changeCashAccountApplyStatus(</span><br><span class="line">                            cashAccountCashApply,</span><br><span class="line">                            responseString,</span><br><span class="line">                            CashAccountApplyStatusStyle.WAIT_PAY_CASH, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//失败处理逻辑</span></span><br><span class="line">                <span class="keyword">this</span>.changeCashAccountApplyStatus(</span><br><span class="line">                        cashAccountCashApply,</span><br><span class="line">                        responseString,</span><br><span class="line">                        CashAccountApplyStatusStyle.WAIT_PAY_CASH, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"ali pay refund error!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (com.alipay.api.AlipayApiException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            String errorString = objectMapper.writeValueAsString(e);</span><br><span class="line">            <span class="keyword">this</span>.changeCashAccountApplyStatus(</span><br><span class="line">                    cashAccountCashApply,</span><br><span class="line">                    errorString,</span><br><span class="line">                    CashAccountApplyStatusStyle.WAIT_PAY_CASH, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonProcessingException je) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"ali pay refund json serialize error!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        logger.info(<span class="string">"AliPayRefund-Error:"</span> + e.getErrMsg());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/07/pay_ali 转账退款/" data-id="cka9ldn4m007cvkuwawzvebld" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/12/06/hexo/" class="article-date">
@@ -119,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/06/hexo/" data-id="cka40ho0z002exwuwrppyra00" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/12/06/hexo/" data-id="cka9ldn1n002kvkuw2nm4ud9x" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -170,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/07/pay_即时到账交易接口/" data-id="cka40ho2z005dxwuwlurefht4" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/07/pay_即时到账交易接口/" data-id="cka9ldn3f005dvkuwlwmeqs6j" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li></ul>
@@ -223,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/06/pay_aliPay/" data-id="cka40ho2x005axwuw3klc4cbd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/06/pay_aliPay/" data-id="cka9ldn3c0058vkuwb9tispzb" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li></ul>
@@ -281,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/06/pay_wxPay/" data-id="cka40ho36005ixwuwy93vl60d" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/06/pay_wxPay/" data-id="cka9ldn3e005bvkuw8wgwu7c9" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ali-weixin-pay/">ali/weixin pay</a></li></ul>
@@ -338,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/05/多线程查询/" data-id="cka40ho4p007qxwuwgj28rfe8" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/05/多线程查询/" data-id="cka9ldn4r007lvkuwysngfbh9" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
@@ -398,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/05/Exceutor/" data-id="cka40hnzd0005xwuwhdrcss1n" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/05/Exceutor/" data-id="cka9ldmyt0004vkuwbiji1sb8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
@@ -446,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/测试/" data-id="cka40ho58008pxwuw1cosetu5" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/测试/" data-id="cka9ldn5a008gvkuwezhct60s" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -499,7 +544,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/Jdk代理/" data-id="cka40hnzl000exwuwjjkw18z9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/Jdk代理/" data-id="cka9ldmyy000avkuw5914z3jl" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -539,58 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/dynamicProxy-cglib/" data-id="cka40ho0l001uxwuw43wahb94" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-静态代理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/03/静态代理/" class="article-date">
-  <time datetime="2018-11-03T13:12:36.000Z" itemprop="datePublished">2018-11-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/03/静态代理/">设计模式-代理（静态代理）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h5><ul>
-<li>接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Image</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>实体类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RealImage</span> <span class="keyword">implements</span> <span class="title">Image</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">private</span> String fileName;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">RealImage</span><span class="params">(String fileName)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fileName = fileName;</span><br><span class="line">      loadFromDisk(fileName);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Displaying "</span> + fileName);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadFromDisk</span><span class="params">(String fileName)</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"Loading "</span> + fileName);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyImage</span> <span class="keyword">implements</span> <span class="title">Image</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">private</span> RealImage realImage;</span><br><span class="line">   <span class="keyword">private</span> String fileName;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ProxyImage</span><span class="params">(String fileName)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fileName = fileName;</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(realImage == <span class="keyword">null</span>)&#123;</span><br><span class="line">         realImage = <span class="keyword">new</span> RealImage(fileName);</span><br><span class="line">      &#125;</span><br><span class="line">      realImage.display();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>client</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyPatternDemo</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      Image image = <span class="keyword">new</span> ProxyImage(<span class="string">"test_10mb.jpg"</span>);</span><br><span class="line"> </span><br><span class="line">      <span class="comment">// 图像将从磁盘加载</span></span><br><span class="line">      image.display(); </span><br><span class="line">      System.out.println(<span class="string">""</span>);</span><br><span class="line">      <span class="comment">// 图像不需要从磁盘加载</span></span><br><span class="line">      image.display();  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Loading test_10mb.jpg</span><br><span class="line">Displaying test_10mb.jpg</span><br><span class="line"></span><br><span class="line">Displaying test_10mb.jpg</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/静态代理/" data-id="cka40ho5j0099xwuw3w2pcb4q" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/dynamicProxy-cglib/" data-id="cka9ldmzy001lvkuwlzg9vk5r" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -630,7 +624,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.36px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
@@ -639,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -652,15 +646,11 @@
       <ul>
         
           <li>
-            <a href="/2020/04/11/linux_bash/">bash</a>
+            <a href="/2020/04/11/linux_bash/">linux—bash</a>
           </li>
         
           <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
@@ -669,6 +659,10 @@
         
           <li>
             <a href="/2020/03/16/go控制结构/">go控制结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
       </ul>

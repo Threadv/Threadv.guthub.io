@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/linux_bash/">bash</a>
+      <a class="article-title" href="/2020/04/11/linux_bash/">linux—bash</a>
     </h1>
   
 
@@ -106,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/11/linux_bash/" data-id="cka40ho240049xwuwe9sqk2ed" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/04/11/linux_bash/" data-id="cka9ldn2r0048vkuwg908ud4p" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -153,9 +153,106 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="cka40ho0u0026xwuwu9pkbe5w" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="cka9ldn1i002evkuw7feksvl8" class="article-share-link">Teilen</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go安装和配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go安装和配置/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go安装和配置/">go安装和配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go安装和配置"><a href="#go安装和配置" class="headerlink" title="go安装和配置"></a>go安装和配置</h1><ul>
+<li>下载地址1：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a>  </li>
+<li>下载地址2：<a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">https://golang.google.cn/dl/</a>  </li>
+<li>配置go环境变量</li>
+<li>检查go安装  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go安装和配置/" data-id="cka9ldn00001qvkuwnofrug49" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go控制结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go控制结构/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go控制结构/">go控制结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go控制结构"><a href="#go控制结构" class="headerlink" title="go控制结构"></a>go控制结构</h1><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><ul>
+<li>go if去除了条件的（）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> first <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> cond <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> first &lt;= <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is less than or equal to 0\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> first &gt; <span class="number">0</span> &amp;&amp; first &lt; <span class="number">5</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is between 0 and 5\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is 5 or greater\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> cond = <span class="number">5</span>; cond &gt; <span class="number">10</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is greater than 10\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is not greater than 10\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="switch-结构"><a href="#switch-结构" class="headerlink" title="switch 结构"></a>switch 结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num1 <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> num1 &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">98</span>, <span class="number">99</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 98"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>: </span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 100"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's not equal to 98 or 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out: It's equal to 100</span><br></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"This is the %d iteration\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for 结构的第二种形式是没有头部的条件判断迭代（类似其它语言中的 while 循环），基本形式为：for 条件语句 {}。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">        i = i - <span class="number">1</span></span><br><span class="line">        fmt.Printf(<span class="string">"The variable i is now: %d\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The variable i is now: 4</span><br><span class="line">The variable i is now: 3</span><br><span class="line">The variable i is now: 2</span><br><span class="line">The variable i is now: 1</span><br><span class="line">The variable i is now: 0</span><br><span class="line">The variable i is now: -1</span><br></pre></td></tr></table></figure>
+<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break continue"></a>break continue</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">5</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"  "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">012345 012345 012345</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">" "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 6 7 8 9</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go控制结构/" data-id="cka9ldn1e002avkuwskak56rq" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
     </footer>
   </div>
   
@@ -276,104 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go基础/" data-id="cka40ho0p0021xwuwklamohrj" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-go安装和配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/16/go安装和配置/" class="article-date">
-  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/go安装和配置/">go安装和配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="go安装和配置"><a href="#go安装和配置" class="headerlink" title="go安装和配置"></a>go安装和配置</h1><ul>
-<li>下载地址1：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a>  </li>
-<li>下载地址2：<a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">https://golang.google.cn/dl/</a>  </li>
-<li>配置go环境变量</li>
-<li>检查go安装  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go安装和配置/" data-id="cka40ho0t0024xwuw068f96pk" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-go控制结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/16/go控制结构/" class="article-date">
-  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/go控制结构/">go控制结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="go控制结构"><a href="#go控制结构" class="headerlink" title="go控制结构"></a>go控制结构</h1><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><ul>
-<li>go if去除了条件的（）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> first <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> cond <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> first &lt;= <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is less than or equal to 0\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> first &gt; <span class="number">0</span> &amp;&amp; first &lt; <span class="number">5</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is between 0 and 5\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is 5 or greater\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> cond = <span class="number">5</span>; cond &gt; <span class="number">10</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is greater than 10\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is not greater than 10\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="switch-结构"><a href="#switch-结构" class="headerlink" title="switch 结构"></a>switch 结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num1 <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> num1 &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">98</span>, <span class="number">99</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 98"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>: </span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 100"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's not equal to 98 or 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out: It's equal to 100</span><br></pre></td></tr></table></figure>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"This is the %d iteration\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>for 结构的第二种形式是没有头部的条件判断迭代（类似其它语言中的 while 循环），基本形式为：for 条件语句 {}。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">        i = i - <span class="number">1</span></span><br><span class="line">        fmt.Printf(<span class="string">"The variable i is now: %d\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The variable i is now: 4</span><br><span class="line">The variable i is now: 3</span><br><span class="line">The variable i is now: 2</span><br><span class="line">The variable i is now: 1</span><br><span class="line">The variable i is now: 0</span><br><span class="line">The variable i is now: -1</span><br></pre></td></tr></table></figure>
-<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break continue"></a>break continue</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">5</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"  "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">012345 012345 012345</span><br></pre></td></tr></table></figure>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">" "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 6 7 8 9</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go控制结构/" data-id="cka40ho0x002bxwuwtvzqaqzs" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/03/16/go基础/" data-id="cka9ldn1k002fvkuw5rawfphh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
@@ -582,7 +582,57 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/linux_awk/" data-id="cka40ho29004exwuwdvyi15qs" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/01/01/linux_awk/" data-id="cka9ldn5m0090vkuwapsxj4kp" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_awk_sed" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/01/linux_awk_sed/" class="article-date">
+  <time datetime="2019-12-01T07:02:19.000Z" itemprop="datePublished">2019-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/01/linux_awk_sed/">linux-awk\sed 示例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="linux-awk-sed-示例"><a href="#linux-awk-sed-示例" class="headerlink" title="linux-awk\sed 示例"></a>linux-awk\sed 示例</h5><ul>
+<li>统计ip出现的次数<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;print $1&#125;' nginx.log | sort | uniq -c | sort -nr | head -n 10</span><br><span class="line"></span><br><span class="line">awk '&#123;print $1&#125;' nginx.log | sort | uniq -c | sort -nr | head -10</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">sort 排序 </span><br><span class="line">uniq -c 合并相邻相同的并统计</span><br><span class="line">sort 排序 -n 按照数值排序  -r反序</span><br><span class="line">head 取值多少</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 匹配 错误日志：</span></span><br><span class="line">awk '$9~/500|404/&#123;print $0&#125;' nginx.log</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>访问量最高的url</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;print $7&#125;' nginx.log|</span><br><span class="line">sed -e 's/\?.*//g' \</span><br><span class="line">	-e 's/\/avatar\/[0-9]*/\/avatar\/int/g' \</span><br><span class="line">	-e 's/\topcs\/[0-9]*/\/topics\/int/g' \</span><br><span class="line">	-e 's/\/replies\/[0-9]*/\/replies\/int/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.png/\id.png/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.jpg/\/id.jpg/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.jepg/\/id.jepg/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.gif/\/id.gif/g' |</span><br><span class="line">sort | uniq -c | sort -nr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx.log</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">223.104.7.59 - - [05/Dec/2018:00:00:01 +0000] &quot;GET /topics/17112 HTTP/2.0&quot; 200 9874 &quot;https://www.googleapis.com/auth/chrome-content-suggestions&quot; &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/70.0.3538.75 Mobile/15E148 Safari/605.1&quot; 0.040 0.040 .</span><br><span class="line">123.125.71.60 - - [05/Dec/2018:00:00:02 +0000] &quot;GET /yuanyibo/topics?locale=en HTTP/1.1&quot; 200 12164 &quot;-&quot; &quot;Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)&quot; 0.032 0.032 .</span><br><span class="line">141.8.142.131 - - [05/Dec/2018:00:00:02 +0000] &quot;GET /topics?page=63 HTTP/1.1&quot; 200 16739 &quot;-&quot; &quot;Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)&quot; 0.120 0.120 .</span><br><span class="line">139.180.131.123 - - [05/Dec/2018:00:00:01 +0000] &quot;GET /cable HTTP/1.1&quot; 101 15073 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 592.015 592.015 .</span><br><span class="line">40.77.167.60 - - [05/Dec/2018:00:00:03 +0000] &quot;GET /hehe123 HTTP/1.1&quot; 200 3494 &quot;-&quot; &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)&quot; 0.033 0.033 .</span><br><span class="line">204.141.42.226 - - [05/Dec/2018:00:00:04 +0000] &quot;GET / HTTP/1.1&quot; 301 5 &quot;-&quot; &quot;Site24x7&quot; 0.002 0.002 .</span><br><span class="line">40.77.167.60 - - [05/Dec/2018:00:00:04 +0000] &quot;GET /uploads/user/avatar/11094.jpg!xs HTTP/1.1&quot; 200 1499 &quot;-&quot; &quot;Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)&quot; 0.011 0.011 .</span><br><span class="line">127.0.0.1 - - [05/Dec/2018:00:00:04 +0000] &quot;GET /_img/uploads/user/avatar/11094.jpg!xs HTTP/1.0&quot; 200 1499 &quot;-&quot; &quot;Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)&quot; 0.011 - .</span><br><span class="line">139.180.131.123 - - [05/Dec/2018:00:00:01 +0000] &quot;GET /cable HTTP/1.1&quot; 101 7549 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 587.602 587.602 .</span><br><span class="line">117.136.39.87 - - [05/Dec/2018:00:00:01 +0000] &quot;GET /uploads/user/avatar/12759.jpg!large HTTP/1.1&quot; 200 1866441 &quot;-&quot; &quot;okhttp/3.2.0&quot; 3.910 1.336 .</span><br><span class="line">121.15.166.147 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 335037 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; 26471.138 26471.138 .</span><br><span class="line">219.142.131.122 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 361523 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.103 Safari/537.36 Vivaldi/2.1.1337.47&quot; 28563.286 28563.286 .</span><br><span class="line">61.132.54.2 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 380979 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36&quot; 30102.676 30102.676 .</span><br><span class="line">103.75.152.102 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 424907 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 33572.810 33572.810 .</span><br><span class="line">222.66.96.129 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 424907 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&quot; 33573.471 33573.471 .</span><br><span class="line">180.168.166.28 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 424907 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36&quot; 33573.628 33573.628 .</span><br><span class="line">114.94.126.62 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 510141 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36&quot; 40313.333 40313.333 .</span><br><span class="line">61.135.169.90 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 531953 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&quot; 42038.134 42038.134 .</span><br><span class="line">120.36.255.107 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 580604 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 45876.266 45876.266 .</span><br><span class="line">14.21.33.152 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 580631 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 45884.878 45884.878 .</span><br><span class="line">103.218.216.115 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 593019 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 46865.329 46865.329 .</span><br><span class="line">124.200.99.162 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 593019 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36&quot; 46865.485 46865.485 .</span><br><span class="line">101.95.128.162 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 593106 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36&quot; 46865.503 46865.503 .</span><br><span class="line">45.120.31.9 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 636757 &quot;-&quot; &quot;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0&quot; 50322.346 50322.346 .</span><br><span class="line">125.46.24.19 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 941 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0&quot; 65.038 65.038 .</span><br><span class="line">220.178.67.222 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 14089 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36 QQBrowser/4.4.116.400&quot; 1104.968 1104.968 .</span><br><span class="line">122.225.218.44 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 18725 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36&quot; 1471.999 1471.999 .</span><br><span class="line">206.16.17.150 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 64135 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 5061.106 5061.106 .</span><br><span class="line">202.189.3.9 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 80703 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0&quot; 6370.541 6370.541 .</span><br><span class="line">14.17.22.35 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 91115 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36&quot; 7190.962 7190.962 .</span><br><span class="line">114.80.11.236 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 169319 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36&quot; 13372.959 13372.959 .</span><br><span class="line">221.226.97.96 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 182087 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&quot; 14383.058 14383.058 .</span><br><span class="line">115.236.48.202 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 215196 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6776.400 QQBrowser/10.3.2601.400&quot; 16992.246 16992.246 .</span><br><span class="line">153.37.218.54 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 261583 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36&quot; 20663.731 20663.731 .</span><br><span class="line">171.43.191.215 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 273021 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 21568.749 21568.749 .</span><br><span class="line">136.243.151.90 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /topics/16689/replies/124751/edit HTTP/1.1&quot; 302 100 &quot;-&quot; &quot;Mozilla/5.0 (compatible; BLEXBot/1.0; +http://webmeup-crawler.com/)&quot; 0.009 0.009 .</span><br><span class="line">136.243.151.90 - - [05/Dec/2018:00:00:07 +0000] &quot;GET / HTTP/1.1&quot; 200 10085 &quot;-&quot; &quot;Mozilla/5.0 (compatible; BLEXBot/1.0; +http://webmeup-crawler.com/)&quot; 0.071 0.071 .</span><br><span class="line">117.136.39.87 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /oauth/authorize?response_type=code&amp;client_id=6dbe4244&amp;state=E3ZYKC1T6H2yP4z&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob HTTP/1.1&quot; 302 115 &quot;-&quot; &quot;Mozilla/5.0 (Linux; Android 8.1.0; COL-AL10 Build/HUAWEICOL-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.91 Mobile Safari/537.36&quot; 0.004 0.004 .</span><br><span class="line">115.236.50.18 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 404 45 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36&quot; 0.004 0.004 .</span><br><span class="line">123.121.16.2 - - [05/Dec/2018:00:00:07 +0000] &quot;GET /cable HTTP/1.1&quot; 101 5349 &quot;-&quot; &quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0&quot; 415.053 415.053 .</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/01/linux_awk_sed/" data-id="cka9ldn2p0046vkuwvjykq08c" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -638,7 +688,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/python_字典/" data-id="cka40ho3e005uxwuw1l7xhc3s" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/10/27/python_字典/" data-id="cka9ldn3k005kvkuw72dx6byr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -689,7 +739,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/python_时间/" data-id="cka40ho3f005xxwuwhg5h0hdz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/10/27/python_时间/" data-id="cka9ldn3q005uvkuwmdjl6zaw" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -731,61 +781,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/git取消修改/" data-id="cka40ho0o001zxwuw0te9ov0y" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/10/26/git取消修改/" data-id="cka9ldn1g002cvkuwpk2ope05" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python_list操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/26/python_list操作/" class="article-date">
-  <time datetime="2019-10-26T08:48:35.000Z" itemprop="datePublished">2019-10-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/python_list操作/">python-list</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="python-list"><a href="#python-list" class="headerlink" title="python-list"></a>python-list</h2><h3 id="list-sort方法和内置函数sorted"><a href="#list-sort方法和内置函数sorted" class="headerlink" title="list.sort方法和内置函数sorted"></a>list.sort方法和内置函数sorted</h3><ul>
-<li>list.sort : 排序本列表，返回none</li>
-<li>内置函数 sorted ：会新建一个列表作为返回值</li>
-<li>list.sort 、 sorted都有可选的关键字参数：</li>
-<li><ul>
-<li>reverse  如果被设定为 True，被排序的序列里的元素会以降序输出（也就是说把最大值当作最 小值来排序）。这个参数的默认值是 False。</li>
-</ul>
-</li>
-<li><ul>
-<li>key  一个只有一个参数的函数，这个函数会被用在序列里的每一个元素上，所产生的结果 将是排序算法依赖的对比关键字。比如说，在对一些字符串排序时，可以用 key=str. lower 来实现忽略大小写的排序，或者是用 key=len 进行基于字符串长度的排序。这个参数的默认值是恒等函数（identity function），也就是默认用元素自己的值来排序。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">'grape'</span>, <span class="string">'raspberry'</span>, <span class="string">'apple'</span>, <span class="string">'banana'</span>]</span><br><span class="line">print(sorted(fruits)) </span><br><span class="line"><span class="comment">#['apple', 'banana', 'grape', 'raspberry']  </span></span><br><span class="line"><span class="keyword">print</span> (fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">sorted(fruits, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment">#['raspberry', 'grape', 'banana', 'apple'] </span></span><br><span class="line">sorted(fruits, key=len) </span><br><span class="line"><span class="comment"># ['grape', 'apple', 'banana', 'raspberry']</span></span><br><span class="line">sorted(fruits, key=len, reverse=<span class="keyword">True</span>) </span><br><span class="line"><span class="comment"># ['raspberry', 'banana', 'grape', 'apple'] </span></span><br><span class="line">print(fruits) </span><br><span class="line"><span class="comment"># ['grape', 'raspberry', 'apple', 'banana'] </span></span><br><span class="line">fruits.sort()   </span><br><span class="line">print(fruits)</span><br><span class="line"><span class="comment"># ['apple', 'banana', 'grape', 'raspberry']</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/python_list操作/" data-id="cka40ho38005kxwuwih3utosg" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -822,7 +821,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.36px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
@@ -831,7 +830,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -844,15 +843,11 @@
       <ul>
         
           <li>
-            <a href="/2020/04/11/linux_bash/">bash</a>
+            <a href="/2020/04/11/linux_bash/">linux—bash</a>
           </li>
         
           <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
@@ -861,6 +856,10 @@
         
           <li>
             <a href="/2020/03/16/go控制结构/">go控制结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
       </ul>

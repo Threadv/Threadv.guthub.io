@@ -61,6 +61,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SendSms" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/22/SendSms/" class="article-date">
+  <time datetime="2018-03-22T02:35:26.000Z" itemprop="datePublished">2018-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/22/SendSms/">云通信短信service（阿里云）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="SendSms"><a href="#SendSms" class="headerlink" title="SendSms"></a>SendSms</h4><ul>
+<li>依赖配置<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;3.2.8&lt;/version&gt; 注：如提示报错，先升级基础包版，无法解决可联系技术支持</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeyid&#125;"</span>)</span><br><span class="line">    String accessKeyId;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;oss.accesskeysecret&#125;"</span>)</span><br><span class="line">    String accessKeySecret;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//产品名称:云通信短信API产品,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String product = <span class="string">"Dysmsapi"</span>;</span><br><span class="line">        <span class="comment">//产品域名,开发者无需替换</span></span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> String domain = <span class="string">"dysmsapi.aliyuncs.com"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)</span></span><br><span class="line"><span class="comment">//        final String accessKeyId = "yourAccessKeyId";</span></span><br><span class="line"><span class="comment">//        final String accessKeySecret = "yourAccessKeySecret";</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  SendSmsResponse <span class="title">sendSms</span><span class="params">(String phone,String templateCode, Map&lt;String,String&gt; map)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//可自助调整超时时间</span></span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultConnectTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line">        System.setProperty(<span class="string">"sun.net.client.defaultReadTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//初始化acsClient,暂不支持region化</span></span><br><span class="line">            IClientProfile profile = DefaultProfile.getProfile(<span class="string">"cn-hangzhou"</span>, accessKeyId, accessKeySecret);</span><br><span class="line">            DefaultProfile.addEndpoint(<span class="string">"cn-hangzhou"</span>, <span class="string">"cn-hangzhou"</span>, product, domain);</span><br><span class="line">            IAcsClient acsClient = <span class="keyword">new</span> DefaultAcsClient(profile);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//组装请求对象-具体描述见控制台-文档部分内容</span></span><br><span class="line">            SendSmsRequest request = <span class="keyword">new</span> SendSmsRequest();</span><br><span class="line">            <span class="comment">//必填:待发送手机号</span></span><br><span class="line">            request.setPhoneNumbers(phone);</span><br><span class="line">            <span class="comment">//必填:短信签名-可在短信控制台中找到</span></span><br><span class="line">            request.setSignName(<span class="string">"signature"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//必填:短信模板-可在短信控制台中找到</span></span><br><span class="line"><span class="comment">//            request.setTemplateCode("SMS_1000000");</span></span><br><span class="line">            <span class="comment">//可选:模板中的变量替换JSON串,如模板内容为"亲爱的$&#123;name&#125;,您的验证码为$&#123;code&#125;"时,此处的值为</span></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"name\":\"Tom\", \"code\":\"123\"&#125;");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//根据模板id判断模板类型</span></span><br><span class="line">            request.setTemplateCode(templateCode);</span><br><span class="line">            <span class="comment">//获得map所有键放入set集合中</span></span><br><span class="line">            Set&lt;Map.Entry&lt;String,String&gt;&gt; entrySet = map.entrySet();</span><br><span class="line">            Iterator&lt;Map.Entry&lt;String, String&gt;&gt; iterator = entrySet.iterator();</span><br><span class="line">            String str = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;map.size();i++)&#123;</span><br><span class="line">                <span class="comment">//将键值取出放入map.entry接口中</span></span><br><span class="line">                Map.Entry&lt;String, String&gt; mapEntry = iterator.next();</span><br><span class="line">                String key = mapEntry.getKey();</span><br><span class="line">                Object value = mapEntry.getValue();</span><br><span class="line"></span><br><span class="line">                <span class="comment">//拼接字符串</span></span><br><span class="line">                <span class="keyword">if</span>(i&lt;map.size()-<span class="number">1</span>)&#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>+<span class="string">","</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    str +=<span class="string">'"'</span>+key+<span class="string">'"'</span>+<span class="string">":"</span>+<span class="string">'"'</span>+value+<span class="string">'"'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//拼接之后完整的字符串放入&#123;&#125;</span></span><br><span class="line">            request.setTemplateParam(<span class="string">"&#123;"</span>+str+<span class="string">"&#125;"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//            request.setTemplateParam("&#123;\"gift\":"+ gift +", \"express\":"+express+", \"code\":"+code+", \"number\":"+number+", \"tel\":"+tel+"&#125;");</span></span><br><span class="line">            <span class="comment">//选填-上行短信扩展码(无特殊需求用户请忽略此字段)</span></span><br><span class="line">            <span class="comment">//request.setSmsUpExtendCode("90997");</span></span><br><span class="line">            <span class="comment">//可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者</span></span><br><span class="line"><span class="comment">//            request.setOutId("yourOutId");</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//hint 此处可能会抛出异常，注意catch</span></span><br><span class="line">            SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);</span><br><span class="line">            <span class="keyword">return</span> sendSmsResponse;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/22/SendSms/" data-id="cka9ldmzi000yvkuwgdj27swj" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-小程序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/10/小程序/" class="article-date">
@@ -87,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="cka40ho6d009wxwuwtwci3gy7" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/10/小程序/" data-id="cka9ldn67009dvkuwd7s2jovg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -125,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/08/java_readFile/" data-id="cka40ho1h0035xwuw4ymh0kmk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/08/java_readFile/" data-id="cka9ldn29003evkuwq1cc9xko" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -163,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="cka40ho41006oxwuw0csmjsnz" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/05/struts2/" data-id="cka9ldn4j0077vkuw2jkdnjx4" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -225,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="cka40ho2k004txwuw9gb4j05w" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/25/maven基本使用/" data-id="cka9ldn31004qvkuw9ouine6u" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -263,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="cka40ho2m004vxwuwk5flpeke" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/25/maven项目目录约定/" data-id="cka9ldn32004svkuw2sf2tdww" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -306,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="cka40ho4f0078xwuwsnyi9289" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/02/与-区别/" data-id="cka9ldn4c006uvkuw6sbu4gj2" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -346,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/java_excel导出/" data-id="cka40ho1a002vxwuw87ubiog0" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/30/java_excel导出/" data-id="cka9ldn1y002xvkuwqryrppne" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -388,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/java_cookie存信息/" data-id="cka40ho17002rxwuww9067z4y" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/23/java_cookie存信息/" data-id="cka9ldn1w002vvkuwwqh1iray" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -451,61 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/22/java_数组2字符串/" data-id="cka40ho1s003nxwuw23ebui5d" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java_interface" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/16/java_interface/" class="article-date">
-  <time datetime="2017-12-16T12:15:07.000Z" itemprop="datePublished">2017-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/java_interface/">interface</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h4><ul>
-<li>接口（interface）抽象方法和常量值定义的集合.</li>
-<li>本质：特殊的抽象类——只包含常量和方法的定义,没有变量和方法的实现.<h5 id="接口的属性（成员变量）"><a href="#接口的属性（成员变量）" class="headerlink" title="接口的属性（成员变量）"></a>接口的属性（成员变量）</h5></li>
-<li>声明成“public static final 类型 属性名”，默认也是声明成“public static final”即里面的成员变量都是公共的、静态的，不能改变的.<h5 id="接口方法"><a href="#接口方法" class="headerlink" title="接口方法"></a>接口方法</h5></li>
-<li>在接口里面的声明的方法都是抽象方法，因此在接口里面的抽象方法都会把abstract关键字省略掉，因为默认声明的方法都是抽象的，所以就没有必要再写“abstract”字了，这一点与在抽象类里面声明抽象方法时有所区别，在抽象类里面声明抽象方法是一定要使用“abstract”关键字的，而在接口里面声明抽象方法可以省略掉“abstract”.</li>
-<li>在接口里面声明的抽象方法默认是“public(公共的)”的<h4 id="接口特点："><a href="#接口特点：" class="headerlink" title="接口特点："></a>接口特点：</h4></li>
-</ul>
-<ol>
-<li>可以实现多继承.</li>
-<li>默认属性为public static final，也只能是public static final.</li>
-<li>只能定义抽象方法,默认为public的.</li>
-<li><p>接口可以继承其它接口,添加新的属性和抽象方法.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Singer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sing</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>接口和接口之间可以相互继承，类和类之间可以相互继承，类和接口之间，只能是类来实现接口.</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/java_interface/" data-id="cka40ho1e0030xwuwdzdrsbwv" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/22/java_数组2字符串/" data-id="cka9ldn2i003svkuwuvlfs7s4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -545,7 +534,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 15.45px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.36px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
@@ -554,7 +543,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -567,15 +556,11 @@
       <ul>
         
           <li>
-            <a href="/2020/04/11/linux_bash/">bash</a>
+            <a href="/2020/04/11/linux_bash/">linux—bash</a>
           </li>
         
           <li>
             <a href="/2020/03/29/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
           <li>
@@ -584,6 +569,10 @@
         
           <li>
             <a href="/2020/03/16/go控制结构/">go控制结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
       </ul>
