@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/Jdk代理/" data-id="ckcc4gmn7000hssuwvb9ooc9k" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/Jdk代理/" data-id="ckcc4z2us000am4uwu5tibc4g" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -142,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/dynamicProxy-cglib/" data-id="ckcc4gmo0001ussuw4sc4dktu" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/dynamicProxy-cglib/" data-id="ckcc4z2za001jm4uwwxwjyqut" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -193,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/03/静态代理/" data-id="ckcc4gms3008wssuwqc17we8r" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/11/03/静态代理/" data-id="ckcc4z35r007pm4uw1ls4qt96" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -231,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/29/shipjssdk.js/" data-id="ckcc4gmqc005pssuwlnmqi5nt" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/29/shipjssdk.js/" data-id="ckcc4z3320051m4uwzicm5l0a" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -269,50 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/16/PHPoffice导出/" data-id="ckcc4gmne000qssuww4d1918v" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-添加数据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/16/添加数据/" class="article-date">
-  <time datetime="2018-10-16T13:30:21.000Z" itemprop="datePublished">2018-10-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/16/添加数据/">添加数据</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--查看数据--&gt;</span><br><span class="line"> dump($xxx);</span><br><span class="line"> <span class="keyword">die</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 发送</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $notice_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'noticeId'</span>,$notice_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'send'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $userList = explode(<span class="string">','</span>, $data[<span class="string">'user_id'</span>]);</span><br><span class="line">           <span class="keyword">foreach</span>($userList <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">               $insData[<span class="string">'notice_id'</span>] = $data[<span class="string">'notice_id'</span>];</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = $val;</span><br><span class="line">               $insData[<span class="string">'is_read'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_del'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               Db::table(<span class="string">'xxx_user'</span>)-&gt;insert($insData);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $code_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'codeId'</span>,$code_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'add'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $num = intval($data[<span class="string">'num'</span>]);</span><br><span class="line">           <span class="keyword">for</span> ($n=<span class="number">0</span>;$n&lt;$num;$n++)&#123;</span><br><span class="line">               $insData[<span class="string">'name'</span>] = $data[<span class="string">'name'</span>];</span><br><span class="line">               $insData[<span class="string">'goods_id'</span>] = $data[<span class="string">'goods_id'</span>];</span><br><span class="line">               $insData[<span class="string">'activity_id'</span>] = <span class="number">4</span>;</span><br><span class="line">               $insData[<span class="string">'pay_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'status'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_expire'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               $insData[<span class="string">'end_time'</span>] = date(<span class="string">'2099-12-12 00:00:00'</span>);</span><br><span class="line">               $insData[<span class="string">'code'</span>] = <span class="string">''</span>;</span><br><span class="line">               $codeId =Db::table(<span class="string">'story_pre_sale_code'</span>)-&gt;insertGetId($insData);</span><br><span class="line">               $r = rand(<span class="number">10</span>,<span class="number">99</span>);</span><br><span class="line">               $pre=<span class="string">""</span>;</span><br><span class="line">               <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">8</span>-strlen($codeId);$i++)&#123;</span><br><span class="line">                   $pre = $pre.<span class="string">"0"</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               $newCode = $r.$pre.$codeId;</span><br><span class="line">               $newCode16 = base_convert($newCode, <span class="number">10</span>, <span class="number">16</span>);</span><br><span class="line">               Db::table(<span class="string">'xxx_code'</span>)-&gt;where(<span class="string">'id'</span>, $codeId)-&gt;setField(<span class="string">'code'</span>,$newCode16);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/16/添加数据/" data-id="ckcc4gmrw008hssuwww9lygmu" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/16/PHPoffice导出/" data-id="ckcc4z2x9000sm4uw75s2mi3z" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -385,7 +342,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/16/添加修改/" data-id="ckcc4gmrx008jssuwbw2yf7kg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/16/添加修改/" data-id="ckcc4z35f007bm4uwb34fi1gc" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-添加数据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/16/添加数据/" class="article-date">
+  <time datetime="2018-10-16T13:30:21.000Z" itemprop="datePublished">2018-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/16/添加数据/">添加数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--查看数据--&gt;</span><br><span class="line"> dump($xxx);</span><br><span class="line"> <span class="keyword">die</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 发送</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $notice_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'noticeId'</span>,$notice_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'send'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $userList = explode(<span class="string">','</span>, $data[<span class="string">'user_id'</span>]);</span><br><span class="line">           <span class="keyword">foreach</span>($userList <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">               $insData[<span class="string">'notice_id'</span>] = $data[<span class="string">'notice_id'</span>];</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = $val;</span><br><span class="line">               $insData[<span class="string">'is_read'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_del'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               Db::table(<span class="string">'xxx_user'</span>)-&gt;insert($insData);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (request()-&gt;isGet()) &#123;</span><br><span class="line">           $code_id = input(<span class="string">'get.id'</span>);</span><br><span class="line">           <span class="keyword">$this</span>-&gt;assign(<span class="string">'codeId'</span>,$code_id);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'add'</span>);</span><br><span class="line">       &#125; <span class="keyword">elseif</span>( request()-&gt;isPost() ) &#123;</span><br><span class="line">           $data = input(<span class="string">'post.'</span>);</span><br><span class="line">           $num = intval($data[<span class="string">'num'</span>]);</span><br><span class="line">           <span class="keyword">for</span> ($n=<span class="number">0</span>;$n&lt;$num;$n++)&#123;</span><br><span class="line">               $insData[<span class="string">'name'</span>] = $data[<span class="string">'name'</span>];</span><br><span class="line">               $insData[<span class="string">'goods_id'</span>] = $data[<span class="string">'goods_id'</span>];</span><br><span class="line">               $insData[<span class="string">'activity_id'</span>] = <span class="number">4</span>;</span><br><span class="line">               $insData[<span class="string">'pay_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'user_id'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'status'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'is_expire'</span>] = <span class="number">0</span>;</span><br><span class="line">               $insData[<span class="string">'create_time'</span>] = date(<span class="string">'Y-m-d H:i:s'</span>,time());</span><br><span class="line">               $insData[<span class="string">'end_time'</span>] = date(<span class="string">'2099-12-12 00:00:00'</span>);</span><br><span class="line">               $insData[<span class="string">'code'</span>] = <span class="string">''</span>;</span><br><span class="line">               $codeId =Db::table(<span class="string">'story_pre_sale_code'</span>)-&gt;insertGetId($insData);</span><br><span class="line">               $r = rand(<span class="number">10</span>,<span class="number">99</span>);</span><br><span class="line">               $pre=<span class="string">""</span>;</span><br><span class="line">               <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">8</span>-strlen($codeId);$i++)&#123;</span><br><span class="line">                   $pre = $pre.<span class="string">"0"</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               $newCode = $r.$pre.$codeId;</span><br><span class="line">               $newCode16 = base_convert($newCode, <span class="number">10</span>, <span class="number">16</span>);</span><br><span class="line">               Db::table(<span class="string">'xxx_code'</span>)-&gt;where(<span class="string">'id'</span>, $codeId)-&gt;setField(<span class="string">'code'</span>,$newCode16);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;success(<span class="string">'恭喜，保存成功哦！'</span>, <span class="string">''</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/16/添加数据/" data-id="ckcc4z35i007dm4uwe8bavd9q" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -431,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/15/Exception/" data-id="ckcc4gmmx0004ssuwnh6vkgld" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/15/Exception/" data-id="ckcc4z2un0004m4uwxmv6o0vj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -476,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/15/Swagger-ui/" data-id="ckcc4gmnm0015ssuws2oopdth" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/15/Swagger-ui/" data-id="ckcc4z2xh0014m4uwbrp9p5uw" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -514,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="ckcc4gmqv006qssuwsp6qrnzh" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/12/web/" data-id="ckcc4z33v005vm4uwnoa0t1z4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springboot/">springboot</a></li></ul>
@@ -592,7 +592,7 @@
           </li>
         
           <li>
-            <a href="/2020/03/16/go基础/">go基础知识</a>
+            <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
           </li>
         
       </ul>
