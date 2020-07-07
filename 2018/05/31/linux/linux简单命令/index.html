@@ -160,12 +160,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-c  只输出匹配行的计数。</span><br><span class="line">-I  不区分大小写(只适用于单字符)。</span><br><span class="line">-l  只显示文件名</span><br><span class="line">-v  显示不包含匹配文本的所有行。</span><br><span class="line">-n  显示匹配行数据及其行号</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>gzip [-cdtv#] 檔名 | 压缩、解压缩，源文件都不再存在</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d  进行解压缩</span><br><span class="line">-c  将压缩的数据输出到屏幕上</span><br><span class="line">-v  :显示原档案/压缩文件案的压缩比等信息</span><br><span class="line"><span class="meta">-#</span>  ：压缩等级，-1最快，但压缩比最差，=9最慢，但压缩比最好</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d  进行解压缩</span><br><span class="line">-c  将压缩的数据输出到屏幕上</span><br><span class="line">-v  :显示原档案/压缩文件案的压缩比等信息</span><br><span class="line"><span class="meta">-#</span><span class="bash">  ：压缩等级，-1最快，但压缩比最差，=9最慢，但压缩比最好</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>gunzip | 解压缩</p>
 </li>
 <li><p>bzip2 | 压缩、解压缩</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d  :解压</span><br><span class="line">-z  :压缩</span><br><span class="line">-k  :保留源文件</span><br><span class="line">-c ：将压缩的过程产生的数据输出到屏幕上！</span><br><span class="line">-v ：可以显示出原档案/压缩文件案的压缩比等信息；</span><br><span class="line"><span class="meta">-#</span> ：与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d  :解压</span><br><span class="line">-z  :压缩</span><br><span class="line">-k  :保留源文件</span><br><span class="line">-c ：将压缩的过程产生的数据输出到屏幕上！</span><br><span class="line">-v ：可以显示出原档案/压缩文件案的压缩比等信息；</span><br><span class="line"><span class="meta">-#</span><span class="bash"> ：与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>bzcat 读取数据而无需解压</p>
 </li>
@@ -268,7 +268,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b 　不检查空格字符的不同。</span><br><span class="line">-B 　不检查空白行。</span><br><span class="line">-i  不检查大小写</span><br><span class="line">-q  仅显示差异而不显示详细信息</span><br><span class="line">eg: diff a b &gt; parch.log 比较两个文件的不同并产生补丁</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>date [参数]… [+格式] | 显示或设定系统的日期与时间</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span>H 小时(以00-23来表示)。 </span><br><span class="line"><span class="meta">%</span>M 分钟(以00-59来表示)。 </span><br><span class="line"><span class="meta">%</span>P AM或PM。</span><br><span class="line"><span class="meta">%</span>D 日期(含年月日)</span><br><span class="line"><span class="meta">%</span>U 该年中的周数。</span><br><span class="line">date -s “2015-10-17 01:01:01″ //时间设定</span><br><span class="line">date +%Y%m%d         //显示前天年月日</span><br><span class="line">date +%Y%m%d --date="+1 day/month/year"  //显示前一天/月/年的日期</span><br><span class="line">date +%Y%m%d --date="-1 day/month/year"  //显示后一天/月/年的日期</span><br><span class="line">date -d '2 weeks' 2周后的日期</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">H 小时(以00-23来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">M 分钟(以00-59来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">P AM或PM。</span></span><br><span class="line"><span class="meta">%</span><span class="bash">D 日期(含年月日)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">U 该年中的周数。</span></span><br><span class="line">date -s “2015-10-17 01:01:01″ //时间设定</span><br><span class="line">date +%Y%m%d         //显示前天年月日</span><br><span class="line">date +%Y%m%d --date="+1 day/month/year"  //显示前一天/月/年的日期</span><br><span class="line">date +%Y%m%d --date="-1 day/month/year"  //显示后一天/月/年的日期</span><br><span class="line">date -d '2 weeks' 2周后的日期</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>cal [参数] 月份] [年份] | 查看日历</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-1  显示当月的月历</span><br><span class="line">-3  显示前、当、后一个月的日历</span><br><span class="line">-m  显示星期一为一个星期的第一天</span><br><span class="line">-s  （默认）星期天为第一天</span><br><span class="line">-j  显示当月是一年中的第几天的日历</span><br><span class="line">-y  显示当前年份的日历</span><br></pre></td></tr></table></figure>
@@ -330,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/linux/linux简单命令/" data-id="ckcc3qzye000bqguwswh3xy5m" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/linux/linux简单命令/" data-id="ckcc4gmt5009vssuwq5hvicd6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -351,9 +351,9 @@
     </a>
   
   
-    <a href="/2018/05/30/快速排序JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/30/复杂度/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">快速排序JavaScript</div>
+      <div class="article-nav-title">算法复杂度</div>
     </a>
   
 </nav>

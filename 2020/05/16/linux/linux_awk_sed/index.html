@@ -90,7 +90,7 @@
 <li>统计ip出现的次数<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;print $1&#125;' nginx.log | sort | uniq -c | sort -nr | head -n 10</span><br><span class="line"></span><br><span class="line">awk '&#123;print $1&#125;' nginx.log | sort | uniq -c | sort -nr | head -10</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">sort 排序 </span><br><span class="line">uniq -c 合并相邻相同的并统计</span><br><span class="line">sort 排序 -n 按照数值排序  -r反序</span><br><span class="line">head 取值多少</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 匹配 错误日志：</span><br><span class="line">awk '$9~/500|404/&#123;print $0&#125;' nginx.log</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 匹配 错误日志：</span></span><br><span class="line">awk '$9~/500|404/&#123;print $0&#125;' nginx.log</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>访问量最高的url</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">awk '&#123;print $7&#125;' nginx.log|</span><br><span class="line">sed -e 's/\?.*//g' \</span><br><span class="line">	-e 's/\/avatar\/[0-9]*/\/avatar\/int/g' \</span><br><span class="line">	-e 's/\topcs\/[0-9]*/\/topics\/int/g' \</span><br><span class="line">	-e 's/\/replies\/[0-9]*/\/replies\/int/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.png/\id.png/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.jpg/\/id.jpg/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.jepg/\/id.jepg/g' \</span><br><span class="line">	-e 's/\/[0-9a-z\-]*\.gif/\/id.gif/g' |</span><br><span class="line">sort | uniq -c | sort -nr</span><br></pre></td></tr></table></figure>
@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/16/linux/linux_awk_sed/" data-id="ckcc3r012000eqguwvh998j9t" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/05/16/linux/linux_awk_sed/" data-id="ckcc4gmsx009kssuw88wxn49k" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
