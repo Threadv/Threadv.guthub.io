@@ -105,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/17/linux/linux_shell/" data-id="ckcc4z37f0096m4uwp569n8rk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/05/17/linux/linux_shell/" data-id="ckcc5ea9a007r18uwmtmiucp3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -155,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/16/linux/linux_awk_sed/" data-id="ckcc4z379008ym4uw64zgmvlj" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/05/16/linux/linux_awk_sed/" data-id="ckcc5ea9c007v18uw6ji1cj0d" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -212,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/11/linux/linux_bash/" data-id="ckcc4z37g0098m4uwzgzy55hd" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/04/11/linux/linux_bash/" data-id="ckcc5ea95007l18uwsxf7t9ks" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -259,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="ckcc4z2zr0027m4uwlfjr1fni" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/03/29/hello-world/" data-id="ckcc5ea4t001t18uw0j6gxcc6" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -301,7 +301,60 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go安装和配置/" data-id="ckcc4z2zi001tm4uw9cuqywq5" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/03/16/go安装和配置/" data-id="ckcc5ea4s001r18uw80fy9fw4" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-go控制结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/16/go控制结构/" class="article-date">
+  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/go控制结构/">go控制结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go控制结构"><a href="#go控制结构" class="headerlink" title="go控制结构"></a>go控制结构</h1><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><ul>
+<li>go if去除了条件的（）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> first <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> cond <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> first &lt;= <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is less than or equal to 0\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> first &gt; <span class="number">0</span> &amp;&amp; first &lt; <span class="number">5</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is between 0 and 5\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is 5 or greater\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> cond = <span class="number">5</span>; cond &gt; <span class="number">10</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is greater than 10\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is not greater than 10\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="switch-结构"><a href="#switch-结构" class="headerlink" title="switch 结构"></a>switch 结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num1 <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> num1 &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">98</span>, <span class="number">99</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 98"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>: </span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 100"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's not equal to 98 or 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out: It's equal to 100</span><br></pre></td></tr></table></figure>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"This is the %d iteration\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for 结构的第二种形式是没有头部的条件判断迭代（类似其它语言中的 while 循环），基本形式为：for 条件语句 {}。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">        i = i - <span class="number">1</span></span><br><span class="line">        fmt.Printf(<span class="string">"The variable i is now: %d\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The variable i is now: 4</span><br><span class="line">The variable i is now: 3</span><br><span class="line">The variable i is now: 2</span><br><span class="line">The variable i is now: 1</span><br><span class="line">The variable i is now: 0</span><br><span class="line">The variable i is now: -1</span><br></pre></td></tr></table></figure>
+<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break continue"></a>break continue</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">5</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"  "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">012345 012345 012345</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">" "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 6 7 8 9</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/16/go控制结构/" data-id="ckcc5ea4v001w18uwufzmlp9j" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
@@ -426,60 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go基础/" data-id="ckcc4z2zj001vm4uwrimh4gcy" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-go控制结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/16/go控制结构/" class="article-date">
-  <time datetime="2020-03-16T11:20:35.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/go控制结构/">go控制结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="go控制结构"><a href="#go控制结构" class="headerlink" title="go控制结构"></a>go控制结构</h1><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><ul>
-<li>go if去除了条件的（）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> first <span class="keyword">int</span> = <span class="number">10</span></span><br><span class="line">    <span class="keyword">var</span> cond <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> first &lt;= <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is less than or equal to 0\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> first &gt; <span class="number">0</span> &amp;&amp; first &lt; <span class="number">5</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is between 0 and 5\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"first is 5 or greater\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> cond = <span class="number">5</span>; cond &gt; <span class="number">10</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is greater than 10\n"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        fmt.Printf(<span class="string">"cond is not greater than 10\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="switch-结构"><a href="#switch-结构" class="headerlink" title="switch 结构"></a>switch 结构</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num1 <span class="keyword">int</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> num1 &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">98</span>, <span class="number">99</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 98"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>: </span><br><span class="line">        fmt.Println(<span class="string">"It's equal to 100"</span>)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">"It's not equal to 98 or 100"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out: It's equal to 100</span><br></pre></td></tr></table></figure>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">5</span>; i++ &#123;</span><br><span class="line">        fmt.Printf(<span class="string">"This is the %d iteration\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>for 结构的第二种形式是没有头部的条件判断迭代（类似其它语言中的 while 循环），基本形式为：for 条件语句 {}。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i <span class="keyword">int</span> = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i &gt;= <span class="number">0</span> &#123;</span><br><span class="line">        i = i - <span class="number">1</span></span><br><span class="line">        fmt.Printf(<span class="string">"The variable i is now: %d\n"</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The variable i is now: 4</span><br><span class="line">The variable i is now: 3</span><br><span class="line">The variable i is now: 2</span><br><span class="line">The variable i is now: 1</span><br><span class="line">The variable i is now: 0</span><br><span class="line">The variable i is now: -1</span><br></pre></td></tr></table></figure>
-<h3 id="break-continue"><a href="#break-continue" class="headerlink" title="break continue"></a>break continue</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>; j&lt;<span class="number">10</span>; j++ &#123;</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">5</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">print</span>(j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"  "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">012345 012345 012345</span><br></pre></td></tr></table></figure>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">5</span> &#123;</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">" "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 6 7 8 9</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/16/go控制结构/" data-id="ckcc4z2zk001xm4uwx6jbetwn" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/03/16/go基础/" data-id="ckcc5ea4y002118uwpsxtf30i" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
@@ -688,7 +688,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/linux/linux_awk/" data-id="ckcc4z37a0090m4uwr79wnh6l" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/01/01/linux/linux_awk/" data-id="ckcc5ea93007i18uwm3jyyqmh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -902,7 +902,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/linux/linux_三剑客/" data-id="ckcc4z37e0094m4uw47ov2pni" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2020/01/01/linux/linux_三剑客/" data-id="ckcc5ea9b007t18uwlnkvxk0b" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -914,9 +914,9 @@
 
 
   
-    <article id="post-python_字典" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-python/python_字典" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/27/python_字典/" class="article-date">
+    <a href="/2019/10/27/python/python_字典/" class="article-date">
   <time datetime="2019-10-27T03:21:36.000Z" itemprop="datePublished">2019-10-27</time>
 </a>
     
@@ -928,7 +928,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/27/python_字典/">python_dict</a>
+      <a class="article-title" href="/2019/10/27/python/python_字典/">python_dict</a>
     </h1>
   
 
@@ -958,7 +958,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/python_字典/" data-id="ckcc4z32f004km4uwjl55qg5j" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2019/10/27/python/python_字典/" data-id="ckcc5ea9n008i18uw398feand" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
