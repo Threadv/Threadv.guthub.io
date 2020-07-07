@@ -138,7 +138,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/03/design/observer/" data-id="ckcc5ea7n005m18uwb9f72s30" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/03/design/observer/" data-id="ckcc5iwnk005nq4uw7zrlk19d" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-design/设计模式-工厂(泛型)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/03/design/设计模式-工厂(泛型)/" class="article-date">
+  <time datetime="2018-10-03T13:12:36.000Z" itemprop="datePublished">2018-10-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/03/design/设计模式-工厂(泛型)/">设计模式-工厂(泛型)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="factory"><a href="#factory" class="headerlink" title="factory"></a>factory</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 颜色</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//说话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhiteHuman</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白色=+++++"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白English 单字节+++++"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractHumanFactory</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> &lt;T extends Human&gt;<span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> <span class="keyword">extends</span> <span class="title">AbstractHumanFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T extends Human&gt; <span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//生产的人种</span></span><br><span class="line">        Human human = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">//产生人种</span></span><br><span class="line">            human = (T)Class.forName(c.getName()).newInstance();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T)human;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">       <span class="comment">//</span></span><br><span class="line">       AbstractHumanFactory abstractHumanFactory = <span class="keyword">new</span> HumanFactory();</span><br><span class="line">       <span class="comment">// white</span></span><br><span class="line">       System.out.println(<span class="string">"白色"</span>);</span><br><span class="line">       Human whiteHuman = abstractHumanFactory.createuman(WhiteHuman.class);</span><br><span class="line">       whiteHuman.getColor();</span><br><span class="line">       whiteHuman.talk();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/03/design/设计模式-工厂(泛型)/" data-id="ckcc5iwno005rq4uwpsgr6g8l" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -245,49 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/03/design/singleton/" data-id="ckcc5ea7v005w18uwhzux5b04" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-design/设计模式-工厂(泛型)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/03/design/设计模式-工厂(泛型)/" class="article-date">
-  <time datetime="2018-10-03T13:12:36.000Z" itemprop="datePublished">2018-10-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/03/design/设计模式-工厂(泛型)/">设计模式-工厂(泛型)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="factory"><a href="#factory" class="headerlink" title="factory"></a>factory</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 颜色</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//说话</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhiteHuman</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白色=+++++"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"白English 单字节+++++"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractHumanFactory</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> &lt;T extends Human&gt;<span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> <span class="keyword">extends</span> <span class="title">AbstractHumanFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T extends Human&gt; <span class="function">T <span class="title">createuman</span><span class="params">(Class&lt;T&gt; c)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//生产的人种</span></span><br><span class="line">        Human human = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">//产生人种</span></span><br><span class="line">            human = (T)Class.forName(c.getName()).newInstance();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T)human;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">       <span class="comment">//</span></span><br><span class="line">       AbstractHumanFactory abstractHumanFactory = <span class="keyword">new</span> HumanFactory();</span><br><span class="line">       <span class="comment">// white</span></span><br><span class="line">       System.out.println(<span class="string">"白色"</span>);</span><br><span class="line">       Human whiteHuman = abstractHumanFactory.createuman(WhiteHuman.class);</span><br><span class="line">       whiteHuman.getColor();</span><br><span class="line">       whiteHuman.talk();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/03/design/设计模式-工厂(泛型)/" data-id="ckcc5ea7z006018uwb9nifook" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/03/design/singleton/" data-id="ckcc5iwnp005tq4uw38yogc29" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -342,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/01/template/" data-id="ckcc5ea5n003a18uw4o1o2dc2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/01/template/" data-id="ckcc5iwlk003gq4uw9s1lmdyz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -403,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/01/design/设计模式-工厂/" data-id="ckcc5ea7u005u18uwww5umq7n" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/10/01/design/设计模式-工厂/" data-id="ckcc5iwnq005vq4uw911vcvvk" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Patterns/">Design Patterns</a></li></ul>
@@ -494,7 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/sort/基数排序(RadixSort)/" data-id="ckcc5ea9v008y18uwrj29k7q2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/sort/基数排序(RadixSort)/" data-id="ckcc5iwp9008lq4uwdrric9s6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -581,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/sort/堆排序(HeapSort)/" data-id="ckcc5ea9u008w18uw4jz0lat6" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/sort/堆排序(HeapSort)/" data-id="ckcc5iwpa008nq4uwgro3j7kb" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -673,7 +673,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/sort/归并排序(Merge Sort)/" data-id="ckcc5ea9t008u18uwicq3ohvi" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/25/sort/归并排序(Merge Sort)/" data-id="ckcc5iwpd008sq4uwmc63e614" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -738,7 +738,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/20/html_input/" data-id="ckcc5ea4z002318uwj36hm7lk" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/20/html_input/" data-id="ckcc5iwkh0024q4uw63efmu2k" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li></ul>
@@ -826,7 +826,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/11/sort/插入排序(Insertion Sort)/" data-id="ckcc5ea9w009018uwwuapily3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/09/11/sort/插入排序(Insertion Sort)/" data-id="ckcc5iwph0090q4uwi7vtigjj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -904,7 +904,7 @@
           </li>
         
           <li>
-            <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
+            <a href="/2020/03/16/go基础/">go基础知识</a>
           </li>
         
       </ul>
