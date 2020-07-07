@@ -61,6 +61,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-http_utils" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/http_utils/" class="article-date">
+  <time datetime="2018-05-31T08:19:12.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/http_utils/">HttpUtils</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="HttpUtils"><a href="#HttpUtils" class="headerlink" title="HttpUtils"></a>HttpUtils</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * get</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doGet</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; querys)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpGet request = <span class="keyword">new</span> HttpGet(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * post form</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> bodys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doPost</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; querys,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; bodys)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpPost request = <span class="keyword">new</span> HttpPost(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (bodys != <span class="keyword">null</span>) &#123;</span><br><span class="line">            List&lt;NameValuePair&gt; nameValuePairList = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (String key : bodys.keySet()) &#123;</span><br><span class="line">                nameValuePairList.add(<span class="keyword">new</span> BasicNameValuePair(key, bodys.get(key)));</span><br><span class="line">            &#125;</span><br><span class="line">            UrlEncodedFormEntity formEntity = <span class="keyword">new</span> UrlEncodedFormEntity(nameValuePairList, <span class="string">"utf-8"</span>);</span><br><span class="line">            formEntity.setContentType(<span class="string">"application/x-www-form-urlencoded; charset=UTF-8"</span>);</span><br><span class="line">            request.setEntity(formEntity);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Post String</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> body</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doPost</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; querys,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      String body)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpPost request = <span class="keyword">new</span> HttpPost(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(body)) &#123;</span><br><span class="line">            request.setEntity(<span class="keyword">new</span> StringEntity(body, <span class="string">"utf-8"</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Post stream</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> body</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doPost</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      Map&lt;String, String&gt; querys,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      <span class="keyword">byte</span>[] body)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpPost request = <span class="keyword">new</span> HttpPost(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (body != <span class="keyword">null</span>) &#123;</span><br><span class="line">            request.setEntity(<span class="keyword">new</span> ByteArrayEntity(body));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Put String</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> body</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doPut</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; querys,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     String body)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpPut request = <span class="keyword">new</span> HttpPut(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(body)) &#123;</span><br><span class="line">            request.setEntity(<span class="keyword">new</span> StringEntity(body, <span class="string">"utf-8"</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Put stream</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> body</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doPut</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     Map&lt;String, String&gt; querys,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     <span class="keyword">byte</span>[] body)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpPut request = <span class="keyword">new</span> HttpPut(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (body != <span class="keyword">null</span>) &#123;</span><br><span class="line">            request.setEntity(<span class="keyword">new</span> ByteArrayEntity(body));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Delete</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> headers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> querys</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpResponse <span class="title">doDelete</span><span class="params">(String host, String path, String method,</span></span></span><br><span class="line"><span class="function"><span class="params">                                        Map&lt;String, String&gt; headers,</span></span></span><br><span class="line"><span class="function"><span class="params">                                        Map&lt;String, String&gt; querys)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        HttpClient httpClient = wrapClient(host);</span><br><span class="line"></span><br><span class="line">        HttpDelete request = <span class="keyword">new</span> HttpDelete(buildUrl(host, path, querys));</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; e : headers.entrySet()) &#123;</span><br><span class="line">            request.addHeader(e.getKey(), e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient.execute(request);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">buildUrl</span><span class="params">(String host, String path, Map&lt;String, String&gt; querys)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        StringBuilder sbUrl = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sbUrl.append(host);</span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.isBlank(path)) &#123;</span><br><span class="line">            sbUrl.append(path);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != querys) &#123;</span><br><span class="line">            StringBuilder sbQuery = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; query : querys.entrySet()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> &lt; sbQuery.length()) &#123;</span><br><span class="line">                    sbQuery.append(<span class="string">"&amp;"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (StringUtils.isBlank(query.getKey()) &amp;&amp; !StringUtils.isBlank(query.getValue())) &#123;</span><br><span class="line">                    sbQuery.append(query.getValue());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!StringUtils.isBlank(query.getKey())) &#123;</span><br><span class="line">                    sbQuery.append(query.getKey());</span><br><span class="line">                    <span class="keyword">if</span> (!StringUtils.isBlank(query.getValue())) &#123;</span><br><span class="line">                        sbQuery.append(<span class="string">"="</span>);</span><br><span class="line">                        sbQuery.append(URLEncoder.encode(query.getValue(), <span class="string">"utf-8"</span>));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt; sbQuery.length()) &#123;</span><br><span class="line">                sbUrl.append(<span class="string">"?"</span>).append(sbQuery);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sbUrl.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> HttpClient <span class="title">wrapClient</span><span class="params">(String host)</span> </span>&#123;</span><br><span class="line">        HttpClient httpClient = <span class="keyword">new</span> DefaultHttpClient();</span><br><span class="line">        <span class="keyword">if</span> (host.startsWith(<span class="string">"https://"</span>)) &#123;</span><br><span class="line">            sslClient(httpClient);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> httpClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sslClient</span><span class="params">(HttpClient httpClient)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            SSLContext ctx = SSLContext.getInstance(<span class="string">"TLS"</span>);</span><br><span class="line">            X509TrustManager tm = <span class="keyword">new</span> X509TrustManager() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkClientTrusted</span><span class="params">(X509Certificate[] xcs, String str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkServerTrusted</span><span class="params">(X509Certificate[] xcs, String str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            ctx.init(<span class="keyword">null</span>, <span class="keyword">new</span> TrustManager[] &#123; tm &#125;, <span class="keyword">null</span>);</span><br><span class="line">            SSLSocketFactory ssf = <span class="keyword">new</span> SSLSocketFactory(ctx);</span><br><span class="line">            ssf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);</span><br><span class="line">            ClientConnectionManager ccm = httpClient.getConnectionManager();</span><br><span class="line">            SchemeRegistry registry = ccm.getSchemeRegistry();</span><br><span class="line">            registry.register(<span class="keyword">new</span> Scheme(<span class="string">"https"</span>, <span class="number">443</span>, ssf));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (KeyManagementException ex) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(ex);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException ex) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(ex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/http_utils/" data-id="ckcc33e29002lmsuwpbcpa84i" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Map2StringUtil" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/Map2StringUtil/" class="article-date">
+  <time datetime="2018-05-31T08:09:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/Map2StringUtil/">Map2StringUtil</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Map2StringUtil"><a href="#Map2StringUtil" class="headerlink" title="Map2StringUtil"></a>Map2StringUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map2StringUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法名称:transMapToString</span></span><br><span class="line"><span class="comment">     * 传入参数:map</span></span><br><span class="line"><span class="comment">     * 返回值:String 形如 username'chenziwen^password'1234</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">transMapToString</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">        java.util.Map.Entry entry;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span>(Iterator iterator = map.entrySet().iterator(); iterator.hasNext();)</span><br><span class="line">        &#123;</span><br><span class="line">            entry = (java.util.Map.Entry)iterator.next();</span><br><span class="line">            sb.append(entry.getKey().toString()).append( <span class="string">"'"</span> ).append(<span class="keyword">null</span>==entry.getValue()?<span class="string">""</span>:</span><br><span class="line">                    entry.getValue().toString()).append (iterator.hasNext() ? <span class="string">"^"</span> : <span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/31/Map2StringUtil/" data-id="ckcc33e0e000nmsuws9o1h75m" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SHA1加密" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/31/SHA1加密/" class="article-date">
@@ -87,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/SHA1加密/" data-id="cka9lj6al000z9kuwpb4a1fso" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/SHA1加密/" data-id="ckcc33e0r000wmsuwaoobtdts" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -125,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="cka9lj6ay001k9kuwl0k3jevg" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/ZipUtil/" data-id="ckcc33e1n001umsuwyum90ute" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/util/">util</a></li></ul>
@@ -137,9 +213,9 @@
 
 
   
-    <article id="post-linux简单命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux/linux简单命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/31/linux简单命令/" class="article-date">
+    <a href="/2018/05/31/linux/linux简单命令/" class="article-date">
   <time datetime="2018-05-31T07:09:11.000Z" itemprop="datePublished">2018-05-31</time>
 </a>
     
@@ -151,7 +227,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/linux简单命令/">linux简单命令</a>
+      <a class="article-title" href="/2018/05/31/linux/linux简单命令/">linux简单命令</a>
     </h1>
   
 
@@ -233,12 +309,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-c  只输出匹配行的计数。</span><br><span class="line">-I  不区分大小写(只适用于单字符)。</span><br><span class="line">-l  只显示文件名</span><br><span class="line">-v  显示不包含匹配文本的所有行。</span><br><span class="line">-n  显示匹配行数据及其行号</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>gzip [-cdtv#] 檔名 | 压缩、解压缩，源文件都不再存在</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d  进行解压缩</span><br><span class="line">-c  将压缩的数据输出到屏幕上</span><br><span class="line">-v  :显示原档案/压缩文件案的压缩比等信息</span><br><span class="line"><span class="meta">-#</span><span class="bash">  ：压缩等级，-1最快，但压缩比最差，=9最慢，但压缩比最好</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d  进行解压缩</span><br><span class="line">-c  将压缩的数据输出到屏幕上</span><br><span class="line">-v  :显示原档案/压缩文件案的压缩比等信息</span><br><span class="line"><span class="meta">-#</span>  ：压缩等级，-1最快，但压缩比最差，=9最慢，但压缩比最好</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>gunzip | 解压缩</p>
 </li>
 <li><p>bzip2 | 压缩、解压缩</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d  :解压</span><br><span class="line">-z  :压缩</span><br><span class="line">-k  :保留源文件</span><br><span class="line">-c ：将压缩的过程产生的数据输出到屏幕上！</span><br><span class="line">-v ：可以显示出原档案/压缩文件案的压缩比等信息；</span><br><span class="line"><span class="meta">-#</span><span class="bash"> ：与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-d  :解压</span><br><span class="line">-z  :压缩</span><br><span class="line">-k  :保留源文件</span><br><span class="line">-c ：将压缩的过程产生的数据输出到屏幕上！</span><br><span class="line">-v ：可以显示出原档案/压缩文件案的压缩比等信息；</span><br><span class="line"><span class="meta">-#</span> ：与 gzip 同样的，都是在计算压缩比的参数， -9 最佳， -1 最快！</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>bzcat 读取数据而无需解压</p>
 </li>
@@ -341,7 +417,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b 　不检查空格字符的不同。</span><br><span class="line">-B 　不检查空白行。</span><br><span class="line">-i  不检查大小写</span><br><span class="line">-q  仅显示差异而不显示详细信息</span><br><span class="line">eg: diff a b &gt; parch.log 比较两个文件的不同并产生补丁</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>date [参数]… [+格式] | 显示或设定系统的日期与时间</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash">H 小时(以00-23来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">M 分钟(以00-59来表示)。 </span></span><br><span class="line"><span class="meta">%</span><span class="bash">P AM或PM。</span></span><br><span class="line"><span class="meta">%</span><span class="bash">D 日期(含年月日)</span></span><br><span class="line"><span class="meta">%</span><span class="bash">U 该年中的周数。</span></span><br><span class="line">date -s “2015-10-17 01:01:01″ //时间设定</span><br><span class="line">date +%Y%m%d         //显示前天年月日</span><br><span class="line">date +%Y%m%d --date="+1 day/month/year"  //显示前一天/月/年的日期</span><br><span class="line">date +%Y%m%d --date="-1 day/month/year"  //显示后一天/月/年的日期</span><br><span class="line">date -d '2 weeks' 2周后的日期</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span>H 小时(以00-23来表示)。 </span><br><span class="line"><span class="meta">%</span>M 分钟(以00-59来表示)。 </span><br><span class="line"><span class="meta">%</span>P AM或PM。</span><br><span class="line"><span class="meta">%</span>D 日期(含年月日)</span><br><span class="line"><span class="meta">%</span>U 该年中的周数。</span><br><span class="line">date -s “2015-10-17 01:01:01″ //时间设定</span><br><span class="line">date +%Y%m%d         //显示前天年月日</span><br><span class="line">date +%Y%m%d --date="+1 day/month/year"  //显示前一天/月/年的日期</span><br><span class="line">date +%Y%m%d --date="-1 day/month/year"  //显示后一天/月/年的日期</span><br><span class="line">date -d '2 weeks' 2周后的日期</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>cal [参数] 月份] [年份] | 查看日历</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-1  显示当月的月历</span><br><span class="line">-3  显示前、当、后一个月的日历</span><br><span class="line">-m  显示星期一为一个星期的第一天</span><br><span class="line">-s  （默认）星期天为第一天</span><br><span class="line">-j  显示当月是一年中的第几天的日历</span><br><span class="line">-y  显示当前年份的日历</span><br></pre></td></tr></table></figure>
@@ -403,10 +479,158 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/31/linux简单命令/" data-id="cka9lj6d5004q9kuw5z640dj3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/31/linux/linux简单命令/" data-id="ckcc3qzye000bqguwswh3xy5m" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="ckcc33e6f0082msuws1hhzd6h" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
+  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>O(d(n+r))</td>
+</tr>
+</tbody>
+</table>
+<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
+<li>基本思想：（分治）</li>
+</ul>
+<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
+<ul>
+<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
+</ul>
+<ol>
+<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ol>
+<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>平均时间复杂度：O(N*logN)</p>
+</li>
+<li><p>方式一</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方式二 runoob</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="ckcc33e6g0085msuwljgdespq" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
 
     </footer>
   </div>
@@ -527,155 +751,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="cka9lj6ey007q9kuw544wwwl0" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序(Quicksort)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序(Quicksort)/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序(Quicksort)/">快速排序(Quicksort)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O(n1.5)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>O(d(n+r))</td>
-</tr>
-</tbody>
-</table>
-<h5 id="快速排序-Quicksort"><a href="#快速排序-Quicksort" class="headerlink" title="快速排序(Quicksort)"></a>快速排序(Quicksort)</h5><ul>
-<li>基本思想：（分治）</li>
-</ul>
-<p>先从数列中取出一个数作为key值；<br>将比这个数小的数全部放在它的左边，大于或等于它的数全部放在它的右边；<br>对左右两个小数列重复第二步，直至各区间只有1个数。</p>
-<ul>
-<li>辅助理解：<a href="https://blog.csdn.net/morewindows/article/details/6684558/" target="_blank" rel="noopener">挖坑填数</a></li>
-</ul>
-<ol>
-<li>初始时 i = 0; j = 9; key=72<br>由于已经将a[0]中的数保存到key中，可以理解成在数组a[0]上挖了个坑，可以将其它数据填充到这来。<br>从j开始向前找一个比key小的数。当j=8，符合条件，a[0] = a[8] ; i++ ; 将a[8]挖出再填到上一个坑a[0]中。<br>这样一个坑a[0]就被搞定了，但又形成了一个新坑a[8]，这怎么办了？简单，再找数字来填a[8]这个坑。<br>这次从i开始向后找一个大于key的数，当i=3，符合条件，a[8] = a[3] ; j– ; 将a[3]挖出再填到上一个坑中。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：72 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 48 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>此时 i = 3; j = 7; key=72<br>再重复上面的步骤，先从后向前找，再从前向后找。<br>从j开始向前找，当j=5，符合条件，将a[5]挖出填到上一个坑中，a[3] = a[5]; i++;<br>从i开始向后找，当i=5时，由于i==j退出。<br>此时，i = j = 5，而a[5]刚好又是上次挖的坑，因此将key填入a[5]。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组：48 - 6 - 57 - 88 - 60 - 42 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ol>
-<li>可以看出a[5]前面的数字都小于它，a[5]后面的数字都大于它。因此再对a[0…4]和a[6…9]这二个子区间重复上述步骤就可以了。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;数组：48 - 6 - 57 - 42 - 60 - 72 - 83 - 73 - 88 - 85</span><br><span class="line"> 0   1   2    3    4    5    6    7    8    9</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>平均时间复杂度：O(N*logN)</p>
-</li>
-<li><p>方式一</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> l = low;</span><br><span class="line">       <span class="keyword">int</span> h = high;</span><br><span class="line">       <span class="keyword">int</span> povit = arr[low];</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= povit)</span><br><span class="line">               h--;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               l++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[l] &lt;= povit)</span><br><span class="line">               l++;</span><br><span class="line">           <span class="keyword">if</span> (l &lt; h) &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[h];</span><br><span class="line">               arr[h] = arr[l];</span><br><span class="line">               arr[l] = temp;</span><br><span class="line">               h--;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//打印</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           System.out.print(arr[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println();</span><br><span class="line"></span><br><span class="line">       <span class="comment">//       print(arr);</span></span><br><span class="line">       System.out.println(<span class="string">"l="</span> + (l + <span class="number">1</span>) + <span class="string">"h="</span> + (h + <span class="number">1</span>) + <span class="string">"povit="</span> + povit + <span class="string">"\n"</span>);</span><br><span class="line">       <span class="keyword">if</span> (l &gt; low) sort(arr, low, l - <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">if</span> (h &lt; high) sort(arr, l + <span class="number">1</span>, high);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二 runoob</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>  &lt;T extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; T[] quickSort(T[] targetArr, <span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> i = start + <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> j = end;</span><br><span class="line">      T key = targetArr[start];</span><br><span class="line">      <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照j--的方向遍历目标数组，直到比key小的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (j &gt; i &amp;&amp; targetArr[j].compareTo(key) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[i]已经保存在key中，可将后面的数填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[i] = targetArr[j];</span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">/**</span></span><br><span class="line"><span class="comment">           * 按照i++的方向遍历目标数组，直到比key大的值为止</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">          <span class="keyword">while</span> (i &lt; j &amp;&amp; targetArr[i].compareTo(key) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * 此处一定要小于等于零，假设数组之内有一亿个1，0交替出现的话，而key的值又恰巧是1的话，那么这个小于等于的作用就会使下面的if语句少执行一亿次。</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              i++;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">              <span class="comment">/**</span></span><br><span class="line"><span class="comment">               * targetArr[j]已保存在targetArr[i]中，可将前面的值填入</span></span><br><span class="line"><span class="comment">               */</span></span><br><span class="line">              targetArr[j] = targetArr[i];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 此时i==j</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      targetArr[i] = key;</span><br><span class="line">      <span class="comment">//递归调用，把key前面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, start, i - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//递归调用，把key后面的完成排序</span></span><br><span class="line">      <span class="keyword">this</span>.quickSort(targetArr, j + <span class="number">1</span>, end);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序(Quicksort)/" data-id="cka9lj6f600859kuwrfx64td5" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快速排序JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/30/快速排序JavaScript/" class="article-date">
-  <time datetime="2018-05-30T06:39:45.000Z" itemprop="datePublished">2018-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30/快速排序JavaScript/">快速排序JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="快速排序JavaScript"><a href="#快速排序JavaScript" class="headerlink" title="快速排序JavaScript"></a>快速排序JavaScript</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">prev, numsize</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> nonius = prev;</span><br><span class="line">            <span class="keyword">var</span> j = numsize <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">var</span> flag = array[prev];</span><br><span class="line">            <span class="keyword">if</span> ((numsize - prev) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span>(nonius &lt; j)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(; nonius &lt; j; j--)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[j] &lt; flag) &#123;</span><br><span class="line">                            array[nonius++] = array[j];　<span class="comment">//a[i] = a[j]; i += 1;</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span>( ; nonius &lt; j; nonius++)&#123;</span><br><span class="line">                        <span class="keyword">if</span> (array[nonius] &gt; flag)&#123;</span><br><span class="line">                            array[j--] = array[nonius];</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                array[nonius] = flag;</span><br><span class="line">                sort(<span class="number">0</span>, nonius);</span><br><span class="line">                sort(nonius + <span class="number">1</span>, numsize);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(<span class="number">0</span>, array.length);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/30/快速排序JavaScript/" data-id="cka9lj6f700879kuwnckh6nnm" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/30/复杂度/" data-id="ckcc33e6p008jmsuw61mqen3j" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sort/">Sort</a></li></ul>
@@ -760,7 +836,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/29/sql_hibernate查询/" data-id="cka9lj6e7006c9kuwr5gxw2pq" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/29/sql_hibernate查询/" data-id="ckcc33e5l006hmsuw9l44xl8k" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -805,289 +881,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="cka9lj6bp002p9kuww3eqygqp" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/05/26/java-io&encode/" data-id="ckcc33e24002emsuwgsw641bb" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-http_method" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/14/http_method/" class="article-date">
-  <time datetime="2018-05-14T03:33:06.000Z" itemprop="datePublished">2018-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/http_method/">http_method</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="http-method"><a href="#http-method" class="headerlink" title="http_method"></a>http_method</h6><ul>
-<li>一些常见的HTTP方法</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>HTTP方法</th>
-<th>描述 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>从服务器向客户端发送命名资源</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>将来自客户端的数据存储到一个命名的服务器资源中去</td>
-</tr>
-<tr>
-<td>DELTET</td>
-<td>从服务器中删除命名资源</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>将客户端数据发送到一个服务器网关应用程序</td>
-</tr>
-<tr>
-<td>HEAD</td>
-<td>仅发送命名资源响应中的HTTP首部</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>一些常见的HTTP状态码</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>HTTP状态码</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>ok,文档正确返回</td>
-</tr>
-<tr>
-<td>302</td>
-<td>Redirect(重定向)。到其他地方去获取资源</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found(没找到)。无法找到这个资源</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p> HTTP报文包括以下三个部分。</p>
-</blockquote>
-<ul>
-<li>起始行<br>报文的第一行就是起始行，在请求报文中用来说明要做些什么，在响应报文中说明出现了什么情况。</li>
-<li>首部字段<br>起始行后面有零个或多个首部字段。每个首部字段都包含一个名字和一个值，为了便于解析，两者之间用冒号（:）来分隔。首部以一个空行结束。添加一个首部字段和添加新行一样简单。</li>
-<li>主体<br>空行之后就是可选的报文主体了，其中包含了所有类型的数据。请求主体中包括了要发送给Web服务器的数据；响应主体中装载了要返回给客户端的数据。起始行和首部都是文本形式且都是结构化的，而主体则不同，主体中可以包含任意的二进制数据（比如图片、视频、音轨、软件程序）。当然，主体中也可以包含文本。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/14/http_method/" data-id="cka9lj6bl002j9kuwncrlgwyi" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js内置对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/08/js内置对象/" class="article-date">
-  <time datetime="2018-05-08T10:06:35.000Z" itemprop="datePublished">2018-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/js内置对象/">js内置对象Math</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="js内置对象Math"><a href="#js内置对象Math" class="headerlink" title="js内置对象Math"></a>js内置对象Math</h5><ul>
-<li>Math对象属性</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Math.E</td>
-<td>自然对数的底数，常量e值</td>
-</tr>
-<tr>
-<td>Math.LN10</td>
-<td>10的自然对数</td>
-</tr>
-<tr>
-<td>Math.LN2</td>
-<td>2的自然对数</td>
-</tr>
-<tr>
-<td>Math.LOG2E</td>
-<td>以2为底e的对数</td>
-</tr>
-<tr>
-<td>Math.LOG2E</td>
-<td>以10为底e的对数</td>
-</tr>
-<tr>
-<td>Math.PI</td>
-<td>π的值</td>
-</tr>
-<tr>
-<td>Math.SQRT1_2</td>
-<td>1/2的平方根（2的平方根的倒数）</td>
-</tr>
-<tr>
-<td>Math.SQRT2</td>
-<td>2的平方根</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>min()和max()方法</li>
-</ul>
-<p>找到数组最值，把Math对象作为apply的第一个参数，从而正确的设置this值，任何数组作为第二个参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>,values);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>舍入方法</p>
-</li>
-<li><ul>
-<li>Math.ceil()     向上舍入</li>
-</ul>
-</li>
-<li><ul>
-<li>Math.floor()    向下舍入</li>
-</ul>
-</li>
-<li><ul>
-<li>Math.round()    标准舍入（四舍五入）</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.9</span>));     <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.5</span>));     <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.1</span>));     <span class="comment">//26</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.9</span>));     <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.5</span>));     <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.1</span>));     <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.9</span>));     <span class="comment">//25</span></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.5</span>));     <span class="comment">//25</span></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.1</span>));     <span class="comment">//25</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>random()方法         </li>
-</ul>
-<p>值 = Math.floor(Math.random() * 可能的总数 + 第一个可能的值)</p>
-<ul>
-<li>[Math.floor()方法，Math.random()总返回一个小数值] </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span> +<span class="number">1</span>);     <span class="comment">//1到10 之间的数值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">9</span> + <span class="number">2</span>);     <span class="comment">//2到10之间的数值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFrom</span>(<span class="params">lowerValue,upperValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> choices = upperValue - lowerValue + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * choices + lowerValue);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = selectFrom(<span class="number">2</span>,<span class="number">10</span>);</span><br><span class="line">alert(num);         <span class="comment">//介于2和10之间（包括2和10）的一个数</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他方法</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Math.abs(num)</td>
-<td>返回num的绝对值</td>
-</tr>
-<tr>
-<td>Math.exp(num)</td>
-<td>返回Math.E的num次幂</td>
-</tr>
-<tr>
-<td>Math.log(num)</td>
-<td>返回num的自然对数</td>
-</tr>
-<tr>
-<td>Math.pow(num,power)</td>
-<td>返回num的power次幂</td>
-</tr>
-<tr>
-<td>Math.sqrt(num)</td>
-<td>返回num的平方根</td>
-</tr>
-<tr>
-<td>Math.acos(x)</td>
-<td>返回x的反余弦值</td>
-</tr>
-<tr>
-<td>Math.asin(x)</td>
-<td>返回x的反正弦值</td>
-</tr>
-<tr>
-<td>Math.atan(x)</td>
-<td>返回x的反正切值</td>
-</tr>
-<tr>
-<td>Math.atan2(y,x)</td>
-<td>返回y/x的反正切值</td>
-</tr>
-<tr>
-<td>Math.cos(x)</td>
-<td>返回x的余弦值</td>
-</tr>
-<tr>
-<td>Math.sin(x)</td>
-<td>返回x的正弦值</td>
-</tr>
-<tr>
-<td>Math.tan(x)</td>
-<td>返回x的正切值</td>
-</tr>
-</tbody>
-</table>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/08/js内置对象/" data-id="cka9lj6cg003u9kuwho5xmox3" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -1124,7 +921,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 16.36px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
+      <a href="/tags/Design-Patterns/" style="font-size: 16.36px;">Design Patterns</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Http/" style="font-size: 12.73px;">Http</a> <a href="/tags/JavaScript/" style="font-size: 15.45px;">JavaScript</a> <a href="/tags/Sort/" style="font-size: 18.18px;">Sort</a> <a href="/tags/algorithm/" style="font-size: 11.82px;">algorithm</a> <a href="/tags/ali-weixin-pay/" style="font-size: 13.64px;">ali/weixin pay</a> <a href="/tags/docker/" style="font-size: 17.27px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/go/" style="font-size: 11.82px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 11.82px;">jvm</a> <a href="/tags/linux/" style="font-size: 18.18px;">linux</a> <a href="/tags/logstash/" style="font-size: 12.73px;">logstash</a> <a href="/tags/mysql/" style="font-size: 14.55px;">mysql</a> <a href="/tags/php/" style="font-size: 11.82px;">php</a> <a href="/tags/pytest/" style="font-size: 10px;">pytest</a> <a href="/tags/python/" style="font-size: 13.64px;">python</a> <a href="/tags/springboot/" style="font-size: 17.27px;">springboot</a> <a href="/tags/util/" style="font-size: 19.09px;">util</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/wechat/" style="font-size: 10.91px;">wechat</a> <a href="/tags/我的世界/" style="font-size: 10px;">我的世界</a> <a href="/tags/消息队列/" style="font-size: 10.91px;">消息队列</a> <a href="/tags/线程/" style="font-size: 11.82px;">线程</a>
     </div>
   </div>
 
@@ -1146,11 +943,15 @@
       <ul>
         
           <li>
-            <a href="/2020/05/16/linux_awk_sed/">linux-awk\sed 示例</a>
+            <a href="/2020/05/17/linux/linux_shell/">linux—shell</a>
           </li>
         
           <li>
-            <a href="/2020/04/11/linux_bash/">linux—bash</a>
+            <a href="/2020/05/16/linux/linux_awk_sed/">linux-awk\sed 示例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/11/linux/linux_bash/">linux—bash</a>
           </li>
         
           <li>
@@ -1159,10 +960,6 @@
         
           <li>
             <a href="/2020/03/16/go基础/">go基础知识</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/go安装和配置/">go安装和配置</a>
           </li>
         
       </ul>
@@ -1177,7 +974,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 chen v<br>
+      &copy; 2020 vchen<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
